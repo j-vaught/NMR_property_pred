@@ -1,0 +1,11 @@
+torch>=2.0
+scikit-learn>=1.0
+pandas>=2.0
+numpy>=1.24
+pyarrow>=10.0
+scipy>=1.10
+rdkit>=2023.0
+chemicals>=1.0
+thermo>=0.5
+CoolProp>=6.0
+requests>=2.28
