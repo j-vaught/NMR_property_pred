@@ -1,0 +1,106 @@
+============================================================
+  PHASE 1 OPTIMAL: All 5 improvements combined
+  1. Lasso feature selection
+  2. ThermoML-only (no GC data)
+  3. Hybrid physics loss (λ=0.5)
+  4. 5-fold compound-level CV
+  5. 5-model ensemble
+============================================================
+
+############################################################
+  VISCOSITY — Optimal Pipeline
+  Lasso α=0.1, 5-fold CV, 5-model ensemble
+############################################################
+[16:30:14] WARNING: not removing hydrogen atom without neighbors
+[Features] 1223 compounds, 1696 raw features
+[16:30:14] WARNING: not removing hydrogen atom without neighbors
+[ThermoML viscosity] 26949 rows, 1247 compounds
+[Arrhenius viscosity] 190 compounds pass filter (46 HC)
+
+--- Fold 1/5 (train=152, test=38) ---
+[Lasso] alpha=0.1: 42 features selected from 1696
+  [A,B] R²=0.740 | Recon R²=0.189 MAPE=680.6% | HC R²=0.913 MAPE=22.6% (5 cpds)
+
+--- Fold 2/5 (train=152, test=38) ---
+[Lasso] alpha=0.1: 48 features selected from 1696
+  [A,B] R²=0.802 | Recon R²=0.533 MAPE=2219.5% | HC R²=0.291 MAPE=3139.6% (8 cpds)
+
+--- Fold 3/5 (train=152, test=38) ---
+[Lasso] alpha=0.1: 60 features selected from 1696
+  [A,B] R²=0.899 | Recon R²=0.371 MAPE=84.8% | HC R²=0.672 MAPE=28.8% (12 cpds)
+
+--- Fold 4/5 (train=152, test=38) ---
+[Lasso] alpha=0.1: 49 features selected from 1696
+  [A,B] R²=0.837 | Recon R²=0.634 MAPE=691.3% | HC R²=0.155 MAPE=161.6% (11 cpds)
+
+--- Fold 5/5 (train=152, test=38) ---
+[Lasso] alpha=0.1: 59 features selected from 1696
+  [A,B] R²=0.953 | Recon R²=0.858 MAPE=2358.2% | HC R²=0.833 MAPE=81.0% (10 cpds)
+
+============================================================
+  VISCOSITY SUMMARY (182s)
+============================================================
+
+  [A,B] coefficients:
+    r2: 0.8462 ± 0.0745
+    mape: 22.5489 ± 3.9334
+    rmse: 508.1913 ± 165.5806
+
+  Reconstructed (ALL):
+    r2: 0.5173 ± 0.2277
+    mape: 1206.8859 ± 911.3354
+    rmse: 0.0601 ± 0.0527
+
+  Reconstructed (HC):
+    r2: 0.5727 ± 0.2992
+    mape: 686.7053 ± 1227.4459
+    rmse: 0.0004 ± 0.0002
+
+############################################################
+  SURFACE_TENSION — Optimal Pipeline
+  Lasso α=0.1, 5-fold CV, 5-model ensemble
+############################################################
+[Features] 1223 compounds, 1696 raw features
+[ThermoML surface_tension] 9104 rows, 645 compounds
+[Arrhenius surface_tension] 111 compounds pass filter (24 HC)
+
+--- Fold 1/5 (train=88, test=23) ---
+[Lasso] alpha=0.1: 40 features selected from 1696
+  [A,B] R²=0.979 | Recon R²=0.248 MAPE=106.0% | HC R²=-0.189 MAPE=5.0% (1 cpds)
+
+--- Fold 2/5 (train=89, test=22) ---
+[Lasso] alpha=0.1: 49 features selected from 1696
+  [A,B] R²=0.865 | Recon R²=-0.079 MAPE=567.9% | HC R²=-0.817 MAPE=697.0% (9 cpds)
+
+--- Fold 3/5 (train=89, test=22) ---
+[Lasso] alpha=0.1: 41 features selected from 1696
+  [A,B] R²=-0.867 | Recon R²=0.701 MAPE=59.1% | HC R²=0.604 MAPE=10.0% (5 cpds)
+
+--- Fold 4/5 (train=89, test=22) ---
+[Lasso] alpha=0.1: 52 features selected from 1696
+  [A,B] R²=0.967 | Recon R²=0.692 MAPE=172.4% | HC R²=0.902 MAPE=6.5% (5 cpds)
+
+--- Fold 5/5 (train=89, test=22) ---
+[Lasso] alpha=0.1: 58 features selected from 1696
+  [A,B] R²=0.851 | Recon R²=-1.085 MAPE=51.0% | HC R²=0.817 MAPE=14.3% (4 cpds)
+
+============================================================
+  SURFACE_TENSION SUMMARY (97s)
+============================================================
+
+  [A,B] coefficients:
+    r2: 0.5589 ± 0.7150
+    mape: 20.7669 ± 13.0306
+    rmse: 0.0145 ± 0.0127
+
+  Reconstructed (ALL):
+    r2: 0.0954 ± 0.6589
+    mape: 191.2740 ± 193.2134
+    rmse: 0.0130 ± 0.0122
+
+  Reconstructed (HC):
+    r2: 0.2633 ± 0.6637
+    mape: 146.5673 ± 275.2466
+    rmse: 0.0037 ± 0.0033
+
+Results saved to /home/j-vaught/NMR_property_pred/src/phase1/outputs/optimal_results.json

@@ -1,0 +1,453 @@
+{
+  "viscosity": {
+    "XGBoost": {
+      "r2_A": {
+        "mean": 0.3052,
+        "std": 0.2368
+      },
+      "r2_B": {
+        "mean": 0.6294,
+        "std": 0.1238
+      },
+      "r2_AB": {
+        "mean": 0.4863,
+        "std": 0.1743
+      },
+      "recon_r2": {
+        "mean": 0.2745,
+        "std": 0.2931
+      },
+      "recon_mape": {
+        "mean": 6844.8,
+        "std": 13298.7
+      },
+      "training_time_s": 593.0
+    },
+    "LightGBM": {
+      "r2_A": {
+        "mean": 0.2694,
+        "std": 0.291
+      },
+      "r2_B": {
+        "mean": 0.6408,
+        "std": 0.081
+      },
+      "r2_AB": {
+        "mean": 0.4551,
+        "std": 0.172
+      },
+      "recon_r2": {
+        "mean": 0.2114,
+        "std": 0.1781
+      },
+      "recon_mape": {
+        "mean": 8008.9,
+        "std": 15482.3
+      },
+      "training_time_s": 349.9
+    },
+    "RandomForest": {
+      "r2_A": {
+        "mean": 0.327,
+        "std": 0.2917
+      },
+      "r2_B": {
+        "mean": 0.6217,
+        "std": 0.137
+      },
+      "r2_AB": {
+        "mean": 0.4743,
+        "std": 0.1969
+      },
+      "recon_r2": {
+        "mean": 0.3084,
+        "std": 0.3089
+      },
+      "recon_mape": {
+        "mean": 6565.1,
+        "std": 11257.1
+      },
+      "training_time_s": 190.8
+    },
+    "Ridge": {
+      "r2_A": {
+        "mean": 0.3322,
+        "std": 0.1562
+      },
+      "r2_B": {
+        "mean": 0.5363,
+        "std": 0.146
+      },
+      "r2_AB": {
+        "mean": 0.4343,
+        "std": 0.1408
+      },
+      "recon_r2": {
+        "mean": 0.1315,
+        "std": 0.2802
+      },
+      "recon_mape": {
+        "mean": 499.8,
+        "std": 712.4
+      },
+      "training_time_s": 0.5
+    },
+    "Lasso": {
+      "r2_A": {
+        "mean": 0.4093,
+        "std": 0.1912
+      },
+      "r2_B": {
+        "mean": 0.5924,
+        "std": 0.1334
+      },
+      "r2_AB": {
+        "mean": 0.5008,
+        "std": 0.1454
+      },
+      "recon_r2": {
+        "mean": 0.1057,
+        "std": 0.0602
+      },
+      "recon_mape": {
+        "mean": 1148.7,
+        "std": 2008.0
+      },
+      "training_time_s": 23.5
+    }
+  },
+  "viscosity_top_features": [
+    {
+      "rank": 1,
+      "feature": "qed",
+      "importance": 268.5
+    },
+    {
+      "rank": 2,
+      "feature": "BCUT2D_LOGPLOW",
+      "importance": 259.5
+    },
+    {
+      "rank": 3,
+      "feature": "BCUT2D_CHGHI",
+      "importance": 233.0
+    },
+    {
+      "rank": 4,
+      "feature": "VSA_EState5",
+      "importance": 216.5
+    },
+    {
+      "rank": 5,
+      "feature": "BCUT2D_LOGPHI",
+      "importance": 208.0
+    },
+    {
+      "rank": 6,
+      "feature": "MinEStateIndex",
+      "importance": 202.5
+    },
+    {
+      "rank": 7,
+      "feature": "BCUT2D_CHGLO",
+      "importance": 187.5
+    },
+    {
+      "rank": 8,
+      "feature": "BalabanJ",
+      "importance": 184.0
+    },
+    {
+      "rank": 9,
+      "feature": "BCUT2D_MRHI",
+      "importance": 174.5
+    },
+    {
+      "rank": 10,
+      "feature": "FpDensityMorgan1",
+      "importance": 173.5
+    },
+    {
+      "rank": 11,
+      "feature": "MinAbsEStateIndex",
+      "importance": 168.0
+    },
+    {
+      "rank": 12,
+      "feature": "BCUT2D_MWLOW",
+      "importance": 158.5
+    },
+    {
+      "rank": 13,
+      "feature": "SPS",
+      "importance": 157.0
+    },
+    {
+      "rank": 14,
+      "feature": "MinPartialCharge",
+      "importance": 150.5
+    },
+    {
+      "rank": 15,
+      "feature": "FpDensityMorgan2",
+      "importance": 148.0
+    },
+    {
+      "rank": 16,
+      "feature": "Kappa3",
+      "importance": 145.5
+    },
+    {
+      "rank": 17,
+      "feature": "BCUT2D_MWHI",
+      "importance": 145.0
+    },
+    {
+      "rank": 18,
+      "feature": "SMR_VSA10",
+      "importance": 140.0
+    },
+    {
+      "rank": 19,
+      "feature": "MaxPartialCharge",
+      "importance": 140.0
+    },
+    {
+      "rank": 20,
+      "feature": "HeavyAtomMolWt",
+      "importance": 139.5
+    }
+  ],
+  "surface_tension": {
+    "XGBoost": {
+      "r2_A": {
+        "mean": 0.5642,
+        "std": 0.0647
+      },
+      "r2_B": {
+        "mean": 0.4559,
+        "std": 0.1042
+      },
+      "r2_AB": {
+        "mean": 0.51,
+        "std": 0.0792
+      },
+      "recon_r2": {
+        "mean": 0.7611,
+        "std": 0.0747
+      },
+      "recon_mape": {
+        "mean": 97.5,
+        "std": 99.1
+      },
+      "training_time_s": 1119.0
+    },
+    "LightGBM": {
+      "r2_A": {
+        "mean": 0.5599,
+        "std": 0.083
+      },
+      "r2_B": {
+        "mean": 0.4684,
+        "std": 0.1142
+      },
+      "r2_AB": {
+        "mean": 0.5142,
+        "std": 0.096
+      },
+      "recon_r2": {
+        "mean": 0.7484,
+        "std": 0.0986
+      },
+      "recon_mape": {
+        "mean": 90.7,
+        "std": 77.6
+      },
+      "training_time_s": 892.1
+    },
+    "RandomForest": {
+      "r2_A": {
+        "mean": 0.5478,
+        "std": 0.0617
+      },
+      "r2_B": {
+        "mean": 0.4417,
+        "std": 0.1604
+      },
+      "r2_AB": {
+        "mean": 0.4947,
+        "std": 0.1033
+      },
+      "recon_r2": {
+        "mean": 0.7276,
+        "std": 0.1259
+      },
+      "recon_mape": {
+        "mean": 104.2,
+        "std": 99.6
+      },
+      "training_time_s": 91.7
+    },
+    "Ridge": {
+      "r2_A": {
+        "mean": 0.4454,
+        "std": 0.1334
+      },
+      "r2_B": {
+        "mean": 0.4276,
+        "std": 0.1261
+      },
+      "r2_AB": {
+        "mean": 0.4365,
+        "std": 0.1191
+      },
+      "recon_r2": {
+        "mean": 0.622,
+        "std": 0.1699
+      },
+      "recon_mape": {
+        "mean": 109.9,
+        "std": 62.5
+      },
+      "training_time_s": 0.9
+    },
+    "Lasso": {
+      "r2_A": {
+        "mean": 0.4781,
+        "std": 0.0845
+      },
+      "r2_B": {
+        "mean": 0.4383,
+        "std": 0.113
+      },
+      "r2_AB": {
+        "mean": 0.4582,
+        "std": 0.0826
+      },
+      "recon_r2": {
+        "mean": 0.6211,
+        "std": 0.2082
+      },
+      "recon_mape": {
+        "mean": 124.5,
+        "std": 77.1
+      },
+      "training_time_s": 81.5
+    }
+  },
+  "surface_tension_top_features": [
+    {
+      "rank": 1,
+      "feature": "qed",
+      "importance": 490.5
+    },
+    {
+      "rank": 2,
+      "feature": "BCUT2D_LOGPHI",
+      "importance": 387.0
+    },
+    {
+      "rank": 3,
+      "feature": "MinAbsEStateIndex",
+      "importance": 371.5
+    },
+    {
+      "rank": 4,
+      "feature": "MolLogP",
+      "importance": 336.5
+    },
+    {
+      "rank": 5,
+      "feature": "BCUT2D_MWLOW",
+      "importance": 324.0
+    },
+    {
+      "rank": 6,
+      "feature": "BCUT2D_LOGPLOW",
+      "importance": 316.0
+    },
+    {
+      "rank": 7,
+      "feature": "BCUT2D_CHGLO",
+      "importance": 311.0
+    },
+    {
+      "rank": 8,
+      "feature": "BalabanJ",
+      "importance": 304.0
+    },
+    {
+      "rank": 9,
+      "feature": "Kappa3",
+      "importance": 278.0
+    },
+    {
+      "rank": 10,
+      "feature": "VSA_EState8",
+      "importance": 278.0
+    },
+    {
+      "rank": 11,
+      "feature": "BCUT2D_MRHI",
+      "importance": 277.0
+    },
+    {
+      "rank": 12,
+      "feature": "MinAbsPartialCharge",
+      "importance": 246.5
+    },
+    {
+      "rank": 13,
+      "feature": "Kappa2",
+      "importance": 245.5
+    },
+    {
+      "rank": 14,
+      "feature": "MaxAbsEStateIndex",
+      "importance": 240.5
+    },
+    {
+      "rank": 15,
+      "feature": "PEOE_VSA6",
+      "importance": 240.5
+    },
+    {
+      "rank": 16,
+      "feature": "MaxAbsPartialCharge",
+      "importance": 240.0
+    },
+    {
+      "rank": 17,
+      "feature": "BertzCT",
+      "importance": 233.5
+    },
+    {
+      "rank": 18,
+      "feature": "BCUT2D_CHGHI",
+      "importance": 233.5
+    },
+    {
+      "rank": 19,
+      "feature": "Chi2v",
+      "importance": 229.5
+    },
+    {
+      "rank": 20,
+      "feature": "FpDensityMorgan3",
+      "importance": 226.0
+    }
+  ],
+  "metadata": {
+    "n_viscosity_compounds": 203,
+    "n_st_compounds": 654,
+    "n_features": 1696,
+    "n_folds": 5,
+    "cv_type": "compound-level KFold",
+    "hyperparameter_tuning": "RandomizedSearchCV (inner 3-fold)",
+    "nn_reference": {
+      "note": "Current NN baseline from train.py",
+      "viscosity_r2_AB_approx": 0.89,
+      "viscosity_recon_r2_approx": 0.88
+    }
+  }
+}

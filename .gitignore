@@ -40,7 +40,6 @@ data/thermo/additional_properties/heat_capacity.csv
 # Model checkpoints (large)
 *.pth
 *.pt
-outputs/
 
 # Temporary
 *.progress
