@@ -12,7 +12,7 @@ from torch.utils.data import DataLoader, TensorDataset
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from shared.config import Paths, DataConfig, SplitConfig, ModelConfig, TrainConfig
-from shared.data_utils import make_temperature_features
+from shared.data_utils import make_temperature_features, fit_arrhenius, fit_linear_st
 from shared.metrics import compute_all_metrics
 from phase1.data_pipeline import build_dataset
 from phase1.model import DirectMultiTaskModel, SingleTaskModel, ArrheniusModel, count_parameters
