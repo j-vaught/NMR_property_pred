@@ -43,9 +43,11 @@ def load_data():
     desc = desc.dropna(subset=["canonical_smiles"]).set_index("canonical_smiles")
     desc_cols = [c for c in desc.columns if c not in ("CAS", "SMILES")]
     desc = desc[desc_cols].astype(np.float32).replace([np.inf, -np.inf], np.nan).fillna(0)
+    desc = desc[~desc.index.duplicated(keep="first")]
     desc = desc.loc[:, desc.std() > 0]
     desc = (desc - desc.mean()) / desc.std().replace(0, 1)
 
+    fp = fp[~fp.index.duplicated(keep="first")]
     common = fp.index.intersection(desc.index)
     features = pd.concat([fp.loc[common], desc.loc[common]], axis=1)
     print(f"Features: {features.shape[0]} compounds, {features.shape[1]} dims")
