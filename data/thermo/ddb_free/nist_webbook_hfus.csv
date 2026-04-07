@@ -1,0 +1,239 @@
+name,CAS,ΔfusH (kJ/mol),Temperature (K),Reference,Comment,Method
+n-Pentane,109-66-0,8.401,143.47,"Messerly, Guthrie, et al., 1967",DH,
+n-Pentane,109-66-0,8.4149,143.46,"Messerly and Kennedy, 1940",DH,
+n-Pentane,109-66-0,8.4,143.5,"Acree, 1991",AC,
+n-Pentane,109-66-0,8.376,143.4,"Parks and Huffman, 1930",DH,
+n-Hexane,110-54-3,13.079,177.84,"Douslin and Huffman, 1946",DH,
+n-Hexane,110-54-3,13.08,177.8,"Domalski and Hearing, 1996",AC,
+n-Hexane,110-54-3,12.343,177.90,"Stull, 1937",DH,
+n-Hexane,110-54-3,13.033,177.9,"Huffman, Parks, et al., 1931",DH,
+n-Hexane,110-54-3,12.581,178.6,"Parks, Huffman, et al., 1930",DH,
+n-Heptane,142-82-5,13.990,182.57,"Van Miltenburg, Van den Berg, et al., 1987",DH,
+n-Heptane,142-82-5,14.053,182.59,"Schaake, Offringa, et al., 1979",DH,
+n-Heptane,142-82-5,14.037,182.55,"Huffman, Gross, et al., 1961",DH,
+n-Heptane,142-82-5,14.037,182.55,"McCullough and Messerly, 1961",DH,
+n-Heptane,142-82-5,14.022,182.56,"Douglas, Furukawa, et al., 1954",DH,
+n-Heptane,142-82-5,14.022,182.56,"Ginnings and Furukawa, 1953",DH,
+n-Heptane,142-82-5,14.0407,182.52,"Pitzer K.S., 1940",DH,
+n-Heptane,142-82-5,14.059,182.7,"Meijer, Blok, et al., 1977",DH,
+n-Heptane,142-82-5,14.061,182.56,"Van Miltenburg, 1972",DH,
+n-Heptane,142-82-5,14.0306,182.56,"Oetting F.L., 1963",DH,
+n-Heptane,142-82-5,14.04,182.6,"Domalski and Hearing, 1996",AC,
+n-Heptane,142-82-5,14.163,182.2,"Huffman, Parks, et al., 1930",DH,
+n-Heptane,142-82-5,14.163,182.2,"Parks, Huffman, et al., 1930",DH,
+n-Octane,111-65-9,20.740,216.38,"Finke, Gross, et al., 1954",DH,N/A
+n-Octane,111-65-9,21.8,216.6,"Mondieig, Rajabalee, et al., 2004",AC,DSC
+n-Octane,111-65-9,20.74,216.4,"Domalski and Hearing, 1996",AC,N/A
+n-Octane,111-65-9,20.652,215.8,"Huffman, Parks, et al., 1931",DH,N/A
+n-Octane,111-65-9,20.092,215.6,"Parks, Huffman, et al., 1930",DH,N/A
+n-Nonane,111-84-2,15.0,219.5,"Mondieig, Rajabalee, et al., 2004",AC,DSC
+n-Nonane,111-84-2,15.48,219.7,"Acree, 1991","See alsoDomalski and Hearing, 1996.;AC",N/A
+n-Decane,124-18-5,28.715,243.51,"Finke, Gross, et al., 1954",DH,N/A
+n-Decane,124-18-5,27.6,243.,"Marti, Kaisersberger, et al., 2004",AC,DSC
+n-Decane,124-18-5,28.7,243.5,"Domalski and Hearing, 1996",AC,N/A
+n-Decane,124-18-5,28.778,243.1,"Huffman, Parks, et al., 1931",DH,N/A
+n-Undecane,1120-21-4,22.5,247.6,"Mondieig, Rajabalee, et al., 2004",AC,DSC
+n-Undecane,1120-21-4,22.18,247.6,"Domalski and Hearing, 1996",AC,N/A
+n-Dodecane,112-40-3,36.836,263.59,"Finke, Gross, et al., 1954",DH,N/A
+n-Dodecane,112-40-3,35.7,263.1,"Mondieig, Rajabalee, et al., 2004",AC,DSC
+n-Dodecane,112-40-3,36.82,263.6,"Domalski and Hearing, 1996",AC,N/A
+n-Dodecane,112-40-3,36.581,263.5,"Huffman, Parks, et al., 1931",DH,N/A
+n-Tridecane,629-50-5,28.9,267.7,"Mondieig, Rajabalee, et al., 2004",AC,DSC
+n-Tridecane,629-50-5,28.49,267.8,"Domalski and Hearing, 1996",AC,N/A
+n-Tetradecane,629-59-4,45.070,279.03,"Finke, Gross, et al., 1954, 2",DH,N/A
+n-Tetradecane,629-59-4,42.7,278.3,"Mondieig, Rajabalee, et al., 2004",AC,DSC
+n-Tetradecane,629-59-4,45.07,279.,"Domalski and Hearing, 1996",AC,N/A
+n-Pentadecane,629-62-9,34.2,282.7,"Mondieig, Rajabalee, et al., 2004",AC,DSC
+n-Pentadecane,629-62-9,34.6,283.1,"Domalski and Hearing, 1996",AC,N/A
+n-Hexadecane,544-76-3,47.545,292.1,"Claudy and Letoffe, 1991",DH,N/A
+n-Hexadecane,544-76-3,53.359,291.34,"Finke, Gross, et al., 1954",DH,N/A
+n-Hexadecane,544-76-3,53.0,290.7,"Mondieig, Rajabalee, et al., 2004",AC,DSC
+n-Hexadecane,544-76-3,51.46,291.1,"Domalski and Hearing, 1996",AC,N/A
+n-Hexadecane,544-76-3,51.543,291.1,"Parks, Moore, et al., 1949",DH,N/A
+n-Heptadecane,629-78-7,39.4,294.7,"Mondieig, Rajabalee, et al., 2004",AC,DSC
+n-Heptadecane,629-78-7,40.17,295.1,"Domalski and Hearing, 1996",AC,N/A
+n-Octadecane,593-45-3,61.500,301.5,"Barbillon, Schuffenecker, et al., 1991",DH,N/A
+n-Octadecane,593-45-3,60.760,301.0,"Kolesnikov and Syunyaev, 1985",DH,N/A
+n-Octadecane,593-45-3,61.706,301.33,"Messerly, Guthrie, et al., 1967, 2",DH,N/A
+n-Octadecane,593-45-3,60.1,301.1,"Mondieig, Rajabalee, et al., 2004",AC,DSC
+n-Octadecane,593-45-3,61.5,301.3,"Domalski and Hearing, 1996",AC,N/A
+n-Octadecane,593-45-3,60.484,301.3,"Parks, Moore, et al., 1949, 2",DH,N/A
+n-Nonadecane,629-92-5,42.7,304.4,"Mondieig, Rajabalee, et al., 2004",AC,DSC
+n-Nonadecane,629-92-5,47.4,305.3,"Domalski and Hearing, 1996",AC,N/A
+n-Eicosane,112-95-8,69.000,309.6,"Barbillon, Schuffenecker, et al., 1991",DH,N/A
+n-Eicosane,112-95-8,67.800,308.8,"Kolesnikov and Syunyaev, 1985",DH,N/A
+n-Eicosane,112-95-8,69.873,309.75,"Company, 1973",DH,N/A
+n-Eicosane,112-95-8,69.8,310.2,"Khimeche, Boumrah, et al., 2006","See alsoGenovese, Amarasinghe, et al., 2006.;AC",N/A
+n-Eicosane,112-95-8,68.1,309.7,"Mondieig, Rajabalee, et al., 2004",AC,DSC
+n-Eicosane,112-95-8,67.8,309.7,"Domalski and Hearing, 1996",AC,N/A
+n-Eicosane,112-95-8,70.900,308.5,"Syunyaev, Tumanyan, et al., 1984",Relative error in determination ± 5%.;DH,N/A
+n-Eicosane,112-95-8,61.476,309.7,"Parks, Huffman, et al., 1930, 2",DH,N/A
+Isopentane,78-78-4,5.1555,113.37,"Guthrie and Huffman, 1943, 2",DH,
+Isopentane,78-78-4,5.130,113.39,"Schumann, Aston, et al., 1942, 2",DH,
+Isopentane,78-78-4,5.13,113.4,"Domalski and Hearing, 1996",AC,
+Isopentane,78-78-4,5.113,112.6,"Parks, Huffman, et al., 1930, 2",DH,
+Neopentane,463-82-1,3.26,256.5,"Domalski and Hearing, 1996",AC,
+2-Methylpentane,107-83-5,6.268,119.55,"Douslin and Huffman, 1946, 2",DH,
+2-Methylpentane,107-83-5,6.27,119.6,"Domalski and Hearing, 1996",AC,
+3-Methylpentane,96-14-0,5.31,110.3,"Domalski and Hearing, 1996",AC,
+"2,2-Dimethylbutane",75-83-2,0.58,174.3,"Domalski and Hearing, 1996",AC,
+"2,3-Dimethylbutane",79-29-8,0.79,145.2,"Domalski and Hearing, 1996",AC,
+2-Methylhexane,591-76-4,9.184,154.90,"Huffman, Gross, et al., 1961",DH,
+2-Methylhexane,591-76-4,9.18,154.9,"Domalski and Hearing, 1996",AC,
+2-Methylhexane,591-76-4,8.870,154.0,"Huffman, Parks, et al., 1930",DH,
+2-Methylhexane,591-76-4,8.870,154.0,"Parks, Huffman, et al., 1930",DH,
+"2,2,4-Trimethylpentane",540-84-1,9.2115,165.79,"Pitzer K.S., 1940",DH,
+"2,2,4-Trimethylpentane",540-84-1,9.04,165.3,"Domalski and Hearing, 1996",AC,
+"2,2,4-Trimethylpentane",540-84-1,9.042,165.3,"Parks, Huffman, et al., 1930, 2",DH,
+2-Methylheptane,592-27-8,11.920,64.19,"Messerly and Finke, 1971",DH,
+2-Methylheptane,592-27-8,11.92,164.2,"Domalski and Hearing, 1996",AC,
+2-Methyloctane,3221-61-2,17.99,192.8,"Helgeson, Owens, et al., 1998",AC,
+2-Methylnonane,871-83-0,17.49,198.8,"Domalski and Hearing, 1996",AC,
+2-Methylnonane,871-83-0,17.489,198.8,"Parks, West, et al., 1941, 2",DH,
+2-Methyldecane,6975-98-0,25.087,224.31,"Messerly and Finke, 1971, 2",DH,
+2-Methyldecane,6975-98-0,25.06,224.3,"Domalski and Hearing, 1996",AC,
+Cyclopentane,287-92-3,0.6,179.7,"Domalski and Hearing, 1996",AC,
+Methylcyclopentane,96-37-7,6.9287,130.73,"Douslin and Huffman, 1946",DH,
+Methylcyclopentane,96-37-7,6.93,130.7,"Domalski and Hearing, 1996",AC,
+Methylcyclopentane,96-37-7,6.883,130.1,"Huffman, Parks, et al., 1931",DH,
+Cyclohexane,110-82-7,2.68,279.8,"Domalski and Hearing, 1996",AC,
+Methylcyclohexane,108-87-2,6.7505,146.58,"Douslin and Huffman, 1946, 2",DH,
+Methylcyclohexane,108-87-2,6.69,146.6,"Domalski and Hearing, 1996",AC,
+Methylcyclohexane,108-87-2,6.673,146.2,"Parks and Huffman, 1930",DH,
+Ethylcyclopentane,1640-89-7,6.86,134.7,"Domalski and Hearing, 1996",AC,
+Ethylcyclohexane,1678-91-7,8.3333,161.84,"Huffman, Todd, et al., 1949, 2",DH,
+Ethylcyclohexane,1678-91-7,8.5,161.5,"Mandanici, Cutroni, et al., 2006",AC,
+Ethylcyclohexane,1678-91-7,8.33,161.4,"Domalski and Hearing, 1996",AC,
+Ethylcyclohexane,1678-91-7,8.276,161.4,"Parks, Moore, et al., 1949, 2",DH,
+Propylcyclohexane,1678-92-8,13.072,178.25,"Finke, Messerly, et al., 1965",DH,
+Propylcyclohexane,1678-92-8,10.6,178.,"Mandanici, Cutroni, et al., 2006",AC,
+Propylcyclohexane,1678-92-8,10.37,178.3,"Acree, 1991",AC,
+Butylcyclohexane,1678-93-9,14.159,198.42,"Finke, Messerly, et al., 1965",DH,
+Butylcyclohexane,1678-93-9,14.2,198.,"Mandanici, Cutroni, et al., 2006",AC,
+Butylcyclohexane,1678-93-9,14.14,198.4,"Domalski and Hearing, 1996",AC,
+Decalin,91-17-8,14.414,242.78,"McCullough, Finke, et al., 1957",DH,
+Decalin,91-17-8,2.209,230.1,"Parks and Hatton, 1949",DH,
+trans-Decalin,493-02-7,3.244,242.4,"Parks and Hatton, 1949, 2",DH,
+trans-Decalin,493-02-7,9.49,230.2,"Domalski and Hearing, 1996",AC,
+cis-Decalin,493-01-6,14.43,242.8,"Domalski and Hearing, 1996",AC,
+Bicyclohexyl,92-51-3,6.86,276.8,"Chirico, Cowell, et al., 1998",Based on data from 6. to 440. K.;AC,AC
+Bicyclohexyl,92-51-3,6.78,277.2,"Domalski and Hearing, 1996","See alsoO'Rourke and Mraw, 1983.;AC",DSC
+Benzene,71-43-2,9.8663,278.69,"Oliver, Eaton, et al., 1948",DH,N/A
+Benzene,71-43-2,9.916,278.65,"Ziegler and Andrews, 1942",DH,N/A
+Benzene,71-43-2,9.87,278.7,"Domalski and Hearing, 1996","See alsoAndrews, Lynn, et al., 1926andZiegler and Andrews, 1942.;AC",C
+Benzene,71-43-2,9.300,279.1,"Smith, 1979",DH,N/A
+Benzene,71-43-2,8.950,278.8,"Pacor, 1967",DH,N/A
+Benzene,71-43-2,9.937,278.6,"Tschamler, 1948",DH,N/A
+Benzene,71-43-2,9.803,278.6,"Huffman, Parks, et al., 1930",DH,N/A
+Benzene,71-43-2,9.875,278.55,"Andrews, Lynn, et al., 1926",DH,N/A
+Benzene,71-43-2,10.000,278.64,"Maass and Walbauer, 1925",DH,N/A
+Toluene,108-88-3,6.636,178.15,"Scott, Guthrie, et al., 1962, 2",DH,
+Toluene,108-88-3,6.619,177.95,"Kelley, 1929, 2",DH,
+Toluene,108-88-3,6.548,178.0,"Ziegler and Andrews, 1942, 2",DH,
+Toluene,108-88-3,6.61,178.,"Domalski and Hearing, 1996","See alsoSouthard and Andrews, 1930.;AC",
+Ethylbenzene,100-41-4,9.1818,178.15,"Scott and Brickwedde, 1945, 2",DH,
+Ethylbenzene,100-41-4,9.163,178.17,"Guthrie, Spitzer, et al., 1944",DH,
+Ethylbenzene,100-41-4,9.16,178.2,"Domalski and Hearing, 1996",AC,
+Ethylbenzene,100-41-4,9.163,178.0,"Huffman, Parks, et al., 1930, 2",DH,
+o-Xylene,95-47-6,13.598,247.82,"Pitzer and Scott, 1943",DH,
+o-Xylene,95-47-6,13.6,247.8,"Domalski and Hearing, 1996",AC,
+m-Xylene,108-38-3,11.569,225.27,"Pitzer and Scott, 1943",DH,
+m-Xylene,108-38-3,11.59,225.3,"Domalski and Hearing, 1996",AC,
+p-Xylene,106-42-3,17.11746,286.405,"Messerly, Finke, et al., 1988, 2",DH,
+p-Xylene,106-42-3,17.100,286.3,"Corruccini and Ginnings, 1947",DH,
+p-Xylene,106-42-3,17.113,286.39,"Pitzer and Scott, 1943",DH,
+p-Xylene,106-42-3,17.11,286.3,"Domalski and Hearing, 1996",AC,
+p-Xylene,106-42-3,16.933,286.3,"Huffman, Parks, et al., 1930, 2",DH,
+Styrene,100-42-5,10.964,242.27,"Warfield and Petree, 1961",DH,
+Styrene,100-42-5,10.949,242.27,"Pitzer, Guttman, et al., 1946, 3",DH,
+Styrene,100-42-5,10.950,242.47,"Guttman and Westrum, 1943",DH,
+Styrene,100-42-5,10.950,242.47,"Lebedev, Lebedev, et al., 1985",DH,
+Styrene,100-42-5,10.96,242.3,"Domalski and Hearing, 1996",AC,
+Propylbenzene,103-65-1,9.27,173.6,"Acree, 1991",AC,
+Isopropylbenzene,98-82-8,7.326,177.13,"Kishimoto, Suga, et al., 1973, 2",DH,
+Isopropylbenzene,98-82-8,7.32,177.1,"Kishimoto, Suga, et al., 1973, 2",AC,
+"1,2,3-Trimethylbenzene",526-73-8,8.18,247.8,"Domalski and Hearing, 1996",AC,
+"1,2,4-Trimethylbenzene",95-63-6,13.19,229.3,"Domalski and Hearing, 1996",AC,
+"1,2,4-Trimethylbenzene",95-63-6,12.648,228.6,"Huffman, Parks, et al., 1931, 2",DH,
+"1,3,5-Trimethylbenzene",108-67-8,9.51,228.4,"Domalski and Hearing, 1996","See alsoRadomska and Radomski, 1991.;AC",
+"1,3,5-Trimethylbenzene",108-67-8,9.51,228.4,"Radomska and Radomski, 1991",AC,
+Butylbenzene,104-51-8,11.22,185.3,"Domalski and Hearing, 1996",AC,
+Butylbenzene,104-51-8,10.979,184.6,"Huffman, Parks, et al., 1931, 2",DH,
+tert-Butylbenzene,98-06-6,8.4,215.3,"Chirico and Steele, 2009",AC,"DSC,AC"
+tert-Butylbenzene,98-06-6,8.41,215.,"Domalski and Hearing, 1996",AC,N/A
+tert-Butylbenzene,98-06-6,8.397,215.0,"Huffman, Parks, et al., 1930, 2",DH,N/A
+Tetralin,119-64-2,12.447,237.36,"McCullough, Finke, et al., 1957, 2",DH,
+Tetralin,119-64-2,12.45,237.4,"Domalski and Hearing, 1996",AC,
+Naphthalene,91-20-3,18.811,353.44,"Mastrangelo, 1957",DH,N/A
+Naphthalene,91-20-3,18.226,353.43,"McCullough, Finke, et al., 1957",DH,N/A
+Naphthalene,91-20-3,19.200,353.0,"Spaght, Thomas, et al., 1932",DH,N/A
+Naphthalene,91-20-3,19.1,353.5,"Sharma, Gupta, et al., 2008",AC,DSC
+Naphthalene,91-20-3,16.44,353.8,"Hafsaoui and Mahmoud, 2007",AC,DSC
+Naphthalene,91-20-3,19.55,354.7,"Khimeche and Dahmani, 2006",AC,DSC
+Naphthalene,91-20-3,19.55,354.7,"Khimeche and Dahmani, 2006, 2",AC,DSC
+Naphthalene,91-20-3,19.0,353.4,"Chirico, Knipmeyer, et al., 2002",Based on data from 5. to 440. K.;AC,AC
+Naphthalene,91-20-3,19.1,353.4,"Acree, 1991",AC,N/A
+Naphthalene,91-20-3,19.020,354.1,"Syunyaev, Tumanyan, et al., 1984",Relative error in determination ± 5%.;DH,N/A
+Naphthalene,91-20-3,19.100,353.5,"Rastogi and Bassi, 1964",DH,N/A
+Naphthalene,91-20-3,18.785,353.,"Ueberreiter and Orthmann, 1950",DH,N/A
+Naphthalene,91-20-3,18.790,353.4,"Eibert, 1944",DH,N/A
+Naphthalene,91-20-3,19.040,353.4,"Schmidt, 1941",DH,N/A
+Naphthalene,91-20-3,19.000,353.1,"Andrews, Lynn, et al., 1926",DH,N/A
+Naphthalene,91-20-3,19.250,353.,"David, 1964",Temperature not measured.;DH,N/A
+1-Methylnaphthalene,90-12-0,6.95,242.7,"Domalski and Hearing, 1996",AC,
+2-Methylnaphthalene,91-57-6,12.13,307.7,"Domalski and Hearing, 1996",AC,
+2-Methylnaphthalene,91-57-6,11.966,307.2,"Huffman, Parks, et al., 1931, 2",DH,
+Biphenyl,92-52-4,18.5760,342.098,"Chirico, Knipmeyer, et al., 1989, 2",DH,N/A
+Biphenyl,92-52-4,18.580,342.2,"O'Rourke and Mraw, 1983",DH,N/A
+Biphenyl,92-52-4,18.800,344.1,"Smith, 1979",DH,N/A
+Biphenyl,92-52-4,18.648,341.5,"Spaght, Thomas, et al., 1932",DH,N/A
+Biphenyl,92-52-4,19.7,342.3,"Khimeche and Dahmani, 2006",AC,DSC
+Biphenyl,92-52-4,19.27,344.34,"Benkhennouf, Kamel, et al., 2004",AC,DSC
+Biphenyl,92-52-4,18.66,341.5,"Domalski and Hearing, 1996",AC,N/A
+Biphenyl,92-52-4,18.575,343.,"Ueberreiter and Orthmann, 1950",DH,N/A
+Biphenyl,92-52-4,18.594,342.,"Schmidt, 1941",DH,N/A
+Biphenyl,92-52-4,18.945,314.3,"Eykman, 1889",DH,N/A
+Indane,496-11-7,8.598,221.77,"Stull, Sinke, et al., 1959, 2",DH,
+Indane,496-11-7,8.6,221.8,"Domalski and Hearing, 1996",AC,
+Fluorene,86-73-7,19.1,387.7,"Lisicki and Jamróz, 2000",AC,DSC
+Fluorene,86-73-7,19.58,387.9,"Domalski and Hearing, 1996",AC,N/A
+Fluorene,86-73-7,19.870,387.0,"Eibert, 1944",DH,N/A
+Acenaphthene,83-32-9,21.4622,366.56,"Finke, Messerly, et al., 1977, 2",DH,N/A
+Acenaphthene,83-32-9,21.0,367.,"Sharma, Gupta, et al., 2008",AC,DSC
+Acenaphthene,83-32-9,21.46,366.6,"Domalski and Hearing, 1996",AC,N/A
+Acenaphthene,83-32-9,20.233,366.4,"Sadowska, Stepniewska, et al., 1969",DH,N/A
+Acenaphthene,83-32-9,25.100,367.8,"Eibert, 1944",DH,N/A
+Phenanthrene,85-01-8,15.720,373.81,"Sabbah and El Watik, 1992",DH,N/A
+Phenanthrene,85-01-8,18.627,(373.),"Rai, Singh, et al., 1987",DH,N/A
+Phenanthrene,85-01-8,18.000,373.2,"Rastogi and Bassi, 1964",DH,N/A
+Phenanthrene,85-01-8,16.6,367.6,"Rojas and Orozco, 2003",Based on data from 353. to 383. K.;AC,DSC
+Phenanthrene,85-01-8,16.2,372.9,"Lisicki and Jamróz, 2000",AC,DSC
+Phenanthrene,85-01-8,16.46,372.4,"Domalski and Hearing, 1996",AC,N/A
+Phenanthrene,85-01-8,17.150,371.4,"Eibert, 1944",DH,N/A
+Phenanthrene,85-01-8,17.138,371.7,"Schmidt, 1941",DH,N/A
+Anthracene,120-12-7,29.372,488.93,"Goursot, Girdhar, et al., 1970, 2",Note that table of smoothed values indicates Hm = 6485 J/mol and Sm = 251 J/mol*K.;DH,N/A
+Anthracene,120-12-7,29.8,492.,"Rojas and Orozco, 2003",Based on data from 463. to 503. K.;AC,DSC
+Anthracene,120-12-7,31.5,491.,"Storoniak, Krzyminski, et al., 2003",AC,DSC
+Anthracene,120-12-7,28.8,489.4,"Lisicki and Jamróz, 2000",AC,DSC
+Anthracene,120-12-7,29.37,488.9,"Domalski and Hearing, 1996",AC,N/A
+Anthracene,120-12-7,28.830,490.,"Ueberreiter and Orthmann, 1950",DH,N/A
+Anthracene,120-12-7,28.870,489.7,"Hildebrand, Duschak, et al., 1917",DH,N/A
+Dodecylbenzene,123-01-3,43.1,274.6,"Mokbel, Ruzicka, et al., 2000",AC,DSC
+1-Pentene,109-67-1,5.93739,108.016,"Messerly, Todd, et al., 1990, 2",DH,
+1-Pentene,109-67-1,5.88168,107.797,"Messerly, Todd, et al., 1990, 2",c(metastable)/liq;DH,
+1-Pentene,109-67-1,5.807,107.90,"Chao, Hall, et al., 1983, 2",DH,
+1-Pentene,109-67-1,5.807,107.9,"Todd, Oliver, et al., 1947, 2",DH,
+1-Pentene,109-67-1,5.81,107.9,"Acree, 1991","See alsoMesserly, Todd, et al., 1990, 2.;AC",
+1-Hexene,592-41-6,9.347,133.39,"McCullough, Finke, et al., 1957, 2",DH,
+1-Hexene,592-41-6,9.35,133.4,"Domalski and Hearing, 1996",AC,
+1-Octene,111-66-0,15.313,171.46,"McCullough, Finke, et al., 1957, 2",DH,
+1-Octene,111-66-0,15.31,171.5,"Domalski and Hearing, 1996",AC,
+1-Decene,872-05-9,13.81,206.9,"Domalski and Hearing, 1996",AC,
+1-Dodecene,112-41-4,19.87,237.9,"Domalski and Hearing, 1996",AC,
+1-Hexadecene,629-73-2,30.192,277.51,"McCullough, Finke, et al., 1957, 2",DH,
+1-Hexadecene,629-73-2,30.21,277.5,"Messerly, Todd, et al., 1990, 2",AC,
+Adamantane,281-23-2,13.8,543.2,"Kabo, Blokhin, et al., 2000",AC,N/A
+Adamantane,281-23-2,10.9,541.,"Chickos, Hesse, et al., 1998",AC,DSC
+Adamantane,281-23-2,10.9,541.2,"Domalski and Hearing, 1996","See alsoPirsch, 1966andHakvoort, 1993.;AC",N/A
+Heptylcyclohexane,5617-41-4,22.22,232.8,"Domalski and Hearing, 1996",AC,
+Heptylcyclohexane,5617-41-4,22.225,232.8,"Parks, Moore, et al., 1949, 2",DH,

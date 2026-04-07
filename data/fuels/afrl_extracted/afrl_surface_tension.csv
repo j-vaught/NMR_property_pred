@@ -1,0 +1,45 @@
+fuel_name,POSF_number,fuel_type,T_C,T_K,surface_tension_mNm,source
+"JP-5 (A-3, SwRI D1331A fit)",10289,JP-5,-40.0,233.14999999999998,32.07,"Figure 86 fit, p104"
+"JP-5 (A-3, SwRI D1331A fit)",10289,JP-5,-20.0,253.14999999999998,30.36,"Figure 86 fit, p104"
+"JP-5 (A-3, SwRI D1331A fit)",10289,JP-5,0.0,273.15,28.66,"Figure 86 fit, p104"
+"JP-5 (A-3, SwRI D1331A fit)",10289,JP-5,20.0,293.15,26.96,"Figure 86 fit, p104"
+"JP-5 (A-3, SwRI D1331A fit)",10289,JP-5,40.0,313.15,25.26,"Figure 86 fit, p104"
+"JP-5 (A-3, SwRI D1331A fit)",10289,JP-5,60.0,333.15,23.55,"Figure 86 fit, p104"
+"JP-5 (A-3, SwRI D1331A fit)",10289,JP-5,80.0,353.15,21.85,"Figure 86 fit, p104"
+"JP-5 (A-3, SwRI D1331A fit)",10289,JP-5,100.0,373.15,20.15,"Figure 86 fit, p104"
+JP-8 (A-1),10264,JP-8,22.0,295.15,24.76,"Figure 89 density correlation, p107"
+JP-8 (A-1),10264,JP-8,-40.0,233.14999999999998,30.04,Figure 89 + slope from Fig 86
+JP-8 (A-1),10264,JP-8,-20.0,253.14999999999998,28.34,Figure 89 + slope from Fig 86
+JP-8 (A-1),10264,JP-8,0.0,273.15,26.64,Figure 89 + slope from Fig 86
+JP-8 (A-1),10264,JP-8,40.0,313.15,23.23,Figure 89 + slope from Fig 86
+JP-8 (A-1),10264,JP-8,60.0,333.15,21.53,Figure 89 + slope from Fig 86
+Jet A (A-2),10325,Jet A,22.0,295.15,25.97,"Figure 89 density correlation, p107"
+Jet A (A-2),10325,Jet A,-40.0,233.14999999999998,31.25,Figure 89 + slope from Fig 86
+Jet A (A-2),10325,Jet A,-20.0,253.14999999999998,29.55,Figure 89 + slope from Fig 86
+Jet A (A-2),10325,Jet A,0.0,273.15,27.84,Figure 89 + slope from Fig 86
+Jet A (A-2),10325,Jet A,40.0,313.15,24.44,Figure 89 + slope from Fig 86
+Jet A (A-2),10325,Jet A,60.0,333.15,22.74,Figure 89 + slope from Fig 86
+JP-5 (A-3),10289,JP-5,22.0,295.15,27.13,"Figure 89 density correlation, p107"
+JP-5 (A-3),10289,JP-5,-40.0,233.14999999999998,32.41,Figure 89 + slope from Fig 86
+JP-5 (A-3),10289,JP-5,-20.0,253.14999999999998,30.7,Figure 89 + slope from Fig 86
+JP-5 (A-3),10289,JP-5,0.0,273.15,29.0,Figure 89 + slope from Fig 86
+JP-5 (A-3),10289,JP-5,40.0,313.15,25.6,Figure 89 + slope from Fig 86
+JP-5 (A-3),10289,JP-5,60.0,333.15,23.89,Figure 89 + slope from Fig 86
+Sasol IPK,7629,SPK,22.0,295.15,23.76,"Figure 89 density correlation, p107"
+Sasol IPK,7629,SPK,-40.0,233.14999999999998,29.04,Figure 89 + slope from Fig 86
+Sasol IPK,7629,SPK,-20.0,253.14999999999998,27.33,Figure 89 + slope from Fig 86
+Sasol IPK,7629,SPK,0.0,273.15,25.63,Figure 89 + slope from Fig 86
+Sasol IPK,7629,SPK,40.0,313.15,22.23,Figure 89 + slope from Fig 86
+Sasol IPK,7629,SPK,60.0,333.15,20.52,Figure 89 + slope from Fig 86
+Shell SPK,5729,SPK,22.0,295.15,22.6,"Figure 89 density correlation, p107"
+Shell SPK,5729,SPK,-40.0,233.14999999999998,27.88,Figure 89 + slope from Fig 86
+Shell SPK,5729,SPK,-20.0,253.14999999999998,26.18,Figure 89 + slope from Fig 86
+Shell SPK,5729,SPK,0.0,273.15,24.47,Figure 89 + slope from Fig 86
+Shell SPK,5729,SPK,40.0,313.15,21.07,Figure 89 + slope from Fig 86
+Shell SPK,5729,SPK,60.0,333.15,19.37,Figure 89 + slope from Fig 86
+Gevo ATJ,11498,ATJ SPK,22.0,295.15,23.81,"Figure 89 density correlation, p107"
+Gevo ATJ,11498,ATJ SPK,-40.0,233.14999999999998,29.09,Figure 89 + slope from Fig 86
+Gevo ATJ,11498,ATJ SPK,-20.0,253.14999999999998,27.38,Figure 89 + slope from Fig 86
+Gevo ATJ,11498,ATJ SPK,0.0,273.15,25.68,Figure 89 + slope from Fig 86
+Gevo ATJ,11498,ATJ SPK,40.0,313.15,22.28,Figure 89 + slope from Fig 86
+Gevo ATJ,11498,ATJ SPK,60.0,333.15,20.57,Figure 89 + slope from Fig 86

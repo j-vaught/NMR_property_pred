@@ -1,0 +1,10 @@
+Functional Group,H Atom Type,Chemical Shift Range (ppm),Integral Label
+Aromatic C-CH,Aromatic H,6.42-8.99,a
+Olefinic CH=CH2,Olefinic H,4.50-6.42,b
+Paraffinic CH (alpha to aromatic),Alpha CH,2.88-3.40,c
+Paraffinic CH2 (alpha to aromatic),Alpha CH2,2.64-2.88,d
+Paraffinic CH3 (alpha to aromatic),Alpha CH3,2.04-2.64,e
+Naphthenic CH-CH2,Naphthenic H,1.57-1.96,f
+Paraffinic CH,Paraffinic CH,1.39-1.57,g
+Paraffinic CH2,Paraffinic CH2,0.94-1.39,h
+Paraffinic CH3,Paraffinic CH3,0.25-0.94,i

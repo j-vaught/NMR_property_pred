@@ -1,0 +1,179 @@
+======================================================================
+DENSITY EXTRACTION
+======================================================================
+
+Table 10 (page 43): Density of selected alternative fuels at 16C
+  Extracted 16 rows from Table 10
+
+Table 5 (page 19): Category A fuel densities at 15.5C
+
+Section 4.2 (page 34): CRC Handbook density-temperature equations
+  JP-5: Density (kg/m3) = -0.8195*T[C] + 825.4
+  Jet A, JP-8: Density = -0.8122*T[C] + 819.3
+  Jet A-1: Density = -0.8111*T[C] + 814.1
+  Generated density-vs-T data at 8 temperatures for 4 fuel equations
+
+Table 24 (page 95): Atmospheric pressure bulk modulus data (density at 30C)
+
+Total density rows: 67
+
+======================================================================
+VISCOSITY EXTRACTION
+======================================================================
+
+Table 16 (page 73): Low-temperature viscosity for alternative fuels
+  Extracted 23 viscosity data points from Table 16
+
+Table 3 (page 12): Specification viscosity limits
+  JP-8/Jet A: 8 cSt max at -20C
+  World Survey Avg: 4.3 cSt (at -20C)
+
+Total viscosity rows: 24
+
+======================================================================
+SURFACE TENSION EXTRACTION
+======================================================================
+
+Figure 86 (page 104): JP-5 surface tension linear fit
+  ST(mN/m) = 28.662 - 0.08513*T(C), R=0.99979
+  This is for POSF 10289 JP-5 (SwRI D1331A)
+
+Figure 89 (page 107): Surface tension at 22C vs density correlation
+  ST(mN/m) = -14.471 + 50.301*density(g/mL) at 22C, R=0.97306
+
+Total surface tension rows: 44
+
+======================================================================
+FUEL PROPERTIES EXTRACTION
+======================================================================
+
+Table 14 (page 63): H content and net heat of combustion
+  Extracted 16 rows from Table 14
+
+Table 15 (page 65): Heat of formation for Category A fuels
+
+Table 7 (page 28): Flash points for alternative fuels
+
+Table 16 (page 73): Freeze points for alternative fuels
+
+Table 18 (page 77): DCN for alternative fuels
+
+Table 11 (page 47): GCxGC composition for reference fuels
+
+Table 12 (page 53): Molecular weights by GCxGC
+
+Total fuel properties rows: 14
+
+======================================================================
+GCxGC COMPOSITION DATA
+======================================================================
+
+Table 11 (pages 47-48): GCxGC composition for Category A fuels
+  Saved GCxGC summary: 3 rows
+
+======================================================================
+MOLECULAR WEIGHT DATA
+======================================================================
+
+Table 12 (page 53): Molecular weights by GCxGC
+  Saved MW data: 22 rows
+
+======================================================================
+DCN DATA
+======================================================================
+
+Table 18 (page 77): DCN for alternative fuels
+  Saved DCN data: 13 rows
+
+======================================================================
+DISTILLATION DATA
+======================================================================
+
+Table 8 (page 28): D86 distillation for alternative fuels
+
+Table 5 (page 19): D86 distillation for Category A fuels
+  Saved distillation data: 15 rows
+
+======================================================================
+SPEED OF SOUND DATA
+======================================================================
+
+Table 19 (page 88): Speed of sound vs temperature equations
+
+Table 24 (page 95): Speed of sound at 30C
+  Saved speed of sound data: 48 rows
+
+======================================================================
+CRITICAL PROPERTIES
+======================================================================
+
+Table 9 (page 30): Penn State measured critical properties
+  Saved critical properties: 9 rows
+
+======================================================================
+ISO-PARAFFIN DISTRIBUTION
+======================================================================
+
+Table 13 (page 55): GCxGC iso-paraffin distribution for alt fuels
+  Saved iso-paraffin data: 78 rows
+
+======================================================================
+BULK MODULUS DATA
+======================================================================
+
+Table 24 (page 95): Atmospheric pressure bulk modulus at 30C
+  Saved bulk modulus data: 16 rows
+
+======================================================================
+LUBRICITY DATA
+======================================================================
+
+Table 25 (page 117): Lubricity results (BOCLE D5001 WSD)
+  Saved lubricity data: 8 rows
+
+======================================================================
+GENERAL NOTES
+======================================================================
+
+Source: AFRL-RQ-WP-TR-2020-0017, "Jet Fuel Properties", James T. Edwards, January 2020
+Total pages in PDF: 136
+
+Tables with temperature-dependent data as continuous measurements (Tables 20-22
+for high-pressure speed of sound/density/bulk modulus at pages 89-90) are embedded
+as scanned images and could not be automatically extracted. These tables contain
+SwRI high-pressure data for:
+  - Jet A/POSF 10325/A-2 (Table 20)
+  - JP-8/POSF 10264/A-1 (Table 21)
+  - JP-5/POSF 10289/A-3 (Table 22)
+
+Much of the temperature-dependent property data in this report is presented as
+figures (plots) rather than numerical tables. Key figure-based data includes:
+  - Viscosity vs temperature (Figure 56, p71): plotted on ASTM D341 chart
+  - Density vs temperature (Figures 19-30, pp35-42): DoD World Survey data
+  - Surface tension vs temperature (Figures 86-89, pp104-107)
+  - Thermal conductivity vs temperature (Figures 82-83, pp99-100)
+  - Heat capacity vs temperature (Figure 67, p83)
+  - Speed of sound vs temperature (Figure 72, p88)
+
+Where linear fit equations were available in the text, these were used to generate
+temperature-dependent data at standard temperatures (-40 to 100C).
+
+Key density-temperature equations from the report:
+  - JP-5: density(kg/m3) = -0.8195*T(C) + 825.4 (CRC 2014)
+  - Jet A/JP-8: density(kg/m3) = -0.8122*T(C) + 819.3 (CRC 2014)
+  - Jet A-1: density(kg/m3) = -0.8111*T(C) + 814.1 (CRC 2014)
+  - DoD Survey (all 68 fuels): density(g/cm3) = 0.81357 - 0.00074334*T(C)
+  NOTE: The report recommends NOT using CRC Handbook density-temperature data,
+  as the DoD World Survey slope differs by ~10% from CRC Handbook values.
+
+Surface tension equation for JP-5 (SwRI D1331A):
+  ST(mN/m) = 28.662 - 0.08513*T(C), R=0.99979
+
+Surface tension correlation with density at 22C:
+  ST(mN/m) = -14.471 + 50.301*density(g/mL), R=0.97306
+
+Speed of sound equations from World Survey (Table 19):
+  Jet A: Vos = -3.8850*T(C) + 1413.7
+  Jet A-1: Vos = -3.9106*T(C) + 1402.3
+  JP-5: Vos = -3.8276*T(C) + 1413.0
+  JP-8: Vos = -3.8678*T(C) + 1399.4

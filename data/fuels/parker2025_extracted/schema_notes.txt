@@ -1,0 +1,68 @@
+Parker 2025 Supplementary Information - Data Extraction Schema
+=============================================================
+Source: Parker2025_SI_002_atom_types.xlsx (ef4c05601_si_002.xlsx)
+
+1. nmr_spectra.csv
+   Source sheet: S5_Proton_Spectrum_Data
+   Description: Raw 1H NMR proton spectrum data for 6 aviation fuels.
+   Rows: 309990 (from 59,134 spectrum points x 6 fuels)
+   Columns:
+     - fuel_name (str): One of 6 fuels:
+         Jet-A POSF 10325, JP-5 POSF 10289, Shell-SPK POSF 5729,
+         Sasol-IPK POSF 7629, HRJ-Camelina POSF 7720, Gevo-ATJ POSF 10151
+     - chemical_shift_ppm (float): 1H NMR chemical shift in ppm
+     - intensity_rel (float): Relative intensity
+
+2. surface_tension_atom_types.csv
+   Source sheet: S6_Surface_Tension_Atom_Types
+   Description: HSQC-NMR atom type assignments for compounds in the surface tension model.
+   Rows: 57 compounds
+   Columns (18 total):
+     - Class (str): Compound class (n-paraffin, iso-paraffin, cyclo-paraffin,
+                     mono-aromatic, di-aromatic, naphtheno-aromatic, bicyclo-paraffin)
+     - Component (str): Common compound name (e.g., n-pentane, toluene)
+     - MW (float): Molecular weight (g/mol)
+     - # C (int): Number of carbon atoms
+     - # H (int): Number of hydrogen atoms
+     - H:C (float): Hydrogen-to-carbon ratio
+     - pCH3 (int): Paraffinic CH3 count
+     - pCH2 (int): Paraffinic CH2 count
+     - pCH (int): Paraffinic CH count
+     - pC (int): Paraffinic quaternary C count
+     - cyCH2 (int): Cycloparaffinic CH2 count
+     - cyCH (int): Cycloparaffinic CH count
+     - alCH3 (int): Alkyl-aromatic CH3 count (methyl on aromatic ring)
+     - alCH2 (int): Alkyl-aromatic CH2 count
+     - alCH (int): Alkyl-aromatic CH count
+     - ArCH (int): Aromatic CH count (ring protons)
+     - ArC (int): Aromatic C count (substituted ring carbons)
+     - rjC (int): Ring junction C count (bridgehead carbons)
+
+3. density_atom_types.csv
+   Source sheet: S6_Density_Atom_Types
+   Description: HSQC-NMR atom type assignments for compounds in the density model.
+   Rows: 55 compounds
+   Columns: Same 18-column structure as surface_tension_atom_types.csv
+
+4. training_stats.csv
+   Source sheet: S7_Training_Data_Statistics
+   Description: Descriptor statistics (min, mean, max, std) for training data
+                used in both the surface tension and density models.
+   Rows: 28 (14 descriptors x 2 models)
+   Columns:
+     - model (str): "surface_tension" or "density"
+     - descriptor (str): Descriptor name (Temperature, pCH3, pCH2, ..., rjC,
+                         Surface Tension / Density)
+     - minimum (float): Minimum value in training set
+     - mean (float): Mean value in training set
+     - maximum (float): Maximum value in training set
+     - std_dev (float): Standard deviation in training set
+
+Notes:
+  - No CAS numbers, SMILES, or InChI identifiers are present in the original data.
+    Compounds are identified only by common name.
+  - The 12 atom types (pCH3 through rjC) are integer counts from HSQC-NMR assignments.
+  - The atom type naming convention: p=paraffinic, cy=cycloparaffinic, al=alkyl-aromatic,
+    Ar=aromatic, rj=ring junction.
+  - The last row of training_stats contains the target property itself
+    (Surface Tension in mN/m or Density in kg/m3).

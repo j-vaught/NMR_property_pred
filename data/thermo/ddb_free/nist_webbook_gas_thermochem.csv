@@ -1,0 +1,208 @@
+name,CAS,Quantity,Value,Units,Method,Reference,Comment
+n-Pentane,109-66-0,ΔfH°gas,-146.8 ± 0.59,kJ/mol,Ccb,"Good, 1970",ALS
+n-Pentane,109-66-0,ΔfH°gas,-147.1 ± 1.0,kJ/mol,Cm,"Pilcher and Chadwick, 1967",ALS
+n-Pentane,109-66-0,ΔfH°gas,-146.4 ± 0.67,kJ/mol,Ccb,"Prosen and Rossini, 1945",ALS
+n-Pentane,109-66-0,Quantity,Value,Units,Method,Reference,Comment
+n-Pentane,109-66-0,ΔcH°gas,-3535.4 ± 0.96,kJ/mol,Cm,"Pilcher and Chadwick, 1967",Corresponding ΔfHºgas= -147.1 kJ/mol (simple calculation by NIST; no Washburn corrections);ALS
+n-Pentane,109-66-0,ΔcH°gas,-3536.6 ± 0.88,kJ/mol,Ccb,"Rossini, 1934",Corresponding ΔfHºgas= -145.9 kJ/mol (simple calculation by NIST; no Washburn corrections);ALS
+n-Pentane,109-66-0,Quantity,Value,Units,Method,Reference,Comment
+n-Pentane,109-66-0,S°gas,347.82 ± 0.84,J/mol*K,N/A,"Messerly G.H., 1940","Scott [Scott D.W., 1974] has calculated the value of S(298.15 K)=349.49(0.71) J/mol*K on the basis of data [Messerly G.H., 1940].;GT"
+n-Hexane,110-54-3,ΔfH°gas,-167.1,kJ/mol,N/A,"Good and Smith, 1969","Value computed using ΔfHliquid° value of -198.7±0.7 kj/mol fromGood and Smith, 1969and ΔvapH° value of 31.6 kj/mol fromProsen and Rossini, 1945.;DRB"
+n-Hexane,110-54-3,ΔfH°gas,-167.2 ± 0.79,kJ/mol,Ccb,"Prosen and Rossini, 1945",ALS
+n-Hexane,110-54-3,Quantity,Value,Units,Method,Reference,Comment
+n-Hexane,110-54-3,S°gas,388.82 ± 0.84,J/mol*K,N/A,"Scott D.W., 1974","This reference does not contain the original experimental data. Experimental entropy value is based on the results [Messerly J.F., 1967] for S(liquid).;GT"
+n-Heptane,142-82-5,ΔfH°gas,-187.8 ± 0.79,kJ/mol,Ccb,"Prosen and Rossini, 1945",ALS
+n-Heptane,142-82-5,ΔfH°gas,-189.3,kJ/mol,N/A,"Davies and Gilbert, 1941","Value computed using ΔfHliquid° value of -225.9±1.3 kj/mol fromDavies and Gilbert, 1941and ΔvapH° value of 36.6 kj/mol fromProsen and Rossini, 1945.;DRB"
+n-Octane,111-65-9,ΔfH°gas,-208.7,kJ/mol,N/A,"Good, 1972","Value computed using ΔfHliquid° value of -250.3±1.8 kj/mol fromGood, 1972and ΔvapH° value of 41.6 kj/mol fromProsen and Rossini, 1945.;DRB"
+n-Octane,111-65-9,ΔfH°gas,-208.4 ± 0.67,kJ/mol,Ccb,"Prosen and Rossini, 1945","seeProsen and Rossini, 1944;ALS"
+n-Octane,111-65-9,Quantity,Value,Units,Method,Reference,Comment
+n-Octane,111-65-9,S°gas,467.06 ± 0.92,J/mol*K,N/A,"Scott D.W., 1974","This reference does not contain the original experimental data. Experimental entropy value is based on the results [Messerly J.F., 1967] for S(liquid).;GT"
+n-Nonane,111-84-2,ΔfH°gas,-228.3,kJ/mol,N/A,"Good, 1969","Value computed using ΔfHliquid° value of -274.7±1 kj/mol fromGood, 1969and ΔvapH° value of 46.43 kj/mol frommissing citation.;DRB"
+n-Nonane,111-84-2,Quantity,Value,Units,Method,Reference,Comment
+n-Nonane,111-84-2,S°gas,506.5 ± 1.0,J/mol*K,N/A,"Scott D.W., 1974","This reference does not contain the original experimental data. Experimental entropy value is based on the results [Messerly J.F., 1967] for S(liquid).;GT"
+n-Decane,124-18-5,ΔfH°gas,-249.7 ± 1.1,kJ/mol,Ccb,"Prosen and Rossini, 1945",ALS
+n-Decane,124-18-5,Quantity,Value,Units,Method,Reference,Comment
+n-Decane,124-18-5,S°gas,545.8 ± 1.1,J/mol*K,N/A,"Scott D.W., 1974","This reference does not contain the original experimental data. Experimental entropy value is based on the results [Messerly J.F., 1967] for S(liquid).;GT"
+n-Undecane,1120-21-4,ΔfH°gas,-270.3 ± 1.3,kJ/mol,Ccb,"Prosen and Rossini, 1945",ALS
+n-Undecane,1120-21-4,Quantity,Value,Units,Method,Reference,Comment
+n-Undecane,1120-21-4,S°gas,583.58,J/mol*K,N/A,"Stull D.R., 1969","This value is based on the low-temperature results [Finke H.L., 1954] for S(liquid).;GT"
+n-Dodecane,112-40-3,ΔfH°gas,-290.9 ± 1.4,kJ/mol,Ccb,"Prosen and Rossini, 1945",ALS
+n-Dodecane,112-40-3,ΔfH°gas,-288.1 ± 3.3,kJ/mol,Ccb,"Prosen and Rossini, 1945, 2","Heat of formation derived byCox and Pilcher, 1970;ALS"
+n-Dodecane,112-40-3,Quantity,Value,Units,Method,Reference,Comment
+n-Dodecane,112-40-3,S°gas,622.50,J/mol*K,N/A,"Stull D.R., 1969","This value is based on the low-temperature results [Finke H.L., 1954] for S(liquid).;GT"
+n-Tridecane,629-50-5,ΔfH°gas,-311.5 ± 1.6,kJ/mol,Ccb,"Prosen and Rossini, 1945",ALS
+n-Tridecane,629-50-5,Quantity,Value,Units,Method,Reference,Comment
+n-Tridecane,629-50-5,S°gas,661.45,J/mol*K,N/A,"Stull D.R., 1969","This value is based on the low-temperature results [Finke H.L., 1954] for S(liquid).;GT"
+n-Tetradecane,629-59-4,ΔfH°gas,-332.1 ± 1.8,kJ/mol,Ccb,"Prosen and Rossini, 1945",ALS
+n-Tetradecane,629-59-4,Quantity,Value,Units,Method,Reference,Comment
+n-Tetradecane,629-59-4,ΔcH°gas,-9393.5 ± 1.6,kJ/mol,Ccb,"Prosen and Rossini, 1945",Corresponding ΔfHºgas= -403.0 kJ/mol (simple calculation by NIST; no Washburn corrections);ALS
+n-Tetradecane,629-59-4,Quantity,Value,Units,Method,Reference,Comment
+n-Tetradecane,629-59-4,S°gas,700.40,J/mol*K,N/A,"Stull D.R., 1969","This value is based on the low-temperature results [Finke H.L., 1954] for S(liquid).;GT"
+n-Pentadecane,629-62-9,ΔfH°gas,-354.8 ± 2.0,kJ/mol,Ccb,"Prosen and Rossini, 1945",ALS
+n-Pentadecane,629-62-9,Quantity,Value,Units,Method,Reference,Comment
+n-Pentadecane,629-62-9,S°gas,738.94,J/mol*K,N/A,"Stull D.R., 1969","This value is based on the low-temperature results [Finke H.L., 1954] for S(liquid).;GT"
+n-Hexadecane,544-76-3,ΔfH°gas,-374.9,kJ/mol,N/A,"Fraser and Prosen, 1955","Value computed using ΔfHliquid° value of -456.3±2 kj/mol fromFraser and Prosen, 1955and ΔvapH° value of 81.38 kj/mol frommissing citation.;DRB"
+n-Hexadecane,544-76-3,ΔfH°gas,-374.7,kJ/mol,N/A,"Richardson and Parks, 1939","Value computed using ΔfHliquid° value of -456.1±4.1 kj/mol fromRichardson and Parks, 1939and ΔvapH° value of 81.38 kj/mol frommissing citation.;DRB"
+n-Hexadecane,544-76-3,Quantity,Value,Units,Method,Reference,Comment
+n-Hexadecane,544-76-3,S°gas,778.31,J/mol*K,N/A,"Stull D.R., 1969","This value is based on the low-temperature results [Finke H.L., 1954] for S(liquid).;GT"
+n-Heptadecane,629-78-7,ΔfH°gas,-393.9 ± 2.4,kJ/mol,Ccb,"Prosen and Rossini, 1945",
+n-Octadecane,593-45-3,ΔfH°gas,-414.6 ± 2.7,kJ/mol,Ccb,"Prosen and Rossini, 1945",
+n-Nonadecane,629-92-5,ΔfH°gas,-435.1 ± 2.9,kJ/mol,Ccb,"Prosen and Rossini, 1945",
+n-Eicosane,112-95-8,ΔfH°gas,-455.8 ± 3.1,kJ/mol,Ccb,"Prosen and Rossini, 1945",
+Isopentane,78-78-4,ΔfH°gas,-153.7 ± 0.59,kJ/mol,Ccb,"Good, 1970",ALS
+Isopentane,78-78-4,ΔfH°gas,-154.1 ± 0.96,kJ/mol,Cm,"Pilcher and Chadwick, 1967",ALS
+Isopentane,78-78-4,ΔfH°gas,-154.5 ± 0.84,kJ/mol,Ccb,"Prosen and Rossini, 1945",ALS
+Isopentane,78-78-4,Quantity,Value,Units,Method,Reference,Comment
+Isopentane,78-78-4,ΔcH°gas,-3528.4 ± 0.92,kJ/mol,Cm,"Pilcher and Chadwick, 1967",Corresponding ΔfHºgas= -154.1 kJ/mol (simple calculation by NIST; no Washburn corrections);ALS
+Isopentane,78-78-4,ΔcH°gas,-3528.6 ± 0.63,kJ/mol,Cm,"Knowlton and Rossini, 1939",Corresponding ΔfHºgas= -153.9 kJ/mol (simple calculation by NIST; no Washburn corrections);ALS
+Isopentane,78-78-4,ΔcH°gas,-3527.6 ± 3.5,kJ/mol,Ccb,"Roth and Pahlke, 1936","Reanalyzed byCox and Pilcher, 1970, Original value = -3529.0 kJ/mol; Corresponding ΔfHºgas= -155.0 kJ/mol (simple calculation by NIST; no Washburn corrections);ALS"
+Neopentane,463-82-1,ΔfH°gas,-167.9 ± 0.63,kJ/mol,Ccb,"Good, 1970",ALS
+Neopentane,463-82-1,ΔfH°gas,-168.5 ± 1.0,kJ/mol,Cm,"Pilcher and Chadwick, 1967",ALS
+Neopentane,463-82-1,ΔfH°gas,-166.0 ± 1.0,kJ/mol,Ccb,"Prosen and Rossini, 1945",ALS
+Neopentane,463-82-1,Quantity,Value,Units,Method,Reference,Comment
+Neopentane,463-82-1,ΔcH°gas,-3514.1 ± 0.96,kJ/mol,Cm,"Pilcher and Chadwick, 1967",Corresponding ΔfHºgas= -168.5 kJ/mol (simple calculation by NIST; no Washburn corrections);ALS
+2-Methylpentane,107-83-5,ΔfH°gas,-174.3 ± 1.0,kJ/mol,Ccb,"Prosen and Rossini, 1945",ALS
+2-Methylpentane,107-83-5,Quantity,Value,Units,Method,Reference,Comment
+2-Methylpentane,107-83-5,ΔcH°gas,-4157.7 ± 0.96,kJ/mol,Ccb,"Prosen and Rossini, 1945",Corresponding ΔfHºgas= -204.2 kJ/mol (simple calculation by NIST; no Washburn corrections);ALS
+3-Methylpentane,96-14-0,ΔfH°gas,-171.6 ± 0.96,kJ/mol,Ccb,"Prosen and Rossini, 1945",ALS
+3-Methylpentane,96-14-0,Quantity,Value,Units,Method,Reference,Comment
+3-Methylpentane,96-14-0,S°gas,382.88 ± 0.67,J/mol*K,N/A,"Finke H.L., 1973","The entropy values S(323.8 K)=397.46 and S(336.5 K)=400.66 J/mol*K were calculated by [Scott D.W., 1974] from the experimental data [Finke H.L., 1973].;GT"
+"2,2-Dimethylbutane",75-83-2,ΔfH°gas,-185.6 ± 0.96,kJ/mol,Ccb,"Prosen and Rossini, 1945",ALS
+"2,2-Dimethylbutane",75-83-2,Quantity,Value,Units,Method,Reference,Comment
+"2,2-Dimethylbutane",75-83-2,S°gas,358.65 ± 0.84,J/mol*K,N/A,"Kilpatrick J.E., 1946","The entropy values S(296.05 K)=357.19 and S(322.85 K)=369.87 J/mol*K were calculated by [Scott D.W., 1974] from the experimental data [Douslin D.R., 1946].;GT"
+"2,3-Dimethylbutane",79-29-8,ΔfH°gas,-177.8 ± 1.0,kJ/mol,Ccb,"Prosen and Rossini, 1945",ALS
+2-Methylhexane,591-76-4,ΔfH°gas,-195.0 ± 1.3,kJ/mol,Ccb,"Prosen and Rossini, 1945",ALS
+2-Methylhexane,591-76-4,ΔfH°gas,-196.2,kJ/mol,N/A,"Davies and Gilbert, 1941","Value computed using ΔfHliquid° value of -231.0±1.0 kj/mol fromDavies and Gilbert, 1941and ΔvapH° value of 34.8 kj/mol fromProsen and Rossini, 1945.;DRB"
+2-Methylhexane,591-76-4,Quantity,Value,Units,Method,Reference,Comment
+2-Methylhexane,591-76-4,S°gas,419.99,J/mol*K,N/A,"Huffman H.M., 1961",GT
+3-Methylhexane,589-34-4,ΔfH°gas,-192.3 ± 1.3,kJ/mol,Ccb,"Prosen and Rossini, 1945",ALS
+3-Methylhexane,589-34-4,ΔfH°gas,-192.9,kJ/mol,N/A,"Davies and Gilbert, 1941","Value computed using ΔfHliquid° value of -228.0±1.0 kj/mol fromDavies and Gilbert, 1941and ΔvapH° value of 35.1 kj/mol fromProsen and Rossini, 1945.;DRB"
+"2,2,4-Trimethylpentane",540-84-1,ΔfH°gas,-224.1 ± 1.3,kJ/mol,Ccb,"Prosen and Rossini, 1945",ALS
+2-Methylheptane,592-27-8,ΔfH°gas,-215.5 ± 1.3,kJ/mol,Ccb,"Prosen and Rossini, 1945",ALS
+2-Methylheptane,592-27-8,Quantity,Value,Units,Method,Reference,Comment
+2-Methylheptane,592-27-8,S°gas,459.49 ± 0.88,J/mol*K,N/A,"Messerly J.F., 1971",GT
+2-Methylnonane,871-83-0,ΔfH°gas,-260.2,kJ/mol,N/A,"Moore, Renquist, et al., 1940","Value computed using ΔfHliquid° value of -309.8±2.4 kj/mol fromMoore, Renquist, et al., 1940and ΔvapH° value of 49.64 kj/mol frommissing citation."
+2-Methyldecane,6975-98-0,S°gas,578.3 ± 2.0,J/mol*K,N/A,"Messerly J.F., 1971",
+Cyclopentane,287-92-3,ΔfH°gas,-76.40 ± 0.79,kJ/mol,Ccb,"McCullough, Pennington, et al., 1959",ALS
+Cyclopentane,287-92-3,ΔfH°gas,-76.9,kJ/mol,N/A,"Spitzer and Huffman, 1947","Value computed using ΔfHliquid° value of -105.6±1.8 kj/mol fromSpitzer and Huffman, 1947and ΔvapH° value of 28.7 kj/mol fromProsen, Johnson, et al., 1946.;DRB"
+Cyclopentane,287-92-3,ΔfH°gas,-77.24 ± 0.75,kJ/mol,Ccb,"Prosen, Johnson, et al., 1946",ALS
+Methylcyclopentane,96-37-7,ΔfH°gas,-106.0,kJ/mol,N/A,"Good and Smith, 1969","Value computed using ΔfHliquid° value of -137.7±0.7 kj/mol fromGood and Smith, 1969and ΔvapH° value of 31.7 kj/mol fromProsen, Johnson, et al., 1946.;DRB"
+Methylcyclopentane,96-37-7,ΔfH°gas,-106.7 ± 0.84,kJ/mol,Ccb,"Prosen, Johnson, et al., 1946",ALS
+Methylcyclopentane,96-37-7,ΔfH°gas,-108.1,kJ/mol,N/A,"Moore, Renquist, et al., 1940","Value computed using ΔfHliquid° value of -139.8±1.7 kj/mol fromMoore, Renquist, et al., 1940and ΔvapH° value of 31.7 kj/mol fromProsen, Johnson, et al., 1946.;DRB"
+Cyclohexane,110-82-7,ΔfH°gas,-124.6,kJ/mol,N/A,"Spitzer and Huffman, 1947","Value computed using ΔfHliquid° value of -157.7±1.8 kj/mol fromSpitzer and Huffman, 1947and ΔvapH° value of 33.1 kj/mol fromProsen, Johnson, et al., 1946.;DRB"
+Cyclohexane,110-82-7,ΔfH°gas,-123.1 ± 0.79,kJ/mol,Ccb,"Prosen, Johnson, et al., 1946",ALS
+Cyclohexane,110-82-7,ΔfH°gas,-123.3,kJ/mol,N/A,"Moore, Renquist, et al., 1940","Value computed using ΔfHliquid° value of -156.4±1.3 kj/mol fromMoore, Renquist, et al., 1940and ΔvapH° value of 33.1 kj/mol fromProsen, Johnson, et al., 1946.;DRB"
+Cyclohexane,110-82-7,Quantity,Value,Units,Method,Reference,Comment
+Cyclohexane,110-82-7,S°gas,298.19,J/mol*K,N/A,"Beckett C.W., 1947",Close value of S(298.15 K)=298.78(0.75) J/mol*K was obtained by [43ASTSZA] from calorimetric data.;GT
+Methylcyclohexane,108-87-2,ΔfH°gas,-154.8 ± 1.0,kJ/mol,Ccb,"Prosen, Johnson, et al., 1946",ALS
+Methylcyclohexane,108-87-2,ΔfH°gas,-159.9,kJ/mol,N/A,"Moore, Renquist, et al., 1940","Value computed using ΔfHliquid° value of -195.3±1.9 kj/mol fromMoore, Renquist, et al., 1940and ΔvapH° value of 35.4 kj/mol fromProsen, Johnson, et al., 1946.;DRB"
+Methylcyclohexane,108-87-2,Quantity,Value,Units,Method,Reference,Comment
+Methylcyclohexane,108-87-2,S°gas,343.30,J/mol*K,N/A,"Beckett C.W., 1947",GT
+Ethylcyclopentane,1640-89-7,ΔfH°gas,-127.1 ± 1.0,kJ/mol,Ccb,"Prosen, Johnson, et al., 1946",ALS
+Ethylcyclopentane,1640-89-7,ΔfH°gas,-129.4,kJ/mol,N/A,"Moore, Renquist, et al., 1940","Value computed using ΔfHliquid° value of -165.8±1.6 kj/mol fromMoore, Renquist, et al., 1940and ΔvapH° value of 36.4 kj/mol fromProsen, Johnson, et al., 1946.;DRB"
+Ethylcyclopentane,1640-89-7,Quantity,Value,Units,Method,Reference,Comment
+Ethylcyclopentane,1640-89-7,S°gas,378.32,J/mol*K,N/A,"Stull D.R., 1969","This value was obtained using low temperature data of [Gross M.E., 1953].;GT"
+Ethylcyclohexane,1678-91-7,ΔfH°gas,-172.6,kJ/mol,N/A,"Baroody and Carpenter, 1972","Value computed using ΔfHliquid° value of -213.0 kj/mol fromBaroody and Carpenter, 1972and ΔvapH° value of 40.4 kj/mol fromProsen, Johnson, et al., 1946.;DRB"
+Ethylcyclohexane,1678-91-7,ΔfH°gas,-171.8 ± 1.5,kJ/mol,Ccb,"Prosen, Johnson, et al., 1946",ALS
+Ethylcyclohexane,1678-91-7,Quantity,Value,Units,Method,Reference,Comment
+Ethylcyclohexane,1678-91-7,S°gas,382.67,J/mol*K,N/A,"Huffman H.M., 1949",GT
+Propylcyclohexane,1678-92-8,ΔfH°gas,-192.4,kJ/mol,N/A,"Good, 1970","Value computed using ΔfHliquid° value of -237.5±1.1 kj/mol fromGood, 1970and ΔvapH° value of 45.1 kj/mol fromProsen, Johnson, et al., 1946.;DRB"
+Propylcyclohexane,1678-92-8,ΔfH°gas,-193.3 ± 1.3,kJ/mol,Ccb,"Prosen, Johnson, et al., 1946",ALS
+Propylcyclohexane,1678-92-8,Quantity,Value,Units,Method,Reference,Comment
+Propylcyclohexane,1678-92-8,S°gas,419.86,J/mol*K,N/A,"Finke H.L., 1965",GT
+Butylcyclohexane,1678-93-9,ΔfH°gas,-213.2 ± 1.4,kJ/mol,Ccb,"Prosen, Johnson, et al., 1946",ALS
+Butylcyclohexane,1678-93-9,Quantity,Value,Units,Method,Reference,Comment
+Butylcyclohexane,1678-93-9,S°gas,459.78,J/mol*K,N/A,"Finke H.L., 1965",GT
+Pentylcyclohexane,4292-92-6,ΔfH°gas,-233.8 ± 1.7,kJ/mol,Ccb,"Prosen, Johnson, et al., 1946",
+Hexylcyclohexane,4292-75-5,ΔfH°gas,-254.4 ± 1.8,kJ/mol,Ccb,"Prosen, Johnson, et al., 1946",
+trans-Decalin,493-02-7,ΔfH°gas,-182.2 ± 2.3,kJ/mol,Ccb,"Speros and Rossini, 1960",ALS
+trans-Decalin,493-02-7,ΔfH°gas,-180.2,kJ/mol,N/A,"Davies and Gilbert, 1941","Value computed using ΔfHliquid° value of -228.7±1.3 kj/mol fromDavies and Gilbert, 1941and ΔvapH° value of 48.5 kj/mol fromSperos and Rossini, 1960.;DRB"
+cis-Decalin,493-01-6,ΔfH°gas,-169.2 ± 2.3,kJ/mol,Ccb,"Speros and Rossini, 1960",ALS
+cis-Decalin,493-01-6,ΔfH°gas,-169.6,kJ/mol,N/A,"Davies and Gilbert, 1941","Value computed using ΔfHliquid° value of -219.9±1.3 kj/mol fromDavies and Gilbert, 1941and ΔvapH° value of 50.3 kj/mol fromSperos and Rossini, 1960.;DRB"
+Bicyclohexyl,92-51-3,ΔfH°gas,-218.4 ± 3.1,kJ/mol,Ccb,"Montgomery, Rossini, et al., 1978",ALS
+Bicyclohexyl,92-51-3,ΔfH°gas,-215.3,kJ/mol,N/A,"Good and Lee, 1976","Value computed using ΔfHliquid° value of -273.3±1.2 kj/mol fromGood and Lee, 1976and ΔvapH° value of 58.0 kj/mol fromMontgomery, Rossini, et al., 1978.;DRB"
+Benzene,71-43-2,ΔfH°gas,82.9 ± 0.9,kJ/mol,Review,"Roux, Temprado, et al., 2008","There are sufficient high-quality literature values to make a good evaluation with a high degree of confidence. In general, the evaluated uncertainty limits are on the order of (0.5 to 2.5) kJ/mol.;DRB"
+Benzene,71-43-2,ΔfH°gas,82.8,kJ/mol,N/A,"Good and Smith, 1969","Value computed using ΔfHliquid° value of 49.0±0.5 kj/mol fromGood and Smith, 1969and ΔvapH° value of 33.9 kj/mol fromProsen, Gilmont, et al., 1945.;DRB"
+Benzene,71-43-2,ΔfH°gas,82.93 ± 0.50,kJ/mol,Ccb,"Prosen, Gilmont, et al., 1945","Hf byProsen, Johnson, et al., 1946;ALS"
+Benzene,71-43-2,ΔfH°gas,79.9,kJ/mol,N/A,"Landrieu, Baylocq, et al., 1929","Value computed using ΔfHliquid° value of 46.0 kj/mol fromLandrieu, Baylocq, et al., 1929and ΔvapH° value of 33.9 kj/mol fromProsen, Gilmont, et al., 1945.;DRB"
+Toluene,108-88-3,ΔfH°gas,50.1 ± 1.1,kJ/mol,Review,"Roux, Temprado, et al., 2008","There are sufficient high-quality literature values to make a good evaluation with a high degree of confidence. In general, the evaluated uncertainty limits are on the order of (0.5 to 2.5) kJ/mol.;DRB"
+Toluene,108-88-3,ΔfH°gas,50.00 ± 0.63,kJ/mol,Ccb,"Prosen, Gilmont, et al., 1945","Hf byProsen, Johnson, et al., 1946;ALS"
+Toluene,108-88-3,ΔfH°gas,48.0,kJ/mol,N/A,"Schmidlin, 1906","Value computed using ΔfHliquid° value of 10.0 kj/mol fromSchmidlin, 1906and ΔvapH° value of 38.0 kj/mol fromProsen, Gilmont, et al., 1945.;DRB"
+Ethylbenzene,100-41-4,ΔfH°gas,29.8 ± 0.84,kJ/mol,Ccb,"Prosen, Gilmont, et al., 1945","Hf byProsen, Johnson, et al., 1946;ALS"
+Ethylbenzene,100-41-4,ΔfH°gas,49.0 ± 4.0,kJ/mol,Ccb,N/A,"Value computed using ΔfHliquid° frommissing citationand ΔvapH° value of 42.2 kJ/mol frommissing citation. recalculated with modern CO2,H2O thermo; estimated uncertainty (NOTE all values in source also have wrong sign);DRB"
+Ethylbenzene,100-41-4,ΔfH°gas,69.3,kJ/mol,N/A,"Moureu and Andre, 1914","Value computed using ΔfHliquid° value of 27.0 kj/mol fromMoureu and Andre, 1914and ΔvapH° value of 42.3 kj/mol fromProsen, Gilmont, et al., 1945.;DRB"
+Ethylbenzene,100-41-4,Quantity,Value,Units,Method,Reference,Comment
+Ethylbenzene,100-41-4,S°gas,360.6 ± 0.5,J/mol*K,N/A,"Miller A., 1978","S(298.16 K)=361.5 J/mol*K was obtained from earlier experimental data [Guttman L., 1943].;GT"
+o-Xylene,95-47-6,ΔfH°gas,19.0 ± 1.1,kJ/mol,Ccb,"Prosen, Gilmont, et al., 1945","Hf byProsen, Johnson, et al., 1946;ALS"
+o-Xylene,95-47-6,Quantity,Value,Units,Method,Reference,Comment
+o-Xylene,95-47-6,S°gas,353.6 ± 1.3,J/mol*K,N/A,"Pitzer K.S., 1943",GT
+m-Xylene,108-38-3,ΔfH°gas,17.2 ± 0.75,kJ/mol,Ccb,"Prosen, Johnson, et al., 1946",ALS
+m-Xylene,108-38-3,Quantity,Value,Units,Method,Reference,Comment
+m-Xylene,108-38-3,S°gas,358.2 ± 1.3,J/mol*K,N/A,"Pitzer K.S., 1943",GT
+p-Xylene,106-42-3,ΔfH°gas,17.9 ± 1.0,kJ/mol,Ccb,"Prosen, Johnson, et al., 1946",ALS
+Styrene,100-42-5,ΔfH°gas,146.9 ± 1.0,kJ/mol,Ccb,"Prosen and Rossini, 1945",ALS
+Styrene,100-42-5,ΔfH°gas,151.5,kJ/mol,N/A,"Landrieu, Baylocq, et al., 1929","Value computed using ΔfHliquid° value of 108.0 kj/mol fromLandrieu, Baylocq, et al., 1929and ΔvapH° value of 43.5 kj/mol fromProsen and Rossini, 1945.;DRB"
+Styrene,100-42-5,ΔfH°gas,131.5 ± 4.0,kJ/mol,Ccb,N/A,"Value computed using ΔfHliquid° frommissing citationand ΔvapH° value of 43.9 kJ/mol fromPitzer, Guttman, et al., 1946. recalculated with modern CO2,H2O thermo; estimated uncertainty (NOTE all values in source also have wrong sign);DRB"
+Styrene,100-42-5,ΔfH°gas,-15.1,kJ/mol,N/A,"Moureu and Andre, 1914","Value computed using ΔfHliquid° value of -58.6 kj/mol fromMoureu and Andre, 1914and ΔvapH° value of 43.5 kj/mol fromProsen and Rossini, 1945.;DRB"
+Styrene,100-42-5,Quantity,Value,Units,Method,Reference,Comment
+Styrene,100-42-5,S°gas,345.1 ± 2.1,J/mol*K,N/A,"Pitzer K.S., 1946","S(298.16 K)=343.38 J/mol*K was obtained from earlier experimental data [Guttman L., 1943].;GT"
+Propylbenzene,103-65-1,ΔfH°gas,7.82 ± 0.84,kJ/mol,Ccb,"Prosen, Gilmont, et al., 1945","Hf byProsen, Johnson, et al., 1946;ALS"
+Propylbenzene,103-65-1,Quantity,Value,Units,Method,Reference,Comment
+Propylbenzene,103-65-1,S°gas,397.86,J/mol*K,N/A,"Messerly J.F., 1965","S(298.15 K) estimated by the method of increments [Thermodynamics Research Center, 1997,Taylor W.J., 1946] is about 2.5 J/mol*K larger than experimental one.;GT"
+Isopropylbenzene,98-82-8,ΔfH°gas,3.9 ± 1.1,kJ/mol,Ccb,"Prosen, Gilmont, et al., 1945","Hf byProsen, Johnson, et al., 1946;ALS"
+Isopropylbenzene,98-82-8,Quantity,Value,Units,Method,Reference,Comment
+Isopropylbenzene,98-82-8,S°gas,386.53,J/mol*K,N/A,"Kishimoto K., 1973",GT
+"1,2,3-Trimethylbenzene",526-73-8,ΔfH°gas,-9.6 ± 1.3,kJ/mol,Ccb,"Johnson, Prosen, et al., 1945","Hf byProsen, Johnson, et al., 1946;ALS"
+"1,2,3-Trimethylbenzene",526-73-8,Quantity,Value,Units,Method,Reference,Comment
+"1,2,3-Trimethylbenzene",526-73-8,S°gas,384.84 ± 0.63,J/mol*K,N/A,"Taylor R.D., 1955",GT
+"1,2,4-Trimethylbenzene",95-63-6,ΔfH°gas,-13.9 ± 1.1,kJ/mol,Ccb,"Johnson, Prosen, et al., 1945","Hf byProsen, Johnson, et al., 1946;ALS"
+"1,2,4-Trimethylbenzene",95-63-6,Quantity,Value,Units,Method,Reference,Comment
+"1,2,4-Trimethylbenzene",95-63-6,S°gas,395.76 ± 0.63,J/mol*K,N/A,"Putnam W.E., 1957",GT
+"1,3,5-Trimethylbenzene",108-67-8,S°gas,385.30 ± 0.63,J/mol*K,N/A,"Taylor R.D., 1955",
+Butylbenzene,104-51-8,ΔfH°gas,-12.8,kJ/mol,N/A,"Good, 1975","Value computed using ΔfHliquid° value of -62.9±1.2 kj/mol fromGood, 1975and ΔvapH° value of 50.1 kj/mol fromProsen, Johnson, et al., 1946.;DRB"
+Butylbenzene,104-51-8,ΔfH°gas,-13.8 ± 1.3,kJ/mol,Ccb,"Prosen, Johnson, et al., 1946",Heat of combustion for gas phase =-1415.44 kcal/mol;ALS
+Butylbenzene,104-51-8,Quantity,Value,Units,Method,Reference,Comment
+Butylbenzene,104-51-8,S°gas,437.86,J/mol*K,N/A,"Messerly J.F., 1965","S(298.15 K) estimated by the method of increments [Thermodynamics Research Center, 1997,Taylor W.J., 1946] is 1-2 J/mol*K larger than experimental one.;GT"
+tert-Butylbenzene,98-06-6,ΔfH°gas,-22.7 ± 1.4,kJ/mol,Ccb,"Prosen, Johnson, et al., 1946",
+sec-Butylbenzene,135-98-8,ΔfH°gas,-17.4 ± 1.4,kJ/mol,Ccb,"Prosen, Johnson, et al., 1946",
+Isobutylbenzene,538-93-2,ΔfH°gas,-21.5 ± 1.4,kJ/mol,Ccb,"Prosen, Johnson, et al., 1946",
+Tetralin,119-64-2,ΔfH°gas,30.0,kJ/mol,N/A,"Good and Lee, 1976","Value computed using ΔfHliquid° value of -28.6±1.0 kj/mol fromGood and Lee, 1976and ΔvapH° value of 58.6 kj/mol fromBoyd, Sanwal, et al., 1971.;DRB"
+Tetralin,119-64-2,ΔfH°gas,26.0 ± 2.0,kJ/mol,Ccb,"Boyd, Sanwal, et al., 1971","Reanalyzed byPedley, Naylor, et al., 1986, Original value = 22.1 ± 3.4  kJ/mol;ALS"
+Naphthalene,91-20-3,ΔfH°gas,150. ± 10.,kJ/mol,AVG,N/A,Average of 7 values;Individual data points
+1-Methylnaphthalene,90-12-0,ΔfH°gas,116.9 ± 2.7,kJ/mol,Ccb,"Speros and Rossini, 1960",ALS
+2-Methylnaphthalene,91-57-6,ΔfH°gas,116.1 ± 2.6,kJ/mol,Ccb,"Speros and Rossini, 1960",Hfusion=2.83±0.01;ALS
+2-Methylnaphthalene,91-57-6,ΔfH°gas,106.2,kJ/mol,N/A,"Richardson and Parks, 1939","Value computed using ΔfHsolid° value of 35.0±2.2 kj/mol fromRichardson and Parks, 1939and ΔsubH° value of 71.2 kj/mol fromRichardson and Parks, 1939.;DRB"
+Biphenyl,92-52-4,ΔfH°gas,180. ± 3.,kJ/mol,AVG,N/A,Average of 6 values;Individual data points
+Indane,496-11-7,ΔfH°gas,60.9 ± 2.1,kJ/mol,Review,"Roux, Temprado, et al., 2008","There are sufficient high-quality literature values to make a good evaluation with a high degree of confidence. In general, the evaluated uncertainty limits are on the order of (0.5 to 2.5) kJ/mol.;DRB"
+Indane,496-11-7,ΔfH°gas,60.7 ± 1.5,kJ/mol,N/A,"Good, 1971","Value computed using ΔfHliquid° value of 11.7±1.5 kj/mol fromGood, 1971and ΔvapH° value of 49.03±0.2 kj/mol frommissing citation.;DRB"
+Indane,496-11-7,ΔfH°gas,59.7 ± 2.0,kJ/mol,N/A,"Stull, Sinke, et al., 1961","Value computed using ΔfHliquid° value of 10.7±2 kj/mol fromStull, Sinke, et al., 1961and ΔvapH° value of 49.03±0.2 kj/mol frommissing citation.;DRB"
+Fluorene,86-73-7,ΔfH°gas,176.7 ± 3.1,kJ/mol,Review,"Roux, Temprado, et al., 2008","There are sufficient literature values to make a qualified recommendation where the suggested value is in good agreement with values predicted using thermochemical cycles or from reliable estimates. In general, the evaluated uncertainty limits are on the order of (2 to 4) kJ/mol.;DRB"
+Fluorene,86-73-7,ΔfH°gas,175.0 ± 1.5,kJ/mol,Ccr,"Rakus, Verevkin, et al., 1994",ALS
+Fluorene,86-73-7,ΔfH°gas,166.9 ± 4.1,kJ/mol,Ccb,"Sabbah, 1991","seeSabbah and Antipine, 1987;ALS"
+Acenaphthene,83-32-9,ΔfH°gas,156.8 ± 3.1,kJ/mol,Review,"Roux, Temprado, et al., 2008","There are sufficient literature values to make a qualified recommendation where the suggested value is in good agreement with values predicted using thermochemical cycles or from reliable estimates. In general, the evaluated uncertainty limits are on the order of (2 to 4) kJ/mol.;DRB"
+Acenaphthene,83-32-9,ΔfH°gas,156. ± 4.,kJ/mol,Ccb,"Boyd, Christensen, et al., 1965",ALS
+Phenanthrene,85-01-8,ΔfH°gas,202.2 ± 2.3,kJ/mol,Review,"Roux, Temprado, et al., 2008","There are sufficient high-quality literature values to make a good evaluation with a high degree of confidence. In general, the evaluated uncertainty limits are on the order of (0.5 to 2.5) kJ/mol.;DRB"
+Phenanthrene,85-01-8,ΔfH°gas,201.2 ± 4.7,kJ/mol,Ccb,"Steele, Chirico, et al., 1990",Δ Hfusion = 15.96±0.05 kJ/mol;ALS
+Phenanthrene,85-01-8,ΔfH°gas,206.9 ± 4.6,kJ/mol,Ccb,"Coleman and Pilcher, 1966",Author was aware that data differs from previously reported values;ALS
+Phenanthrene,85-01-8,ΔfH°gas,203.8,kJ/mol,N/A,"Bender and Farber, 1952","Value computed using ΔfHsolid° value of 113.0 kj/mol fromBender and Farber, 1952and ΔsubH° value of 90.8 kj/mol fromBender and Farber, 1952.;DRB"
+Phenanthrene,85-01-8,ΔfH°gas,163.6,kJ/mol,N/A,"Richardson and Parks, 1939","Value computed using ΔfHsolid° value of 72.8±2.6 kj/mol fromRichardson and Parks, 1939and ΔsubH° value of 90.8 kj/mol fromRichardson and Parks, 1939.;DRB"
+Anthracene,120-12-7,ΔfH°gas,223. ± 10.,kJ/mol,AVG,N/A,Average of 6 values;Individual data points
+1-Pentene,109-67-1,ΔfH°gas,-22. ± 9.,kJ/mol,AVG,N/A,Average of 6 values;Individual data points
+1-Hexene,592-41-6,ΔfH°gas,-42. ± 2.,kJ/mol,AVG,N/A,Average of 10 values;Individual data points
+1-Octene,111-66-0,ΔfH°gas,-82.93,kJ/mol,Chyd,"Bretschneider and Rogers, 1970",
+1-Octene,111-66-0,ΔfH°gas,-82.93,kJ/mol,Ccb,"Rockenfeller and Rossini, 1961",
+1-Decene,872-05-9,ΔfH°gas,-124.6,kJ/mol,Chyd,"Bretschneider and Rogers, 1970",ALS
+1-Decene,872-05-9,ΔfH°gas,-123.4,kJ/mol,N/A,"Rockenfeller and Rossini, 1961","Value computed using ΔfHliquid° value of -173.8±1.9 kj/mol fromRockenfeller and Rossini, 1961and ΔvapH° value of 50.44 kj/mol frommissing citation.;DRB"
+1-Dodecene,112-41-4,ΔfH°gas,-165.4 ± 2.1,kJ/mol,Ccr,"Stridh, 1976",
+1-Dodecene,112-41-4,ΔfH°gas,-165.2,kJ/mol,Chyd,"Bretschneider and Rogers, 1970",
+1-Hexadecene,629-73-2,ΔfH°gas,-248.4 ± 2.5,kJ/mol,Ccr,"Stridh, 1976","Reanalyzed byPedley, Naylor, et al., 1986, Original value = -250.2 ± 3.0  kJ/mol;ALS"
+1-Hexadecene,629-73-2,ΔfH°gas,-247.2 ± 2.6,kJ/mol,Ccb,"Loeffler and Rossini, 1960","Reanalyzed byCox and Pilcher, 1970, Original value = -243.3 ± 3.3  kJ/mol;ALS"
+1-Hexadecene,629-73-2,ΔfH°gas,-249.3,kJ/mol,N/A,"Fraser and Prosen, 1955","Value computed using ΔfHliquid° value of -329.4±2.1 kj/mol fromFraser and Prosen, 1955and ΔvapH° value of 80.1 kj/mol fromLoeffler and Rossini, 1960.;DRB"
+Adamantane,281-23-2,ΔfH°gas,-134.4 ± 2.3,kJ/mol,Ccb,"Clark, Knox, et al., 1979","Reanalyzed byPedley, Naylor, et al., 1986, Original value = -132.9 ± 1.3  kJ/mol; Gas flow technique for Hs, seeClark, Knox, et al., 1975;ALS"
+Adamantane,281-23-2,ΔfH°gas,-138.7,kJ/mol,N/A,"Baroody and Carpenter, 1972","Value computed using ΔfHsolid° value of -193.8 kj/mol fromBaroody and Carpenter, 1972and ΔsubH° value of 55.1 kj/mol fromClark, Knox, et al., 1979.;DRB"
+Adamantane,281-23-2,ΔfH°gas,-133.6 ± 2.5,kJ/mol,Ccb,"Boyd, Sanwal, et al., 1971","Reanalyzed byPedley, Naylor, et al., 1986, Original value = -128.2 ± 4.1  kJ/mol;ALS"
+Adamantane,281-23-2,ΔfH°gas,-129. ± 4.,kJ/mol,Ccb,"Butler, Carson, et al., 1971",ALS
+Adamantane,281-23-2,ΔfH°gas,-137.9 ± 0.79,kJ/mol,Ccr,"Mansson, Rapport, et al., 1970",ALS
+Heptylcyclohexane,5617-41-4,ΔfH°gas,-275.0 ± 1.9,kJ/mol,Ccb,"Prosen, Johnson, et al., 1946",
+Octylcyclohexane,1795-15-9,ΔfH°gas,-295.6 ± 2.1,kJ/mol,Ccb,"Prosen, Johnson, et al., 1946",
+Nonylcyclohexane,2883-02-5,ΔfH°gas,-316.2 ± 2.3,kJ/mol,Ccb,"Prosen, Johnson, et al., 1946",

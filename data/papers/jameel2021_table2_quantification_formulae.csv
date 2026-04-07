@@ -1,0 +1,7 @@
+Functional Group,H_type_formula,Molecular_Weight_Factor,Mass_formula
+Paraffinic CH3,(i + e)/S * 100,15/3 = 5,H_PCH3 * 15/3
+Paraffinic CH2,(h + d)/S * 100,14/2 = 7,H_PCH2 * 14/2
+Paraffinic CH,(g + c)/S * 100,13/1 = 13,H_PCH * 13/1
+Olefinic CH=CH2,b/S * 100,13.5/1.5 = 9,H_OCH_CH2 * 13.5/1.5
+Naphthenic CH-CH2,f/S * 100,13.5/1.5 = 9,H_NCH_CH2 * 13.5/1.5
+Aromatic C-CH,(a + c + d + e)/S * 100,complex (includes alpha carbons),see paper Table 2

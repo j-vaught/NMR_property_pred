@@ -31,6 +31,12 @@ data/thermo/ilthermo/surface_tension/
 data/thermo/nist_webbook/*.html
 data/thermo/ddb_free/SETUP_TDE_Free_10.4.5.zip
 
+# Files over 100 MB (GitHub limit)
+data/thermo/thermoml_parsed/mixture_density.csv
+data/thermo/thermoml_parsed/mixture_viscosity.csv
+data/thermo/additional_properties/thermal_conductivity.csv
+data/thermo/additional_properties/heat_capacity.csv
+
 # Model checkpoints (large)
 *.pth
 *.pt
@@ -39,3 +45,4 @@ outputs/
 # Temporary
 *.progress
 /tmp/
+Physical-Property-Modeling-Using-NMR-Spectra-and-Functional-Group-Representation/

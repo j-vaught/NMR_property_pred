@@ -1,0 +1,9 @@
+fuel_name,POSF_number,fuel_type,D5001_WSD_without_CILI,D5001_WSD_with_CILI,source
+Synthetic Paraffinic Kerosene (SPK) (Sasol IPK),7629,Synthetic Paraffinic Kerosene (SPK),n/a,"0.60, 0.62","Table 25, p117"
+Synthetic Paraffinic Kerosene (SPK) (Shell SPK),5729,Synthetic Paraffinic Kerosene (SPK),n/a,0.70,"Table 25, p117"
+Synthetic Paraffinic Kerosene (SPK) (Syntroleum S-8),5018,Synthetic Paraffinic Kerosene (SPK),n/a,"0.56, 0.60","Table 25, p117"
+"Hydroprocessed Esters and Fatty Acids (HEFA, aka HRJ) (UOP camelina)",10301,"Hydroprocessed Esters and Fatty Acids (HEFA, aka HRJ)",n/a,"0.54, 0.61","Table 25, p117"
+"Hydroprocessed Esters and Fatty Acids (HEFA, aka HRJ) (UOP tallow)",10298,"Hydroprocessed Esters and Fatty Acids (HEFA, aka HRJ)",0.82,n/a,"Table 25, p117"
+"Hydroprocessed Esters and Fatty Acids (HEFA, aka HRJ) (Dynamic Fuels (mixed fats))",7635,"Hydroprocessed Esters and Fatty Acids (HEFA, aka HRJ)",0.72,n/a,"Table 25, p117"
+ATJ SPK (Gevo (isobutanol)),11498,ATJ SPK,"0.80, 0.78",n/a,"Table 25, p117"
+CHJ (ARA),8455,CHJ,0.52,n/a,"Table 25, p117"

@@ -1,0 +1,127 @@
+EXTRACTION NOTES - Abdul Jameel et al. 2018
+============================================
+Source: "Predicting Octane Number Using Nuclear Magnetic Resonance Spectroscopy
+and Artificial Neural Networks"
+Energy & Fuels 2018, 32, 6309-6329
+DOI: 10.1021/acs.energyfuels.8b00556
+
+FILES EXTRACTED
+===============
+
+1. pure_compounds.csv (128 entries)
+   - Table 3 from the paper (pages 13-15)
+   - All 128 pure hydrocarbons with RON and MON values
+   - Source reference: Flynn & Wall 1958 (ASTM Knocking Characteristics of Pure Hydrocarbons), ref 70
+   - Entry 128 (ethanol, RON=108, MON=90) is from ref 7
+   - Categories: n-paraffins (#1-3), isoparaffins (#4-29), olefins (#30-75 including cyclic olefins #76-82),
+     naphthenes (#83-99), aromatics (#100-127), ethanol (#128)
+   - NOTE: The paper does NOT include the actual NMR functional group weight fractions in the tables.
+     The functional groups can be COMPUTED from molecular structure (as described in Section 2).
+     The NMR group fractions are implicit/calculable, not tabulated in the paper.
+
+2. blends.csv (123 entries)
+   - Table 4 from the paper (pages 16-18)
+   - Hydrocarbon-ethanol blends with component vol% and RON/MON
+   - Components: n-heptane, isooctane (2,2,4-trimethylpentane), toluene,
+     TMB (1,2,4-trimethylbenzene), cyclopentane, 1-hexene, ethanol
+   - References: 7 (Foong et al. 2014), 26 (Badra et al. 2017),
+     71 (Solaka et al. 2013), 72 (Singh et al. 2017)
+   - Note: Entry 21 in Table 4 is misnumbered as "21" instead of "22" in the original paper
+
+3. face_gasoline_blends.csv (30 entries)
+   - Table 5 from the paper (page 18)
+   - FACE gasoline-ethanol blends
+   - FACE gasolines: A, C, F, G, I, J (6 gasolines x 5 ethanol levels = 30 entries)
+   - Ethanol vol%: 0, 10, 25, 40, 60
+   - Reference: 26 (Badra et al. 2017)
+   - Note: Table 5 header lists "FACE F gasoline" twice (column 6 should be "FACE J gasoline")
+
+NMR FUNCTIONAL GROUP DEFINITIONS (Table 1)
+==========================================
+Chemical shift regions (1H NMR):
+  - Paraffinic CH3:        0.25-0.94 ppm (integral label: I)
+  - Paraffinic CH2:        0.94-1.39 ppm (integral label: H)
+  - Paraffinic CH:         1.39-1.57 ppm (integral label: G)
+  - Naphthenic CH-CH2:     1.57-1.96 ppm (integral label: F)
+  - alpha-CH3:             2.04-2.64 ppm (integral label: E)
+  - alpha-CH2:             2.64-2.88 ppm (integral label: D)
+  - alpha-CH:              2.88-3.40 ppm (integral label: C)
+  - Ethanolic OH:          3.60-3.80 ppm (integral label: OH)
+  - Olefinic CH and CH2:   4.50-6.42 ppm (integral label: B)
+  - Aromatic C-CH:         6.42-8.99 ppm (integral label: A)
+
+Additional NMR sub-regions for branching index calculation:
+  - Paraffinic CH3 (interior chain): 0.84-0.87 ppm (label: J)
+  - Paraffinic CH2 (interior chain): 1.35-1.39 ppm (label: K)
+  - alpha-CH3 (meta position):       2.31-2.34 ppm (label: L)
+  - alpha-CH3 (para position):       2.17-2.19 ppm (label: M)
+
+FUNCTIONAL GROUP WEIGHT PERCENT FORMULAS (Table 2)
+==================================================
+Given in Table 2 of paper. For each group, three steps:
+  1. Compute mol% from integral intensity ratio
+  2. Compute arbitrary weight using MW of group and number of H atoms
+  3. Compute weight% from all groups
+
+Example for paraffinic CH2:
+  M_PCH2 = (H + D)/T * 100       (mol %)
+  G_PCH2 = M_PCH2 * 14/2         (arb. weight units)
+  W_PCH2 = G_PCH2 / (sum of all G values) * 100   (weight %)
+
+BRANCHING INDEX EQUATIONS
+=========================
+For pure compounds (Eq 1):
+  BI = (no. of C atoms connected to longest chain + sum of PI for each) / no. of C atoms in longest chain
+
+Position Index (PI):
+  PI = 0        if C at outermost position
+  PI = 0.5      if C 1 position from outermost
+  PI = 0.5+0.5  if C 2 positions from outermost, etc.
+
+For gasolines from NMR (Eq 5):
+  BI_gasoline = (I/3 + J/3 + K/2 + H/2) / (4*A/T + 0.5*10*F/T + E/3 + (L+M)/3 + D/2 + C)
+
+MLR EQUATIONS (for comparison; ANN is the primary model)
+========================================================
+RON = 44.82 + 0.86*CH3 + 0.25*CH2 + 0.23*CH + 0.76*olefinic - 0.43*naphthenic
+      + 0.56*aromatic + 1.22*ethanolic_OH - 0.31*MW + 26.69*BI          (Eq 6)
+
+MON = 31.26 + 0.86*CH3 + 0.29*CH2 + 0.26*CH + 0.49*olefinic + 0.40*naphthenic
+      + 0.49*aromatic + 0.94*ethanolic_OH - 0.22*MW + 28.47*BI          (Eq 7)
+
+Note: MLR R2 = 0.52 (RON) and 0.51 (MON) - poor fit; ANN is much better (R2 = 0.99)
+
+ANN MODEL ARCHITECTURE (Table 6)
+=================================
+RON model: 9-540-314-1  (9 inputs, hidden layer 1: 540 nodes, hidden layer 2: 314 nodes, 1 output)
+  - Mean absolute error: 1.6, RMS error: 2.2, Mean % error: 1.8
+
+MON model: 9-340-603-1  (9 inputs, hidden layer 1: 340 nodes, hidden layer 2: 603 nodes, 1 output)
+  - Mean absolute error: 1.3, RMS error: 2.2, Mean % error: 1.6
+
+9 Input parameters: paraffinic CH3 (wt%), paraffinic CH2 (wt%), paraffinic CH (wt%),
+  olefinic CH=CH2 (wt%), naphthenic CH-CH2 (wt%), aromatic C-CH (wt%),
+  ethanolic OH (wt%), molecular weight (g/mol), branching index (BI)
+
+Training/test split: 224 training / 57 test (80/20 split)
+Octane sensitivity mean absolute error: 1.4
+
+FACE GASOLINE IDENTIFIERS
+=========================
+Six FACE gasolines used: A, C, F, G, I, J
+(FACE = Fuels for Advanced Combustion Engines)
+
+WHAT IS NOT IN THE PAPER
+=========================
+- The actual NMR functional group weight fractions for each compound/blend are NOT tabulated.
+  For pure compounds, these must be computed from molecular structure.
+  For blends, they are computed from composition and pure component properties.
+  For FACE gasolines, they were measured via NMR but the spectra/values are not provided.
+- ANN model weights are not provided (the paper references CloudFlame web tool).
+- The Supplementary Information only describes ANN methodology, not additional data.
+
+ABDUL JAMEEL 2016 SI (AbdulJameel2016_SI.pdf)
+=============================================
+This is the SI for the earlier paper on predicting fuel ignition quality (DCN) from NMR.
+It contains only 1 page: Figure S1 showing 1H NMR spectra of gasoline and diesel fuels.
+No additional tabular data is present.

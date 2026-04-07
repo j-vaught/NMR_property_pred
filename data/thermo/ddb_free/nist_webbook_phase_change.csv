@@ -1,0 +1,1485 @@
+name,CAS,Quantity,Value,Units,Method,Reference,Comment
+n-Pentane,109-66-0,Tboil,309.2 ± 0.2,K,AVG,N/A,Average of 81 out of 94 values;Individual data points
+n-Pentane,109-66-0,Quantity,Value,Units,Method,Reference,Comment
+n-Pentane,109-66-0,Tfus,143.4 ± 0.7,K,AVG,N/A,Average of 30 out of 31 values;Individual data points
+n-Pentane,109-66-0,Quantity,Value,Units,Method,Reference,Comment
+n-Pentane,109-66-0,Ttriple,143.46 ± 0.05,K,AVG,N/A,Average of 6 values;Individual data points
+n-Pentane,109-66-0,Quantity,Value,Units,Method,Reference,Comment
+n-Pentane,109-66-0,Tc,469.8 ± 0.5,K,AVG,N/A,Average of 27 out of 31 values;Individual data points
+n-Pentane,109-66-0,Quantity,Value,Units,Method,Reference,Comment
+n-Pentane,109-66-0,Pc,33.6 ± 0.6,bar,AVG,N/A,Average of 20 values;Individual data points
+n-Pentane,109-66-0,Quantity,Value,Units,Method,Reference,Comment
+n-Pentane,109-66-0,Vc,0.311,l/mol,N/A,"Ambrose and Tsonopoulos, 1995",
+n-Pentane,109-66-0,Vc,0.3098,l/mol,N/A,"Aftienjew and Zawisza, 1977",Uncertainty assigned by TRC =  0.0003 l/mol;TRC
+n-Pentane,109-66-0,Vc,0.295,l/mol,N/A,"Beattie, Levine, et al., 1951",Uncertainty assigned by TRC =  0.006 l/mol;TRC
+n-Pentane,109-66-0,Vc,0.31482,l/mol,N/A,"Sage and Lacey, 1942",Uncertainty assigned by TRC =  0.0031 l/mol;TRC
+n-Pentane,109-66-0,Quantity,Value,Units,Method,Reference,Comment
+n-Pentane,109-66-0,ρc,3.22 ± 0.07,mol/l,AVG,N/A,Average of 14 values;Individual data points
+n-Pentane,109-66-0,Quantity,Value,Units,Method,Reference,Comment
+n-Pentane,109-66-0,ΔvapH°,26.5 ± 0.6,kJ/mol,AVG,N/A,Average of 11 values;Individual data points
+n-Hexane,110-54-3,Tboil,341.9 ± 0.3,K,AVG,N/A,Average of 85 out of 100 values;Individual data points
+n-Hexane,110-54-3,Quantity,Value,Units,Method,Reference,Comment
+n-Hexane,110-54-3,Tfus,178. ± 1.,K,AVG,N/A,Average of 32 values;Individual data points
+n-Hexane,110-54-3,Quantity,Value,Units,Method,Reference,Comment
+n-Hexane,110-54-3,Ttriple,178.0 ± 0.5,K,AVG,N/A,Average of 9 values;Individual data points
+n-Hexane,110-54-3,Quantity,Value,Units,Method,Reference,Comment
+n-Hexane,110-54-3,Tc,507.6 ± 0.5,K,AVG,N/A,Average of 39 out of 44 values;Individual data points
+n-Hexane,110-54-3,Quantity,Value,Units,Method,Reference,Comment
+n-Hexane,110-54-3,Pc,30.2 ± 0.4,bar,AVG,N/A,Average of 24 out of 25 values;Individual data points
+n-Hexane,110-54-3,Quantity,Value,Units,Method,Reference,Comment
+n-Hexane,110-54-3,Vc,0.368,l/mol,N/A,"Ambrose and Tsonopoulos, 1995",
+n-Hexane,110-54-3,Vc,0.371,l/mol,N/A,"Zawisza, 1985",Uncertainty assigned by TRC =  0.007 l/mol;TRC
+n-Hexane,110-54-3,Quantity,Value,Units,Method,Reference,Comment
+n-Hexane,110-54-3,ρc,2.71 ± 0.02,mol/l,AVG,N/A,Average of 10 values;Individual data points
+n-Hexane,110-54-3,Quantity,Value,Units,Method,Reference,Comment
+n-Hexane,110-54-3,ΔvapH°,31. ± 1.,kJ/mol,AVG,N/A,Average of 11 values;Individual data points
+n-Heptane,142-82-5,Tboil,371.5 ± 0.3,K,AVG,N/A,Average of 215 out of 227 values;Individual data points
+n-Heptane,142-82-5,Quantity,Value,Units,Method,Reference,Comment
+n-Heptane,142-82-5,Tfus,182.6 ± 0.4,K,AVG,N/A,Average of 51 out of 52 values;Individual data points
+n-Heptane,142-82-5,Quantity,Value,Units,Method,Reference,Comment
+n-Heptane,142-82-5,Ttriple,182.56 ± 0.03,K,AVG,N/A,Average of 26 out of 31 values;Individual data points
+n-Heptane,142-82-5,Quantity,Value,Units,Method,Reference,Comment
+n-Heptane,142-82-5,Tc,540. ± 2.,K,AVG,N/A,Average of 27 values;Individual data points
+n-Heptane,142-82-5,Quantity,Value,Units,Method,Reference,Comment
+n-Heptane,142-82-5,Pc,27.4 ± 0.3,bar,AVG,N/A,Average of 18 out of 19 values;Individual data points
+n-Heptane,142-82-5,Quantity,Value,Units,Method,Reference,Comment
+n-Heptane,142-82-5,Vc,0.428,l/mol,N/A,"Ambrose and Tsonopoulos, 1995",
+n-Heptane,142-82-5,Vc,0.425,l/mol,N/A,"Zawisza and Vejrosta, 1982",Uncertainty assigned by TRC =  0.001 l/mol; Visual;TRC
+n-Heptane,142-82-5,Quantity,Value,Units,Method,Reference,Comment
+n-Heptane,142-82-5,ρc,2.35 ± 0.07,mol/l,AVG,N/A,Average of 12 values;Individual data points
+n-Heptane,142-82-5,Quantity,Value,Units,Method,Reference,Comment
+n-Heptane,142-82-5,ΔvapH°,36. ± 3.,kJ/mol,AVG,N/A,Average of 7 values;Individual data points
+n-Octane,111-65-9,Tboil,398.7 ± 0.5,K,AVG,N/A,Average of 75 out of 89 values;Individual data points
+n-Octane,111-65-9,Quantity,Value,Units,Method,Reference,Comment
+n-Octane,111-65-9,Tfus,216.3 ± 0.3,K,AVG,N/A,Average of 39 out of 41 values;Individual data points
+n-Octane,111-65-9,Quantity,Value,Units,Method,Reference,Comment
+n-Octane,111-65-9,Ttriple,216.2 ± 0.6,K,AVG,N/A,Average of 9 values;Individual data points
+n-Octane,111-65-9,Quantity,Value,Units,Method,Reference,Comment
+n-Octane,111-65-9,Tc,568.9 ± 0.5,K,AVG,N/A,Average of 23 values;Individual data points
+n-Octane,111-65-9,Quantity,Value,Units,Method,Reference,Comment
+n-Octane,111-65-9,Pc,24.9 ± 0.1,bar,AVG,N/A,Average of 12 values;Individual data points
+n-Octane,111-65-9,Quantity,Value,Units,Method,Reference,Comment
+n-Octane,111-65-9,Vc,0.492,l/mol,N/A,"Ambrose and Tsonopoulos, 1995",
+n-Octane,111-65-9,Quantity,Value,Units,Method,Reference,Comment
+n-Octane,111-65-9,ρc,2.034 ± 0.007,mol/l,AVG,N/A,Average of 7 values;Individual data points
+n-Octane,111-65-9,Quantity,Value,Units,Method,Reference,Comment
+n-Octane,111-65-9,ΔvapH°,41. ± 4.,kJ/mol,AVG,N/A,Average of 10 values;Individual data points
+n-Nonane,111-84-2,Tboil,423.8 ± 0.3,K,AVG,N/A,Average of 44 out of 51 values;Individual data points
+n-Nonane,111-84-2,Quantity,Value,Units,Method,Reference,Comment
+n-Nonane,111-84-2,Tfus,219.5 ± 0.5,K,AVG,N/A,Average of 24 values;Individual data points
+n-Nonane,111-84-2,Quantity,Value,Units,Method,Reference,Comment
+n-Nonane,111-84-2,Ttriple,219.6 ± 0.3,K,AVG,N/A,Average of 7 values;Individual data points
+n-Nonane,111-84-2,Quantity,Value,Units,Method,Reference,Comment
+n-Nonane,111-84-2,Tc,595. ± 1.,K,AVG,N/A,Average of 16 values;Individual data points
+n-Nonane,111-84-2,Quantity,Value,Units,Method,Reference,Comment
+n-Nonane,111-84-2,Pc,23.0 ± 0.4,bar,AVG,N/A,Average of 10 values;Individual data points
+n-Nonane,111-84-2,Quantity,Value,Units,Method,Reference,Comment
+n-Nonane,111-84-2,Vc,0.555,l/mol,N/A,"Ambrose and Tsonopoulos, 1995",
+n-Nonane,111-84-2,Quantity,Value,Units,Method,Reference,Comment
+n-Nonane,111-84-2,ρc,1.80 ± 0.05,mol/l,N/A,"Ambrose and Tsonopoulos, 1995",
+n-Nonane,111-84-2,ρc,1.84,mol/l,N/A,"Steele, 1992",Uncertainty assigned by TRC =  0.078 mol/l;TRC
+n-Nonane,111-84-2,ρc,1.80,mol/l,N/A,"Anselme, Gude, et al., 1990",Uncertainty assigned by TRC =  0.05 mol/l;TRC
+n-Nonane,111-84-2,Quantity,Value,Units,Method,Reference,Comment
+n-Nonane,111-84-2,ΔvapH°,46.5 ± 0.2,kJ/mol,AVG,N/A,Average of 7 values;Individual data points
+n-Decane,124-18-5,Tboil,447.2 ± 0.3,K,AVG,N/A,Average of 34 out of 43 values;Individual data points
+n-Decane,124-18-5,Quantity,Value,Units,Method,Reference,Comment
+n-Decane,124-18-5,Tfus,243.3 ± 0.6,K,AVG,N/A,Average of 23 out of 25 values;Individual data points
+n-Decane,124-18-5,Quantity,Value,Units,Method,Reference,Comment
+n-Decane,124-18-5,Ttriple,243.4 ± 0.3,K,AVG,N/A,Average of 9 values;Individual data points
+n-Decane,124-18-5,Quantity,Value,Units,Method,Reference,Comment
+n-Decane,124-18-5,Tc,617.8 ± 0.7,K,AVG,N/A,Average of 16 out of 18 values;Individual data points
+n-Decane,124-18-5,Quantity,Value,Units,Method,Reference,Comment
+n-Decane,124-18-5,Pc,21.1 ± 0.8,bar,AVG,N/A,Average of 11 values;Individual data points
+n-Decane,124-18-5,Quantity,Value,Units,Method,Reference,Comment
+n-Decane,124-18-5,Vc,0.624,l/mol,N/A,"Ambrose and Tsonopoulos, 1995",
+n-Decane,124-18-5,Quantity,Value,Units,Method,Reference,Comment
+n-Decane,124-18-5,ρc,1.60 ± 0.05,mol/l,N/A,"Ambrose and Tsonopoulos, 1995",
+n-Decane,124-18-5,ρc,1.67,mol/l,N/A,"Steele, 1992",Uncertainty assigned by TRC =  0.070 mol/l;TRC
+n-Decane,124-18-5,ρc,1.60,mol/l,N/A,"Anselme, Gude, et al., 1990",Uncertainty assigned by TRC =  0.04 mol/l;TRC
+n-Decane,124-18-5,ρc,1.67,mol/l,N/A,"Knipmeyer, Archer, et al., 1989",Uncertainty assigned by TRC =  0.070 mol/l;TRC
+n-Decane,124-18-5,ρc,1.595,mol/l,N/A,"Gehrig and Lentz, 1983",Uncertainty assigned by TRC =  0.04 mol/l;TRC
+n-Decane,124-18-5,Quantity,Value,Units,Method,Reference,Comment
+n-Decane,124-18-5,ΔvapH°,51.3 ± 0.3,kJ/mol,AVG,N/A,Average of 12 values;Individual data points
+n-Decane,124-18-5,Quantity,Value,Units,Method,Reference,Comment
+n-Decane,124-18-5,ΔsubH°,80.3,kJ/mol,B,"Swain, Kwan, et al., 1980",AC
+n-Decane,124-18-5,ΔsubH°,82.4,kJ/mol,H,"Bondi, 1963","See alsoChickos, Hosseini, et al., 1993.;AC"
+n-Undecane,1120-21-4,Tboil,468. ± 2.,K,AVG,N/A,Average of 39 values;Individual data points
+n-Undecane,1120-21-4,Quantity,Value,Units,Method,Reference,Comment
+n-Undecane,1120-21-4,Tfus,247.4 ± 0.8,K,AVG,N/A,Average of 25 out of 28 values;Individual data points
+n-Undecane,1120-21-4,Quantity,Value,Units,Method,Reference,Comment
+n-Undecane,1120-21-4,Ttriple,247.58,K,N/A,"Messerly, Guthrie, et al., 1967",Crystal phase 1 phase; Uncertainty assigned by TRC =  0.05 K;TRC
+n-Undecane,1120-21-4,Ttriple,247.590,K,N/A,"Finke, Gross, et al., 1954",Crystal phase 1 phase; Uncertainty assigned by TRC =  0.03 K;TRC
+n-Undecane,1120-21-4,Ttriple,247.580,K,N/A,"Waddington, 1950",Uncertainty assigned by TRC =  0.2 K;TRC
+n-Undecane,1120-21-4,Ttriple,247.590,K,N/A,"Waddington, 1950",Uncertainty assigned by TRC =  0.2 K;TRC
+n-Undecane,1120-21-4,Ttriple,247.2,K,N/A,"Huffman, Parks, et al., 1931",Crystal phase 1 phase; Uncertainty assigned by TRC =  0.3 K;TRC
+n-Undecane,1120-21-4,Quantity,Value,Units,Method,Reference,Comment
+n-Undecane,1120-21-4,Tc,639. ± 1.,K,AVG,N/A,Average of 11 values;Individual data points
+n-Undecane,1120-21-4,Quantity,Value,Units,Method,Reference,Comment
+n-Undecane,1120-21-4,Pc,19.8 ± 0.4,bar,AVG,N/A,Average of 6 values;Individual data points
+n-Undecane,1120-21-4,Quantity,Value,Units,Method,Reference,Comment
+n-Undecane,1120-21-4,Vc,0.689,l/mol,N/A,"Ambrose and Tsonopoulos, 1995",
+n-Undecane,1120-21-4,Quantity,Value,Units,Method,Reference,Comment
+n-Undecane,1120-21-4,ρc,1.5 ± 0.1,mol/l,N/A,"Ambrose and Tsonopoulos, 1995",
+n-Undecane,1120-21-4,ρc,1.77,mol/l,N/A,"Anselme, Gude, et al., 1990",Uncertainty assigned by TRC =  0.04 mol/l;TRC
+n-Undecane,1120-21-4,Quantity,Value,Units,Method,Reference,Comment
+n-Undecane,1120-21-4,ΔvapH°,56.4 ± 0.2,kJ/mol,AVG,N/A,Average of 8 values;Individual data points
+n-Dodecane,112-40-3,Tboil,489. ± 2.,K,AVG,N/A,Average of 22 values;Individual data points
+n-Dodecane,112-40-3,Quantity,Value,Units,Method,Reference,Comment
+n-Dodecane,112-40-3,Tfus,263.5 ± 0.3,K,AVG,N/A,Average of 35 out of 45 values;Individual data points
+n-Dodecane,112-40-3,Quantity,Value,Units,Method,Reference,Comment
+n-Dodecane,112-40-3,Ttriple,263.57 ± 0.05,K,AVG,N/A,Average of 7 values;Individual data points
+n-Dodecane,112-40-3,Quantity,Value,Units,Method,Reference,Comment
+n-Dodecane,112-40-3,Tc,658.2 ± 0.9,K,AVG,N/A,Average of 10 values;Individual data points
+n-Dodecane,112-40-3,Quantity,Value,Units,Method,Reference,Comment
+n-Dodecane,112-40-3,Pc,18. ± 1.,bar,N/A,"Ambrose and Tsonopoulos, 1995",
+n-Dodecane,112-40-3,Pc,18.10,bar,N/A,"Rosenthal and Teja, 1989",Uncertainty assigned by TRC =  0.20 bar;TRC
+n-Dodecane,112-40-3,Pc,18.34,bar,N/A,"Teja, Lee, et al., 1989",TRC
+n-Dodecane,112-40-3,Pc,18.60,bar,N/A,"Pak and Kay, 1972","Uncertainty assigned by TRC =  0.1378 bar; corrected for vapor pressure of Hg, and extrapolated to zero time to correct for decomposition;TRC"
+n-Dodecane,112-40-3,Pc,18.24,bar,N/A,"Ambrose and Townsend, 1968",Uncertainty assigned by TRC =  0.10 bar;TRC
+n-Dodecane,112-40-3,Quantity,Value,Units,Method,Reference,Comment
+n-Dodecane,112-40-3,Vc,0.754,l/mol,N/A,"Ambrose and Tsonopoulos, 1995",
+n-Dodecane,112-40-3,Quantity,Value,Units,Method,Reference,Comment
+n-Dodecane,112-40-3,ρc,1.3 ± 0.1,mol/l,N/A,"Ambrose and Tsonopoulos, 1995",
+n-Dodecane,112-40-3,ρc,1.33,mol/l,N/A,"Anselme, Gude, et al., 1990",Uncertainty assigned by TRC =  0.04 mol/l;TRC
+n-Dodecane,112-40-3,Quantity,Value,Units,Method,Reference,Comment
+n-Dodecane,112-40-3,ΔvapH°,61. ± 1.,kJ/mol,AVG,N/A,Average of 12 values;Individual data points
+n-Dodecane,112-40-3,Quantity,Value,Units,Method,Reference,Comment
+n-Dodecane,112-40-3,ΔsubH°,100.2,kJ/mol,B,"Morawetz, 1972",AC
+n-Tridecane,629-50-5,Tboil,507. ± 2.,K,AVG,N/A,Average of 9 values;Individual data points
+n-Tridecane,629-50-5,Quantity,Value,Units,Method,Reference,Comment
+n-Tridecane,629-50-5,Tfus,268. ± 1.,K,AVG,N/A,Average of 19 out of 20 values;Individual data points
+n-Tridecane,629-50-5,Quantity,Value,Units,Method,Reference,Comment
+n-Tridecane,629-50-5,Ttriple,267.79 ± 0.01,K,AVG,N/A,Average of 6 values;Individual data points
+n-Tridecane,629-50-5,Quantity,Value,Units,Method,Reference,Comment
+n-Tridecane,629-50-5,Tc,676. ± 1.,K,AVG,N/A,Average of 10 values;Individual data points
+n-Tridecane,629-50-5,Quantity,Value,Units,Method,Reference,Comment
+n-Tridecane,629-50-5,Pc,17. ± 1.,bar,N/A,"Ambrose and Tsonopoulos, 1995",
+n-Tridecane,629-50-5,Pc,16.79,bar,N/A,"Rosenthal and Teja, 1989",Uncertainty assigned by TRC =  0.20 bar;TRC
+n-Tridecane,629-50-5,Pc,17.20,bar,N/A,"Teja, Lee, et al., 1989",TRC
+n-Tridecane,629-50-5,Pc,17.25,bar,N/A,"Pak and Kay, 1972","Uncertainty assigned by TRC =  0.3447 bar; corrected for vapor pressure of Hg, and extrapolated to zero to correct for decomposition;TRC"
+n-Tridecane,629-50-5,Quantity,Value,Units,Method,Reference,Comment
+n-Tridecane,629-50-5,Vc,0.823,l/mol,N/A,"Ambrose and Tsonopoulos, 1995",
+n-Tridecane,629-50-5,Quantity,Value,Units,Method,Reference,Comment
+n-Tridecane,629-50-5,ρc,1.2 ± 0.1,mol/l,N/A,"Ambrose and Tsonopoulos, 1995",
+n-Tridecane,629-50-5,ρc,1.22,mol/l,N/A,"Anselme, Gude, et al., 1990",Uncertainty assigned by TRC =  0.03 mol/l;TRC
+n-Tridecane,629-50-5,Quantity,Value,Units,Method,Reference,Comment
+n-Tridecane,629-50-5,ΔvapH°,66.43,kJ/mol,N/A,"Majer and Svoboda, 1985",
+n-Tridecane,629-50-5,ΔvapH°,66.7,kJ/mol,N/A,"Ruzicka and Majer, 1994",AC
+n-Tridecane,629-50-5,ΔvapH°,66.5 ± 0.2,kJ/mol,C,"Sunner and Svensson, 1979",AC
+n-Tridecane,629-50-5,ΔvapH°,66.4 ± 0.3,kJ/mol,C,"Morawetz, 1972",AC
+n-Tridecane,629-50-5,ΔvapH°,66.2,kJ/mol,N/A,"Reid, 1972",AC
+n-Tridecane,629-50-5,Quantity,Value,Units,Method,Reference,Comment
+n-Tridecane,629-50-5,ΔsubH°,91.4,kJ/mol,B,"Morawetz, 1972, 2",AC
+n-Tetradecane,629-59-4,Tboil,523. ± 10.,K,AVG,N/A,Average of 9 values;Individual data points
+n-Tetradecane,629-59-4,Quantity,Value,Units,Method,Reference,Comment
+n-Tetradecane,629-59-4,Tfus,278.7 ± 0.9,K,AVG,N/A,Average of 31 out of 32 values;Individual data points
+n-Tetradecane,629-59-4,Quantity,Value,Units,Method,Reference,Comment
+n-Tetradecane,629-59-4,Ttriple,279.02,K,N/A,"Messerly, Guthrie, et al., 1967",Uncertainty assigned by TRC =  0.05 K;TRC
+n-Tetradecane,629-59-4,Ttriple,279.020,K,N/A,"Finke, Gross, et al., 1954",Uncertainty assigned by TRC =  0.02 K;TRC
+n-Tetradecane,629-59-4,Ttriple,279.020,K,N/A,"Waddington, 1950",Uncertainty assigned by TRC =  0.2 K;TRC
+n-Tetradecane,629-59-4,Ttriple,279.010,K,N/A,"Waddington, 1950",Uncertainty assigned by TRC =  0.2 K;TRC
+n-Tetradecane,629-59-4,Quantity,Value,Units,Method,Reference,Comment
+n-Tetradecane,629-59-4,Tc,693. ± 3.,K,AVG,N/A,Average of 11 values;Individual data points
+n-Tetradecane,629-59-4,Quantity,Value,Units,Method,Reference,Comment
+n-Tetradecane,629-59-4,Pc,16. ± 2.,bar,N/A,"Ambrose and Tsonopoulos, 1995",
+n-Tetradecane,629-59-4,Pc,15.73,bar,N/A,"Rosenthal and Teja, 1989",Uncertainty assigned by TRC =  0.20 bar;TRC
+n-Tetradecane,629-59-4,Pc,14.40,bar,N/A,"Teja, Lee, et al., 1989",TRC
+n-Tetradecane,629-59-4,Pc,14.38,bar,N/A,"Pak and Kay, 1972","Uncertainty assigned by TRC =  0.6894 bar; corrected for vapor pressure of HG, and extrapolated to zero to correct for decomposition;TRC"
+n-Tetradecane,629-59-4,Quantity,Value,Units,Method,Reference,Comment
+n-Tetradecane,629-59-4,Vc,0.894,l/mol,N/A,"Ambrose and Tsonopoulos, 1995",
+n-Tetradecane,629-59-4,Quantity,Value,Units,Method,Reference,Comment
+n-Tetradecane,629-59-4,ρc,1.1 ± 0.2,mol/l,N/A,"Ambrose and Tsonopoulos, 1995",
+n-Tetradecane,629-59-4,ρc,1.12,mol/l,N/A,"Anselme, Gude, et al., 1990",Uncertainty assigned by TRC =  0.03 mol/l;TRC
+n-Tetradecane,629-59-4,Quantity,Value,Units,Method,Reference,Comment
+n-Tetradecane,629-59-4,ΔvapH°,71.6 ± 0.6,kJ/mol,AVG,N/A,Average of 10 values;Individual data points
+n-Tetradecane,629-59-4,Quantity,Value,Units,Method,Reference,Comment
+n-Tetradecane,629-59-4,ΔsubH°,117.6,kJ/mol,B,"Morawetz, 1972",AC
+n-Pentadecane,629-62-9,Tboil,540. ± 20.,K,AVG,N/A,Average of 9 values;Individual data points
+n-Pentadecane,629-62-9,Quantity,Value,Units,Method,Reference,Comment
+n-Pentadecane,629-62-9,Tfus,283.0 ± 0.1,K,AVG,N/A,Average of 19 out of 24 values;Individual data points
+n-Pentadecane,629-62-9,Quantity,Value,Units,Method,Reference,Comment
+n-Pentadecane,629-62-9,Ttriple,283.10,K,N/A,"Messerly, Guthrie, et al., 1967",Crystal phase 1 phase; Uncertainty assigned by TRC =  0.05 K;TRC
+n-Pentadecane,629-62-9,Ttriple,283.10,K,N/A,"Finke, Gross, et al., 1954",Crystal phase 1 phase; Uncertainty assigned by TRC =  0.02 K;TRC
+n-Pentadecane,629-62-9,Ttriple,283.100,K,N/A,"Waddington, 1950",Crystal phase 1 phase; Uncertainty assigned by TRC =  0.2 K;TRC
+n-Pentadecane,629-62-9,Ttriple,283.090,K,N/A,"Waddington, 1950",Crystal phase 1 phase; Uncertainty assigned by TRC =  0.2 K;TRC
+n-Pentadecane,629-62-9,Quantity,Value,Units,Method,Reference,Comment
+n-Pentadecane,629-62-9,Tc,708. ± 2.,K,AVG,N/A,Average of 10 values;Individual data points
+n-Pentadecane,629-62-9,Quantity,Value,Units,Method,Reference,Comment
+n-Pentadecane,629-62-9,Pc,15. ± 2.,bar,N/A,"Ambrose and Tsonopoulos, 1995",
+n-Pentadecane,629-62-9,Pc,14.79,bar,N/A,"Rosenthal and Teja, 1989",Uncertainty assigned by TRC =  0.0002 bar;TRC
+n-Pentadecane,629-62-9,Quantity,Value,Units,Method,Reference,Comment
+n-Pentadecane,629-62-9,Vc,0.966,l/mol,N/A,"Ambrose and Tsonopoulos, 1995",
+n-Pentadecane,629-62-9,Quantity,Value,Units,Method,Reference,Comment
+n-Pentadecane,629-62-9,ρc,1.0 ± 0.2,mol/l,N/A,"Ambrose and Tsonopoulos, 1995",
+n-Pentadecane,629-62-9,ρc,1.04,mol/l,N/A,"Anselme, Gude, et al., 1990",Uncertainty assigned by TRC =  0.003 mol/l;TRC
+n-Pentadecane,629-62-9,Quantity,Value,Units,Method,Reference,Comment
+n-Pentadecane,629-62-9,ΔvapH°,76.1 ± 0.8,kJ/mol,AVG,N/A,Average of 8 values;Individual data points
+n-Pentadecane,629-62-9,Quantity,Value,Units,Method,Reference,Comment
+n-Pentadecane,629-62-9,ΔsubH°,107.8,kJ/mol,B,"Morawetz, 1972",AC
+n-Hexadecane,544-76-3,Tboil,554. ± 10.,K,AVG,N/A,Average of 10 values;Individual data points
+n-Hexadecane,544-76-3,Quantity,Value,Units,Method,Reference,Comment
+n-Hexadecane,544-76-3,Tfus,291. ± 1.,K,AVG,N/A,Average of 52 out of 54 values;Individual data points
+n-Hexadecane,544-76-3,Quantity,Value,Units,Method,Reference,Comment
+n-Hexadecane,544-76-3,Ttriple,291.3 ± 0.1,K,AVG,N/A,Average of 9 values;Individual data points
+n-Hexadecane,544-76-3,Quantity,Value,Units,Method,Reference,Comment
+n-Hexadecane,544-76-3,Tc,722. ± 4.,K,AVG,N/A,Average of 9 values;Individual data points
+n-Hexadecane,544-76-3,Quantity,Value,Units,Method,Reference,Comment
+n-Hexadecane,544-76-3,Pc,14. ± 2.,bar,N/A,"Ambrose and Tsonopoulos, 1995",
+n-Hexadecane,544-76-3,Pc,14.01,bar,N/A,"Rosenthal and Teja, 1989",Uncertainty assigned by TRC =  0.50 bar;TRC
+n-Hexadecane,544-76-3,Quantity,Value,Units,Method,Reference,Comment
+n-Hexadecane,544-76-3,Vc,1.034,l/mol,N/A,"Ambrose and Tsonopoulos, 1995",
+n-Hexadecane,544-76-3,Quantity,Value,Units,Method,Reference,Comment
+n-Hexadecane,544-76-3,ρc,1. ± 0.2,mol/l,N/A,"Ambrose and Tsonopoulos, 1995",
+n-Hexadecane,544-76-3,ρc,0.967,mol/l,N/A,"Anselme, Gude, et al., 1990",Uncertainty assigned by TRC =  0.03 mol/l;TRC
+n-Hexadecane,544-76-3,Quantity,Value,Units,Method,Reference,Comment
+n-Hexadecane,544-76-3,ΔvapH°,81.3 ± 0.6,kJ/mol,AVG,N/A,Average of 9 values;Individual data points
+n-Hexadecane,544-76-3,Quantity,Value,Units,Method,Reference,Comment
+n-Hexadecane,544-76-3,ΔsubH°,135.1,kJ/mol,B,"Morawetz, 1972",AC
+n-Heptadecane,629-78-7,Tboil,575.0,K,N/A,"Weast and Grasselli, 1989",BS
+n-Heptadecane,629-78-7,Tboil,574.25,K,N/A,"Ivanov, Ivanov, et al., 1954",Uncertainty assigned by TRC =  0.7 K;TRC
+n-Heptadecane,629-78-7,Tboil,563.15,K,N/A,"Matsui and Arakawa, 1932",Uncertainty assigned by TRC =  2. K;TRC
+n-Heptadecane,629-78-7,Tboil,561.65,K,N/A,"Mabery, 1902",Uncertainty assigned by TRC =  1.5 K;TRC
+n-Heptadecane,629-78-7,Tboil,561.65,K,N/A,"Mabery, 1900",Uncertainty assigned by TRC =  2. K;TRC
+n-Heptadecane,629-78-7,Quantity,Value,Units,Method,Reference,Comment
+n-Heptadecane,629-78-7,Tfus,295.1 ± 0.9,K,AVG,N/A,Average of 28 out of 29 values;Individual data points
+n-Heptadecane,629-78-7,Quantity,Value,Units,Method,Reference,Comment
+n-Heptadecane,629-78-7,Ttriple,295.14,K,N/A,"Messerly, Guthrie, et al., 1967",Crystal phase 1 phase; Uncertainty assigned by TRC =  0.04 K;TRC
+n-Heptadecane,629-78-7,Quantity,Value,Units,Method,Reference,Comment
+n-Heptadecane,629-78-7,Tc,734. ± 7.,K,AVG,N/A,Average of 7 values;Individual data points
+n-Heptadecane,629-78-7,Quantity,Value,Units,Method,Reference,Comment
+n-Heptadecane,629-78-7,Pc,13. ± 2.,bar,N/A,"Ambrose and Tsonopoulos, 1995",
+n-Heptadecane,629-78-7,Pc,13.20,bar,N/A,"Nikitin, Pavlov, et al., 1994",Uncertainty assigned by TRC =  0.40 bar;TRC
+n-Heptadecane,629-78-7,Pc,13.42,bar,N/A,"Rosenthal and Teja, 1989",Uncertainty assigned by TRC =  1.60 bar;TRC
+n-Heptadecane,629-78-7,Quantity,Value,Units,Method,Reference,Comment
+n-Heptadecane,629-78-7,Vc,1.103,l/mol,N/A,"Ambrose and Tsonopoulos, 1995",
+n-Heptadecane,629-78-7,Quantity,Value,Units,Method,Reference,Comment
+n-Heptadecane,629-78-7,ρc,0.9 ± 0.2,mol/l,N/A,"Ambrose and Tsonopoulos, 1995",
+n-Heptadecane,629-78-7,ρc,0.907,mol/l,N/A,"Anselme, Gude, et al., 1990",Uncertainty assigned by TRC =  0.02 mol/l;TRC
+n-Heptadecane,629-78-7,Quantity,Value,Units,Method,Reference,Comment
+n-Heptadecane,629-78-7,ΔvapH°,86.02,kJ/mol,N/A,"Majer and Svoboda, 1985",
+n-Heptadecane,629-78-7,ΔvapH°,86.5,kJ/mol,N/A,"Ruzicka and Majer, 1994",AC
+n-Heptadecane,629-78-7,ΔvapH°,86.0 ± 0.8,kJ/mol,C,"Morawetz, 1972",AC
+n-Heptadecane,629-78-7,ΔvapH°,86.2,kJ/mol,N/A,"Reid, 1972",AC
+n-Heptadecane,629-78-7,Quantity,Value,Units,Method,Reference,Comment
+n-Heptadecane,629-78-7,ΔsubH°,125.1,kJ/mol,N/A,"Morawetz, 1972, 2",AC
+n-Octadecane,593-45-3,Tboil,589.3,K,N/A,"Weast and Grasselli, 1989",BS
+n-Octadecane,593-45-3,Tboil,581.,K,N/A,"Matsui and Arakawa, 1932",Uncertainty assigned by TRC =  3. K;TRC
+n-Octadecane,593-45-3,Tboil,581.65,K,N/A,"Von Braun and Sobecki, 1911",Uncertainty assigned by TRC =  2.5 K;TRC
+n-Octadecane,593-45-3,Tboil,585.65,K,N/A,"Sorabji, 1885",Uncertainty assigned by TRC =  2. K;TRC
+n-Octadecane,593-45-3,Quantity,Value,Units,Method,Reference,Comment
+n-Octadecane,593-45-3,Tfus,301.0 ± 0.7,K,AVG,N/A,Average of 35 out of 37 values;Individual data points
+n-Octadecane,593-45-3,Quantity,Value,Units,Method,Reference,Comment
+n-Octadecane,593-45-3,Ttriple,301.,K,N/A,"Messerly, Guthrie, et al., 1967",Uncertainty assigned by TRC =  0.04 K;TRC
+n-Octadecane,593-45-3,Ttriple,301.3,K,N/A,"Parks, Moore, et al., 1949",Uncertainty assigned by TRC =  0.2 K;TRC
+n-Octadecane,593-45-3,Quantity,Value,Units,Method,Reference,Comment
+n-Octadecane,593-45-3,Tc,747. ± 3.,K,N/A,"Ambrose and Tsonopoulos, 1995",
+n-Octadecane,593-45-3,Tc,745.8,K,N/A,"Anselme, Gude, et al., 1990",Uncertainty assigned by TRC =  3.4 K;TRC
+n-Octadecane,593-45-3,Tc,747.7,K,N/A,"Rosenthal and Teja, 1989",Uncertainty assigned by TRC =  1. K;TRC
+n-Octadecane,593-45-3,Tc,747.2,K,N/A,"Teja, Lee, et al., 1989",TRC
+n-Octadecane,593-45-3,Tc,756.15,K,N/A,"Ambrose, 1963",Uncertainty assigned by TRC =  0.005 K;TRC
+n-Octadecane,593-45-3,Quantity,Value,Units,Method,Reference,Comment
+n-Octadecane,593-45-3,Pc,13. ± 2.,bar,N/A,"Ambrose and Tsonopoulos, 1995",
+n-Octadecane,593-45-3,Pc,12.92,bar,N/A,"Rosenthal and Teja, 1989",Uncertainty assigned by TRC =  1.10 bar;TRC
+n-Octadecane,593-45-3,Quantity,Value,Units,Method,Reference,Comment
+n-Octadecane,593-45-3,Vc,1.189,l/mol,N/A,"Ambrose and Tsonopoulos, 1995",
+n-Octadecane,593-45-3,Quantity,Value,Units,Method,Reference,Comment
+n-Octadecane,593-45-3,ρc,0.8 ± 0.2,mol/l,N/A,"Ambrose and Tsonopoulos, 1995",
+n-Octadecane,593-45-3,ρc,0.841,mol/l,N/A,"Anselme, Gude, et al., 1990",Uncertainty assigned by TRC =  0.02 mol/l;TRC
+n-Octadecane,593-45-3,Quantity,Value,Units,Method,Reference,Comment
+n-Octadecane,593-45-3,ΔvapH°,92. ± 1.,kJ/mol,AVG,N/A,Average of 8 values;Individual data points
+n-Octadecane,593-45-3,Quantity,Value,Units,Method,Reference,Comment
+n-Octadecane,593-45-3,ΔsubH°,152.7,kJ/mol,C,"Morawetz, 1972",AC
+n-Nonadecane,629-92-5,Tboil,602.9,K,N/A,"Weast and Grasselli, 1989",BS
+n-Nonadecane,629-92-5,Tboil,601.7,K,N/A,"Ivanov, Ivanov, et al., 1954",Uncertainty assigned by TRC =  1.5 K;TRC
+n-Nonadecane,629-92-5,Quantity,Value,Units,Method,Reference,Comment
+n-Nonadecane,629-92-5,Tfus,304. ± 3.,K,AVG,N/A,Average of 10 values;Individual data points
+n-Nonadecane,629-92-5,Quantity,Value,Units,Method,Reference,Comment
+n-Nonadecane,629-92-5,Tc,755. ± 8.,K,N/A,"Ambrose and Tsonopoulos, 1995",
+n-Nonadecane,629-92-5,Tc,755.3,K,N/A,"Nikitin, Pavlov, et al., 1994",Uncertainty assigned by TRC =  3. K;TRC
+n-Nonadecane,629-92-5,Quantity,Value,Units,Method,Reference,Comment
+n-Nonadecane,629-92-5,Pc,12. ± 2.,bar,N/A,"Ambrose and Tsonopoulos, 1995",
+n-Nonadecane,629-92-5,Pc,11.60,bar,N/A,"Nikitin, Pavlov, et al., 1994",Uncertainty assigned by TRC =  0.40 bar;TRC
+n-Nonadecane,629-92-5,Quantity,Value,Units,Method,Reference,Comment
+n-Nonadecane,629-92-5,ΔvapH°,96.4,kJ/mol,N/A,"Ruzicka and Majer, 1994",AC
+n-Nonadecane,629-92-5,ΔvapH°,95.8,kJ/mol,N/A,"Reid, 1972",AC
+n-Nonadecane,629-92-5,Quantity,Value,Units,Method,Reference,Comment
+n-Nonadecane,629-92-5,ΔsubH°,143.6,kJ/mol,C,"Morawetz, 1972",AC
+n-Eicosane,112-95-8,Tboil,616.2,K,N/A,"Weast and Grasselli, 1989",BS
+n-Eicosane,112-95-8,Tboil,582.9,K,N/A,"Tsakalotos, 1906",Uncertainty assigned by TRC =  5. K;TRC
+n-Eicosane,112-95-8,Quantity,Value,Units,Method,Reference,Comment
+n-Eicosane,112-95-8,Tfus,310. ± 1.,K,AVG,N/A,Average of 26 out of 30 values;Individual data points
+n-Eicosane,112-95-8,Quantity,Value,Units,Method,Reference,Comment
+n-Eicosane,112-95-8,Ttriple,309.64,K,N/A,"Marsh, 1987",Uncertainty assigned by TRC =  0.01 K; recommended as fixed point for thermometry;TRC
+n-Eicosane,112-95-8,Ttriple,309.7,K,N/A,"Parks, Huffman, et al., 1930",Uncertainty assigned by TRC =  0.2 K;TRC
+n-Eicosane,112-95-8,Quantity,Value,Units,Method,Reference,Comment
+n-Eicosane,112-95-8,Tc,768. ± 8.,K,N/A,"Ambrose and Tsonopoulos, 1995",
+n-Eicosane,112-95-8,Tc,767.5,K,N/A,"Nikitin, Pavlov, et al., 1994",Uncertainty assigned by TRC =  3. K;TRC
+n-Eicosane,112-95-8,Quantity,Value,Units,Method,Reference,Comment
+n-Eicosane,112-95-8,Pc,11. ± 2.,bar,N/A,"Ambrose and Tsonopoulos, 1995",
+n-Eicosane,112-95-8,Pc,10.70,bar,N/A,"Nikitin, Pavlov, et al., 1994",Uncertainty assigned by TRC =  0.40 bar;TRC
+n-Eicosane,112-95-8,Quantity,Value,Units,Method,Reference,Comment
+n-Eicosane,112-95-8,ΔvapH°,102. ± 2.,kJ/mol,AVG,N/A,Average of 6 values;Individual data points
+n-Eicosane,112-95-8,Quantity,Value,Units,Method,Reference,Comment
+n-Eicosane,112-95-8,ΔsubH°,170.4,kJ/mol,C,"Morawetz, 1972",AC
+Isopentane,78-78-4,Tboil,301.1 ± 0.2,K,AVG,N/A,Average of 67 out of 76 values;Individual data points
+Isopentane,78-78-4,Quantity,Value,Units,Method,Reference,Comment
+Isopentane,78-78-4,Tfus,113. ± 1.,K,AVG,N/A,Average of 10 values;Individual data points
+Isopentane,78-78-4,Quantity,Value,Units,Method,Reference,Comment
+Isopentane,78-78-4,Ttriple,113.37,K,N/A,"Guthrie and Huffman, 1943",Uncertainty assigned by TRC =  0.02 K;TRC
+Isopentane,78-78-4,Ttriple,113.39,K,N/A,"Schumann, Aston, et al., 1942",Uncertainty assigned by TRC =  0.05 K;TRC
+Isopentane,78-78-4,Ttriple,112.6,K,N/A,"Parks, Huffman, et al., 1930",Uncertainty assigned by TRC =  0.3 K;TRC
+Isopentane,78-78-4,Quantity,Value,Units,Method,Reference,Comment
+Isopentane,78-78-4,Tc,461. ± 5.,K,AVG,N/A,Average of 9 values;Individual data points
+Isopentane,78-78-4,Quantity,Value,Units,Method,Reference,Comment
+Isopentane,78-78-4,Pc,33.8 ± 0.5,bar,N/A,"Daubert, 1996",
+Isopentane,78-78-4,Pc,33.81,bar,N/A,"Das, Reed, et al., 1977",Uncertainty assigned by TRC =  0.5066 bar;TRC
+Isopentane,78-78-4,Pc,34.106,bar,N/A,"Vohra and Kobe, 1959",Uncertainty assigned by TRC =  0.1013 bar;TRC
+Isopentane,78-78-4,Pc,33.355,bar,N/A,"Young, 1910",Uncertainty assigned by TRC =  0.667 bar;TRC
+Isopentane,78-78-4,Pc,32.70,bar,N/A,"Altschul, 1893",Uncertainty assigned by TRC =  0.9807 bar;TRC
+Isopentane,78-78-4,Quantity,Value,Units,Method,Reference,Comment
+Isopentane,78-78-4,Vc,0.306,l/mol,N/A,"Daubert, 1996",
+Isopentane,78-78-4,Quantity,Value,Units,Method,Reference,Comment
+Isopentane,78-78-4,ρc,3.27 ± 0.05,mol/l,N/A,"Daubert, 1996",
+Isopentane,78-78-4,ρc,3.247,mol/l,N/A,"Holcomb, Magee, et al., 1995",Uncertainty assigned by TRC =  0.06 mol/l;TRC
+Isopentane,78-78-4,ρc,3.27,mol/l,N/A,"Das, Reed, et al., 1977",Uncertainty assigned by TRC =  0.03 mol/l;TRC
+Isopentane,78-78-4,ρc,3.27,mol/l,N/A,"Vohra and Kobe, 1959",Uncertainty assigned by TRC =  0.1 mol/l;TRC
+Isopentane,78-78-4,ρc,3.247,mol/l,N/A,"Young, 1910",Uncertainty assigned by TRC =  0.06 mol/l;TRC
+Isopentane,78-78-4,Quantity,Value,Units,Method,Reference,Comment
+Isopentane,78-78-4,ΔvapH°,25.22,kJ/mol,N/A,"Majer and Svoboda, 1985",
+Isopentane,78-78-4,ΔvapH°,24.8,kJ/mol,N/A,"Reid, 1972",AC
+Isopentane,78-78-4,ΔvapH°,24.8 ± 0.1,kJ/mol,V,"Scott, McCullough, et al., 1951",flow calorimeter and metal cycling vaporizer;ALS
+Isopentane,78-78-4,ΔvapH°,25.0,kJ/mol,C,"Schumann, Aston, et al., 1942, 2",AC
+Neopentane,463-82-1,Tboil,282.6 ± 0.5,K,AVG,N/A,Average of 17 values;Individual data points
+Neopentane,463-82-1,Quantity,Value,Units,Method,Reference,Comment
+Neopentane,463-82-1,Tfus,255. ± 3.,K,AVG,N/A,Average of 8 values;Individual data points
+Neopentane,463-82-1,Quantity,Value,Units,Method,Reference,Comment
+Neopentane,463-82-1,Ttriple,256.76,K,N/A,"Enokido, Shinoda, et al., 1969",Crystal phase 1 phase; Uncertainty assigned by TRC =  0.02 K;TRC
+Neopentane,463-82-1,Ttriple,256.77,K,N/A,"Streiff, 1964",Crystal phase 1 phase; Uncertainty assigned by TRC =  0.03 K;TRC
+Neopentane,463-82-1,Ttriple,256.53,K,N/A,"Aston and Messerly, 1936",Crystal phase 1 phase; Uncertainty assigned by TRC =  0.02 K;TRC
+Neopentane,463-82-1,Quantity,Value,Units,Method,Reference,Comment
+Neopentane,463-82-1,Tc,433.8 ± 0.1,K,N/A,"Daubert, 1996",
+Neopentane,463-82-1,Tc,433.8,K,N/A,"Majer and Svoboda, 1985",
+Neopentane,463-82-1,Tc,433.8,K,N/A,"Dawson, Silberberg, et al., 1973",Uncertainty assigned by TRC =  0.2 K;TRC
+Neopentane,463-82-1,Tc,433.75,K,N/A,"Partington, Rowlinson, et al., 1960","Uncertainty assigned by TRC =  0.1 K; Visual, THg;TRC"
+Neopentane,463-82-1,Tc,433.75,K,N/A,"Beattie, Douslin, et al., 1951",Uncertainty assigned by TRC =  0.2 K;TRC
+Neopentane,463-82-1,Quantity,Value,Units,Method,Reference,Comment
+Neopentane,463-82-1,Pc,32.0 ± 0.1,bar,N/A,"Daubert, 1996",
+Neopentane,463-82-1,Pc,31.963,bar,N/A,"Dawson, Silberberg, et al., 1973",Uncertainty assigned by TRC =  0.1013 bar;TRC
+Neopentane,463-82-1,Pc,31.99,bar,N/A,"Beattie, Douslin, et al., 1951",Uncertainty assigned by TRC =  0.2027 bar;TRC
+Neopentane,463-82-1,Quantity,Value,Units,Method,Reference,Comment
+Neopentane,463-82-1,Vc,0.307,l/mol,N/A,"Daubert, 1996",
+Neopentane,463-82-1,Vc,0.304,l/mol,N/A,"Beattie, Douslin, et al., 1951",Uncertainty assigned by TRC =  0.004 l/mol;TRC
+Neopentane,463-82-1,Quantity,Value,Units,Method,Reference,Comment
+Neopentane,463-82-1,ρc,3.26 ± 0.01,mol/l,N/A,"Daubert, 1996",
+Neopentane,463-82-1,ρc,3.214,mol/l,N/A,"Dawson, Silberberg, et al., 1973",Uncertainty assigned by TRC =  0.03 mol/l;TRC
+Neopentane,463-82-1,Quantity,Value,Units,Method,Reference,Comment
+Neopentane,463-82-1,ΔvapH°,22.39,kJ/mol,N/A,"Majer and Svoboda, 1985",
+Neopentane,463-82-1,ΔvapH°,21.8,kJ/mol,C,"Hossenlopp and Scott, 1981",AC
+Neopentane,463-82-1,ΔvapH°,21.85,kJ/mol,N/A,"Reid, 1972",AC
+Neopentane,463-82-1,ΔvapH°,22.4 ± 0.59,kJ/mol,V,"Good, 1970",ALS
+2-Methylpentane,107-83-5,Tboil,334. ± 1.,K,AVG,N/A,Average of 71 out of 73 values;Individual data points
+2-Methylpentane,107-83-5,Quantity,Value,Units,Method,Reference,Comment
+2-Methylpentane,107-83-5,Tfus,120. ± 7.,K,AVG,N/A,Average of 21 values;Individual data points
+2-Methylpentane,107-83-5,Quantity,Value,Units,Method,Reference,Comment
+2-Methylpentane,107-83-5,Ttriple,119.55,K,N/A,"Douslin and Huffman, 1946",Uncertainty assigned by TRC =  0.07 K;TRC
+2-Methylpentane,107-83-5,Ttriple,119.55,K,N/A,"Huffman, 1945",Uncertainty assigned by TRC =  0.03 K; based on To = 273.16 K;TRC
+2-Methylpentane,107-83-5,Ttriple,119.7,K,N/A,"Stull, 1937",Uncertainty assigned by TRC =  0.1 K; measured by Wojciechowski;TRC
+2-Methylpentane,107-83-5,Quantity,Value,Units,Method,Reference,Comment
+2-Methylpentane,107-83-5,Tc,497.8 ± 0.4,K,AVG,N/A,Average of 10 values;Individual data points
+2-Methylpentane,107-83-5,Quantity,Value,Units,Method,Reference,Comment
+2-Methylpentane,107-83-5,Pc,30.35 ± 0.07,bar,AVG,N/A,Average of 6 values;Individual data points
+2-Methylpentane,107-83-5,Quantity,Value,Units,Method,Reference,Comment
+2-Methylpentane,107-83-5,Vc,0.368,l/mol,N/A,"Daubert, 1996",
+2-Methylpentane,107-83-5,Quantity,Value,Units,Method,Reference,Comment
+2-Methylpentane,107-83-5,ρc,2.72 ± 0.02,mol/l,N/A,"Daubert, 1996",
+2-Methylpentane,107-83-5,ρc,2.734,mol/l,N/A,"Holcomb, Magee, et al., 1995",Uncertainty assigned by TRC =  0.05 mol/l;TRC
+2-Methylpentane,107-83-5,ρc,2.72,mol/l,N/A,"Genco, Teja, et al., 1980",Uncertainty assigned by TRC =  0.06 mol/l;TRC
+2-Methylpentane,107-83-5,ρc,2.73,mol/l,N/A,"Kay, 1946",Uncertainty assigned by TRC =  0.02 mol/l; by extrapolation of rectilinear diameter to Tc;TRC
+2-Methylpentane,107-83-5,Quantity,Value,Units,Method,Reference,Comment
+2-Methylpentane,107-83-5,ΔvapH°,29. ± 4.,kJ/mol,AVG,N/A,Average of 6 values;Individual data points
+3-Methylpentane,96-14-0,Tboil,336.4 ± 0.4,K,AVG,N/A,Average of 53 out of 57 values;Individual data points
+3-Methylpentane,96-14-0,Quantity,Value,Units,Method,Reference,Comment
+3-Methylpentane,96-14-0,Tfus,155.15,K,N/A,"Hoog, Smittenberg, et al., 1937",Uncertainty assigned by TRC =  2. K;TRC
+3-Methylpentane,96-14-0,Tfus,155.15,K,N/A,"Bruun and Hicks-Brunn, 1930",Uncertainty assigned by TRC =  1. K;TRC
+3-Methylpentane,96-14-0,Quantity,Value,Units,Method,Reference,Comment
+3-Methylpentane,96-14-0,Ttriple,110.25,K,N/A,"Finke and Messerly, 1973",Uncertainty assigned by TRC =  0.006 K; by extrapolation of 1/f to 0;TRC
+3-Methylpentane,96-14-0,Quantity,Value,Units,Method,Reference,Comment
+3-Methylpentane,96-14-0,Tc,504. ± 4.,K,AVG,N/A,Average of 8 values;Individual data points
+3-Methylpentane,96-14-0,Quantity,Value,Units,Method,Reference,Comment
+3-Methylpentane,96-14-0,Pc,31.1 ± 0.6,bar,AVG,N/A,Average of 6 values;Individual data points
+3-Methylpentane,96-14-0,Quantity,Value,Units,Method,Reference,Comment
+3-Methylpentane,96-14-0,Vc,0.368,l/mol,N/A,"Daubert, 1996",
+3-Methylpentane,96-14-0,Quantity,Value,Units,Method,Reference,Comment
+3-Methylpentane,96-14-0,ρc,2.72 ± 0.02,mol/l,N/A,"Daubert, 1996",
+3-Methylpentane,96-14-0,ρc,2.72,mol/l,N/A,"Genco, Teja, et al., 1980",Uncertainty assigned by TRC =  0.06 mol/l;TRC
+3-Methylpentane,96-14-0,ρc,2.73,mol/l,N/A,"Kay, 1946",Uncertainty assigned by TRC =  0.02 mol/l; by extrapolation of rectilinear diameter to Tc;TRC
+3-Methylpentane,96-14-0,Quantity,Value,Units,Method,Reference,Comment
+3-Methylpentane,96-14-0,ΔvapH°,30.3 ± 0.2,kJ/mol,AVG,N/A,Average of 6 values;Individual data points
+"2,2-Dimethylbutane",75-83-2,Tboil,322.9 ± 0.1,K,AVG,N/A,Average of 46 out of 54 values;Individual data points
+"2,2-Dimethylbutane",75-83-2,Quantity,Value,Units,Method,Reference,Comment
+"2,2-Dimethylbutane",75-83-2,Tfus,173. ± 2.,K,AVG,N/A,Average of 24 out of 28 values;Individual data points
+"2,2-Dimethylbutane",75-83-2,Quantity,Value,Units,Method,Reference,Comment
+"2,2-Dimethylbutane",75-83-2,Ttriple,174. ± 2.,K,AVG,N/A,Average of 6 values;Individual data points
+"2,2-Dimethylbutane",75-83-2,Quantity,Value,Units,Method,Reference,Comment
+"2,2-Dimethylbutane",75-83-2,Tc,489.0 ± 0.5,K,AVG,N/A,Average of 7 values;Individual data points
+"2,2-Dimethylbutane",75-83-2,Quantity,Value,Units,Method,Reference,Comment
+"2,2-Dimethylbutane",75-83-2,Pc,31.0 ± 0.2,bar,N/A,"Daubert, 1996",
+"2,2-Dimethylbutane",75-83-2,Pc,31.0236,bar,N/A,"Genco, Teja, et al., 1980",Uncertainty assigned by TRC =  0.05 bar;TRC
+"2,2-Dimethylbutane",75-83-2,Pc,31.02,bar,N/A,"Kay and Young, 1975",Uncertainty assigned by TRC =  0.03 bar;TRC
+"2,2-Dimethylbutane",75-83-2,Pc,31.0764,bar,N/A,"Kay, 1946",Uncertainty assigned by TRC =  0.1013 bar;TRC
+"2,2-Dimethylbutane",75-83-2,Quantity,Value,Units,Method,Reference,Comment
+"2,2-Dimethylbutane",75-83-2,Vc,0.358,l/mol,N/A,"Daubert, 1996",
+"2,2-Dimethylbutane",75-83-2,Vc,0.358,l/mol,N/A,"Genco, Teja, et al., 1980",Uncertainty assigned by TRC =  0.001 l/mol;TRC
+"2,2-Dimethylbutane",75-83-2,Quantity,Value,Units,Method,Reference,Comment
+"2,2-Dimethylbutane",75-83-2,ρc,2.80 ± 0.02,mol/l,N/A,"Daubert, 1996",
+"2,2-Dimethylbutane",75-83-2,ρc,2.79,mol/l,N/A,"Kay, 1946",Uncertainty assigned by TRC =  0.02 mol/l; by extrapolation of rectilinear diameter to Tc;TRC
+"2,2-Dimethylbutane",75-83-2,Quantity,Value,Units,Method,Reference,Comment
+"2,2-Dimethylbutane",75-83-2,ΔvapH°,27.93,kJ/mol,N/A,"Majer and Svoboda, 1985",
+"2,2-Dimethylbutane",75-83-2,ΔvapH°,27.7,kJ/mol,N/A,"Reid, 1972",AC
+"2,2-Dimethylbutane",75-83-2,ΔvapH°,27.68,kJ/mol,C,"Osborne and Ginnings, 1947",ALS
+"2,3-Dimethylbutane",79-29-8,Tboil,331.2 ± 0.2,K,AVG,N/A,Average of 65 out of 73 values;Individual data points
+"2,3-Dimethylbutane",79-29-8,Quantity,Value,Units,Method,Reference,Comment
+"2,3-Dimethylbutane",79-29-8,Tfus,143. ± 6.,K,AVG,N/A,Average of 28 out of 29 values;Individual data points
+"2,3-Dimethylbutane",79-29-8,Quantity,Value,Units,Method,Reference,Comment
+"2,3-Dimethylbutane",79-29-8,Ttriple,144. ± 6.,K,AVG,N/A,Average of 6 values;Individual data points
+"2,3-Dimethylbutane",79-29-8,Quantity,Value,Units,Method,Reference,Comment
+"2,3-Dimethylbutane",79-29-8,Tc,500.1 ± 0.5,K,AVG,N/A,Average of 11 values;Individual data points
+"2,3-Dimethylbutane",79-29-8,Quantity,Value,Units,Method,Reference,Comment
+"2,3-Dimethylbutane",79-29-8,Pc,31.5 ± 0.8,bar,AVG,N/A,Average of 8 values;Individual data points
+"2,3-Dimethylbutane",79-29-8,Quantity,Value,Units,Method,Reference,Comment
+"2,3-Dimethylbutane",79-29-8,Vc,0.361,l/mol,N/A,"Daubert, 1996",
+"2,3-Dimethylbutane",79-29-8,Vc,0.360,l/mol,N/A,"Genco, Teja, et al., 1980",Uncertainty assigned by TRC =  0.001 l/mol;TRC
+"2,3-Dimethylbutane",79-29-8,Quantity,Value,Units,Method,Reference,Comment
+"2,3-Dimethylbutane",79-29-8,ρc,2.77 ± 0.02,mol/l,N/A,"Daubert, 1996",
+"2,3-Dimethylbutane",79-29-8,ρc,2.80,mol/l,N/A,"Kay, 1946",Uncertainty assigned by TRC =  0.02 mol/l; by extrapolation of rectilinear diameter to Tc;TRC
+"2,3-Dimethylbutane",79-29-8,ρc,2.798,mol/l,N/A,"Young, 1910",Uncertainty assigned by TRC =  0.06 mol/l;TRC
+"2,3-Dimethylbutane",79-29-8,Quantity,Value,Units,Method,Reference,Comment
+"2,3-Dimethylbutane",79-29-8,ΔvapH°,29.33,kJ/mol,N/A,"Majer and Svoboda, 1985",
+"2,3-Dimethylbutane",79-29-8,ΔvapH°,29.1,kJ/mol,N/A,"Reid, 1972",AC
+"2,3-Dimethylbutane",79-29-8,ΔvapH°,29.12,kJ/mol,C,"Osborne and Ginnings, 1947",ALS
+2-Methylhexane,591-76-4,Tboil,363.2 ± 0.5,K,AVG,N/A,Average of 44 out of 48 values;Individual data points
+2-Methylhexane,591-76-4,Quantity,Value,Units,Method,Reference,Comment
+2-Methylhexane,591-76-4,Tfus,154.7 ± 0.6,K,AVG,N/A,Average of 22 out of 23 values;Individual data points
+2-Methylhexane,591-76-4,Quantity,Value,Units,Method,Reference,Comment
+2-Methylhexane,591-76-4,Ttriple,154.6 ± 0.8,K,AVG,N/A,Average of 6 values;Individual data points
+2-Methylhexane,591-76-4,Quantity,Value,Units,Method,Reference,Comment
+2-Methylhexane,591-76-4,Tc,530.5 ± 0.5,K,AVG,N/A,Average of 6 values;Individual data points
+2-Methylhexane,591-76-4,Quantity,Value,Units,Method,Reference,Comment
+2-Methylhexane,591-76-4,Pc,27.4 ± 0.2,bar,N/A,"Daubert, 1996",
+2-Methylhexane,591-76-4,Pc,27.50,bar,N/A,"Abara, Jennings, et al., 1988",Uncertainty assigned by TRC =  0.25 bar;TRC
+2-Methylhexane,591-76-4,Pc,27.328,bar,N/A,"McMicking and Kay, 1965",Uncertainty assigned by TRC =  0.4053 bar;TRC
+2-Methylhexane,591-76-4,Pc,27.5604,bar,N/A,"Edgar and Calingaert, 1929",Uncertainty assigned by TRC =  0.5066 bar; measured by Keys and Kleinschmidt;TRC
+2-Methylhexane,591-76-4,Quantity,Value,Units,Method,Reference,Comment
+2-Methylhexane,591-76-4,Vc,0.421,l/mol,N/A,"Daubert, 1996",
+2-Methylhexane,591-76-4,Quantity,Value,Units,Method,Reference,Comment
+2-Methylhexane,591-76-4,ρc,2.38 ± 0.02,mol/l,N/A,"Daubert, 1996",
+2-Methylhexane,591-76-4,ρc,2.38,mol/l,N/A,"McMicking and Kay, 1965",Uncertainty assigned by TRC =  0.05 mol/l; ~;TRC
+2-Methylhexane,591-76-4,Quantity,Value,Units,Method,Reference,Comment
+2-Methylhexane,591-76-4,ΔvapH°,34.98,kJ/mol,N/A,"Majer and Svoboda, 1985",
+2-Methylhexane,591-76-4,ΔvapH°,34.9 ± 0.1,kJ/mol,C,"Majer, Svoboda, et al., 1979",AC
+2-Methylhexane,591-76-4,ΔvapH°,34.8,kJ/mol,N/A,"Reid, 1972",AC
+2-Methylhexane,591-76-4,ΔvapH°,34.8,kJ/mol,N/A,"Huffman, Gross, et al., 1961",Based on data from 273. to 318. K.;AC
+3-Methylhexane,589-34-4,Tboil,365.0 ± 0.3,K,AVG,N/A,Average of 34 out of 38 values;Individual data points
+3-Methylhexane,589-34-4,Quantity,Value,Units,Method,Reference,Comment
+3-Methylhexane,589-34-4,Tfus,153.75,K,N/A,"Timmermans, 1921",Uncertainty assigned by TRC =  0.5 K;TRC
+3-Methylhexane,589-34-4,Quantity,Value,Units,Method,Reference,Comment
+3-Methylhexane,589-34-4,Tc,535.2 ± 0.4,K,N/A,"Daubert, 1996",
+3-Methylhexane,589-34-4,Tc,535.2,K,N/A,"Majer and Svoboda, 1985",
+3-Methylhexane,589-34-4,Tc,535.19,K,N/A,"McMicking and Kay, 1965",Uncertainty assigned by TRC =  0.4 K;TRC
+3-Methylhexane,589-34-4,Tc,535.55,K,N/A,"Edgar and Calingaert, 1929",Uncertainty assigned by TRC =  0.5 K; measured by Keys and Kleinschmidt;TRC
+3-Methylhexane,589-34-4,Quantity,Value,Units,Method,Reference,Comment
+3-Methylhexane,589-34-4,Pc,28.1 ± 0.4,bar,N/A,"Daubert, 1996",
+3-Methylhexane,589-34-4,Pc,28.135,bar,N/A,"McMicking and Kay, 1965",Uncertainty assigned by TRC =  0.4053 bar;TRC
+3-Methylhexane,589-34-4,Pc,28.50,bar,N/A,"Edgar and Calingaert, 1929",Uncertainty assigned by TRC =  51.334 bar; measured by Keys and Kleinschmidt;TRC
+3-Methylhexane,589-34-4,Quantity,Value,Units,Method,Reference,Comment
+3-Methylhexane,589-34-4,Vc,0.404,l/mol,N/A,"Daubert, 1996",
+3-Methylhexane,589-34-4,Quantity,Value,Units,Method,Reference,Comment
+3-Methylhexane,589-34-4,ρc,2.47 ± 0.04,mol/l,N/A,"Daubert, 1996",
+3-Methylhexane,589-34-4,ρc,2.48,mol/l,N/A,"McMicking and Kay, 1965",Uncertainty assigned by TRC =  0.05 mol/l;TRC
+3-Methylhexane,589-34-4,Quantity,Value,Units,Method,Reference,Comment
+3-Methylhexane,589-34-4,ΔvapH°,35.16,kJ/mol,N/A,"Majer and Svoboda, 1985",
+3-Methylhexane,589-34-4,ΔvapH°,35.1 ± 0.1,kJ/mol,C,"Majer, Svoboda, et al., 1979",AC
+3-Methylhexane,589-34-4,ΔvapH°,35.1,kJ/mol,N/A,"Reid, 1972",AC
+"2,2,4-Trimethylpentane",540-84-1,Tboil,372.4 ± 0.2,K,AVG,N/A,Average of 49 out of 52 values;Individual data points
+"2,2,4-Trimethylpentane",540-84-1,Quantity,Value,Units,Method,Reference,Comment
+"2,2,4-Trimethylpentane",540-84-1,Tfus,165.77 ± 0.06,K,AVG,N/A,Average of 37 out of 44 values;Individual data points
+"2,2,4-Trimethylpentane",540-84-1,Quantity,Value,Units,Method,Reference,Comment
+"2,2,4-Trimethylpentane",540-84-1,Ttriple,165.760,K,N/A,"Streiff, 1959",Uncertainty assigned by TRC =  0.4 K;TRC
+"2,2,4-Trimethylpentane",540-84-1,Ttriple,165.3,K,N/A,"Parks, Huffman, et al., 1930",Uncertainty assigned by TRC =  0.2 K;TRC
+"2,2,4-Trimethylpentane",540-84-1,Quantity,Value,Units,Method,Reference,Comment
+"2,2,4-Trimethylpentane",540-84-1,Tc,543.9 ± 0.4,K,AVG,N/A,Average of 6 values;Individual data points
+"2,2,4-Trimethylpentane",540-84-1,Quantity,Value,Units,Method,Reference,Comment
+"2,2,4-Trimethylpentane",540-84-1,Pc,25.7 ± 0.2,bar,N/A,"Daubert, 1996",
+"2,2,4-Trimethylpentane",540-84-1,Pc,25.676,bar,N/A,"McMicking and Kay, 1965",Uncertainty assigned by TRC =  0.4053 bar;TRC
+"2,2,4-Trimethylpentane",540-84-1,Pc,25.6433,bar,N/A,"Kay and Warzel, 1951",Uncertainty assigned by TRC =  0.1013 bar;TRC
+"2,2,4-Trimethylpentane",540-84-1,Pc,25.8379,bar,N/A,"Beattie and Edwards, 1948",Uncertainty assigned by TRC =  0.1519 bar; from observed isotherms in critical region;TRC
+"2,2,4-Trimethylpentane",540-84-1,Quantity,Value,Units,Method,Reference,Comment
+"2,2,4-Trimethylpentane",540-84-1,Vc,0.468,l/mol,N/A,"Daubert, 1996",
+"2,2,4-Trimethylpentane",540-84-1,Vc,0.482,l/mol,N/A,"Beattie and Edwards, 1948",Uncertainty assigned by TRC =  0.02 l/mol; from observed isotherms in the critical region;TRC
+"2,2,4-Trimethylpentane",540-84-1,Quantity,Value,Units,Method,Reference,Comment
+"2,2,4-Trimethylpentane",540-84-1,ρc,2.14 ± 0.02,mol/l,N/A,"Daubert, 1996",
+"2,2,4-Trimethylpentane",540-84-1,ρc,2.13,mol/l,N/A,"McMicking and Kay, 1965",Uncertainty assigned by TRC =  0.04 mol/l;TRC
+"2,2,4-Trimethylpentane",540-84-1,ρc,2.13,mol/l,N/A,"Kay and Warzel, 1951",Uncertainty assigned by TRC =  0.03 mol/l;TRC
+"2,2,4-Trimethylpentane",540-84-1,Quantity,Value,Units,Method,Reference,Comment
+"2,2,4-Trimethylpentane",540-84-1,ΔvapH°,35.1 ± 0.2,kJ/mol,AVG,N/A,Average of 7 values;Individual data points
+2-Methylheptane,592-27-8,Tboil,390.7 ± 0.8,K,AVG,N/A,Average of 37 out of 38 values;Individual data points
+2-Methylheptane,592-27-8,Quantity,Value,Units,Method,Reference,Comment
+2-Methylheptane,592-27-8,Tfus,163. ± 2.,K,AVG,N/A,Average of 14 values;Individual data points
+2-Methylheptane,592-27-8,Quantity,Value,Units,Method,Reference,Comment
+2-Methylheptane,592-27-8,Ttriple,160. ± 9.,K,AVG,N/A,Average of 10 values;Individual data points
+2-Methylheptane,592-27-8,Quantity,Value,Units,Method,Reference,Comment
+2-Methylheptane,592-27-8,Tc,559.7 ± 0.1,K,N/A,"Daubert, 1996",
+2-Methylheptane,592-27-8,Tc,559.7,K,N/A,"Abara, Jennings, et al., 1988",Uncertainty assigned by TRC =  0.2 K;TRC
+2-Methylheptane,592-27-8,Tc,559.6,K,N/A,"Majer and Svoboda, 1985",
+2-Methylheptane,592-27-8,Tc,559.56,K,N/A,"McMicking and Kay, 1965",Uncertainty assigned by TRC =  0.4 K;TRC
+2-Methylheptane,592-27-8,Tc,559.57,K,N/A,"Ambrose, Cox, et al., 1960","Uncertainty assigned by TRC =  0.2 K; Visual, PRT, IPTS-48;TRC"
+2-Methylheptane,592-27-8,Quantity,Value,Units,Method,Reference,Comment
+2-Methylheptane,592-27-8,Pc,25.0 ± 0.2,bar,N/A,"Daubert, 1996",
+2-Methylheptane,592-27-8,Pc,25.00,bar,N/A,"Abara, Jennings, et al., 1988",Uncertainty assigned by TRC =  0.40 bar;TRC
+2-Methylheptane,592-27-8,Pc,24.842,bar,N/A,"McMicking and Kay, 1965",Uncertainty assigned by TRC =  0.4053 bar;TRC
+2-Methylheptane,592-27-8,Quantity,Value,Units,Method,Reference,Comment
+2-Methylheptane,592-27-8,Vc,0.488,l/mol,N/A,"Daubert, 1996",
+2-Methylheptane,592-27-8,Quantity,Value,Units,Method,Reference,Comment
+2-Methylheptane,592-27-8,ρc,2.05 ± 0.02,mol/l,N/A,"Daubert, 1996",
+2-Methylheptane,592-27-8,ρc,2.05,mol/l,N/A,"McMicking and Kay, 1965",Uncertainty assigned by TRC =  0.04 mol/l;TRC
+2-Methylheptane,592-27-8,Quantity,Value,Units,Method,Reference,Comment
+2-Methylheptane,592-27-8,ΔvapH°,39. ± 5.,kJ/mol,AVG,N/A,Average of 6 values;Individual data points
+2-Methyloctane,3221-61-2,Tboil,416.1 ± 0.9,K,AVG,N/A,Average of 14 values;Individual data points
+2-Methyloctane,3221-61-2,Quantity,Value,Units,Method,Reference,Comment
+2-Methyloctane,3221-61-2,Tfus,192.75,K,N/A,"Mears, Fookson, et al., 1950",Uncertainty assigned by TRC =  0.15 K;TRC
+2-Methyloctane,3221-61-2,Tfus,193.05,K,N/A,"Whitmore and Southgate, 1938",Uncertainty assigned by TRC =  0.2 K;TRC
+2-Methyloctane,3221-61-2,Tfus,192.66,K,N/A,"White and Glasgow, 1937",Uncertainty assigned by TRC =  0.1 K;TRC
+2-Methyloctane,3221-61-2,Quantity,Value,Units,Method,Reference,Comment
+2-Methyloctane,3221-61-2,Tc,582.8 ± 0.1,K,N/A,"Daubert, 1996",
+2-Methyloctane,3221-61-2,Tc,582.87,K,N/A,"Abara, Jennings, et al., 1988",Uncertainty assigned by TRC =  0.3 K;TRC
+2-Methyloctane,3221-61-2,Tc,582.87,K,N/A,"Kay and Hissong, 1969",Uncertainty assigned by TRC =  0.2 K;TRC
+2-Methyloctane,3221-61-2,Quantity,Value,Units,Method,Reference,Comment
+2-Methyloctane,3221-61-2,Pc,23.1 ± 0.2,bar,N/A,"Daubert, 1996",
+2-Methyloctane,3221-61-2,Pc,23.10,bar,N/A,"Abara, Jennings, et al., 1988",Uncertainty assigned by TRC =  0.50 bar;TRC
+2-Methyloctane,3221-61-2,Pc,23.10,bar,N/A,"Kay and Hissong, 1969",Uncertainty assigned by TRC =  0.2068 bar;TRC
+2-Methyloctane,3221-61-2,Quantity,Value,Units,Method,Reference,Comment
+2-Methyloctane,3221-61-2,ΔvapH°,44.9,kJ/mol,N/A,"Reid, 1972","See alsoLabbauf, Greenshields, et al., 1961.;AC"
+2-Methylnonane,871-83-0,Tboil,440.0,K,N/A,"Weast and Grasselli, 1989",BS
+2-Methylnonane,871-83-0,Tboil,440.2,K,N/A,"Majer and Svoboda, 1985",
+2-Methylnonane,871-83-0,Tboil,440.15,K,N/A,"Mears, Fookson, et al., 1950",Uncertainty assigned by TRC =  0.15 K;TRC
+2-Methylnonane,871-83-0,Tboil,440.0,K,N/A,"Calingaert and Soroos, 1936",Uncertainty assigned by TRC =  0.3 K;TRC
+2-Methylnonane,871-83-0,Quantity,Value,Units,Method,Reference,Comment
+2-Methylnonane,871-83-0,Tfus,201.5,K,N/A,"Mears, Fookson, et al., 1950",Uncertainty assigned by TRC =  0.15 K;TRC
+2-Methylnonane,871-83-0,Tfus,198.79,K,N/A,"Parks, West, et al., 1941",Uncertainty assigned by TRC =  0.2 K;TRC
+2-Methylnonane,871-83-0,Quantity,Value,Units,Method,Reference,Comment
+2-Methylnonane,871-83-0,Ttriple,198.8,K,N/A,"Parks, West, et al., 1941",Uncertainty assigned by TRC =  0.2 K;TRC
+2-Methylnonane,871-83-0,Quantity,Value,Units,Method,Reference,Comment
+2-Methylnonane,871-83-0,Tc,610.7,K,N/A,"Majer and Svoboda, 1985",
+2-Methylnonane,871-83-0,Quantity,Value,Units,Method,Reference,Comment
+2-Methylnonane,871-83-0,ΔvapH°,49.64,kJ/mol,N/A,"Majer and Svoboda, 1985",
+2-Methylnonane,871-83-0,ΔvapH°,51.0,kJ/mol,N/A,"Reid, 1972",AC
+2-Methyldecane,6975-98-0,Tboil,462.4,K,N/A,"Weast and Grasselli, 1989",BS
+2-Methyldecane,6975-98-0,Tboil,462.4,K,N/A,"Majer and Svoboda, 1985",
+2-Methyldecane,6975-98-0,Tboil,462.30,K,N/A,"Anonymous, 1950",Uncertainty assigned by TRC =  0.5 K;TRC
+2-Methyldecane,6975-98-0,Tboil,462.3,K,N/A,"Boord, Greenlee, et al., 1950",Uncertainty assigned by TRC =  0.2 K;TRC
+2-Methyldecane,6975-98-0,Tboil,462.27,K,N/A,"Boord, Greenlee, et al., 1950",Uncertainty assigned by TRC =  0.2 K;TRC
+2-Methyldecane,6975-98-0,Quantity,Value,Units,Method,Reference,Comment
+2-Methyldecane,6975-98-0,Tfus,224.28 ± 0.02,K,AVG,N/A,Average of 7 values;Individual data points
+2-Methyldecane,6975-98-0,Quantity,Value,Units,Method,Reference,Comment
+2-Methyldecane,6975-98-0,Ttriple,224.3000,K,N/A,"Messerly and Finke, 1971",Uncertainty assigned by TRC =  0.01 K;TRC
+2-Methyldecane,6975-98-0,Ttriple,224.3100,K,N/A,"Messerly and Finke, 1971","Uncertainty assigned by TRC =  0.005 K; by extrapolation of 1/F to 0, corrected for impurities;TRC"
+2-Methyldecane,6975-98-0,Quantity,Value,Units,Method,Reference,Comment
+2-Methyldecane,6975-98-0,Tc,629.9,K,N/A,"Majer and Svoboda, 1985",
+2-Methyldecane,6975-98-0,Quantity,Value,Units,Method,Reference,Comment
+2-Methyldecane,6975-98-0,ΔvapH°,54.29,kJ/mol,N/A,"Majer and Svoboda, 1985",
+"2,6-Dimethyloctane",2051-30-1,Tboil,432. ± 1.,K,AVG,N/A,Average of 7 values;Individual data points
+"2,6-Dimethyloctane",2051-30-1,Quantity,Value,Units,Method,Reference,Comment
+"2,6-Dimethyloctane",2051-30-1,ΔvapH°,49.3,kJ/mol,N/A,"Reid, 1972",AC
+Cyclopentane,287-92-3,Tboil,322.4 ± 0.3,K,AVG,N/A,Average of 34 out of 39 values;Individual data points
+Cyclopentane,287-92-3,Quantity,Value,Units,Method,Reference,Comment
+Cyclopentane,287-92-3,Tfus,179.2 ± 0.8,K,AVG,N/A,Average of 26 out of 27 values;Individual data points
+Cyclopentane,287-92-3,Quantity,Value,Units,Method,Reference,Comment
+Cyclopentane,287-92-3,Ttriple,179.71,K,N/A,"Douslin and Huffman, 1946",Crystal phase 1 phase; Uncertainty assigned by TRC =  0.05 K; To = 273.16 K;TRC
+Cyclopentane,287-92-3,Ttriple,179.71,K,N/A,"Douslin and Huffman, 1946",Crystal phase 1 phase; Uncertainty assigned by TRC =  0.007 K; To = 273.16 K;TRC
+Cyclopentane,287-92-3,Ttriple,179.69,K,N/A,"Aston, Finke, et al., 1943",Uncertainty assigned by TRC =  0.08 K;TRC
+Cyclopentane,287-92-3,Ttriple,179.0,K,N/A,"Jacobs and Parks, 1934",Crystal phase 1 phase; Uncertainty assigned by TRC =  0.2 K;TRC
+Cyclopentane,287-92-3,Quantity,Value,Units,Method,Reference,Comment
+Cyclopentane,287-92-3,Tc,511.7 ± 0.2,K,N/A,"Daubert, 1996",
+Cyclopentane,287-92-3,Tc,511.6,K,N/A,"Majer and Svoboda, 1985",
+Cyclopentane,287-92-3,Tc,511.7,K,N/A,"Kudchadker, Alani, et al., 1968",Uncertainty assigned by TRC =  0.2 K;TRC
+Cyclopentane,287-92-3,Tc,511.6,K,N/A,"Ambrose and Grant, 1957",Uncertainty assigned by TRC =  0.15 K;TRC
+Cyclopentane,287-92-3,Tc,511.75,K,N/A,"Kay, 1947",Uncertainty assigned by TRC =  0.05 K;TRC
+Cyclopentane,287-92-3,Quantity,Value,Units,Method,Reference,Comment
+Cyclopentane,287-92-3,Pc,45.1 ± 0.4,bar,N/A,"Daubert, 1996",
+Cyclopentane,287-92-3,Pc,45.08,bar,N/A,"Kudchadker, Alani, et al., 1968",Uncertainty assigned by TRC =  0.4053 bar;TRC
+Cyclopentane,287-92-3,Pc,44.30,bar,N/A,"Ambrose and Grant, 1957",Uncertainty assigned by TRC =  0.5066 bar;TRC
+Cyclopentane,287-92-3,Pc,45.1403,bar,N/A,"Kay, 1947",Uncertainty assigned by TRC =  0.0506 bar;TRC
+Cyclopentane,287-92-3,Quantity,Value,Units,Method,Reference,Comment
+Cyclopentane,287-92-3,Vc,0.259,l/mol,N/A,"Daubert, 1996",
+Cyclopentane,287-92-3,Quantity,Value,Units,Method,Reference,Comment
+Cyclopentane,287-92-3,ρc,3.85 ± 0.04,mol/l,N/A,"Daubert, 1996",
+Cyclopentane,287-92-3,ρc,3.850,mol/l,N/A,"Kudchadker, Alani, et al., 1968",Uncertainty assigned by TRC =  0.06 mol/l;TRC
+Cyclopentane,287-92-3,ρc,3.85,mol/l,N/A,"Kay, 1947",Uncertainty assigned by TRC =  0.03 mol/l;TRC
+Cyclopentane,287-92-3,Quantity,Value,Units,Method,Reference,Comment
+Cyclopentane,287-92-3,ΔvapH°,28.8 ± 0.6,kJ/mol,AVG,N/A,Average of 8 values;Individual data points
+Methylcyclopentane,96-37-7,Tboil,345.0 ± 0.2,K,AVG,N/A,Average of 35 out of 41 values;Individual data points
+Methylcyclopentane,96-37-7,Quantity,Value,Units,Method,Reference,Comment
+Methylcyclopentane,96-37-7,Tfus,131. ± 1.,K,AVG,N/A,Average of 30 out of 35 values;Individual data points
+Methylcyclopentane,96-37-7,Quantity,Value,Units,Method,Reference,Comment
+Methylcyclopentane,96-37-7,Ttriple,130.5 ± 0.6,K,AVG,N/A,Average of 6 values;Individual data points
+Methylcyclopentane,96-37-7,Quantity,Value,Units,Method,Reference,Comment
+Methylcyclopentane,96-37-7,Tc,532.7 ± 0.2,K,N/A,"Daubert, 1996",
+Methylcyclopentane,96-37-7,Tc,532.7,K,N/A,"Majer and Svoboda, 1985",
+Methylcyclopentane,96-37-7,Tc,532.73,K,N/A,"Kudchadker, Alani, et al., 1968",Uncertainty assigned by TRC =  0.3 K;TRC
+Methylcyclopentane,96-37-7,Tc,532.7,K,N/A,"Ambrose, Cox, et al., 1960","Uncertainty assigned by TRC =  0.2 K; Vis, PRT, IPTS-48;TRC"
+Methylcyclopentane,96-37-7,Tc,532.76,K,N/A,"Kay, 1947",Uncertainty assigned by TRC =  0.05 K;TRC
+Methylcyclopentane,96-37-7,Quantity,Value,Units,Method,Reference,Comment
+Methylcyclopentane,96-37-7,Pc,37.9 ± 0.4,bar,N/A,"Daubert, 1996",
+Methylcyclopentane,96-37-7,Pc,37.84,bar,N/A,"Kudchadker, Alani, et al., 1968",Uncertainty assigned by TRC =  0.4053 bar;TRC
+Methylcyclopentane,96-37-7,Pc,37.8591,bar,N/A,"Kay, 1947",Uncertainty assigned by TRC =  0.0506 bar;TRC
+Methylcyclopentane,96-37-7,Quantity,Value,Units,Method,Reference,Comment
+Methylcyclopentane,96-37-7,Vc,0.318,l/mol,N/A,"Daubert, 1996",
+Methylcyclopentane,96-37-7,Quantity,Value,Units,Method,Reference,Comment
+Methylcyclopentane,96-37-7,ρc,3.14 ± 0.04,mol/l,N/A,"Daubert, 1996",
+Methylcyclopentane,96-37-7,ρc,3.137,mol/l,N/A,"Kudchadker, Alani, et al., 1968",Uncertainty assigned by TRC =  0.05 mol/l;TRC
+Methylcyclopentane,96-37-7,ρc,3.14,mol/l,N/A,"Kay, 1947",Uncertainty assigned by TRC =  0.02 mol/l;TRC
+Methylcyclopentane,96-37-7,Quantity,Value,Units,Method,Reference,Comment
+Methylcyclopentane,96-37-7,ΔvapH°,31.7 ± 0.1,kJ/mol,AVG,N/A,Average of 6 values;Individual data points
+Cyclohexane,110-82-7,Tboil,353.9 ± 0.2,K,AVG,N/A,Average of 93 out of 116 values;Individual data points
+Cyclohexane,110-82-7,Quantity,Value,Units,Method,Reference,Comment
+Cyclohexane,110-82-7,Tfus,279.6 ± 0.3,K,AVG,N/A,Average of 38 out of 47 values;Individual data points
+Cyclohexane,110-82-7,Quantity,Value,Units,Method,Reference,Comment
+Cyclohexane,110-82-7,Ttriple,279.7 ± 0.4,K,AVG,N/A,Average of 8 values;Individual data points
+Cyclohexane,110-82-7,Quantity,Value,Units,Method,Reference,Comment
+Cyclohexane,110-82-7,Tc,554. ± 1.,K,AVG,N/A,Average of 18 values;Individual data points
+Cyclohexane,110-82-7,Quantity,Value,Units,Method,Reference,Comment
+Cyclohexane,110-82-7,Pc,40.7 ± 0.5,bar,AVG,N/A,Average of 8 values;Individual data points
+Cyclohexane,110-82-7,Quantity,Value,Units,Method,Reference,Comment
+Cyclohexane,110-82-7,Vc,0.308,l/mol,N/A,"Daubert, 1996",
+Cyclohexane,110-82-7,Vc,0.309,l/mol,N/A,"Young, 1972",Uncertainty assigned by TRC =  0.003 l/mol;TRC
+Cyclohexane,110-82-7,Quantity,Value,Units,Method,Reference,Comment
+Cyclohexane,110-82-7,ρc,3.24 ± 0.03,mol/l,N/A,"Daubert, 1996",
+Cyclohexane,110-82-7,ρc,3.26,mol/l,N/A,"Teja and Anselme, 1990",Uncertainty assigned by TRC =  0.07 mol/l;TRC
+Cyclohexane,110-82-7,ρc,3.230,mol/l,N/A,"Simon, 1957",Uncertainty assigned by TRC =  0.04 mol/l;TRC
+Cyclohexane,110-82-7,ρc,3.250,mol/l,N/A,"Young, 1910",Uncertainty assigned by TRC =  0.02 mol/l;TRC
+Cyclohexane,110-82-7,ρc,3.247,mol/l,N/A,"Young and Fortey, 1899",Uncertainty assigned by TRC =  0.06 mol/l;TRC
+Cyclohexane,110-82-7,Quantity,Value,Units,Method,Reference,Comment
+Cyclohexane,110-82-7,ΔvapH°,33.1 ± 0.4,kJ/mol,AVG,N/A,Average of 19 out of 21 values;Individual data points
+Methylcyclohexane,108-87-2,Tboil,374.0 ± 0.8,K,AVG,N/A,Average of 101 out of 106 values;Individual data points
+Methylcyclohexane,108-87-2,Quantity,Value,Units,Method,Reference,Comment
+Methylcyclohexane,108-87-2,Tfus,146.6 ± 0.4,K,AVG,N/A,Average of 15 out of 16 values;Individual data points
+Methylcyclohexane,108-87-2,Quantity,Value,Units,Method,Reference,Comment
+Methylcyclohexane,108-87-2,Ttriple,146.58,K,N/A,"Douslin and Huffman, 1946",Uncertainty assigned by TRC =  0.05 K; To = 273.16 K;TRC
+Methylcyclohexane,108-87-2,Ttriple,146.57,K,N/A,"Douslin and Huffman, 1946",Uncertainty assigned by TRC =  0.08 K; To = 273.16 K;TRC
+Methylcyclohexane,108-87-2,Quantity,Value,Units,Method,Reference,Comment
+Methylcyclohexane,108-87-2,Tc,573. ± 2.,K,AVG,N/A,Average of 9 values;Individual data points
+Methylcyclohexane,108-87-2,Quantity,Value,Units,Method,Reference,Comment
+Methylcyclohexane,108-87-2,Pc,34.8 ± 0.2,bar,N/A,"Daubert, 1996",
+Methylcyclohexane,108-87-2,Pc,34.71,bar,N/A,"Kudchadker, Alani, et al., 1968",Uncertainty assigned by TRC =  0.304 bar;TRC
+Methylcyclohexane,108-87-2,Pc,34.7768,bar,N/A,"Kay, 1947",Uncertainty assigned by TRC =  0.0506 bar;TRC
+Methylcyclohexane,108-87-2,Quantity,Value,Units,Method,Reference,Comment
+Methylcyclohexane,108-87-2,Vc,0.369,l/mol,N/A,"Daubert, 1996",
+Methylcyclohexane,108-87-2,Quantity,Value,Units,Method,Reference,Comment
+Methylcyclohexane,108-87-2,ρc,2.71 ± 0.02,mol/l,N/A,"Daubert, 1996",
+Methylcyclohexane,108-87-2,ρc,2.719,mol/l,N/A,"Kudchadker, Alani, et al., 1968",Uncertainty assigned by TRC =  0.03 mol/l;TRC
+Methylcyclohexane,108-87-2,ρc,2.715,mol/l,N/A,"Simon, 1957",Uncertainty assigned by TRC =  0.03 mol/l;TRC
+Methylcyclohexane,108-87-2,ρc,2.71,mol/l,N/A,"Kay, 1947",Uncertainty assigned by TRC =  0.02 mol/l;TRC
+Methylcyclohexane,108-87-2,Quantity,Value,Units,Method,Reference,Comment
+Methylcyclohexane,108-87-2,ΔvapH°,35.3 ± 0.2,kJ/mol,AVG,N/A,Average of 10 out of 11 values;Individual data points
+Ethylcyclopentane,1640-89-7,Tboil,376.6 ± 0.2,K,AVG,N/A,Average of 26 out of 28 values;Individual data points
+Ethylcyclopentane,1640-89-7,Quantity,Value,Units,Method,Reference,Comment
+Ethylcyclopentane,1640-89-7,Tfus,134.5 ± 0.9,K,AVG,N/A,Average of 19 values;Individual data points
+Ethylcyclopentane,1640-89-7,Quantity,Value,Units,Method,Reference,Comment
+Ethylcyclopentane,1640-89-7,Ttriple,134.4 ± 0.7,K,AVG,N/A,Average of 7 values;Individual data points
+Ethylcyclopentane,1640-89-7,Quantity,Value,Units,Method,Reference,Comment
+Ethylcyclopentane,1640-89-7,Tc,569.5 ± 0.5,K,N/A,"Daubert, 1996",
+Ethylcyclopentane,1640-89-7,Tc,569.5,K,N/A,"Majer and Svoboda, 1985",
+Ethylcyclopentane,1640-89-7,Tc,569.45,K,N/A,"Kay, 1947",Uncertainty assigned by TRC =  0.05 K;TRC
+Ethylcyclopentane,1640-89-7,Quantity,Value,Units,Method,Reference,Comment
+Ethylcyclopentane,1640-89-7,Pc,34.0 ± 0.4,bar,N/A,"Daubert, 1996",
+Ethylcyclopentane,1640-89-7,Pc,33.9702,bar,N/A,"Kay, 1947",Uncertainty assigned by TRC =  0.0506 bar;TRC
+Ethylcyclopentane,1640-89-7,Quantity,Value,Units,Method,Reference,Comment
+Ethylcyclopentane,1640-89-7,Vc,0.375,l/mol,N/A,"Daubert, 1996",
+Ethylcyclopentane,1640-89-7,Quantity,Value,Units,Method,Reference,Comment
+Ethylcyclopentane,1640-89-7,ρc,2.67 ± 0.04,mol/l,N/A,"Daubert, 1996",
+Ethylcyclopentane,1640-89-7,ρc,2.67,mol/l,N/A,"Kay, 1947",Uncertainty assigned by TRC =  0.02 mol/l;TRC
+Ethylcyclopentane,1640-89-7,Quantity,Value,Units,Method,Reference,Comment
+Ethylcyclopentane,1640-89-7,ΔvapH°,36.47,kJ/mol,N/A,"Majer and Svoboda, 1985",
+Ethylcyclopentane,1640-89-7,ΔvapH°,36.5,kJ/mol,N/A,"Reid, 1972",AC
+Ethylcyclopentane,1640-89-7,ΔvapH°,36.4,kJ/mol,N/A,"Prosen, Johnson, et al., 1946",DRB
+Ethylcyclohexane,1678-91-7,Tboil,405. ± 2.,K,AVG,N/A,Average of 37 out of 39 values;Individual data points
+Ethylcyclohexane,1678-91-7,Quantity,Value,Units,Method,Reference,Comment
+Ethylcyclohexane,1678-91-7,Tfus,161. ± 3.,K,AVG,N/A,Average of 6 values;Individual data points
+Ethylcyclohexane,1678-91-7,Quantity,Value,Units,Method,Reference,Comment
+Ethylcyclohexane,1678-91-7,Ttriple,161.84,K,N/A,"Huffman, Todd, et al., 1949",Uncertainty assigned by TRC =  0.05 K;TRC
+Ethylcyclohexane,1678-91-7,Ttriple,161.4,K,N/A,"Parks, Moore, et al., 1949",Uncertainty assigned by TRC =  0.2 K;TRC
+Ethylcyclohexane,1678-91-7,Quantity,Value,Units,Method,Reference,Comment
+Ethylcyclohexane,1678-91-7,Tc,609.,K,N/A,"Majer and Svoboda, 1985",
+Ethylcyclohexane,1678-91-7,Quantity,Value,Units,Method,Reference,Comment
+Ethylcyclohexane,1678-91-7,ΔvapH°,40.2 ± 0.8,kJ/mol,AVG,N/A,Average of 9 values;Individual data points
+"1,2-Dimethylcyclohexane",583-57-3,Tboil,399. ± 4.,K,AVG,N/A,Average of 14 values;Individual data points
+"1,3-Dimethylcyclohexane",591-21-9,Tboil,393. ± 4.,K,AVG,N/A,Average of 25 out of 27 values;Individual data points
+"1,4-Dimethylcyclohexane",589-90-2,Tboil,394. ± 3.,K,AVG,N/A,Average of 11 out of 12 values;Individual data points
+Propylcyclohexane,1678-92-8,Tboil,429. ± 3.,K,AVG,N/A,Average of 24 values;Individual data points
+Propylcyclohexane,1678-92-8,Quantity,Value,Units,Method,Reference,Comment
+Propylcyclohexane,1678-92-8,Tfus,178.09,K,N/A,"Boord, Greenlee, et al., 1946",Uncertainty assigned by TRC =  0.2 K;TRC
+Propylcyclohexane,1678-92-8,Tfus,178.19,K,N/A,"Forziati, Glasgow, et al., 1946",Uncertainty assigned by TRC =  0.02 K;TRC
+Propylcyclohexane,1678-92-8,Tfus,178.06,K,N/A,"Anonymous, 1941",Uncertainty assigned by TRC =  0.1 K;TRC
+Propylcyclohexane,1678-92-8,Quantity,Value,Units,Method,Reference,Comment
+Propylcyclohexane,1678-92-8,Ttriple,178.25,K,N/A,"Finke, Messerly, et al., 1965",Uncertainty assigned by TRC =  0.02 K;TRC
+Propylcyclohexane,1678-92-8,Quantity,Value,Units,Method,Reference,Comment
+Propylcyclohexane,1678-92-8,ΔvapH°,45. ± 1.,kJ/mol,AVG,N/A,Average of 10 values;Individual data points
+Butylcyclohexane,1678-93-9,Tboil,453. ± 2.,K,AVG,N/A,Average of 16 out of 17 values;Individual data points
+Butylcyclohexane,1678-93-9,Quantity,Value,Units,Method,Reference,Comment
+Butylcyclohexane,1678-93-9,Tfus,198.30,K,N/A,"Boord, Henne, et al., 1949",Uncertainty assigned by TRC =  0.5 K;TRC
+Butylcyclohexane,1678-93-9,Tfus,198.3,K,N/A,"Boord, Greenlee, et al., 1946",Uncertainty assigned by TRC =  0.2 K;TRC
+Butylcyclohexane,1678-93-9,Tfus,198.3,K,N/A,"Boord, Greenlee, et al., 1945",Uncertainty assigned by TRC =  0.2 K;TRC
+Butylcyclohexane,1678-93-9,Tfus,196.85,K,N/A,"Anonymous, 1943",Uncertainty assigned by TRC =  0.5 K;TRC
+Butylcyclohexane,1678-93-9,Quantity,Value,Units,Method,Reference,Comment
+Butylcyclohexane,1678-93-9,Ttriple,198.42,K,N/A,"Finke, Messerly, et al., 1965",Uncertainty assigned by TRC =  0.02 K;TRC
+Butylcyclohexane,1678-93-9,Quantity,Value,Units,Method,Reference,Comment
+Butylcyclohexane,1678-93-9,ΔvapH°,49. ± 2.,kJ/mol,AVG,N/A,Average of 10 values;Individual data points
+Pentylcyclohexane,4292-92-6,Tboil,477.0,K,N/A,"Smith and Pennekamp, 1945",Uncertainty assigned by TRC =  0.6 K;TRC
+Pentylcyclohexane,4292-92-6,Tboil,474.8,K,N/A,"Signaigo and Cramer, 1933",Uncertainty assigned by TRC =  1.5 K;TRC
+Pentylcyclohexane,4292-92-6,Tboil,469.4,K,N/A,"Stratford, 1929",Uncertainty assigned by TRC =  4. K;TRC
+Pentylcyclohexane,4292-92-6,Tboil,472.15,K,N/A,"Bourguel, 1927",Uncertainty assigned by TRC =  2. K;TRC
+Pentylcyclohexane,4292-92-6,Quantity,Value,Units,Method,Reference,Comment
+Pentylcyclohexane,4292-92-6,ΔvapH°,54. ± 1.,kJ/mol,AVG,N/A,Average of 6 values;Individual data points
+Hexylcyclohexane,4292-75-5,Tboil,497.93,K,N/A,"Mears, Stanley, et al., 1963",Uncertainty assigned by TRC =  0.2 K;TRC
+Hexylcyclohexane,4292-75-5,Tboil,497.93,K,N/A,"Jessup and Stanley, 1961",Uncertainty assigned by TRC =  0.5 K;TRC
+Hexylcyclohexane,4292-75-5,Tboil,497.8,K,N/A,"Smith and Pennekamp, 1945",Uncertainty assigned by TRC =  0.6 K;TRC
+Hexylcyclohexane,4292-75-5,Tboil,493.15,K,N/A,"Nenitzescu and Cioranescu, 1936",Uncertainty assigned by TRC =  2. K;TRC
+Hexylcyclohexane,4292-75-5,Tboil,494.15,K,N/A,"Bourguel, 1927",Uncertainty assigned by TRC =  2. K;TRC
+Hexylcyclohexane,4292-75-5,Quantity,Value,Units,Method,Reference,Comment
+Hexylcyclohexane,4292-75-5,Tfus,225.64,K,N/A,"Mears, Stanley, et al., 1963",Uncertainty assigned by TRC =  0.2 K;TRC
+Hexylcyclohexane,4292-75-5,Tfus,225.64,K,N/A,"Jessup and Stanley, 1961",Uncertainty assigned by TRC =  0.5 K;TRC
+Hexylcyclohexane,4292-75-5,Quantity,Value,Units,Method,Reference,Comment
+Hexylcyclohexane,4292-75-5,ΔvapH°,55.9 ± 0.5,kJ/mol,GC,"Azandegbe, 1987",AC
+Hexylcyclohexane,4292-75-5,ΔvapH°,58.95 ± 0.50,kJ/mol,C,"Fuchs and Peacock, 1978",ALS
+Hexylcyclohexane,4292-75-5,ΔvapH°,59.0 ± 0.5,kJ/mol,GCC,"Fuchs and Peacock, 1978, 2",AC
+Hexylcyclohexane,4292-75-5,ΔvapH°,59.9,kJ/mol,N/A,"Reid, 1972",AC
+Decalin,91-17-8,Tboil,463.2,K,N/A,"Aldrich Chemical Company Inc., 1990",BS
+Decalin,91-17-8,Tboil,465.,K,N/A,"Greensfelder and Voge, 1945",Uncertainty assigned by TRC =  5. K;TRC
+Decalin,91-17-8,Tboil,465.,K,N/A,"Larsen, Thorpe, et al., 1942",Uncertainty assigned by TRC =  2. K;TRC
+Decalin,91-17-8,Tboil,445.,K,N/A,"Ross and Leather, 1906",Uncertainty assigned by TRC =  10. K;TRC
+Decalin,91-17-8,Tboil,461.,K,N/A,"Leroux, 1904",Uncertainty assigned by TRC =  6. K;TRC
+Decalin,91-17-8,Quantity,Value,Units,Method,Reference,Comment
+Decalin,91-17-8,Tfus,149.,K,N/A,"Herz and Schuftan, 1922",Uncertainty assigned by TRC =  2.5 K;TRC
+Decalin,91-17-8,Quantity,Value,Units,Method,Reference,Comment
+Decalin,91-17-8,Tc,645.,K,N/A,"Glaser and Ruland, 1957",Uncertainty assigned by TRC =  2. K;TRC
+Decalin,91-17-8,Quantity,Value,Units,Method,Reference,Comment
+Decalin,91-17-8,Pc,20.80,bar,N/A,"Glaser and Ruland, 1957",Uncertainty assigned by TRC =  1.5199 bar;TRC
+trans-Decalin,493-02-7,Tboil,460. ± 3.,K,AVG,N/A,Average of 17 values;Individual data points
+trans-Decalin,493-02-7,Quantity,Value,Units,Method,Reference,Comment
+trans-Decalin,493-02-7,Tfus,242. ± 2.,K,AVG,N/A,Average of 15 out of 16 values;Individual data points
+trans-Decalin,493-02-7,Quantity,Value,Units,Method,Reference,Comment
+trans-Decalin,493-02-7,Ttriple,242.7700,K,N/A,"McCullough, Finke, et al., 1957",Uncertainty assigned by TRC =  0.07 K;TRC
+trans-Decalin,493-02-7,Ttriple,242.7700,K,N/A,"McCullough, Finke, et al., 1957",Uncertainty assigned by TRC =  0.05 K;TRC
+trans-Decalin,493-02-7,Ttriple,242.4,K,N/A,"Parks and Hatton, 1949",Uncertainty assigned by TRC =  0.2 K;TRC
+trans-Decalin,493-02-7,Quantity,Value,Units,Method,Reference,Comment
+trans-Decalin,493-02-7,Tc,687. ± 3.,K,N/A,"Daubert, 1996",
+trans-Decalin,493-02-7,Tc,960.15,K,N/A,"Cheng, McCoubrey, et al., 1962",Uncertainty assigned by TRC =  1.3 K; extrapolated to zero time to correct for decomposition cal. vs NPL thermometer;TRC
+trans-Decalin,493-02-7,Quantity,Value,Units,Method,Reference,Comment
+trans-Decalin,493-02-7,ΔvapH°,48.5 ± 2.1,kJ/mol,V,"Speros and Rossini, 1960",ALS
+trans-Decalin,493-02-7,ΔvapH°,48.5,kJ/mol,N/A,"Speros and Rossini, 1960",DRB
+trans-Decalin,493-02-7,ΔvapH°,42.84,kJ/mol,C,"Glaser and Ruland, 1957",ALS
+trans-Decalin,493-02-7,Quantity,Value,Units,Method,Reference,Comment
+trans-Decalin,493-02-7,ΔsubH°,64.3,kJ/mol,H,"Bondi, 1963","See alsoChickos, Hosseini, et al., 1993.;AC"
+cis-Decalin,493-01-6,Tboil,466. ± 5.,K,AVG,N/A,Average of 15 values;Individual data points
+cis-Decalin,493-01-6,Quantity,Value,Units,Method,Reference,Comment
+cis-Decalin,493-01-6,Tfus,230. ± 2.,K,AVG,N/A,Average of 12 out of 14 values;Individual data points
+cis-Decalin,493-01-6,Quantity,Value,Units,Method,Reference,Comment
+cis-Decalin,493-01-6,Ttriple,230.15 ± 0.09,K,AVG,N/A,Average of 6 values;Individual data points
+cis-Decalin,493-01-6,Quantity,Value,Units,Method,Reference,Comment
+cis-Decalin,493-01-6,Tc,704. ± 3.,K,N/A,"Daubert, 1996",
+cis-Decalin,493-01-6,Tc,681.,K,N/A,"Matzik and Schneider, 1985",Uncertainty assigned by TRC =  1.5 K;TRC
+cis-Decalin,493-01-6,Tc,705.0,K,N/A,"Pak and Kay, 1972",Uncertainty assigned by TRC =  1. K; extrapolated to zero time to correct for decomposition;TRC
+cis-Decalin,493-01-6,Tc,702.2,K,N/A,"Cheng, McCoubrey, et al., 1962",Uncertainty assigned by TRC =  1.5 K; extrapolated to zero time to correct for decomposition; calibr. vs NPL thermometer;TRC
+cis-Decalin,493-01-6,Quantity,Value,Units,Method,Reference,Comment
+cis-Decalin,493-01-6,Pc,32. ± 2.,bar,N/A,"Daubert, 1996",
+cis-Decalin,493-01-6,Pc,24.90,bar,N/A,"Matzik and Schneider, 1985",Uncertainty assigned by TRC =  0.50 bar;TRC
+cis-Decalin,493-01-6,Pc,32.07,bar,N/A,"Pak and Kay, 1972","Uncertainty assigned by TRC =  0.2068 bar; corrected for vapor pressure of Hg, and extrapolated to zero time to correct for decompostion;TRC"
+cis-Decalin,493-01-6,Quantity,Value,Units,Method,Reference,Comment
+cis-Decalin,493-01-6,ΔvapH°,50.2 ± 2.1,kJ/mol,V,"Speros and Rossini, 1960",ALS
+cis-Decalin,493-01-6,ΔvapH°,50.3,kJ/mol,N/A,"Speros and Rossini, 1960",DRB
+cis-Decalin,493-01-6,Quantity,Value,Units,Method,Reference,Comment
+cis-Decalin,493-01-6,ΔsubH°,62.5,kJ/mol,H,"Bondi, 1963","See alsoChickos, Hosseini, et al., 1993.;AC"
+Bicyclohexyl,92-51-3,Tboil,508. ± 10.,K,AVG,N/A,Average of 8 values;Individual data points
+Bicyclohexyl,92-51-3,Quantity,Value,Units,Method,Reference,Comment
+Bicyclohexyl,92-51-3,Tfus,276.9 ± 0.4,K,AVG,N/A,Average of 11 values;Individual data points
+Bicyclohexyl,92-51-3,Quantity,Value,Units,Method,Reference,Comment
+Bicyclohexyl,92-51-3,Ttriple,276.9,K,N/A,"Pilcher, 1957",Uncertainty assigned by TRC =  0.002 K;TRC
+Bicyclohexyl,92-51-3,Quantity,Value,Units,Method,Reference,Comment
+Bicyclohexyl,92-51-3,ΔvapH°,57.98,kJ/mol,N/A,"Majer and Svoboda, 1985",
+Bicyclohexyl,92-51-3,ΔvapH°,58.0 ± 0.3,kJ/mol,C,"Montgomery, Rossini, et al., 1978",ALS
+Bicyclohexyl,92-51-3,ΔvapH°,58.0,kJ/mol,N/A,"Montgomery, Rossini, et al., 1978",DRB
+Bicyclohexyl,92-51-3,ΔvapH°,58.0 ± 0.2,kJ/mol,C,"Montgomery, Rossini, et al., 1978",AC
+Benzene,71-43-2,Tboil,353.3 ± 0.1,K,AVG,N/A,Average of 147 out of 183 values;Individual data points
+Benzene,71-43-2,Quantity,Value,Units,Method,Reference,Comment
+Benzene,71-43-2,Tfus,278.64 ± 0.08,K,AVG,N/A,Average of 57 out of 69 values;Individual data points
+Benzene,71-43-2,Quantity,Value,Units,Method,Reference,Comment
+Benzene,71-43-2,Ttriple,278.5 ± 0.6,K,AVG,N/A,Average of 9 values;Individual data points
+Benzene,71-43-2,Quantity,Value,Units,Method,Reference,Comment
+Benzene,71-43-2,Tc,562.0 ± 0.8,K,AVG,N/A,Average of 36 out of 41 values;Individual data points
+Benzene,71-43-2,Quantity,Value,Units,Method,Reference,Comment
+Benzene,71-43-2,Pc,48.9 ± 0.4,bar,AVG,N/A,Average of 24 out of 26 values;Individual data points
+Benzene,71-43-2,Quantity,Value,Units,Method,Reference,Comment
+Benzene,71-43-2,Vc,0.25 ± 0.03,l/mol,AVG,N/A,Average of 6 values;Individual data points
+Benzene,71-43-2,Quantity,Value,Units,Method,Reference,Comment
+Benzene,71-43-2,ρc,3.9 ± 0.2,mol/l,AVG,N/A,Average of 12 values;Individual data points
+Benzene,71-43-2,Quantity,Value,Units,Method,Reference,Comment
+Benzene,71-43-2,ΔvapH°,33.9 ± 0.1,kJ/mol,AVG,N/A,Average of 10 out of 11 values;Individual data points
+Benzene,71-43-2,Quantity,Value,Units,Method,Reference,Comment
+Benzene,71-43-2,ΔsubH°,44.4,kJ/mol,"TE,ME","Kruif, 1980",Based on data from 183. to 197. K.;AC
+Toluene,108-88-3,Tboil,383.8 ± 0.2,K,AVG,N/A,Average of 110 out of 132 values;Individual data points
+Toluene,108-88-3,Quantity,Value,Units,Method,Reference,Comment
+Toluene,108-88-3,Tfus,178.1 ± 0.6,K,AVG,N/A,Average of 24 out of 25 values;Individual data points
+Toluene,108-88-3,Quantity,Value,Units,Method,Reference,Comment
+Toluene,108-88-3,Ttriple,178.15,K,N/A,"Scott, Guthrie, et al., 1962",Uncertainty assigned by TRC =  0.05 K;TRC
+Toluene,108-88-3,Ttriple,178.00,K,N/A,"Ziegler and Andrews, 1942",Uncertainty assigned by TRC =  0.2 K;TRC
+Toluene,108-88-3,Ttriple,177.9,K,N/A,"Stull, 1937",Uncertainty assigned by TRC =  0.2 K;TRC
+Toluene,108-88-3,Ttriple,177.95,K,N/A,"Kelley, 1929",Uncertainty assigned by TRC =  0.02 K;TRC
+Toluene,108-88-3,Quantity,Value,Units,Method,Reference,Comment
+Toluene,108-88-3,Tc,593. ± 2.,K,AVG,N/A,Average of 20 values;Individual data points
+Toluene,108-88-3,Quantity,Value,Units,Method,Reference,Comment
+Toluene,108-88-3,Pc,41. ± 1.,bar,AVG,N/A,Average of 11 values;Individual data points
+Toluene,108-88-3,Quantity,Value,Units,Method,Reference,Comment
+Toluene,108-88-3,Vc,0.316,l/mol,N/A,"Tsonopoulos and Ambrose, 1995",
+Toluene,108-88-3,Quantity,Value,Units,Method,Reference,Comment
+Toluene,108-88-3,ρc,3.17 ± 0.010,mol/l,N/A,"Tsonopoulos and Ambrose, 1995",
+Toluene,108-88-3,ρc,3.16,mol/l,N/A,"Chirico and Steele, 1994",Uncertainty assigned by TRC =  0.04 mol/l;TRC
+Toluene,108-88-3,ρc,3.15,mol/l,N/A,"Goodwin, 1989",Uncertainty assigned by TRC =  0.05 mol/l;TRC
+Toluene,108-88-3,ρc,3.16,mol/l,N/A,"Steele, Chirico, et al., 1988",Uncertainty assigned by TRC =  0.05 mol/l;TRC
+Toluene,108-88-3,ρc,3.162,mol/l,N/A,"Simon, 1957",Uncertainty assigned by TRC =  0.05 mol/l;TRC
+Toluene,108-88-3,Quantity,Value,Units,Method,Reference,Comment
+Toluene,108-88-3,ΔvapH°,37. ± 3.,kJ/mol,AVG,N/A,Average of 9 values;Individual data points
+Toluene,108-88-3,Quantity,Value,Units,Method,Reference,Comment
+Toluene,108-88-3,ΔsubH°,43.1,kJ/mol,B,"Lenchitz and Velicky, 1970",AC
+Ethylbenzene,100-41-4,Tboil,409.3 ± 0.4,K,AVG,N/A,Average of 79 out of 96 values;Individual data points
+Ethylbenzene,100-41-4,Quantity,Value,Units,Method,Reference,Comment
+Ethylbenzene,100-41-4,Tfus,179. ± 2.,K,AVG,N/A,Average of 15 out of 16 values;Individual data points
+Ethylbenzene,100-41-4,Quantity,Value,Units,Method,Reference,Comment
+Ethylbenzene,100-41-4,Ttriple,178.15,K,N/A,"Scott and Brickwedde, 1945",Uncertainty assigned by TRC =  0.02 K;TRC
+Ethylbenzene,100-41-4,Ttriple,178.,K,N/A,"Huffman, Parks, et al., 1930",Uncertainty assigned by TRC =  0.3 K;TRC
+Ethylbenzene,100-41-4,Quantity,Value,Units,Method,Reference,Comment
+Ethylbenzene,100-41-4,Tc,617. ± 2.,K,AVG,N/A,Average of 10 values;Individual data points
+Ethylbenzene,100-41-4,Quantity,Value,Units,Method,Reference,Comment
+Ethylbenzene,100-41-4,Pc,36.4 ± 0.9,bar,AVG,N/A,Average of 6 values;Individual data points
+Ethylbenzene,100-41-4,Quantity,Value,Units,Method,Reference,Comment
+Ethylbenzene,100-41-4,Vc,0.374,l/mol,N/A,"Tsonopoulos and Ambrose, 1995",
+Ethylbenzene,100-41-4,Quantity,Value,Units,Method,Reference,Comment
+Ethylbenzene,100-41-4,ρc,2.68 ± 0.010,mol/l,N/A,"Tsonopoulos and Ambrose, 1995",
+Ethylbenzene,100-41-4,ρc,2.670,mol/l,N/A,"Simon, 1957",Uncertainty assigned by TRC =  0.04 mol/l;TRC
+Ethylbenzene,100-41-4,Quantity,Value,Units,Method,Reference,Comment
+Ethylbenzene,100-41-4,ΔvapH°,41. ± 4.,kJ/mol,AVG,N/A,Average of 7 values;Individual data points
+o-Xylene,95-47-6,Tboil,417. ± 2.,K,AVG,N/A,Average of 50 out of 51 values;Individual data points
+o-Xylene,95-47-6,Quantity,Value,Units,Method,Reference,Comment
+o-Xylene,95-47-6,Tfus,248. ± 2.,K,AVG,N/A,Average of 12 out of 13 values;Individual data points
+o-Xylene,95-47-6,Quantity,Value,Units,Method,Reference,Comment
+o-Xylene,95-47-6,Ttriple,247.8,K,N/A,"Huffman, Parks, et al., 1930",Uncertainty assigned by TRC =  0.25 K;TRC
+o-Xylene,95-47-6,Quantity,Value,Units,Method,Reference,Comment
+o-Xylene,95-47-6,Tc,631. ± 3.,K,AVG,N/A,Average of 11 out of 12 values;Individual data points
+o-Xylene,95-47-6,Quantity,Value,Units,Method,Reference,Comment
+o-Xylene,95-47-6,Pc,37. ± 5.,bar,AVG,N/A,Average of 7 values;Individual data points
+o-Xylene,95-47-6,Quantity,Value,Units,Method,Reference,Comment
+o-Xylene,95-47-6,Vc,0.370,l/mol,N/A,"Tsonopoulos and Ambrose, 1995",
+o-Xylene,95-47-6,Quantity,Value,Units,Method,Reference,Comment
+o-Xylene,95-47-6,ρc,2.70 ± 0.04,mol/l,N/A,"Tsonopoulos and Ambrose, 1995",
+o-Xylene,95-47-6,ρc,2.699,mol/l,N/A,"Akhundov and Imanov, 1970",Uncertainty assigned by TRC =  0.05 mol/l;TRC
+o-Xylene,95-47-6,ρc,2.710,mol/l,N/A,"Simon, 1957",Uncertainty assigned by TRC =  0.04 mol/l;TRC
+o-Xylene,95-47-6,Quantity,Value,Units,Method,Reference,Comment
+o-Xylene,95-47-6,ΔvapH°,42. ± 5.,kJ/mol,AVG,N/A,Average of 9 values;Individual data points
+m-Xylene,108-38-3,Tboil,412.3 ± 0.3,K,AVG,N/A,Average of 39 out of 42 values;Individual data points
+m-Xylene,108-38-3,Quantity,Value,Units,Method,Reference,Comment
+m-Xylene,108-38-3,Tfus,225. ± 4.,K,AVG,N/A,Average of 8 values;Individual data points
+m-Xylene,108-38-3,Quantity,Value,Units,Method,Reference,Comment
+m-Xylene,108-38-3,Ttriple,219.6,K,N/A,"Huffman, Parks, et al., 1930",Uncertainty assigned by TRC =  0.3 K;TRC
+m-Xylene,108-38-3,Quantity,Value,Units,Method,Reference,Comment
+m-Xylene,108-38-3,Tc,618. ± 4.,K,AVG,N/A,Average of 9 values;Individual data points
+m-Xylene,108-38-3,Quantity,Value,Units,Method,Reference,Comment
+m-Xylene,108-38-3,Pc,35.4 ± 0.4,bar,N/A,"Tsonopoulos and Ambrose, 1995",
+m-Xylene,108-38-3,Pc,35.412,bar,N/A,"Ambrose, 1987",Uncertainty assigned by TRC =  0.05 bar;TRC
+m-Xylene,108-38-3,Pc,35.41,bar,N/A,"Ambrose, Broderick, et al., 1967",Uncertainty assigned by TRC =  0.06 bar;TRC
+m-Xylene,108-38-3,Pc,33.4373,bar,N/A,"Glaser and Ruland, 1957",Uncertainty assigned by TRC =  1.5199 bar;TRC
+m-Xylene,108-38-3,Pc,35.10,bar,N/A,"Altschul, 1893",Uncertainty assigned by TRC =  0.0392 bar;TRC
+m-Xylene,108-38-3,Quantity,Value,Units,Method,Reference,Comment
+m-Xylene,108-38-3,Vc,0.375,l/mol,N/A,"Tsonopoulos and Ambrose, 1995",
+m-Xylene,108-38-3,Quantity,Value,Units,Method,Reference,Comment
+m-Xylene,108-38-3,ρc,2.67 ± 0.04,mol/l,N/A,"Tsonopoulos and Ambrose, 1995",
+m-Xylene,108-38-3,ρc,2.684,mol/l,N/A,"Akhundov and Asadullaeva, 1968",Uncertainty assigned by TRC =  0.05 mol/l;TRC
+m-Xylene,108-38-3,Quantity,Value,Units,Method,Reference,Comment
+m-Xylene,108-38-3,ΔvapH°,41. ± 5.,kJ/mol,AVG,N/A,Average of 8 values;Individual data points
+p-Xylene,106-42-3,Tboil,411.4 ± 0.5,K,AVG,N/A,Average of 59 out of 65 values;Individual data points
+p-Xylene,106-42-3,Quantity,Value,Units,Method,Reference,Comment
+p-Xylene,106-42-3,Tfus,286.3 ± 0.2,K,AVG,N/A,Average of 18 out of 21 values;Individual data points
+p-Xylene,106-42-3,Quantity,Value,Units,Method,Reference,Comment
+p-Xylene,106-42-3,Ttriple,286.400,K,N/A,"Messerly, Finke, et al., 1988",Uncertainty assigned by TRC =  0.01 K;TRC
+p-Xylene,106-42-3,Ttriple,286.3,K,N/A,"Huffman, Parks, et al., 1930",Uncertainty assigned by TRC =  0.3 K;TRC
+p-Xylene,106-42-3,Quantity,Value,Units,Method,Reference,Comment
+p-Xylene,106-42-3,Tc,617. ± 3.,K,AVG,N/A,Average of 12 values;Individual data points
+p-Xylene,106-42-3,Quantity,Value,Units,Method,Reference,Comment
+p-Xylene,106-42-3,Pc,35. ± 2.,bar,AVG,N/A,Average of 6 values;Individual data points
+p-Xylene,106-42-3,Quantity,Value,Units,Method,Reference,Comment
+p-Xylene,106-42-3,Vc,0.378,l/mol,N/A,"Tsonopoulos and Ambrose, 1995",
+p-Xylene,106-42-3,Quantity,Value,Units,Method,Reference,Comment
+p-Xylene,106-42-3,ρc,2.65 ± 0.02,mol/l,N/A,"Tsonopoulos and Ambrose, 1995",
+p-Xylene,106-42-3,ρc,2.661,mol/l,N/A,"Akhundov and Imanov, 1970",Uncertainty assigned by TRC =  0.05 mol/l;TRC
+p-Xylene,106-42-3,ρc,2.644,mol/l,N/A,"Simon, 1957",Uncertainty assigned by TRC =  0.04 mol/l;TRC
+p-Xylene,106-42-3,Quantity,Value,Units,Method,Reference,Comment
+p-Xylene,106-42-3,ΔvapH°,42. ± 4.,kJ/mol,AVG,N/A,Average of 14 values;Individual data points
+Styrene,100-42-5,Tboil,419. ± 2.,K,AVG,N/A,Average of 18 out of 19 values;Individual data points
+Styrene,100-42-5,Quantity,Value,Units,Method,Reference,Comment
+Styrene,100-42-5,Tfus,240. ± 30.,K,AVG,N/A,Average of 10 values;Individual data points
+Styrene,100-42-5,Quantity,Value,Units,Method,Reference,Comment
+Styrene,100-42-5,Ttriple,242.47,K,N/A,"Pitzer, Guttman, et al., 1946",Uncertainty assigned by TRC =  0.07 K;TRC
+Styrene,100-42-5,Ttriple,242.47,K,N/A,"Guttman, Westrum, et al., 1943",Uncertainty assigned by TRC =  0.1 K;TRC
+Styrene,100-42-5,Ttriple,242.47,K,N/A,"Guttman, 1943",Uncertainty assigned by TRC =  0.1 K; temperature scale based on To = 273.16 K;TRC
+Styrene,100-42-5,Quantity,Value,Units,Method,Reference,Comment
+Styrene,100-42-5,ΔvapH°,43.93 ± 0.42,kJ/mol,V,"Pitzer, Guttman, et al., 1946, 2",ALS
+Styrene,100-42-5,ΔvapH°,43.9,kJ/mol,N/A,"Pitzer, Guttman, et al., 1946, 3",Based on data from 285. to 333. K.;AC
+Styrene,100-42-5,ΔvapH°,43.5 ± 0.4,kJ/mol,N/A,"Pitzer, Guttman, et al., 1946, 3",AC
+Styrene,100-42-5,ΔvapH°,43.5,kJ/mol,N/A,"Prosen and Rossini, 1945",DRB
+Styrene,100-42-5,ΔvapH°,43.2,kJ/mol,N/A,"Patnode and Scheiber, 1939",Based on data from 245. to 357. K.;AC
+Propylbenzene,103-65-1,Tboil,432. ± 2.,K,AVG,N/A,Average of 41 out of 46 values;Individual data points
+Propylbenzene,103-65-1,Quantity,Value,Units,Method,Reference,Comment
+Propylbenzene,103-65-1,Tfus,173. ± 2.,K,AVG,N/A,Average of 16 values;Individual data points
+Propylbenzene,103-65-1,Quantity,Value,Units,Method,Reference,Comment
+Propylbenzene,103-65-1,Ttriple,173.59,K,N/A,"Messerly, Todd, et al., 1965",Crystal phase 1 phase; Uncertainty assigned by TRC =  0.01 K;TRC
+Propylbenzene,103-65-1,Ttriple,171.6,K,N/A,"Messerly, Todd, et al., 1965",Metastable crystal phase; Uncertainty assigned by TRC =  0.01 K;TRC
+Propylbenzene,103-65-1,Quantity,Value,Units,Method,Reference,Comment
+Propylbenzene,103-65-1,Tc,638.4 ± 0.1,K,N/A,"Tsonopoulos and Ambrose, 1995",
+Propylbenzene,103-65-1,Tc,638.24,K,N/A,"Ambrose, Broderick, et al., 1967",Uncertainty assigned by TRC =  0.1 K;TRC
+Propylbenzene,103-65-1,Tc,638.36,K,N/A,"Ambrose, Cox, et al., 1960","Uncertainty assigned by TRC =  0.3 K; Visual, PRT, IPTS-48;TRC"
+Propylbenzene,103-65-1,Tc,639.2,K,N/A,"Simon, 1957",Uncertainty assigned by TRC =  0.4 K;TRC
+Propylbenzene,103-65-1,Tc,638.8,K,N/A,"Altschul, 1893",Uncertainty assigned by TRC =  0.6 K;TRC
+Propylbenzene,103-65-1,Quantity,Value,Units,Method,Reference,Comment
+Propylbenzene,103-65-1,Pc,32.00 ± 0.10,bar,N/A,"Tsonopoulos and Ambrose, 1995",
+Propylbenzene,103-65-1,Pc,32.00,bar,N/A,"Ambrose, Broderick, et al., 1967",Uncertainty assigned by TRC =  0.06 bar;TRC
+Propylbenzene,103-65-1,Pc,31.70,bar,N/A,"Altschul, 1893",Uncertainty assigned by TRC =  0.049 bar;TRC
+Propylbenzene,103-65-1,Quantity,Value,Units,Method,Reference,Comment
+Propylbenzene,103-65-1,Vc,0.440,l/mol,N/A,"Tsonopoulos and Ambrose, 1995",
+Propylbenzene,103-65-1,Quantity,Value,Units,Method,Reference,Comment
+Propylbenzene,103-65-1,ρc,2.27 ± 0.010,mol/l,N/A,"Tsonopoulos and Ambrose, 1995",
+Propylbenzene,103-65-1,ρc,2.269,mol/l,N/A,"Simon, 1957",Uncertainty assigned by TRC =  0.03 mol/l;TRC
+Propylbenzene,103-65-1,Quantity,Value,Units,Method,Reference,Comment
+Propylbenzene,103-65-1,ΔvapH°,46.0 ± 0.8,kJ/mol,AVG,N/A,Average of 8 values;Individual data points
+Isopropylbenzene,98-82-8,Tboil,425. ± 1.,K,AVG,N/A,Average of 58 out of 64 values;Individual data points
+Isopropylbenzene,98-82-8,Quantity,Value,Units,Method,Reference,Comment
+Isopropylbenzene,98-82-8,Tfus,177.0 ± 0.7,K,AVG,N/A,Average of 13 values;Individual data points
+Isopropylbenzene,98-82-8,Quantity,Value,Units,Method,Reference,Comment
+Isopropylbenzene,98-82-8,Ttriple,177.13,K,N/A,"Kishimoto, Suga, et al., 1973",Uncertainty assigned by TRC =  0.01 K;TRC
+Isopropylbenzene,98-82-8,Quantity,Value,Units,Method,Reference,Comment
+Isopropylbenzene,98-82-8,Tc,631.0 ± 0.5,K,N/A,"Tsonopoulos and Ambrose, 1995",
+Isopropylbenzene,98-82-8,Tc,631.1,K,N/A,"Ambrose and Grant, 1957",Uncertainty assigned by TRC =  0.15 K;TRC
+Isopropylbenzene,98-82-8,Tc,624.55,K,N/A,"Glaser and Ruland, 1957",Uncertainty assigned by TRC =  2. K;TRC
+Isopropylbenzene,98-82-8,Tc,635.9,K,N/A,"Altschul, 1893",Uncertainty assigned by TRC =  4. K;TRC
+Isopropylbenzene,98-82-8,Quantity,Value,Units,Method,Reference,Comment
+Isopropylbenzene,98-82-8,Pc,32.1 ± 0.4,bar,N/A,"Tsonopoulos and Ambrose, 1995",
+Isopropylbenzene,98-82-8,Pc,32.09,bar,N/A,"Ambrose, Broderick, et al., 1967",Uncertainty assigned by TRC =  0.06 bar;TRC
+Isopropylbenzene,98-82-8,Pc,27.8644,bar,N/A,"Glaser and Ruland, 1957",Uncertainty assigned by TRC =  1.5199 bar;TRC
+Isopropylbenzene,98-82-8,Pc,31.60,bar,N/A,"Altschul, 1893",Uncertainty assigned by TRC =  0.0588 bar;TRC
+Isopropylbenzene,98-82-8,Quantity,Value,Units,Method,Reference,Comment
+Isopropylbenzene,98-82-8,ρc,2.32,mol/l,N/A,"Hales and Townsend, 1972",Uncertainty assigned by TRC =  0.008 mol/l; from fit of obs data to 490 K to Rideal's equation;TRC
+Isopropylbenzene,98-82-8,Quantity,Value,Units,Method,Reference,Comment
+Isopropylbenzene,98-82-8,ΔvapH°,44. ± 5.,kJ/mol,AVG,N/A,Average of 9 values;Individual data points
+"1,2,3-Trimethylbenzene",526-73-8,Tboil,449.2 ± 0.2,K,AVG,N/A,Average of 24 out of 29 values;Individual data points
+"1,2,3-Trimethylbenzene",526-73-8,Quantity,Value,Units,Method,Reference,Comment
+"1,2,3-Trimethylbenzene",526-73-8,Tfus,247.7 ± 0.2,K,AVG,N/A,Average of 13 values;Individual data points
+"1,2,3-Trimethylbenzene",526-73-8,Quantity,Value,Units,Method,Reference,Comment
+"1,2,3-Trimethylbenzene",526-73-8,Ttriple,247.81,K,N/A,"Taylor, Johnson, et al., 1955",Crystal phase 1 phase; Uncertainty assigned by TRC =  0.05 K;TRC
+"1,2,3-Trimethylbenzene",526-73-8,Ttriple,247.800,K,N/A,"Kilpatrick, 1953",Uncertainty assigned by TRC =  0.05 K;TRC
+"1,2,3-Trimethylbenzene",526-73-8,Quantity,Value,Units,Method,Reference,Comment
+"1,2,3-Trimethylbenzene",526-73-8,Tc,664.5 ± 0.5,K,N/A,"Tsonopoulos and Ambrose, 1995",
+"1,2,3-Trimethylbenzene",526-73-8,Tc,665.50,K,N/A,"Kay and Pak, 1980",Uncertainty assigned by TRC =  1.5 K;TRC
+"1,2,3-Trimethylbenzene",526-73-8,Tc,664.39,K,N/A,"Ambrose, Broderick, et al., 1967",Uncertainty assigned by TRC =  0.1 K;TRC
+"1,2,3-Trimethylbenzene",526-73-8,Tc,664.5,K,N/A,"Ambrose, Cox, et al., 1960","Uncertainty assigned by TRC =  0.3 K; Visual, PRT, IPTS-48;TRC"
+"1,2,3-Trimethylbenzene",526-73-8,Quantity,Value,Units,Method,Reference,Comment
+"1,2,3-Trimethylbenzene",526-73-8,Pc,34.5 ± 0.4,bar,N/A,"Tsonopoulos and Ambrose, 1995",
+"1,2,3-Trimethylbenzene",526-73-8,Pc,34.426,bar,N/A,"Kay and Pak, 1980",Uncertainty assigned by TRC =  0.50 bar;TRC
+"1,2,3-Trimethylbenzene",526-73-8,Pc,34.54,bar,N/A,"Ambrose, Broderick, et al., 1967",Uncertainty assigned by TRC =  0.06 bar;TRC
+"1,2,3-Trimethylbenzene",526-73-8,Quantity,Value,Units,Method,Reference,Comment
+"1,2,3-Trimethylbenzene",526-73-8,ΔvapH°,49.0 ± 0.2,kJ/mol,AVG,N/A,Average of 7 values;Individual data points
+"1,2,4-Trimethylbenzene",95-63-6,Tboil,442.4 ± 0.8,K,AVG,N/A,Average of 32 out of 33 values;Individual data points
+"1,2,4-Trimethylbenzene",95-63-6,Quantity,Value,Units,Method,Reference,Comment
+"1,2,4-Trimethylbenzene",95-63-6,Tfus,227. ± 5.,K,AVG,N/A,Average of 14 out of 15 values;Individual data points
+"1,2,4-Trimethylbenzene",95-63-6,Quantity,Value,Units,Method,Reference,Comment
+"1,2,4-Trimethylbenzene",95-63-6,Ttriple,229.330,K,N/A,"Putnam and Kilpatrick, 1957",Uncertainty assigned by TRC =  0.03 K;TRC
+"1,2,4-Trimethylbenzene",95-63-6,Ttriple,228.6,K,N/A,"Huffman, Parks, et al., 1931",Uncertainty assigned by TRC =  0.3 K;TRC
+"1,2,4-Trimethylbenzene",95-63-6,Quantity,Value,Units,Method,Reference,Comment
+"1,2,4-Trimethylbenzene",95-63-6,Tc,650. ± 30.,K,AVG,N/A,Average of 8 values;Individual data points
+"1,2,4-Trimethylbenzene",95-63-6,Quantity,Value,Units,Method,Reference,Comment
+"1,2,4-Trimethylbenzene",95-63-6,Pc,31. ± 9.,bar,AVG,N/A,Average of 7 values;Individual data points
+"1,2,4-Trimethylbenzene",95-63-6,Quantity,Value,Units,Method,Reference,Comment
+"1,2,4-Trimethylbenzene",95-63-6,ΔvapH°,47. ± 6.,kJ/mol,AVG,N/A,Average of 8 values;Individual data points
+"1,3,5-Trimethylbenzene",108-67-8,Tboil,437.8 ± 0.8,K,AVG,N/A,Average of 48 out of 54 values;Individual data points
+"1,3,5-Trimethylbenzene",108-67-8,Quantity,Value,Units,Method,Reference,Comment
+"1,3,5-Trimethylbenzene",108-67-8,Tfus,225. ± 8.,K,AVG,N/A,Average of 21 out of 22 values;Individual data points
+"1,3,5-Trimethylbenzene",108-67-8,Quantity,Value,Units,Method,Reference,Comment
+"1,3,5-Trimethylbenzene",108-67-8,Ttriple,228.42,K,N/A,"Taylor and Kilpatrick, 1955",Crystal phase 1 phase; Uncertainty assigned by TRC =  0.01 K;TRC
+"1,3,5-Trimethylbenzene",108-67-8,Quantity,Value,Units,Method,Reference,Comment
+"1,3,5-Trimethylbenzene",108-67-8,Tc,639. ± 4.,K,AVG,N/A,Average of 8 values;Individual data points
+"1,3,5-Trimethylbenzene",108-67-8,Quantity,Value,Units,Method,Reference,Comment
+"1,3,5-Trimethylbenzene",108-67-8,Pc,31.3 ± 0.4,bar,N/A,"Tsonopoulos and Ambrose, 1995",
+"1,3,5-Trimethylbenzene",108-67-8,Pc,31.619,bar,N/A,"Kay and Pak, 1980","Uncertainty assigned by TRC =  0.0031 bar; Visual, Table 2, mercury interface at room temperature.;TRC"
+"1,3,5-Trimethylbenzene",108-67-8,Pc,32.55,bar,N/A,"Kay and Pak, 1980","Uncertainty assigned by TRC =  0.0032 bar; Visual, Table 2, mercury interface at sample tempera;TRC"
+"1,3,5-Trimethylbenzene",108-67-8,Pc,31.27,bar,N/A,"Ambrose, Broderick, et al., 1967",Uncertainty assigned by TRC =  0.06 bar;TRC
+"1,3,5-Trimethylbenzene",108-67-8,Pc,32.60,bar,N/A,"Altschul, 1893",Uncertainty assigned by TRC =  0.0981 bar;TRC
+"1,3,5-Trimethylbenzene",108-67-8,Quantity,Value,Units,Method,Reference,Comment
+"1,3,5-Trimethylbenzene",108-67-8,ΔvapH°,47.51 ± 0.07,kJ/mol,AVG,N/A,Average of 8 values;Individual data points
+Butylbenzene,104-51-8,Tboil,456. ± 2.,K,AVG,N/A,Average of 40 out of 43 values;Individual data points
+Butylbenzene,104-51-8,Quantity,Value,Units,Method,Reference,Comment
+Butylbenzene,104-51-8,Tfus,185.1 ± 0.6,K,AVG,N/A,Average of 11 out of 12 values;Individual data points
+Butylbenzene,104-51-8,Quantity,Value,Units,Method,Reference,Comment
+Butylbenzene,104-51-8,Ttriple,185.30,K,N/A,"Messerly, Todd, et al., 1965",Crystal phase 1 phase; Uncertainty assigned by TRC =  0.01 K;TRC
+Butylbenzene,104-51-8,Ttriple,185.14,K,N/A,"Messerly, Todd, et al., 1965",Metastable crystal phase; Uncertainty assigned by TRC =  0.01 K;TRC
+Butylbenzene,104-51-8,Ttriple,184.6,K,N/A,"Huffman, Parks, et al., 1931",Uncertainty assigned by TRC =  0.25 K;TRC
+Butylbenzene,104-51-8,Quantity,Value,Units,Method,Reference,Comment
+Butylbenzene,104-51-8,Tc,660.5 ± 0.5,K,N/A,"Tsonopoulos and Ambrose, 1995",
+Butylbenzene,104-51-8,Tc,660.5,K,N/A,"Majer and Svoboda, 1985",
+Butylbenzene,104-51-8,Tc,660.05,K,N/A,"Ambrose, Broderick, et al., 1967",Uncertainty assigned by TRC =  0.5 K;TRC
+Butylbenzene,104-51-8,Tc,660.45,K,N/A,"Ambrose, Cox, et al., 1960","Uncertainty assigned by TRC =  0.1 K; Visual, PRT, IPTS-48, with decomp.;TRC"
+Butylbenzene,104-51-8,Tc,661.0,K,N/A,"Simon, 1957",Uncertainty assigned by TRC =  0.5 K;TRC
+Butylbenzene,104-51-8,Quantity,Value,Units,Method,Reference,Comment
+Butylbenzene,104-51-8,Pc,28.9 ± 0.4,bar,N/A,"Tsonopoulos and Ambrose, 1995",
+Butylbenzene,104-51-8,Pc,28.87,bar,N/A,"Ambrose, Broderick, et al., 1967",Uncertainty assigned by TRC =  0.07 bar;TRC
+Butylbenzene,104-51-8,Quantity,Value,Units,Method,Reference,Comment
+Butylbenzene,104-51-8,Vc,0.497,l/mol,N/A,"Tsonopoulos and Ambrose, 1995",
+Butylbenzene,104-51-8,Quantity,Value,Units,Method,Reference,Comment
+Butylbenzene,104-51-8,ρc,2.01 ± 0.04,mol/l,N/A,"Tsonopoulos and Ambrose, 1995",
+Butylbenzene,104-51-8,ρc,2.009,mol/l,N/A,"Simon, 1957",Uncertainty assigned by TRC =  0.075 mol/l;TRC
+Butylbenzene,104-51-8,Quantity,Value,Units,Method,Reference,Comment
+Butylbenzene,104-51-8,ΔvapH°,51.37,kJ/mol,N/A,"Majer and Svoboda, 1985",
+Butylbenzene,104-51-8,ΔvapH°,50.8,kJ/mol,N/A,"Ru«7825»icka, Zábranský, et al., 1994",AC
+Butylbenzene,104-51-8,ΔvapH°,50.1,kJ/mol,N/A,"Reid, 1972",AC
+Butylbenzene,104-51-8,ΔvapH°,51.0 ± 2.9,kJ/mol,V,"Messerly, Todd, et al., 1965, 2",ALS
+Butylbenzene,104-51-8,ΔvapH°,50.1,kJ/mol,N/A,"Prosen, Johnson, et al., 1946",DRB
+tert-Butylbenzene,98-06-6,Tboil,442. ± 2.,K,AVG,N/A,Average of 47 out of 48 values;Individual data points
+tert-Butylbenzene,98-06-6,Quantity,Value,Units,Method,Reference,Comment
+tert-Butylbenzene,98-06-6,Tfus,215. ± 2.,K,AVG,N/A,Average of 7 values;Individual data points
+tert-Butylbenzene,98-06-6,Quantity,Value,Units,Method,Reference,Comment
+tert-Butylbenzene,98-06-6,Ttriple,215.0,K,N/A,"Huffman, Parks, et al., 1930",Uncertainty assigned by TRC =  0.2 K;TRC
+tert-Butylbenzene,98-06-6,Quantity,Value,Units,Method,Reference,Comment
+tert-Butylbenzene,98-06-6,ΔvapH°,48. ± 1.,kJ/mol,AVG,N/A,Average of 6 values;Individual data points
+sec-Butylbenzene,135-98-8,Tboil,446. ± 2.,K,AVG,N/A,Average of 40 out of 42 values;Individual data points
+sec-Butylbenzene,135-98-8,Quantity,Value,Units,Method,Reference,Comment
+sec-Butylbenzene,135-98-8,Tfus,197.85,K,N/A,"Birch, Dean, et al., 1949",Uncertainty assigned by TRC =  0.2 K;TRC
+sec-Butylbenzene,135-98-8,Tfus,199.76,K,N/A,"Birch, Dean, et al., 1949",Uncertainty assigned by TRC =  0.2 K;TRC
+sec-Butylbenzene,135-98-8,Tfus,197.68,K,N/A,"Streiff, Murphy, et al., 1947",Uncertainty assigned by TRC =  0.04 K;TRC
+sec-Butylbenzene,135-98-8,Tfus,197.46,K,N/A,"Boord, Greenlee, et al., 1946",Uncertainty assigned by TRC =  0.1 K;TRC
+sec-Butylbenzene,135-98-8,Tfus,197.,K,N/A,"Anonymous, 1943",Uncertainty assigned by TRC =  0.7 K;TRC
+sec-Butylbenzene,135-98-8,Quantity,Value,Units,Method,Reference,Comment
+sec-Butylbenzene,135-98-8,ΔvapH°,47.99,kJ/mol,N/A,"Majer and Svoboda, 1985",
+sec-Butylbenzene,135-98-8,ΔvapH°,48.1,kJ/mol,N/A,"Ru«7825»icka, Zábranský, et al., 1994",AC
+sec-Butylbenzene,135-98-8,ΔvapH°,49.5,kJ/mol,N/A,"Reid, 1972",AC
+sec-Butylbenzene,135-98-8,ΔvapH°,48.6,kJ/mol,N/A,"Prosen, Johnson, et al., 1946",DRB
+Isobutylbenzene,538-93-2,Tboil,444. ± 4.,K,AVG,N/A,Average of 28 values;Individual data points
+Isobutylbenzene,538-93-2,Quantity,Value,Units,Method,Reference,Comment
+Isobutylbenzene,538-93-2,Tfus,221.5 ± 0.3,K,AVG,N/A,Average of 6 values;Individual data points
+Isobutylbenzene,538-93-2,Quantity,Value,Units,Method,Reference,Comment
+Isobutylbenzene,538-93-2,Tc,650.,K,N/A,"Tsonopoulos and Ambrose, 1995",
+Isobutylbenzene,538-93-2,Tc,657.87,K,N/A,"Ambrose, Cox, et al., 1960",Uncertainty assigned by TRC =  0.3 K;TRC
+Isobutylbenzene,538-93-2,Tc,650.3,K,N/A,"Altschul, 1893",Uncertainty assigned by TRC =  3. K;TRC
+Isobutylbenzene,538-93-2,Quantity,Value,Units,Method,Reference,Comment
+Isobutylbenzene,538-93-2,Pc,30.5,bar,N/A,"Tsonopoulos and Ambrose, 1995",
+Isobutylbenzene,538-93-2,Pc,30.50,bar,N/A,"Altschul, 1893",Uncertainty assigned by TRC =  0.0588 bar;TRC
+Isobutylbenzene,538-93-2,Quantity,Value,Units,Method,Reference,Comment
+Isobutylbenzene,538-93-2,ΔvapH°,47.87,kJ/mol,N/A,"Majer and Svoboda, 1985",
+Isobutylbenzene,538-93-2,ΔvapH°,48.0,kJ/mol,N/A,"Ru«7825»icka, Zábranský, et al., 1994",AC
+Isobutylbenzene,538-93-2,ΔvapH°,49.5,kJ/mol,N/A,"Reid, 1972",AC
+Isobutylbenzene,538-93-2,ΔvapH°,48.4,kJ/mol,N/A,"Prosen, Johnson, et al., 1946",DRB
+Tetralin,119-64-2,Tboil,480. ± 1.,K,AVG,N/A,Average of 6 values;Individual data points
+Tetralin,119-64-2,Quantity,Value,Units,Method,Reference,Comment
+Tetralin,119-64-2,Tfus,237.3 ± 0.9,K,AVG,N/A,Average of 7 values;Individual data points
+Tetralin,119-64-2,Quantity,Value,Units,Method,Reference,Comment
+Tetralin,119-64-2,Ttriple,237.3400,K,N/A,"McCullough, Finke, et al., 1957",Uncertainty assigned by TRC =  0.07 K;TRC
+Tetralin,119-64-2,Ttriple,237.3500,K,N/A,"McCullough, Finke, et al., 1957",Uncertainty assigned by TRC =  0.05 K;TRC
+Tetralin,119-64-2,Quantity,Value,Units,Method,Reference,Comment
+Tetralin,119-64-2,Tc,720. ± 1.,K,N/A,"Tsonopoulos and Ambrose, 1995",
+Tetralin,119-64-2,Tc,721.7,K,N/A,"Gude and Teja, 1994",Uncertainty assigned by TRC =  0.5 K; by the flow method;TRC
+Tetralin,119-64-2,Tc,719.9,K,N/A,"Teja and Anselme, 1990",Uncertainty assigned by TRC =  1. K;TRC
+Tetralin,119-64-2,Tc,721.,K,N/A,"Steele, Chirico, et al., 1988",Uncertainty assigned by TRC =  1.5 K;TRC
+Tetralin,119-64-2,Quantity,Value,Units,Method,Reference,Comment
+Tetralin,119-64-2,Pc,37. ± 1.,bar,N/A,"Tsonopoulos and Ambrose, 1995",
+Tetralin,119-64-2,Pc,36.30,bar,N/A,"Gude and Teja, 1994",Uncertainty assigned by TRC =  0.25 bar; by the flow method;TRC
+Tetralin,119-64-2,Pc,37.50,bar,N/A,"Steele, Chirico, et al., 1988",Uncertainty assigned by TRC =  0.80 bar;TRC
+Tetralin,119-64-2,Quantity,Value,Units,Method,Reference,Comment
+Tetralin,119-64-2,Vc,0.408,l/mol,N/A,"Tsonopoulos and Ambrose, 1995",
+Tetralin,119-64-2,Quantity,Value,Units,Method,Reference,Comment
+Tetralin,119-64-2,ρc,2.5 ± 0.1,mol/l,N/A,"Tsonopoulos and Ambrose, 1995",
+Tetralin,119-64-2,ρc,2.45,mol/l,N/A,"Teja and Anselme, 1990",Uncertainty assigned by TRC =  0.05 mol/l;TRC
+Tetralin,119-64-2,ρc,2.27,mol/l,N/A,"Steele, Chirico, et al., 1988",Uncertainty assigned by TRC =  0.11 mol/l;TRC
+Tetralin,119-64-2,Quantity,Value,Units,Method,Reference,Comment
+Tetralin,119-64-2,ΔvapH°,55. ± 1.,kJ/mol,V,"Boyd, Sanwal, et al., 1971",ALS
+Tetralin,119-64-2,ΔvapH°,58.6,kJ/mol,N/A,"Boyd, Sanwal, et al., 1971",DRB
+Naphthalene,91-20-3,Tboil,490. ± 5.,K,AVG,N/A,Average of 10 out of 11 values;Individual data points
+Naphthalene,91-20-3,Quantity,Value,Units,Method,Reference,Comment
+Naphthalene,91-20-3,Tfus,353.2 ± 0.7,K,AVG,N/A,Average of 55 out of 57 values;Individual data points
+Naphthalene,91-20-3,Quantity,Value,Units,Method,Reference,Comment
+Naphthalene,91-20-3,Ttriple,353.39 ± 0.09,K,AVG,N/A,Average of 6 values;Individual data points
+Naphthalene,91-20-3,Quantity,Value,Units,Method,Reference,Comment
+Naphthalene,91-20-3,Tc,748. ± 6.,K,AVG,N/A,Average of 13 out of 14 values;Individual data points
+Naphthalene,91-20-3,Quantity,Value,Units,Method,Reference,Comment
+Naphthalene,91-20-3,Pc,41. ± 1.,bar,AVG,N/A,Average of 10 out of 11 values;Individual data points
+Naphthalene,91-20-3,Quantity,Value,Units,Method,Reference,Comment
+Naphthalene,91-20-3,Vc,0.407,l/mol,N/A,"Tsonopoulos and Ambrose, 1995",
+Naphthalene,91-20-3,Vc,0.409,l/mol,N/A,"Cheng, 1963",Uncertainty assigned by TRC =  0.06 l/mol;TRC
+Naphthalene,91-20-3,Quantity,Value,Units,Method,Reference,Comment
+Naphthalene,91-20-3,ρc,2.46 ± 0.05,mol/l,N/A,"Tsonopoulos and Ambrose, 1995",
+Naphthalene,91-20-3,ρc,2.497,mol/l,N/A,"Chirico, Knipmeyer, et al., 1993",Uncertainty assigned by TRC =  0.078 mol/l;TRC
+Naphthalene,91-20-3,ρc,2.450,mol/l,N/A,"Schroeer, 1941",Uncertainty assigned by TRC =  0.04 mol/l;TRC
+Naphthalene,91-20-3,ρc,2.456,mol/l,N/A,"Zhuravlev, 1937",Uncertainty assigned by TRC =  0.04 mol/l;TRC
+Naphthalene,91-20-3,Quantity,Value,Units,Method,Reference,Comment
+Naphthalene,91-20-3,ΔvapH°,54.6,kJ/mol,CGC,"Zhao, Unhannanant, et al., 2008",AC
+Naphthalene,91-20-3,ΔvapH°,60.3 ± 1.1,kJ/mol,GC,"Haftka, Parsons, et al., 2006",Based on data from 333. to 403. K.;AC
+Naphthalene,91-20-3,ΔvapH°,53.4,kJ/mol,CGC,"Chickos, Hesse, et al., 1998",AC
+Naphthalene,91-20-3,ΔvapH°,56.6,kJ/mol,CGC,"Chickos, Hosseini, et al., 1995",Based on data from 403. to 453. K.;AC
+Naphthalene,91-20-3,Quantity,Value,Units,Method,Reference,Comment
+Naphthalene,91-20-3,ΔsubH°,71. ± 5.,kJ/mol,AVG,N/A,Average of 17 values;Individual data points
+1-Methylnaphthalene,90-12-0,Tboil,515. ± 7.,K,AVG,N/A,Average of 30 values;Individual data points
+1-Methylnaphthalene,90-12-0,Quantity,Value,Units,Method,Reference,Comment
+1-Methylnaphthalene,90-12-0,Tfus,244. ± 9.,K,AVG,N/A,Average of 27 out of 28 values;Individual data points
+1-Methylnaphthalene,90-12-0,Quantity,Value,Units,Method,Reference,Comment
+1-Methylnaphthalene,90-12-0,Ttriple,242.6600,K,N/A,"McCullough, Finke, et al., 1957",Crystal phase 1 phase; Uncertainty assigned by TRC =  0.05 K; for sample crystalized rapidly without forming C2;TRC
+1-Methylnaphthalene,90-12-0,Ttriple,242.6600,K,N/A,"McCullough, Finke, et al., 1957",Crystal phase 1 phase; Uncertainty assigned by TRC =  0.03 K; after forming C2 and then C1;TRC
+1-Methylnaphthalene,90-12-0,Ttriple,242.6900,K,N/A,"McCullough, Finke, et al., 1957",Crystal phase 1 phase; Uncertainty assigned by TRC =  0.02 K; after forming C2 and then C1;TRC
+1-Methylnaphthalene,90-12-0,Ttriple,242.7000,K,N/A,"McCullough, Finke, et al., 1957",Crystal phase 1 phase; Uncertainty assigned by TRC =  0.03 K; for sample crystalized rapidly without forming C2;TRC
+1-Methylnaphthalene,90-12-0,Quantity,Value,Units,Method,Reference,Comment
+1-Methylnaphthalene,90-12-0,Tc,772. ± 1.,K,N/A,"Tsonopoulos and Ambrose, 1995",
+1-Methylnaphthalene,90-12-0,Tc,772.,K,N/A,"Wilson, Johnston, et al., 1981",Uncertainty assigned by TRC =  1. K;TRC
+1-Methylnaphthalene,90-12-0,Tc,772.,K,N/A,"Ambrose, 1963",Uncertainty assigned by TRC =  1.5 K;TRC
+1-Methylnaphthalene,90-12-0,Tc,273.15,K,N/A,"Ambrose, Cox, et al., 1960","Uncertainty assigned by TRC =  2.72 K; Visual, PRT, IPTS-48, rapid decomp and no value obtained sample;TRC"
+1-Methylnaphthalene,90-12-0,Tc,784.0,K,N/A,"Glaser and Ruland, 1957",Uncertainty assigned by TRC =  2. K;TRC
+1-Methylnaphthalene,90-12-0,Quantity,Value,Units,Method,Reference,Comment
+1-Methylnaphthalene,90-12-0,Pc,36. ± 1.,bar,N/A,"Tsonopoulos and Ambrose, 1995",
+1-Methylnaphthalene,90-12-0,Pc,36.00,bar,N/A,"Wilson, Johnston, et al., 1981",Uncertainty assigned by TRC =  1.00 bar;TRC
+1-Methylnaphthalene,90-12-0,Pc,43.5698,bar,N/A,"Glaser and Ruland, 1957",Uncertainty assigned by TRC =  1.5199 bar;TRC
+1-Methylnaphthalene,90-12-0,Quantity,Value,Units,Method,Reference,Comment
+1-Methylnaphthalene,90-12-0,ΔvapH°,59. ± 10.,kJ/mol,AVG,N/A,Average of 8 values;Individual data points
+2-Methylnaphthalene,91-57-6,Tboil,514. ± 1.,K,AVG,N/A,Average of 15 out of 16 values;Individual data points
+2-Methylnaphthalene,91-57-6,Quantity,Value,Units,Method,Reference,Comment
+2-Methylnaphthalene,91-57-6,Tfus,307. ± 1.,K,AVG,N/A,Average of 15 out of 16 values;Individual data points
+2-Methylnaphthalene,91-57-6,Quantity,Value,Units,Method,Reference,Comment
+2-Methylnaphthalene,91-57-6,Ttriple,307.7200,K,N/A,"McCullough, Finke, et al., 1957",Crystal phase 1 phase; Uncertainty assigned by TRC =  0.08 K;TRC
+2-Methylnaphthalene,91-57-6,Ttriple,307.7200,K,N/A,"McCullough, Finke, et al., 1957",Crystal phase 1 phase; Uncertainty assigned by TRC =  0.05 K;TRC
+2-Methylnaphthalene,91-57-6,Ttriple,307.2,K,N/A,"Huffman, Parks, et al., 1931",Uncertainty assigned by TRC =  0.25 K;TRC
+2-Methylnaphthalene,91-57-6,Quantity,Value,Units,Method,Reference,Comment
+2-Methylnaphthalene,91-57-6,Tc,761. ± 1.,K,N/A,"Tsonopoulos and Ambrose, 1995",
+2-Methylnaphthalene,91-57-6,Tc,761.15,K,N/A,"Ambrose, 1963",Uncertainty assigned by TRC =  1.5 K;TRC
+2-Methylnaphthalene,91-57-6,Tc,764.55,K,N/A,"Glaser and Ruland, 1957",Uncertainty assigned by TRC =  2. K;TRC
+2-Methylnaphthalene,91-57-6,Quantity,Value,Units,Method,Reference,Comment
+2-Methylnaphthalene,91-57-6,Pc,32.9306,bar,N/A,"Glaser and Ruland, 1957",Uncertainty assigned by TRC =  1.5199 bar;TRC
+2-Methylnaphthalene,91-57-6,Quantity,Value,Units,Method,Reference,Comment
+2-Methylnaphthalene,91-57-6,ΔvapH°,45.31,kJ/mol,C,"Glaser and Ruland, 1957",ALS
+2-Methylnaphthalene,91-57-6,Quantity,Value,Units,Method,Reference,Comment
+2-Methylnaphthalene,91-57-6,ΔsubH°,65.69 ± 0.84,kJ/mol,C,"Sabbah, Chastel, et al., 1974",ALS
+2-Methylnaphthalene,91-57-6,ΔsubH°,71.3 ± 2.1,kJ/mol,V,"Speros and Rossini, 1960",Hfusion=2.83±0.01;ALS
+2-Methylnaphthalene,91-57-6,ΔsubH°,71.2,kJ/mol,N/A,"Speros and Rossini, 1960",DRB
+Biphenyl,92-52-4,Tboil,527. ± 2.,K,AVG,N/A,Average of 40 out of 42 values;Individual data points
+Biphenyl,92-52-4,Quantity,Value,Units,Method,Reference,Comment
+Biphenyl,92-52-4,Tfus,343. ± 1.,K,AVG,N/A,Average of 285 out of 294 values;Individual data points
+Biphenyl,92-52-4,Quantity,Value,Units,Method,Reference,Comment
+Biphenyl,92-52-4,Ttriple,342.090,K,N/A,"Chirico, Knipmeyer, et al., 1989",Uncertainty assigned by TRC =  0.01 K;TRC
+Biphenyl,92-52-4,Ttriple,341.8,K,N/A,"Parks and Huffman, 1931",Uncertainty assigned by TRC =  0.3 K;TRC
+Biphenyl,92-52-4,Quantity,Value,Units,Method,Reference,Comment
+Biphenyl,92-52-4,Tc,780. ± 20.,K,AVG,N/A,Average of 7 values;Individual data points
+Biphenyl,92-52-4,Quantity,Value,Units,Method,Reference,Comment
+Biphenyl,92-52-4,Pc,35. ± 6.,bar,AVG,N/A,Average of 8 values;Individual data points
+Biphenyl,92-52-4,Quantity,Value,Units,Method,Reference,Comment
+Biphenyl,92-52-4,Vc,0.497,l/mol,N/A,"Tsonopoulos and Ambrose, 1995",
+Biphenyl,92-52-4,Quantity,Value,Units,Method,Reference,Comment
+Biphenyl,92-52-4,ρc,2.0 ± 0.1,mol/l,N/A,"Tsonopoulos and Ambrose, 1995",
+Biphenyl,92-52-4,ρc,2.01,mol/l,N/A,"Ellard and Yanko, 1963",Uncertainty assigned by TRC =  0.065 mol/l;TRC
+Biphenyl,92-52-4,ρc,2.09,mol/l,N/A,"Reiter, 1963",Uncertainty assigned by TRC =  0.065 mol/l;TRC
+Biphenyl,92-52-4,ρc,1.99,mol/l,N/A,"Mandel and Ewbank, 1960",Uncertainty assigned by TRC =  0.097 mol/l;TRC
+Biphenyl,92-52-4,Quantity,Value,Units,Method,Reference,Comment
+Biphenyl,92-52-4,ΔvapH°,62. ± 10.,kJ/mol,AVG,N/A,Average of 7 values;Individual data points
+Biphenyl,92-52-4,Quantity,Value,Units,Method,Reference,Comment
+Biphenyl,92-52-4,ΔsubH°,82. ± 3.,kJ/mol,AVG,N/A,Average of 10 values;Individual data points
+Indane,496-11-7,Tboil,450. ± 2.,K,AVG,N/A,Average of 9 values;Individual data points
+Indane,496-11-7,Quantity,Value,Units,Method,Reference,Comment
+Indane,496-11-7,Tfus,221.46,K,N/A,"Boord, Perilstein, et al., 1944",Uncertainty assigned by TRC =  0.4 K;TRC
+Indane,496-11-7,Quantity,Value,Units,Method,Reference,Comment
+Indane,496-11-7,Ttriple,221.77,K,N/A,"Stull, Sinke, et al., 1959",Uncertainty assigned by TRC =  0.02 K;TRC
+Indane,496-11-7,Quantity,Value,Units,Method,Reference,Comment
+Indane,496-11-7,Tc,684.9 ± 0.5,K,N/A,"Tsonopoulos and Ambrose, 1995",
+Indane,496-11-7,Tc,684.9,K,N/A,"Majer and Svoboda, 1985",
+Indane,496-11-7,Tc,684.9,K,N/A,"Ambrose, Broderick, et al., 1974",Uncertainty assigned by TRC =  0.4 K;TRC
+Indane,496-11-7,Quantity,Value,Units,Method,Reference,Comment
+Indane,496-11-7,Pc,39.5 ± 0.4,bar,N/A,"Tsonopoulos and Ambrose, 1995",
+Indane,496-11-7,Pc,39.50,bar,N/A,"Ambrose, Broderick, et al., 1974",Uncertainty assigned by TRC =  0.30 bar;TRC
+Indane,496-11-7,Quantity,Value,Units,Method,Reference,Comment
+Indane,496-11-7,ΔvapH°,48.8,kJ/mol,N/A,"Majer and Svoboda, 1985",
+Indane,496-11-7,ΔvapH°,49.2 ± 1.0,kJ/mol,Review,"Roux, Temprado, et al., 2008","There are sufficient high-quality literature values to make a good evaluation with a high degree of confidence. In general, the evaluated uncertainty limits are on the order of (0.5 to 2.5) kJ/mol.;DRB"
+Indane,496-11-7,ΔvapH°,49.0,kJ/mol,C,"Hossenlopp and Scott, 1981",AC
+Indane,496-11-7,ΔvapH°,49.03 ± 0.20,kJ/mol,V,"Osborn and Scott, 1978",ALS
+Fluorene,86-73-7,Tboil,571.2,K,N/A,"Aldrich Chemical Company Inc., 1990",BS
+Fluorene,86-73-7,Tboil,567.2,K,N/A,"Weast and Grasselli, 1989",BS
+Fluorene,86-73-7,Tboil,569.55,K,N/A,"Lecat, 1943",Uncertainty assigned by TRC =  0.5 K;TRC
+Fluorene,86-73-7,Quantity,Value,Units,Method,Reference,Comment
+Fluorene,86-73-7,Tfus,388. ± 2.,K,AVG,N/A,Average of 13 values;Individual data points
+Fluorene,86-73-7,Quantity,Value,Units,Method,Reference,Comment
+Fluorene,86-73-7,Ttriple,355.51,K,N/A,"Sabbah, 1991",Uncertainty assigned by TRC =  0.03 K;TRC
+Fluorene,86-73-7,Ttriple,387.94,K,N/A,"Finke, Messerly, et al., 1977",Crystal phase 1 phase; Uncertainty assigned by TRC =  0.02 K; C2 - C1 is a second order transition;TRC
+Fluorene,86-73-7,Ttriple,387.94,K,N/A,"Osborn and Douslin, 1975",Uncertainty assigned by TRC =  0.02 K;TRC
+Fluorene,86-73-7,Quantity,Value,Units,Method,Reference,Comment
+Fluorene,86-73-7,ΔvapH°,72.4 ± 1.7,kJ/mol,CGC,"Hanshaw, Nutt, et al., 2008",AC
+Fluorene,86-73-7,ΔvapH°,74.4 ± 1.2,kJ/mol,GC,"Haftka, Parsons, et al., 2006",Based on data from 373. to 423. K.;AC
+Fluorene,86-73-7,ΔvapH°,72.3,kJ/mol,CGC,"Chickos, Hesse, et al., 1998",AC
+Fluorene,86-73-7,ΔvapH°,72.2,kJ/mol,CGC,"Chickos, Hosseini, et al., 1995",Based on data from 403. to 453. K.;AC
+Fluorene,86-73-7,ΔvapH°,65.7,kJ/mol,B,"Rakus, Verevkin, et al., 1994",Based on data from 323. to 363. K.;AC
+Fluorene,86-73-7,Quantity,Value,Units,Method,Reference,Comment
+Fluorene,86-73-7,ΔsubH°,84. ± 5.,kJ/mol,AVG,N/A,Average of 9 values;Individual data points
+Acenaphthene,83-32-9,Tboil,552.2,K,N/A,"Weast and Grasselli, 1989",BS
+Acenaphthene,83-32-9,Tboil,552.,K,N/A,"Buckingham and Donaghy, 1982",BS
+Acenaphthene,83-32-9,Tboil,502.65,K,N/A,"Perkin, 1896",Uncertainty assigned by TRC =  1. K;TRC
+Acenaphthene,83-32-9,Quantity,Value,Units,Method,Reference,Comment
+Acenaphthene,83-32-9,Tfus,367. ± 4.,K,AVG,N/A,Average of 13 values;Individual data points
+Acenaphthene,83-32-9,Quantity,Value,Units,Method,Reference,Comment
+Acenaphthene,83-32-9,Ttriple,366.56,K,N/A,"Finke, Messerly, et al., 1977",Uncertainty assigned by TRC =  0.02 K;TRC
+Acenaphthene,83-32-9,Ttriple,366.55,K,N/A,"Osborn and Douslin, 1975",Uncertainty assigned by TRC =  0.02 K;TRC
+Acenaphthene,83-32-9,Quantity,Value,Units,Method,Reference,Comment
+Acenaphthene,83-32-9,ΔvapH°,68.0,kJ/mol,CGC,"Zhao, Unhannanant, et al., 2008",AC
+Acenaphthene,83-32-9,ΔvapH°,70.5 ± 1.1,kJ/mol,GC,"Haftka, Parsons, et al., 2006",Based on data from 363. to 423. K.;AC
+Acenaphthene,83-32-9,ΔvapH°,66.2,kJ/mol,CGC,"Chickos, Hesse, et al., 1998",AC
+Acenaphthene,83-32-9,ΔvapH°,66.2,kJ/mol,N/A,"Ruuzicka, Mokbel, et al., 1998","See alsoHanshaw, Nutt, et al., 2008.;AC"
+Acenaphthene,83-32-9,ΔvapH°,66.5 ± 1.3,kJ/mol,N/A,"Mokbel, Guetachew, et al., 1995","See alsoHanshaw, Nutt, et al., 2008.;AC"
+Acenaphthene,83-32-9,Quantity,Value,Units,Method,Reference,Comment
+Acenaphthene,83-32-9,ΔsubH°,84.8 ± 0.4,kJ/mol,Review,"Roux, Temprado, et al., 2008","There are sufficient high-quality literature values to make a good evaluation with a high degree of confidence. In general, the evaluated uncertainty limits are on the order of (0.5 to 2.5) kJ/mol.;DRB"
+Acenaphthene,83-32-9,ΔsubH°,84.6,kJ/mol,CGC-DSC,"Chickos, Hesse, et al., 1998",AC
+Acenaphthene,83-32-9,ΔsubH°,83.4 ± 1.0,kJ/mol,N/A,"Osborn and Douslin, 1975, 2","See alsoFinke, Messerly, et al., 1977, 2.;AC"
+Acenaphthene,83-32-9,ΔsubH°,86. ± 1.,kJ/mol,V,"Boyd, Christensen, et al., 1965",ALS
+Acenaphthene,83-32-9,ΔsubH°,86.0,kJ/mol,N/A,"Boyd, Christensen, et al., 1965",DRB
+Phenanthrene,85-01-8,Tboil,609.2,K,N/A,"Aldrich Chemical Company Inc., 1990",BS
+Phenanthrene,85-01-8,Tboil,613.2,K,N/A,"Weast and Grasselli, 1989",BS
+Phenanthrene,85-01-8,Tboil,605.15,K,N/A,"Kirby, 1921",Uncertainty assigned by TRC =  5. K;TRC
+Phenanthrene,85-01-8,Tboil,601.15,K,N/A,"Kirby, 1921",Uncertainty assigned by TRC =  3. K;TRC
+Phenanthrene,85-01-8,Tboil,613.15,K,N/A,"Beilstein, 1919",Uncertainty assigned by TRC =  2. K;TRC
+Phenanthrene,85-01-8,Quantity,Value,Units,Method,Reference,Comment
+Phenanthrene,85-01-8,Tfus,372. ± 2.,K,AVG,N/A,Average of 32 out of 35 values;Individual data points
+Phenanthrene,85-01-8,Quantity,Value,Units,Method,Reference,Comment
+Phenanthrene,85-01-8,Ttriple,372.38,K,N/A,"Finke, Messerly, et al., 1977",Crystal phase 1 phase; Uncertainty assigned by TRC =  0.02 K; C3 - C2 and C2 - C1 are second order transitions;TRC
+Phenanthrene,85-01-8,Ttriple,372.38,K,N/A,"Osborn and Douslin, 1975",Uncertainty assigned by TRC =  0.02 K;TRC
+Phenanthrene,85-01-8,Quantity,Value,Units,Method,Reference,Comment
+Phenanthrene,85-01-8,Tc,869. ± 1.,K,N/A,"Tsonopoulos and Ambrose, 1995",
+Phenanthrene,85-01-8,Tc,869.3,K,N/A,"Cheng, 1963",Uncertainty assigned by TRC =  1. K;TRC
+Phenanthrene,85-01-8,Quantity,Value,Units,Method,Reference,Comment
+Phenanthrene,85-01-8,ΔvapH°,78.7,kJ/mol,CGC,"Zhao, Unhannanant, et al., 2008",AC
+Phenanthrene,85-01-8,ΔvapH°,79.0 ± 1.2,kJ/mol,GC,"Haftka, Parsons, et al., 2006",Based on data from 413. to 483. K.;AC
+Phenanthrene,85-01-8,ΔvapH°,78.7,kJ/mol,CGC,"Chickos, Hesse, et al., 1998",AC
+Phenanthrene,85-01-8,ΔvapH°,78.5,kJ/mol,CGC,"Chickos, Hosseini, et al., 1995",Based on data from 403. to 453. K.;AC
+Phenanthrene,85-01-8,Quantity,Value,Units,Method,Reference,Comment
+Phenanthrene,85-01-8,ΔsubH°,91. ± 3.,kJ/mol,AVG,N/A,Average of 12 values;Individual data points
+Anthracene,120-12-7,Tboil,613.2,K,N/A,"Weast and Grasselli, 1989",BS
+Anthracene,120-12-7,Tboil,613.0,K,N/A,"Buckingham and Donaghy, 1982",BS
+Anthracene,120-12-7,Tboil,613.1,K,N/A,"Burriel, 1931",Uncertainty assigned by TRC =  0.3 K;TRC
+Anthracene,120-12-7,Tboil,613.,K,N/A,"Kirby, 1921",Uncertainty assigned by TRC =  5. K;TRC
+Anthracene,120-12-7,Quantity,Value,Units,Method,Reference,Comment
+Anthracene,120-12-7,Tfus,490. ± 3.,K,AVG,N/A,Average of 27 values;Individual data points
+Anthracene,120-12-7,Quantity,Value,Units,Method,Reference,Comment
+Anthracene,120-12-7,Ttriple,488.93,K,N/A,"Goursot, Girdhar, et al., 1970",Uncertainty assigned by TRC =  0.01 K;TRC
+Anthracene,120-12-7,Quantity,Value,Units,Method,Reference,Comment
+Anthracene,120-12-7,ΔvapH°,78.5,kJ/mol,CGC,"Zhao, Unhannanant, et al., 2008",AC
+Anthracene,120-12-7,ΔvapH°,79.5 ± 1.2,kJ/mol,GC,"Haftka, Parsons, et al., 2006",Based on data from 413. to 473. K.;AC
+Anthracene,120-12-7,ΔvapH°,79.1,kJ/mol,CGC,"Puri, Chickos, et al., 2001",AC
+Anthracene,120-12-7,ΔvapH°,79.8,kJ/mol,CGC,"Chickos, Hesse, et al., 1998",AC
+Anthracene,120-12-7,ΔvapH°,79.6,kJ/mol,CGC,"Chickos, Hosseini, et al., 1995",Based on data from 453. to 503. K.;AC
+Anthracene,120-12-7,Quantity,Value,Units,Method,Reference,Comment
+Anthracene,120-12-7,ΔsubH°,98. ± 10.,kJ/mol,AVG,N/A,Average of 12 values;Individual data points
+Pentylbenzene,538-68-1,Tboil,471. ± 20.,K,AVG,N/A,Average of 22 values;Individual data points
+Pentylbenzene,538-68-1,Quantity,Value,Units,Method,Reference,Comment
+Pentylbenzene,538-68-1,Tfus,194.90,K,N/A,"Simon, 1929",Uncertainty assigned by TRC =  0.3 K;TRC
+Pentylbenzene,538-68-1,Quantity,Value,Units,Method,Reference,Comment
+Pentylbenzene,538-68-1,ΔvapH°,55.1 ± 0.4,kJ/mol,GS,"Verevkin, 2006",Based on data from 284. to 323. K.;AC
+Pentylbenzene,538-68-1,ΔvapH°,55.3,kJ/mol,N/A,"Ru«7825»icka, Zábranský, et al., 1994",AC
+Pentylbenzene,538-68-1,ΔvapH°,55.1,kJ/mol,N/A,"Reid, 1972",AC
+Hexylbenzene,1077-16-3,Tboil,494. ± 10.,K,AVG,N/A,Average of 23 values;Individual data points
+Hexylbenzene,1077-16-3,Quantity,Value,Units,Method,Reference,Comment
+Hexylbenzene,1077-16-3,Tfus,209.7,K,N/A,"Mears, Stanley, et al., 1963",Uncertainty assigned by TRC =  0.3 K;TRC
+Hexylbenzene,1077-16-3,Tfus,209.7,K,N/A,"Jessup and Stanley, 1961",Uncertainty assigned by TRC =  0.5 K;TRC
+Hexylbenzene,1077-16-3,Tfus,206.4,K,N/A,"Simon, 1929",Uncertainty assigned by TRC =  1.5 K;TRC
+Hexylbenzene,1077-16-3,Quantity,Value,Units,Method,Reference,Comment
+Hexylbenzene,1077-16-3,ΔvapH°,60.2,kJ/mol,N/A,"Ru«7825»icka, Zábranský, et al., 1994",AC
+Hexylbenzene,1077-16-3,ΔvapH°,60.0,kJ/mol,N/A,"Reid, 1972",AC
+"1,3-Diethylbenzene",141-93-5,Tboil,454. ± 2.,K,AVG,N/A,Average of 24 values;Individual data points
+"1,3-Diethylbenzene",141-93-5,Quantity,Value,Units,Method,Reference,Comment
+"1,3-Diethylbenzene",141-93-5,Tfus,189.33,K,N/A,"Birch, Dean, et al., 1949",Uncertainty assigned by TRC =  0.2 K;TRC
+"1,3-Diethylbenzene",141-93-5,Tfus,189.16,K,N/A,"Boord, Greenlee, et al., 1948",Uncertainty assigned by TRC =  0.2 K;TRC
+"1,3-Diethylbenzene",141-93-5,Tfus,189.06,K,N/A,"Gibbons, Thompson, et al., 1946",Uncertainty assigned by TRC =  0.15 K;TRC
+"1,3-Diethylbenzene",141-93-5,Quantity,Value,Units,Method,Reference,Comment
+"1,3-Diethylbenzene",141-93-5,ΔvapH°,52.5,kJ/mol,N/A,"Reid, 1972",AC
+"1,4-Diethylbenzene",105-05-5,Tboil,456.7 ± 0.6,K,AVG,N/A,Average of 18 values;Individual data points
+"1,4-Diethylbenzene",105-05-5,Quantity,Value,Units,Method,Reference,Comment
+"1,4-Diethylbenzene",105-05-5,Tfus,229.90,K,N/A,"Birch, Dean, et al., 1949",Uncertainty assigned by TRC =  0.2 K;TRC
+"1,4-Diethylbenzene",105-05-5,Tfus,229.6,K,N/A,"Boord, Perilstein, et al., 1944",Uncertainty assigned by TRC =  0.6 K;TRC
+"1,4-Diethylbenzene",105-05-5,Quantity,Value,Units,Method,Reference,Comment
+"1,4-Diethylbenzene",105-05-5,Tc,657.9 ± 0.5,K,N/A,"Tsonopoulos and Ambrose, 1995",
+"1,4-Diethylbenzene",105-05-5,Tc,657.89,K,N/A,"Ambrose, Broderick, et al., 1967",Uncertainty assigned by TRC =  0.15 K;TRC
+"1,4-Diethylbenzene",105-05-5,Tc,657.87,K,N/A,"Ambrose, Cox, et al., 1960","Uncertainty assigned by TRC =  0.03 K; Visual, PRT, IPTS-48, sample wrongly named isobutyl benzene;TRC"
+"1,4-Diethylbenzene",105-05-5,Quantity,Value,Units,Method,Reference,Comment
+"1,4-Diethylbenzene",105-05-5,Pc,28.0 ± 0.4,bar,N/A,"Tsonopoulos and Ambrose, 1995",
+"1,4-Diethylbenzene",105-05-5,Pc,28.03,bar,N/A,"Ambrose, Broderick, et al., 1967",Uncertainty assigned by TRC =  0.07 bar;TRC
+"1,4-Diethylbenzene",105-05-5,Quantity,Value,Units,Method,Reference,Comment
+"1,4-Diethylbenzene",105-05-5,ΔvapH°,52.5,kJ/mol,N/A,"Reid, 1972",AC
+Dodecylbenzene,123-01-3,Tboil,590.,K,N/A,"Sharrah and Feighner, 1954",Uncertainty assigned by TRC =  5. K;TRC
+Dodecylbenzene,123-01-3,Quantity,Value,Units,Method,Reference,Comment
+Dodecylbenzene,123-01-3,Tfus,270.,K,N/A,"Ju, Shen, et al., 1940",Uncertainty assigned by TRC =  2. K;TRC
+Dodecylbenzene,123-01-3,Tfus,266.,K,N/A,"Petrov and Lapteva, 1938",Uncertainty assigned by TRC =  2. K;TRC
+Dodecylbenzene,123-01-3,Quantity,Value,Units,Method,Reference,Comment
+Dodecylbenzene,123-01-3,ΔvapH°,89.6,kJ/mol,N/A,"Reid, 1972",AC
+Dodecylbenzene,123-01-3,Quantity,Value,Units,Method,Reference,Comment
+Dodecylbenzene,123-01-3,ΔsubH°,135.1,kJ/mol,N/A,"Mokbel, Ruzicka, et al., 2000",AC
+1-Pentene,109-67-1,Tboil,304. ± 8.,K,AVG,N/A,Average of 30 out of 31 values;Individual data points
+1-Pentene,109-67-1,Quantity,Value,Units,Method,Reference,Comment
+1-Pentene,109-67-1,Tfus,107.75,K,N/A,"Streiff, Murphy, et al., 1946",Uncertainty assigned by TRC =  0.2 K;TRC
+1-Pentene,109-67-1,Tfus,107.78,K,N/A,"Streiff, Murphy, et al., 1946",Uncertainty assigned by TRC =  0.2 K;TRC
+1-Pentene,109-67-1,Tfus,107.88,K,N/A,"Streiff, Murphy, et al., 1946",Uncertainty assigned by TRC =  0.1 K;TRC
+1-Pentene,109-67-1,Quantity,Value,Units,Method,Reference,Comment
+1-Pentene,109-67-1,Ttriple,108.010,K,N/A,"Messerly, Todd, et al., 1990",Crystal phase 1 phase; Uncertainty assigned by TRC =  0.003 K;TRC
+1-Pentene,109-67-1,Ttriple,107.790,K,N/A,"Messerly, Todd, et al., 1990",Metastable crystal phase; Uncertainty assigned by TRC =  0.003 K;TRC
+1-Pentene,109-67-1,Ttriple,5.800,K,N/A,"Chao, Hall, et al., 1983",Uncertainty assigned by TRC =  0.01 K;TRC
+1-Pentene,109-67-1,Ttriple,107.9,K,N/A,"Todd, Oliver, et al., 1947",Uncertainty assigned by TRC =  0.5 K; this value not measured but taken from 1956-strmur 0;TRC
+1-Pentene,109-67-1,Quantity,Value,Units,Method,Reference,Comment
+1-Pentene,109-67-1,Tc,464.8 ± 0.5,K,N/A,"Tsonopoulos and Ambrose, 1996",
+1-Pentene,109-67-1,Tc,464.7,K,N/A,"Majer and Svoboda, 1985",
+1-Pentene,109-67-1,Tc,465.1,K,N/A,"Wolfe, Kay, et al., 1983",Uncertainty assigned by TRC =  0.3 K; $ %Y/SI 0.01 @Y/SI 0.3;TRC
+1-Pentene,109-67-1,Tc,463.77,K,N/A,"Mousa, Kay, et al., 1972",Uncertainty assigned by TRC =  0.2 K;TRC
+1-Pentene,109-67-1,Tc,464.74,K,N/A,"Ambrose, Cox, et al., 1960","Uncertainty assigned by TRC =  0.03 K; Visual, PRT, IPTS-48;TRC"
+1-Pentene,109-67-1,Quantity,Value,Units,Method,Reference,Comment
+1-Pentene,109-67-1,Pc,35.6 ± 0.5,bar,N/A,"Tsonopoulos and Ambrose, 1996",
+1-Pentene,109-67-1,Pc,35.50,bar,N/A,"Wolfe, Kay, et al., 1983",Uncertainty assigned by TRC =  0.20 bar; $ %Y/SI 1.5 @Y/SI 20.;TRC
+1-Pentene,109-67-1,Pc,35.510,bar,N/A,"Mousa, Kay, et al., 1972",Uncertainty assigned by TRC =  0.0344 bar;TRC
+1-Pentene,109-67-1,Quantity,Value,Units,Method,Reference,Comment
+1-Pentene,109-67-1,Vc,0.2984,l/mol,N/A,"Tsonopoulos and Ambrose, 1996",
+1-Pentene,109-67-1,Quantity,Value,Units,Method,Reference,Comment
+1-Pentene,109-67-1,ρc,3.35 ± 0.05,mol/l,N/A,"Tsonopoulos and Ambrose, 1996",
+1-Pentene,109-67-1,ρc,3.32,mol/l,N/A,"Wolfe, Kay, et al., 1983",Uncertainty assigned by TRC =  0.03 mol/l;TRC
+1-Pentene,109-67-1,Quantity,Value,Units,Method,Reference,Comment
+1-Pentene,109-67-1,ΔvapH°,29.82,kJ/mol,N/A,"Majer and Svoboda, 1985",
+1-Pentene,109-67-1,ΔvapH°,25.5,kJ/mol,N/A,"Reid, 1972",AC
+1-Pentene,109-67-1,ΔvapH°,25.5 ± 0.1,kJ/mol,C,"Scott, Waddington, et al., 1949",AC
+1-Hexene,592-41-6,Tboil,337. ± 2.,K,AVG,N/A,Average of 42 out of 44 values;Individual data points
+1-Hexene,592-41-6,Quantity,Value,Units,Method,Reference,Comment
+1-Hexene,592-41-6,Tfus,133. ± 4.,K,AVG,N/A,Average of 9 values;Individual data points
+1-Hexene,592-41-6,Quantity,Value,Units,Method,Reference,Comment
+1-Hexene,592-41-6,Ttriple,133.39,K,N/A,"McCullough, Finke, et al., 1957",Uncertainty assigned by TRC =  0.01 K;TRC
+1-Hexene,592-41-6,Ttriple,133.380,K,N/A,"Waddington, 1951",Uncertainty assigned by TRC =  0.05 K;TRC
+1-Hexene,592-41-6,Ttriple,133.390,K,N/A,"Waddington, 1951",Uncertainty assigned by TRC =  0.02 K;TRC
+1-Hexene,592-41-6,Quantity,Value,Units,Method,Reference,Comment
+1-Hexene,592-41-6,Tc,504.0 ± 0.3,K,N/A,"Tsonopoulos and Ambrose, 1996",
+1-Hexene,592-41-6,Tc,503.98,K,N/A,"Ambrose, Cox, et al., 1960","Uncertainty assigned by TRC =  0.3 K; Visual, PRT, IPTS-48;TRC"
+1-Hexene,592-41-6,Quantity,Value,Units,Method,Reference,Comment
+1-Hexene,592-41-6,Pc,32.1 ± 0.3,bar,N/A,"Tsonopoulos and Ambrose, 1996",
+1-Hexene,592-41-6,Quantity,Value,Units,Method,Reference,Comment
+1-Hexene,592-41-6,Vc,0.3551,l/mol,N/A,"Tsonopoulos and Ambrose, 1996",
+1-Hexene,592-41-6,Quantity,Value,Units,Method,Reference,Comment
+1-Hexene,592-41-6,ρc,2.82 ± 0.03,mol/l,N/A,"Tsonopoulos and Ambrose, 1996",
+1-Hexene,592-41-6,Quantity,Value,Units,Method,Reference,Comment
+1-Hexene,592-41-6,ΔvapH°,30.6,kJ/mol,N/A,"Reid, 1972",AC
+1-Hexene,592-41-6,ΔvapH°,30.6,kJ/mol,V,"Camin and Rossini, 1956",ALS
+1-Hexene,592-41-6,ΔvapH°,30.6,kJ/mol,N/A,"Camin and Rossini, 1956, 2",Based on data from 289. to 337. K.;AC
+1-Octene,111-66-0,Tboil,395. ± 2.,K,AVG,N/A,Average of 60 out of 61 values;Individual data points
+1-Octene,111-66-0,Quantity,Value,Units,Method,Reference,Comment
+1-Octene,111-66-0,Tfus,171. ± 2.,K,AVG,N/A,Average of 10 values;Individual data points
+1-Octene,111-66-0,Quantity,Value,Units,Method,Reference,Comment
+1-Octene,111-66-0,Ttriple,171.46,K,N/A,"McCullough, Finke, et al., 1957",Uncertainty assigned by TRC =  0.05 K;TRC
+1-Octene,111-66-0,Quantity,Value,Units,Method,Reference,Comment
+1-Octene,111-66-0,Tc,567.0 ± 0.8,K,N/A,"Tsonopoulos and Ambrose, 1996",
+1-Octene,111-66-0,Tc,566.6,K,N/A,"Majer and Svoboda, 1985",
+1-Octene,111-66-0,Tc,566.55,K,N/A,"Ambrose, Cox, et al., 1960","Uncertainty assigned by TRC =  0.05 K; Visual, PRT, IPTS-48, with decomp.;TRC"
+1-Octene,111-66-0,Quantity,Value,Units,Method,Reference,Comment
+1-Octene,111-66-0,Pc,26.8 ± 0.8,bar,N/A,"Tsonopoulos and Ambrose, 1996",
+1-Octene,111-66-0,Quantity,Value,Units,Method,Reference,Comment
+1-Octene,111-66-0,Vc,0.468,l/mol,N/A,"Tsonopoulos and Ambrose, 1996",
+1-Octene,111-66-0,Quantity,Value,Units,Method,Reference,Comment
+1-Octene,111-66-0,ρc,2.1 ± 0.08,mol/l,N/A,"Tsonopoulos and Ambrose, 1996",
+1-Octene,111-66-0,Quantity,Value,Units,Method,Reference,Comment
+1-Octene,111-66-0,ΔvapH°,40.44,kJ/mol,N/A,"Majer and Svoboda, 1985",
+1-Octene,111-66-0,ΔvapH°,40.6,kJ/mol,CGC,"Chickos, Hosseini, et al., 1995",Based on data from 373. to 423. K.;AC
+1-Octene,111-66-0,ΔvapH°,40.27 ± 0.20,kJ/mol,C,"Mansson, Sellers, et al., 1977",ALS
+1-Octene,111-66-0,ΔvapH°,40.3 ± 0.2,kJ/mol,C,"Månsson, Sellers, et al., 1977",AC
+1-Octene,111-66-0,ΔvapH°,38.,kJ/mol,N/A,"Reid, 1972",AC
+1-Decene,872-05-9,Tboil,440. ± 10.,K,AVG,N/A,Average of 14 values;Individual data points
+1-Decene,872-05-9,Quantity,Value,Units,Method,Reference,Comment
+1-Decene,872-05-9,Tfus,207. ± 2.,K,AVG,N/A,Average of 6 values;Individual data points
+1-Decene,872-05-9,Quantity,Value,Units,Method,Reference,Comment
+1-Decene,872-05-9,Ttriple,206.89,K,N/A,"McCullough, Finke, et al., 1957",Crystal phase 1 phase; Uncertainty assigned by TRC =  0.05 K;TRC
+1-Decene,872-05-9,Ttriple,206.89,K,N/A,"McCullough and Waddington, 1957","Uncertainty assigned by TRC =  0.06 K; IPTS-48, from fast crystallization;TRC"
+1-Decene,872-05-9,Ttriple,206.88,K,N/A,"McCullough and Waddington, 1957","Uncertainty assigned by TRC =  0.06 K; IPTS-48, from slow crystallization;TRC"
+1-Decene,872-05-9,Ttriple,206.47,K,N/A,"Waddington, 1953",Uncertainty assigned by TRC =  0.2 K;TRC
+1-Decene,872-05-9,Quantity,Value,Units,Method,Reference,Comment
+1-Decene,872-05-9,Tc,617. ± 2.,K,N/A,"Tsonopoulos and Ambrose, 1996",
+1-Decene,872-05-9,Quantity,Value,Units,Method,Reference,Comment
+1-Decene,872-05-9,Pc,22.2 ± 1.0,bar,N/A,"Tsonopoulos and Ambrose, 1996",
+1-Decene,872-05-9,Quantity,Value,Units,Method,Reference,Comment
+1-Decene,872-05-9,Vc,0.584,l/mol,N/A,"Tsonopoulos and Ambrose, 1996",
+1-Decene,872-05-9,Quantity,Value,Units,Method,Reference,Comment
+1-Decene,872-05-9,ρc,1.7 ± 0.10,mol/l,N/A,"Tsonopoulos and Ambrose, 1996",
+1-Decene,872-05-9,Quantity,Value,Units,Method,Reference,Comment
+1-Decene,872-05-9,ΔvapH°,50.44,kJ/mol,N/A,"Majer and Svoboda, 1985",
+1-Decene,872-05-9,ΔvapH°,50.43 ± 0.20,kJ/mol,C,"Mansson, Sellers, et al., 1977",ALS
+1-Decene,872-05-9,ΔvapH°,50.4 ± 0.2,kJ/mol,C,"Månsson, Sellers, et al., 1977",AC
+1-Decene,872-05-9,ΔvapH°,50.5,kJ/mol,N/A,"Reid, 1972",AC
+1-Dodecene,112-41-4,Tboil,486.2 ± 0.6,K,AVG,N/A,Average of 6 values;Individual data points
+1-Dodecene,112-41-4,Quantity,Value,Units,Method,Reference,Comment
+1-Dodecene,112-41-4,Tfus,238. ± 1.,K,AVG,N/A,Average of 10 values;Individual data points
+1-Dodecene,112-41-4,Quantity,Value,Units,Method,Reference,Comment
+1-Dodecene,112-41-4,Ttriple,237.93,K,N/A,"McCullough, Finke, et al., 1957",Crystal phase 1 phase; Uncertainty assigned by TRC =  0.05 K;TRC
+1-Dodecene,112-41-4,Quantity,Value,Units,Method,Reference,Comment
+1-Dodecene,112-41-4,Tc,658. ± 2.,K,N/A,"Tsonopoulos and Ambrose, 1996",
+1-Dodecene,112-41-4,Quantity,Value,Units,Method,Reference,Comment
+1-Dodecene,112-41-4,Pc,19.3 ± 2.0,bar,N/A,"Tsonopoulos and Ambrose, 1996",
+1-Dodecene,112-41-4,Quantity,Value,Units,Method,Reference,Comment
+1-Dodecene,112-41-4,ΔvapH°,60.78,kJ/mol,N/A,"Majer and Svoboda, 1985",
+1-Dodecene,112-41-4,ΔvapH°,60.78 ± 0.20,kJ/mol,C,"Mansson, Sellers, et al., 1977",ALS
+1-Dodecene,112-41-4,ΔvapH°,60.78 ± 0.29,kJ/mol,V,"Stridh, 1976",ALS
+1-Dodecene,112-41-4,ΔvapH°,60.8 ± 0.3,kJ/mol,C,"Stridh, 1976","See alsoMånsson, Sellers, et al., 1977.;AC"
+1-Dodecene,112-41-4,ΔvapH°,60.3,kJ/mol,N/A,"Reid, 1972",AC
+1-Tetradecene,1120-36-1,Tboil,524.2,K,N/A,"Aldrich Chemical Company Inc., 1990",BS
+1-Tetradecene,1120-36-1,Tboil,524.,K,N/A,"Farchan Laboratories, 1990",BS
+1-Tetradecene,1120-36-1,Quantity,Value,Units,Method,Reference,Comment
+1-Tetradecene,1120-36-1,Tfus,260.23,K,N/A,"Streiff, Hulme, et al., 1955",Uncertainty assigned by TRC =  0.06 K;TRC
+1-Tetradecene,1120-36-1,Tfus,260.23,K,N/A,"Streiff, Hulme, et al., 1955",Uncertainty assigned by TRC =  0.06 K;TRC
+1-Tetradecene,1120-36-1,Tfus,260.3,K,N/A,"Streiff, Hulme, et al., 1955",Uncertainty assigned by TRC =  0.04 K;TRC
+1-Tetradecene,1120-36-1,Tfus,260.230,K,N/A,"Anonymous, 1951",Uncertainty assigned by TRC =  0.05 K;TRC
+1-Tetradecene,1120-36-1,Tfus,260.300,K,N/A,"Anonymous, 1951",Uncertainty assigned by TRC =  0.03 K;TRC
+1-Tetradecene,1120-36-1,Quantity,Value,Units,Method,Reference,Comment
+1-Tetradecene,1120-36-1,ΔvapH°,70.2,kJ/mol,N/A,"Reid, 1972",AC
+1-Hexadecene,629-73-2,Tboil,547.2,K,N/A,"Aldrich Chemical Company Inc., 1990",BS
+1-Hexadecene,629-73-2,Tboil,547.,K,N/A,"Farchan Laboratories, 1990",BS
+1-Hexadecene,629-73-2,Tboil,557.6,K,N/A,"Weast and Grasselli, 1989",BS
+1-Hexadecene,629-73-2,Quantity,Value,Units,Method,Reference,Comment
+1-Hexadecene,629-73-2,Tfus,279. ± 8.,K,AVG,N/A,Average of 10 values;Individual data points
+1-Hexadecene,629-73-2,Quantity,Value,Units,Method,Reference,Comment
+1-Hexadecene,629-73-2,Ttriple,277.390,K,N/A,"Messerly, Todd, et al., 1990",Crystal phase 1 phase; Uncertainty assigned by TRC =  0.003 K;TRC
+1-Hexadecene,629-73-2,Ttriple,277.51,K,N/A,"McCullough, Finke, et al., 1957",Uncertainty assigned by TRC =  0.05 K;TRC
+1-Hexadecene,629-73-2,Ttriple,277.30,K,N/A,"Waddington, 1951",Uncertainty assigned by TRC =  0.15 K;TRC
+1-Hexadecene,629-73-2,Ttriple,277.45,K,N/A,"Waddington, 1951",Uncertainty assigned by TRC =  0.05 K;TRC
+1-Hexadecene,629-73-2,Quantity,Value,Units,Method,Reference,Comment
+1-Hexadecene,629-73-2,ΔvapH°,80.2 ± 0.2,kJ/mol,AVG,N/A,Average of 6 values;Individual data points
+Adamantane,281-23-2,Tfus,552.,K,N/A,"Andrews, Carpenter, et al., 1978",Crystal phase 1 phase; Uncertainty assigned by TRC =  3. K;TRC
+Adamantane,281-23-2,Tfus,542.15,K,N/A,"Mair, Shamaiengar, et al., 1959",Uncertainty assigned by TRC =  1. K;TRC
+Adamantane,281-23-2,Quantity,Value,Units,Method,Reference,Comment
+Adamantane,281-23-2,ΔvapH°,48.2,kJ/mol,GC,"van Roon, Parsons, et al., 2002",AC
+Adamantane,281-23-2,ΔvapH°,51.7,kJ/mol,CGC,"Chickos, Hosseini, et al., 1995",Based on data from 403. to 453. K.;AC
+Adamantane,281-23-2,Quantity,Value,Units,Method,Reference,Comment
+Adamantane,281-23-2,ΔsubH°,59. ± 4.,kJ/mol,AVG,N/A,Average of 18 values;Individual data points
+Heptylcyclohexane,5617-41-4,Tboil,510.,K,N/A,"Schlenk, 1951",Uncertainty assigned by TRC =  4. K;TRC
+Heptylcyclohexane,5617-41-4,Quantity,Value,Units,Method,Reference,Comment
+Heptylcyclohexane,5617-41-4,Tfus,232.,K,N/A,"Schmidt, 1942",Uncertainty assigned by TRC =  1.5 K;TRC
+Heptylcyclohexane,5617-41-4,Quantity,Value,Units,Method,Reference,Comment
+Heptylcyclohexane,5617-41-4,Ttriple,232.8,K,N/A,"Parks, Moore, et al., 1949",Uncertainty assigned by TRC =  0.2 K;TRC
+Heptylcyclohexane,5617-41-4,Quantity,Value,Units,Method,Reference,Comment
+Heptylcyclohexane,5617-41-4,ΔvapH°,63.72 ± 0.54,kJ/mol,C,"Fuchs and Peacock, 1978",ALS
+Heptylcyclohexane,5617-41-4,ΔvapH°,64.9,kJ/mol,N/A,"Reid, 1972",AC
+Octylcyclohexane,1795-15-9,Tboil,528.,K,N/A,"Schlenk, 1951",Uncertainty assigned by TRC =  3. K;TRC
+Octylcyclohexane,1795-15-9,Quantity,Value,Units,Method,Reference,Comment
+Octylcyclohexane,1795-15-9,Tfus,252.75,K,N/A,"Anonymous, 1968",Uncertainty assigned by TRC =  0.5 K;TRC
+Octylcyclohexane,1795-15-9,Quantity,Value,Units,Method,Reference,Comment
+Octylcyclohexane,1795-15-9,ΔvapH°,69.8,kJ/mol,N/A,"Reid, 1972",AC
+Nonylcyclohexane,2883-02-5,Tboil,545.,K,N/A,"Schlenk, 1951",Uncertainty assigned by TRC =  3. K;TRC
+Nonylcyclohexane,2883-02-5,Tboil,554.7,K,N/A,"Smith and Pennekamp, 1945",Uncertainty assigned by TRC =  0.6 K;TRC
+Nonylcyclohexane,2883-02-5,Quantity,Value,Units,Method,Reference,Comment
+Nonylcyclohexane,2883-02-5,ΔvapH°,74.7,kJ/mol,N/A,"Reid, 1972",AC
+"2,2,4,6,6-Pentamethylheptane",13475-82-6,Tboil,451. ± 2.,K,AVG,N/A,Average of 8 values;Individual data points
+"2,2,4,6,6-Pentamethylheptane",13475-82-6,Quantity,Value,Units,Method,Reference,Comment
+"2,2,4,6,6-Pentamethylheptane",13475-82-6,Tfus,206. ± 3.,K,AVG,N/A,Average of 9 values;Individual data points
+"2,2,4,6,6-Pentamethylheptane",13475-82-6,Quantity,Value,Units,Method,Reference,Comment
+"2,2,4,6,6-Pentamethylheptane",13475-82-6,ΔvapH°,48.97,kJ/mol,N/A,"Majer and Svoboda, 1985",
+"2,2,4,6,6-Pentamethylheptane",13475-82-6,ΔvapH°,49.0 ± 0.2,kJ/mol,C,"Melaugh, Mansson, et al., 1976",AC
+Farnesane,3891-98-3,Tboil,525.1,K,N/A,"Anonymous, 1962",Uncertainty assigned by TRC =  0.5 K
+Pristane,1921-70-6,Tfus,173.2,K,N/A,"Sorensen and Sorensen, 1949",Uncertainty assigned by TRC =  10. K;TRC

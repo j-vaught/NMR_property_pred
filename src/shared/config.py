@@ -2,7 +2,25 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 
-ROOT = Path("/Users/user/Downloads/untitled folder")
+import os
+
+def _find_root() -> Path:
+    """Find project root — works on both local Mac and Comech server."""
+    # Check environment variable first
+    env_root = os.environ.get("NMR_PROJECT_ROOT")
+    if env_root:
+        return Path(env_root)
+    # Check common locations
+    candidates = [
+        Path("/Users/user/Downloads/untitled folder"),  # Mac
+        Path.home() / "NMR_property_pred",  # Comech server
+    ]
+    for p in candidates:
+        if (p / "src").exists():
+            return p
+    return Path.cwd()
+
+ROOT = _find_root()
 
 
 @dataclass

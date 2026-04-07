@@ -1,0 +1,4 @@
+fuel_name,POSF_number,fuel_type,total_aromatics_wt_pct,total_nparaffins_wt_pct,total_isoparaffins_wt_pct,total_monocycloparaffins_wt_pct,total_dicycloparaffins_wt_pct,H_content_wt_pct,MW_gmol
+JP-8 (A-1),10264,JP-8,13.56,26.05,37.47,19.41,3.39,14.4,152
+Jet A (A-2),10325,Jet A,18.53,19.98,29.61,25.08,6.56,14.0,159
+JP-5 (A-3),10289,JP-5,20.36,13.35,21.92,30.25,17.02,13.7,166

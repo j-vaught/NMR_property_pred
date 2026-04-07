@@ -1,0 +1,75 @@
+CAS,Name,T_min_K,T_max_K,n_points,has_viscosity,has_surface_tension
+C431890,"1,1,1,2,3,3,3-Heptafluoropropane (R227ea)",146.3,374.9,601,True,True
+C431630,"1,1,1,2,3,3-Hexafluoropropane (R236ea)",242.6,412.3,596,True,True
+C690391,"1,1,1,3,3,3-Hexafluoropropane (R236fa)",179.6,398.1,599,True,True
+C460731,"1,1,1,3,3-Pentafluoropropane (R245fa)",170.0,427.0,601,True,True
+C679867,"1,1,2,2,3-Pentafluoropropane (R245ca)",196.0,447.6,601,True,True
+C76131,"1,1,2-Trichloro-1,2,2-trifluoroethane (R113)",236.9,487.2,601,True,True
+C1717006,"1,1-Dichloro-1-fluoroethane (R141b)",169.7,477.5,601,True,True
+C76142,"1,2-Dichloro-1,1,2,2-tetrafluoroethane (R114)",274.4,418.8,583,True,True
+C75683,"1-Chloro-1,1-difluoroethane (R142b)",142.7,410.3,601,True,True
+C463821,"2,2-Dimethylpropane",256.6,433.7,601,True,True
+C78784,2-Methylbutane,237.6,460.4,600,True,True
+C107835,2-Methylpentane,262.5,497.5,599,True,True
+C7664417,Ammonia,195.5,405.6,601,True,True
+C7440371,Argon,83.8,150.7,601,True,True
+C71432,Benzene,278.7,562.0,601,True,True
+C106978,Butane,134.9,425.1,601,True,True
+C124389,Carbon dioxide,216.6,304.1,601,True,True
+C630080,Carbon monoxide,68.2,132.8,600,True,True
+C463581,Carbonyl sulfide,134.3,378.7,600,True,True
+C76153,Chloropentafluoroethane (R115),173.8,353.1,601,True,True
+C75729,Chlorotrifluoromethane (R13),152.3,302.0,600,True,True
+C110827,Cyclohexane,279.9,553.6,601,True,True
+C75194,Cyclopropane,273.1,398.2,562,True,True
+C355259,Decafluorobutane,144.0,386.3,601,True,True
+C124185,Decane,243.5,617.6,600,True,True
+C7782390,Deuterium,18.7,38.3,601,True,True
+C7789200,Deuterium oxide,277.0,643.9,601,True,True
+C75718,Dichlorodifluoromethane (R12),116.1,385.1,601,True,True
+C75434,Dichlorofluoromethane (R21),231.6,451.3,599,True,True
+C10024972,Dinitrogen monoxide,182.3,309.5,601,True,True
+C678262,Dodecafluoropentane,148.2,421.0,601,True,True
+C112403,Dodecane,263.6,658.0,600,True,True
+C74840,Ethane,90.4,305.3,601,True,True
+C811972,"Ethane, 1,1,1,2-tetrafluoro- (R134a)",169.8,374.2,601,True,True
+C420462,"Ethane, 1,1,1-trifluoro- (R143a)",161.3,345.8,600,True,True
+C75376,"Ethane, 1,1-difluoro- (R152a)",154.6,386.4,601,True,True
+C2837890,"Ethane, 1-chloro-1,2,2,2-tetrafluoro- (R124)",209.5,395.4,600,True,True
+C306832,"Ethane, 2,2-dichloro-1,1,1-trifluoro- (R123)",166.0,456.8,601,True,True
+C354336,"Ethane, pentafluoro- (R125)",172.5,339.2,601,True,True
+C74851,Ethene,104.0,282.4,601,True,True
+C7782414,Fluorine,53.5,144.1,600,True,True
+C593533,Fluoromethane (R41),129.8,317.1,600,True,True
+C7440597,Helium,2.2,5.2,601,True,True
+C142825,Heptane,182.6,540.2,601,True,True
+C76164,Hexafluoroethane (R116),173.1,293.0,600,True,True
+C110543,Hexane,177.8,507.8,601,True,True
+C1333740,Hydrogen,14.0,33.1,601,True,True
+C7783064,Hydrogen sulfide,187.7,373.0,600,True,True
+C75285,Isobutane,113.7,407.8,601,True,True
+C7439909,Krypton,115.8,209.5,601,True,True
+C74828,Methane,90.7,190.6,601,True,True
+C75456,"Methane, chlorodifluoro- (R22)",190.1,369.3,600,True,True
+C75105,"Methane, difluoro- (R32)",136.3,351.2,600,True,True
+C67561,Methanol,293.8,512.6,600,True,True
+C7440019,Neon,24.6,44.4,601,True,True
+C7727379,Nitrogen,63.2,126.2,601,True,True
+C7783542,Nitrogen trifluoride,115.1,234.0,600,False,True
+C111842,Nonane,219.7,594.4,600,True,True
+C115253,Octafluorocyclobutane (RC318),233.3,388.3,600,True,True
+C76197,Octafluoropropane (R218),125.5,345.0,601,True,True
+C111659,Octane,216.4,568.7,601,True,True
+C7782447,Oxygen,54.4,154.6,601,True,True
+C109660,Pentane,143.5,469.7,601,True,True
+C74986,Propane,184.4,369.9,600,True,True
+C115071,Propene,181.2,364.2,600,True,True
+C74997,Propyne,273.9,402.3,571,True,True
+C7446095,Sulfur dioxide,197.7,430.6,601,True,True
+C2551624,Sulfur hexafluoride,223.6,318.7,601,True,True
+C75730,Tetrafluoromethane (R14),121.0,227.2,598,True,True
+C108883,Toluene,178.0,591.8,601,True,True
+C75694,Trichlorofluoromethane (R11),162.7,471.1,601,True,True
+C75467,Trifluoromethane (R23),118.0,299.3,601,True,True
+C7732185,Water,273.2,647.1,601,True,True
+C7440633,Xenon,161.4,289.7,601,True,True
