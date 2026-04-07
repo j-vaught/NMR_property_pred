@@ -1,0 +1,41 @@
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Build/compilation
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Large data files (tracked in DATA_DOCUMENTATION)
+data/nmr/nmrexp/
+data/nmr/nmrshiftdb/
+data/nmr/pubchem/
+data/thermo/thermoml/ThermoML.v2020-09-30.tgz
+data/thermo/ilthermo/viscosity/
+data/thermo/ilthermo/surface_tension/
+data/thermo/nist_webbook/*.html
+data/thermo/ddb_free/SETUP_TDE_Free_10.4.5.zip
+
+# Model checkpoints (large)
+*.pth
+*.pt
+outputs/
+
+# Temporary
+*.progress
+/tmp/
