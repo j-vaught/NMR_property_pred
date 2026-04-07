@@ -1,0 +1,104 @@
+============================================================
+  PHASE 1 DIRECT OPTIMAL
+  All compounds, T as input, Lasso + Huber + 5-fold + ensemble
+============================================================
+
+############################################################
+  VISCOSITY — Direct Optimal
+  5-fold CV, 5 ensemble, Lasso α=0.1
+############################################################
+[17:10:30] WARNING: not removing hydrogen atom without neighbors
+[Features] 1223 compounds, 1696 dims
+[17:10:30] WARNING: not removing hydrogen atom without neighbors
+[Labels viscosity] 21390 rows, 1767 compounds
+[17:10:31] WARNING: not removing hydrogen atom without neighbors
+[Joined] 856 compounds (159 HC), 10908 rows
+
+--- Fold 1/5 (train=684 cpds, test=172 cpds) ---
+[Lasso] 37 features selected from 1696
+  log R²=0.474 | Real R²=0.157 MAPE=1566.1% | HC R²=0.695 MAPE=99.8% (480 pts)
+
+--- Fold 2/5 (train=685 cpds, test=171 cpds) ---
+[Lasso] 31 features selected from 1696
+  log R²=0.643 | Real R²=0.296 MAPE=946.7% | HC R²=0.762 MAPE=798.8% (401 pts)
+
+--- Fold 3/5 (train=685 cpds, test=171 cpds) ---
+[Lasso] 38 features selected from 1696
+  log R²=0.730 | Real R²=0.028 MAPE=962.9% | HC R²=0.684 MAPE=505.7% (473 pts)
+
+--- Fold 4/5 (train=685 cpds, test=171 cpds) ---
+[Lasso] 22 features selected from 1696
+  log R²=0.695 | Real R²=0.054 MAPE=1502.2% | HC R²=0.743 MAPE=1172.1% (376 pts)
+
+--- Fold 5/5 (train=685 cpds, test=171 cpds) ---
+[Lasso] 28 features selected from 1696
+  log R²=0.648 | Real R²=0.234 MAPE=3383.6% | HC R²=0.633 MAPE=442.8% (461 pts)
+
+============================================================
+  VISCOSITY SUMMARY (3907s)
+============================================================
+
+  Standardized:
+    r2: 0.6381 ± 0.0880
+    mape: 16.0130 ± 4.7517
+    rmse: 1.5379 ± 0.1300
+
+  Real units:
+    r2: 0.1536 ± 0.1023
+    mape: 1672.3093 ± 894.2351
+    rmse: 0.0707 ± 0.0652
+
+  HC only:
+    r2: 0.7033 ± 0.0458
+    mape: 603.8256 ± 360.7133
+    rmse: 0.0005 ± 0.0002
+
+############################################################
+  SURFACE_TENSION — Direct Optimal
+  5-fold CV, 5 ensemble, Lasso α=0.1
+############################################################
+[Features] 1223 compounds, 1696 dims
+[18:15:38] Explicit valence for atom # 0 B, 4, is greater than permitted
+[Labels surface_tension] 13337 rows, 1161 compounds
+[Joined] 713 compounds (134 HC), 8392 rows
+
+--- Fold 1/5 (train=570 cpds, test=143 cpds) ---
+[Lasso] 26 features selected from 1696
+  N/m R²=0.868 | Real R²=0.868 MAPE=48.9% | HC R²=0.980 MAPE=40.6% (232 pts)
+
+--- Fold 2/5 (train=570 cpds, test=143 cpds) ---
+[Lasso] 25 features selected from 1696
+  N/m R²=0.106 | Real R²=0.106 MAPE=58.1% | HC R²=0.853 MAPE=41.8% (316 pts)
+
+--- Fold 3/5 (train=570 cpds, test=143 cpds) ---
+[Lasso] 24 features selected from 1696
+  N/m R²=0.606 | Real R²=0.607 MAPE=35.2% | HC R²=0.683 MAPE=28.0% (491 pts)
+
+--- Fold 4/5 (train=571 cpds, test=142 cpds) ---
+[Lasso] 30 features selected from 1696
+  N/m R²=0.587 | Real R²=0.588 MAPE=444.6% | HC R²=0.373 MAPE=429.3% (310 pts)
+
+--- Fold 5/5 (train=571 cpds, test=142 cpds) ---
+[Lasso] 24 features selected from 1696
+  N/m R²=0.620 | Real R²=0.620 MAPE=110.2% | HC R²=0.227 MAPE=323.3% (376 pts)
+
+============================================================
+  SURFACE_TENSION SUMMARY (2696s)
+============================================================
+
+  Standardized:
+    r2: 0.5575 ± 0.2478
+    mape: 229.2353 ± 139.1059
+    rmse: 0.0089 ± 0.0041
+
+  Real units:
+    r2: 0.5579 ± 0.2479
+    mape: 139.3906 ± 154.7106
+    rmse: 0.0089 ± 0.0041
+
+  HC only:
+    r2: 0.6231 ± 0.2840
+    mape: 172.6167 ± 169.7555
+    rmse: 0.0056 ± 0.0026
+
+Results saved to /home/j-vaught/NMR_property_pred/src/phase1/outputs/direct_optimal_results.json
