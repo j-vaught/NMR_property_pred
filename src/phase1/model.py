@@ -47,43 +47,20 @@ class PropertyHead(nn.Module):
         return self.net(x)
 
 
-class ArrheniusMultiTaskModel(nn.Module):
-    """Predicts Arrhenius [A, B] coefficients for viscosity and [A, B] for surface tension."""
-
-    def __init__(self, fp_dim: int = 2048, encoder_layers: list[int] = None,
-                 dropout: float = 0.3):
-        super().__init__()
-        if encoder_layers is None:
-            encoder_layers = [fp_dim, 512, 256, 128]
-        else:
-            encoder_layers = [fp_dim] + encoder_layers
-
-        self.encoder = SharedEncoder(encoder_layers, dropout=dropout)
-        embed_dim = encoder_layers[-1]
-        self.visc_head = PropertyHead(embed_dim, 2, hidden=64, dropout=0.2)
-        self.st_head = PropertyHead(embed_dim, 2, hidden=64, dropout=0.2)
-
-    def forward(self, fp):
-        z = self.encoder(fp)
-        return self.visc_head(z), self.st_head(z)
-
-
 class DirectMultiTaskModel(nn.Module):
-    """Predicts property values directly, with temperature as input."""
-
     def __init__(self, fp_dim: int = 2048, t_feature_dim: int = 3,
                  encoder_layers: list[int] = None, dropout: float = 0.3):
         super().__init__()
         if encoder_layers is None:
-            encoder_layers = [fp_dim, 512, 256, 128]
+            encoder_layers = [fp_dim, 256, 128, 64]
         else:
             encoder_layers = [fp_dim] + encoder_layers
 
         self.encoder = SharedEncoder(encoder_layers, dropout=dropout)
         embed_dim = encoder_layers[-1]
         head_in = embed_dim + t_feature_dim
-        self.visc_head = PropertyHead(head_in, 1, hidden=64, dropout=0.2)
-        self.st_head = PropertyHead(head_in, 1, hidden=64, dropout=0.2)
+        self.visc_head = PropertyHead(head_in, 1, hidden=32, dropout=0.2)
+        self.st_head = PropertyHead(head_in, 1, hidden=32, dropout=0.2)
 
     def forward(self, fp, t_features):
         z = self.encoder(fp)
@@ -91,22 +68,39 @@ class DirectMultiTaskModel(nn.Module):
         return self.visc_head(z_t), self.st_head(z_t)
 
 
+class SingleTaskModel(nn.Module):
+    def __init__(self, fp_dim: int = 2048, t_feature_dim: int = 3,
+                 encoder_layers: list[int] = None, dropout: float = 0.3):
+        super().__init__()
+        if encoder_layers is None:
+            encoder_layers = [fp_dim, 256, 128, 64]
+        else:
+            encoder_layers = [fp_dim] + encoder_layers
+
+        self.encoder = SharedEncoder(encoder_layers, dropout=dropout)
+        embed_dim = encoder_layers[-1]
+        head_in = embed_dim + t_feature_dim
+        self.head = PropertyHead(head_in, 1, hidden=32, dropout=0.2)
+
+    def forward(self, fp, t_features):
+        z = self.encoder(fp)
+        z_t = torch.cat([z, t_features], dim=1)
+        return self.head(z_t)
+
+
 def count_parameters(model: nn.Module) -> int:
     return sum(p.numel() for p in model.parameters() if p.requires_grad)
 
 
 if __name__ == "__main__":
-    arr_model = ArrheniusMultiTaskModel()
-    direct_model = DirectMultiTaskModel()
-
-    print(f"Arrhenius model: {count_parameters(arr_model):,} parameters")
-    print(f"Direct model:    {count_parameters(direct_model):,} parameters")
+    direct = DirectMultiTaskModel()
+    single = SingleTaskModel()
+    print(f"Multi-task model: {count_parameters(direct):,} parameters")
+    print(f"Single-task model: {count_parameters(single):,} parameters")
 
     fp = torch.randn(4, 2048)
     t = torch.randn(4, 3)
-
-    v_arr, s_arr = arr_model(fp)
-    print(f"Arrhenius output: visc {v_arr.shape}, ST {s_arr.shape}")
-
-    v_dir, s_dir = direct_model(fp, t)
-    print(f"Direct output: visc {v_dir.shape}, ST {s_dir.shape}")
+    v, s = direct(fp, t)
+    print(f"Multi-task: visc {v.shape}, ST {s.shape}")
+    y = single(fp, t)
+    print(f"Single-task: {y.shape}")

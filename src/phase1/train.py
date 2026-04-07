@@ -12,10 +12,10 @@ from torch.utils.data import DataLoader, TensorDataset
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from shared.config import Paths, DataConfig, SplitConfig, ModelConfig, TrainConfig
-from shared.data_utils import fit_arrhenius, fit_linear_st, make_temperature_features
+from shared.data_utils import make_temperature_features
 from shared.metrics import compute_all_metrics
 from phase1.data_pipeline import build_dataset
-from phase1.model import ArrheniusMultiTaskModel, DirectMultiTaskModel, count_parameters
+from phase1.model import DirectMultiTaskModel, SingleTaskModel, count_parameters
 
 
 def set_seed(seed: int):
@@ -26,35 +26,73 @@ def set_seed(seed: int):
         torch.cuda.manual_seed_all(seed)
 
 
-def build_direct_tensors(
-    fp_df, visc_df, st_df, compound_list, scaler_visc=None, scaler_st=None
-):
-    fps, t_feats, y_visc, y_st, mask_visc, mask_st = [], [], [], [], [], []
+def build_single_task_tensors(fp_df, prop_df, compound_list, scaler=None):
+    """Build tensors for a single property. One row per (compound, T) measurement."""
+    sub = prop_df[prop_df["canonical_smiles"].isin(compound_list)]
+    sub = sub[sub["canonical_smiles"].isin(fp_df.index)]
 
-    visc_sub = visc_df[visc_df["canonical_smiles"].isin(compound_list)]
-    st_sub = st_df[st_df["canonical_smiles"].isin(compound_list)]
+    fps = []
+    t_feats = []
+    targets = []
 
-    for _, row in visc_sub.iterrows():
+    for _, row in sub.iterrows():
         smi = row["canonical_smiles"]
-        if smi not in fp_df.index:
-            continue
         fp = fp_df.loc[smi].values
         t = make_temperature_features(np.array([row["T_K"]]))[0]
         fps.append(fp)
         t_feats.append(t)
-        y_visc.append(np.log(row["value"]))
+        targets.append(row["value"])
+
+    if len(fps) == 0:
+        return None
+
+    fps = np.array(fps, dtype=np.float32)
+    t_feats = np.array(t_feats, dtype=np.float32)
+    targets = np.array(targets, dtype=np.float32).reshape(-1, 1)
+
+    if scaler is None:
+        scaler = StandardScaler()
+        targets = scaler.fit_transform(targets)
+    else:
+        targets = scaler.transform(targets)
+
+    return (
+        torch.tensor(fps),
+        torch.tensor(t_feats),
+        torch.tensor(targets, dtype=torch.float32),
+        scaler,
+    )
+
+
+def build_multitask_tensors(fp_df, visc_df, st_df, compound_list,
+                            scaler_visc=None, scaler_st=None):
+    """Build tensors where compounds with both properties at same T share a row."""
+    visc_sub = visc_df[visc_df["canonical_smiles"].isin(compound_list)]
+    visc_sub = visc_sub[visc_sub["canonical_smiles"].isin(fp_df.index)]
+    st_sub = st_df[st_df["canonical_smiles"].isin(compound_list)]
+    st_sub = st_sub[st_sub["canonical_smiles"].isin(fp_df.index)]
+
+    # Transform viscosity to log scale
+    visc_sub = visc_sub.copy()
+    visc_sub["log_value"] = np.log(visc_sub["value"])
+
+    fps, t_feats = [], []
+    y_visc, y_st = [], []
+    mask_visc, mask_st = [], []
+
+    # Viscosity rows
+    for _, row in visc_sub.iterrows():
+        fps.append(fp_df.loc[row["canonical_smiles"]].values)
+        t_feats.append(make_temperature_features(np.array([row["T_K"]]))[0])
+        y_visc.append(row["log_value"])
         y_st.append(0.0)
         mask_visc.append(True)
         mask_st.append(False)
 
+    # Surface tension rows
     for _, row in st_sub.iterrows():
-        smi = row["canonical_smiles"]
-        if smi not in fp_df.index:
-            continue
-        fp = fp_df.loc[smi].values
-        t = make_temperature_features(np.array([row["T_K"]]))[0]
-        fps.append(fp)
-        t_feats.append(t)
+        fps.append(fp_df.loc[row["canonical_smiles"]].values)
+        t_feats.append(make_temperature_features(np.array([row["T_K"]]))[0])
         y_visc.append(0.0)
         y_st.append(row["value"])
         mask_visc.append(False)
@@ -80,132 +118,82 @@ def build_direct_tensors(
         y_st[mask_st] = scaler_st.transform(y_st[mask_st])
 
     return (
-        torch.tensor(fps),
-        torch.tensor(t_feats),
-        torch.tensor(y_visc),
-        torch.tensor(y_st),
-        torch.tensor(mask_visc),
-        torch.tensor(mask_st),
-        scaler_visc,
-        scaler_st,
-    )
-
-
-def build_arrhenius_tensors(
-    fp_df, visc_df, st_df, compound_list, data_config,
-    scaler_visc=None, scaler_st=None
-):
-    visc_sub = visc_df[visc_df["canonical_smiles"].isin(compound_list)]
-    st_sub = st_df[st_df["canonical_smiles"].isin(compound_list)]
-
-    visc_targets = {}
-    for smi, group in visc_sub.groupby("canonical_smiles"):
-        if len(group) < data_config.min_points_per_compound:
-            continue
-        A, B, r2 = fit_arrhenius(group["T_K"].values, group["value"].values)
-        if r2 >= data_config.arrhenius_r2_threshold:
-            visc_targets[smi] = (A, B)
-
-    st_targets = {}
-    for smi, group in st_sub.groupby("canonical_smiles"):
-        if len(group) < data_config.min_points_per_compound:
-            continue
-        A, B, r2 = fit_linear_st(group["T_K"].values, group["value"].values)
-        if r2 >= data_config.arrhenius_r2_threshold:
-            st_targets[smi] = (A, B)
-
-    all_smiles = sorted(set(visc_targets) | set(st_targets))
-    all_smiles = [s for s in all_smiles if s in fp_df.index]
-
-    fps, y_visc, y_st, mask_visc, mask_st = [], [], [], [], []
-    for smi in all_smiles:
-        fps.append(fp_df.loc[smi].values)
-        if smi in visc_targets:
-            y_visc.append(list(visc_targets[smi]))
-            mask_visc.append(True)
-        else:
-            y_visc.append([0.0, 0.0])
-            mask_visc.append(False)
-        if smi in st_targets:
-            y_st.append(list(st_targets[smi]))
-            mask_st.append(True)
-        else:
-            y_st.append([0.0, 0.0])
-            mask_st.append(False)
-
-    fps = np.array(fps, dtype=np.float32)
-    y_visc = np.array(y_visc, dtype=np.float32)
-    y_st = np.array(y_st, dtype=np.float32)
-    mask_visc = np.array(mask_visc, dtype=bool)
-    mask_st = np.array(mask_st, dtype=bool)
-
-    if scaler_visc is None:
-        scaler_visc = StandardScaler()
-        if mask_visc.any():
-            y_visc[mask_visc] = scaler_visc.fit_transform(y_visc[mask_visc])
-    else:
-        if mask_visc.any():
-            y_visc[mask_visc] = scaler_visc.transform(y_visc[mask_visc])
-
-    if scaler_st is None:
-        scaler_st = StandardScaler()
-        if mask_st.any():
-            y_st[mask_st] = scaler_st.fit_transform(y_st[mask_st])
-    else:
-        if mask_st.any():
-            y_st[mask_st] = scaler_st.transform(y_st[mask_st])
-
-    return (
-        torch.tensor(fps),
-        torch.tensor(y_visc),
-        torch.tensor(y_st),
-        torch.tensor(mask_visc),
-        torch.tensor(mask_st),
-        scaler_visc,
-        scaler_st,
+        torch.tensor(fps), torch.tensor(t_feats),
+        torch.tensor(y_visc), torch.tensor(y_st),
+        torch.tensor(mask_visc), torch.tensor(mask_st),
+        scaler_visc, scaler_st,
     )
 
 
 def masked_mse(pred, target, mask):
     if not mask.any():
-        return torch.tensor(0.0, device=pred.device)
+        return torch.tensor(0.0, device=pred.device, requires_grad=True)
     return nn.functional.mse_loss(pred[mask], target[mask])
 
 
-def train_direct(dataset: dict, model_config: ModelConfig, train_config: TrainConfig):
+def get_device():
+    if torch.cuda.is_available():
+        return torch.device("cuda")
+    if hasattr(torch.backends, "mps") and torch.backends.mps.is_available():
+        return torch.device("mps")
+    return torch.device("cpu")
+
+
+def train_single_task(dataset, property_name, train_config):
+    """Train a single-task model for viscosity or surface tension."""
     set_seed(train_config.seed)
-    device = torch.device("cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu")
-    print(f"Using device: {device}")
+    device = get_device()
+    print(f"\n{'='*60}")
+    print(f"SINGLE TASK: {property_name}")
+    print(f"Device: {device}")
+    print(f"{'='*60}")
 
     fp_df = dataset["fp_df"]
-    visc_df = dataset["visc_df"]
-    st_df = dataset["st_df"]
+    prop_df = dataset["visc_df"] if property_name == "viscosity" else dataset["st_df"]
     splits = dataset["splits"]
 
-    train_data = build_direct_tensors(fp_df, visc_df, st_df, splits["train"])
-    fps_tr, t_tr, yv_tr, ys_tr, mv_tr, ms_tr, sc_v, sc_s = train_data
+    # Transform viscosity to log scale
+    if property_name == "viscosity":
+        prop_df = prop_df.copy()
+        prop_df["value"] = np.log(prop_df["value"])
 
-    val_data = build_direct_tensors(fp_df, visc_df, st_df, splits["val"], sc_v, sc_s)
-    fps_val, t_val, yv_val, ys_val, mv_val, ms_val, _, _ = val_data
+    train_data = build_single_task_tensors(fp_df, prop_df, splits["train"])
+    if train_data is None:
+        print(f"No training data for {property_name}")
+        return None
+    fps_tr, t_tr, y_tr, scaler = train_data
 
-    train_ds = TensorDataset(fps_tr, t_tr, yv_tr, ys_tr, mv_tr, ms_tr)
-    train_loader = DataLoader(train_ds, batch_size=train_config.batch_size, shuffle=True, drop_last=False)
+    val_data = build_single_task_tensors(fp_df, prop_df, splits["val"], scaler)
+    if val_data is None:
+        print(f"No validation data for {property_name}")
+        return None
+    fps_val, t_val, y_val, _ = val_data
 
-    model = DirectMultiTaskModel(
+    print(f"Train: {len(fps_tr)} rows, Val: {len(fps_val)} rows")
+
+    train_ds = TensorDataset(fps_tr, t_tr, y_tr)
+    train_loader = DataLoader(train_ds, batch_size=train_config.batch_size, shuffle=True)
+
+    model = SingleTaskModel(
         fp_dim=fps_tr.shape[1],
         t_feature_dim=t_tr.shape[1],
-        encoder_layers=model_config.encoder_layers[1:],
-        dropout=model_config.dropout,
+        dropout=0.3,
     ).to(device)
-
-    print(f"Model parameters: {count_parameters(model):,}")
+    print(f"Parameters: {count_parameters(model):,}")
 
     optimizer = torch.optim.AdamW(model.parameters(), lr=train_config.lr, weight_decay=train_config.weight_decay)
+    warmup_epochs = 10
+    def lr_lambda(epoch):
+        if epoch < warmup_epochs:
+            return (epoch + 1) / warmup_epochs
+        progress = (epoch - warmup_epochs) / max(1, train_config.epochs - warmup_epochs)
+        return max(train_config.lr_min / train_config.lr, 0.5 * (1 + np.cos(np.pi * progress)))
 
-    if train_config.lr_scheduler == "cosine":
-        scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=train_config.epochs, eta_min=train_config.lr_min)
-    else:
-        scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, patience=10, factor=0.5)
+    scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lr_lambda)
+
+    fps_val_d = fps_val.to(device)
+    t_val_d = t_val.to(device)
+    y_val_d = y_val.to(device)
 
     best_val_loss = float("inf")
     patience_counter = 0
@@ -214,149 +202,284 @@ def train_direct(dataset: dict, model_config: ModelConfig, train_config: TrainCo
     output_dir = Paths().outputs
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    fps_val_d = fps_val.to(device)
-    t_val_d = t_val.to(device)
-    yv_val_d = yv_val.to(device)
-    ys_val_d = ys_val.to(device)
-
     t0 = time.time()
     for epoch in range(train_config.epochs):
         model.train()
         epoch_loss = 0.0
         n_batches = 0
-
-        for batch in train_loader:
-            fp_b, t_b, yv_b, ys_b, mv_b, ms_b = [x.to(device) for x in batch]
+        for fp_b, t_b, y_b in train_loader:
+            fp_b, t_b, y_b = fp_b.to(device), t_b.to(device), y_b.to(device)
             optimizer.zero_grad()
-
-            pred_v, pred_s = model(fp_b, t_b)
-            loss_v = masked_mse(pred_v, yv_b, mv_b)
-            loss_s = masked_mse(pred_s, ys_b, ms_b)
-            loss = train_config.viscosity_weight * loss_v + train_config.surface_tension_weight * loss_s
-
+            pred = model(fp_b, t_b)
+            loss = nn.functional.mse_loss(pred, y_b)
             loss.backward()
             torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
             optimizer.step()
-
             epoch_loss += loss.item()
             n_batches += 1
 
-        avg_train_loss = epoch_loss / max(n_batches, 1)
+        avg_train = epoch_loss / max(n_batches, 1)
+        scheduler.step()
 
         model.eval()
         with torch.no_grad():
-            pred_v_val, pred_s_val = model(fps_val_d, t_val_d)
-            val_loss_v = masked_mse(pred_v_val, yv_val_d, mv_val.to(device))
-            val_loss_s = masked_mse(pred_s_val, ys_val_d, ms_val.to(device))
-            val_loss = (train_config.viscosity_weight * val_loss_v + train_config.surface_tension_weight * val_loss_s).item()
+            pred_val = model(fps_val_d, t_val_d)
+            val_loss = nn.functional.mse_loss(pred_val, y_val_d).item()
 
-        current_lr = optimizer.param_groups[0]["lr"]
-        history["train_loss"].append(avg_train_loss)
+        history["train_loss"].append(avg_train)
         history["val_loss"].append(val_loss)
-        history["lr"].append(current_lr)
-
-        if isinstance(scheduler, torch.optim.lr_scheduler.ReduceLROnPlateau):
-            scheduler.step(val_loss)
-        else:
-            scheduler.step()
+        history["lr"].append(optimizer.param_groups[0]["lr"])
 
         if val_loss < best_val_loss:
             best_val_loss = val_loss
             patience_counter = 0
             torch.save({
                 "model_state_dict": model.state_dict(),
+                "scaler_mean": scaler.mean_.tolist(),
+                "scaler_scale": scaler.scale_.tolist(),
                 "epoch": epoch,
                 "val_loss": val_loss,
+                "property": property_name,
+            }, output_dir / f"best_{property_name}_model.pt")
+        else:
+            patience_counter += 1
+
+        if (epoch + 1) % 20 == 0 or epoch == 0:
+            print(f"  Epoch {epoch+1:3d}/{train_config.epochs} | "
+                  f"train={avg_train:.4f} val={val_loss:.4f} | "
+                  f"lr={optimizer.param_groups[0]['lr']:.2e} | best={best_val_loss:.4f} | "
+                  f"{time.time()-t0:.0f}s")
+
+        if patience_counter >= train_config.patience:
+            print(f"  Early stopping at epoch {epoch+1}")
+            break
+
+    ckpt = torch.load(output_dir / f"best_{property_name}_model.pt", weights_only=False)
+    model.load_state_dict(ckpt["model_state_dict"])
+
+    # Evaluate on test set
+    test_data = build_single_task_tensors(fp_df, prop_df, splits["test"], scaler)
+    if test_data is not None:
+        fps_te, t_te, y_te, _ = test_data
+        model.eval()
+        with torch.no_grad():
+            pred_te = model(fps_te.to(device), t_te.to(device)).cpu().numpy()
+
+        y_true_scaled = y_te.numpy()
+        y_pred_scaled = pred_te
+
+        y_true = scaler.inverse_transform(y_true_scaled)
+        y_pred = scaler.inverse_transform(y_pred_scaled)
+
+        metrics_std = compute_all_metrics(y_true.flatten(), y_pred.flatten())
+        print(f"\n  Test ({property_name}, standardized space):")
+        for k, v in metrics_std.items():
+            print(f"    {k}: {v:.4f}")
+
+        if property_name == "viscosity":
+            y_true_exp = np.exp(y_true)
+            y_pred_exp = np.exp(y_pred)
+            metrics_exp = compute_all_metrics(y_true_exp.flatten(), y_pred_exp.flatten())
+            print(f"\n  Test (viscosity, Pa.s):")
+            for k, v in metrics_exp.items():
+                print(f"    {k}: {v:.4f}")
+
+    return model, scaler, history
+
+
+def train_multitask(dataset, train_config):
+    """Train multi-task model for both properties simultaneously."""
+    set_seed(train_config.seed)
+    device = get_device()
+    print(f"\n{'='*60}")
+    print(f"MULTI-TASK TRAINING")
+    print(f"Device: {device}")
+    print(f"{'='*60}")
+
+    fp_df = dataset["fp_df"]
+    splits = dataset["splits"]
+
+    train_data = build_multitask_tensors(fp_df, dataset["visc_df"], dataset["st_df"], splits["train"])
+    fps_tr, t_tr, yv_tr, ys_tr, mv_tr, ms_tr, sc_v, sc_s = train_data
+
+    val_data = build_multitask_tensors(fp_df, dataset["visc_df"], dataset["st_df"], splits["val"], sc_v, sc_s)
+    fps_val, t_val, yv_val, ys_val, mv_val, ms_val, _, _ = val_data
+
+    n_visc_tr = mv_tr.sum().item()
+    n_st_tr = ms_tr.sum().item()
+    print(f"Train: {len(fps_tr)} total rows ({n_visc_tr} visc, {n_st_tr} ST)")
+    print(f"Val: {len(fps_val)} total rows ({mv_val.sum().item()} visc, {ms_val.sum().item()} ST)")
+
+    train_ds = TensorDataset(fps_tr, t_tr, yv_tr, ys_tr, mv_tr, ms_tr)
+    train_loader = DataLoader(train_ds, batch_size=train_config.batch_size, shuffle=True)
+
+    model = DirectMultiTaskModel(
+        fp_dim=fps_tr.shape[1],
+        t_feature_dim=t_tr.shape[1],
+        dropout=0.3,
+    ).to(device)
+    print(f"Parameters: {count_parameters(model):,}")
+
+    optimizer = torch.optim.AdamW(model.parameters(), lr=train_config.lr, weight_decay=train_config.weight_decay)
+    warmup_epochs = 10
+    def lr_lambda(epoch):
+        if epoch < warmup_epochs:
+            return (epoch + 1) / warmup_epochs
+        progress = (epoch - warmup_epochs) / max(1, train_config.epochs - warmup_epochs)
+        return max(train_config.lr_min / train_config.lr, 0.5 * (1 + np.cos(np.pi * progress)))
+
+    scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lr_lambda)
+
+    # Balance loss weights inversely proportional to data size
+    visc_weight = 1.0
+    st_weight = n_visc_tr / max(n_st_tr, 1)
+    print(f"Loss weights: visc={visc_weight:.2f}, ST={st_weight:.2f}")
+
+    fps_val_d = fps_val.to(device)
+    t_val_d = t_val.to(device)
+    yv_val_d = yv_val.to(device)
+    ys_val_d = ys_val.to(device)
+    mv_val_d = mv_val.to(device)
+    ms_val_d = ms_val.to(device)
+
+    best_val_loss = float("inf")
+    patience_counter = 0
+    history = {"train_loss": [], "val_loss": [], "val_visc": [], "val_st": [], "lr": []}
+
+    output_dir = Paths().outputs
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    t0 = time.time()
+    for epoch in range(train_config.epochs):
+        model.train()
+        epoch_loss = 0.0
+        n_batches = 0
+        for batch in train_loader:
+            fp_b, t_b, yv_b, ys_b, mv_b, ms_b = [x.to(device) for x in batch]
+            optimizer.zero_grad()
+            pred_v, pred_s = model(fp_b, t_b)
+            loss_v = masked_mse(pred_v, yv_b, mv_b)
+            loss_s = masked_mse(pred_s, ys_b, ms_b)
+            loss = visc_weight * loss_v + st_weight * loss_s
+            loss.backward()
+            torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
+            optimizer.step()
+            epoch_loss += loss.item()
+            n_batches += 1
+
+        scheduler.step()
+        avg_train = epoch_loss / max(n_batches, 1)
+
+        model.eval()
+        with torch.no_grad():
+            pv, ps = model(fps_val_d, t_val_d)
+            vl_v = masked_mse(pv, yv_val_d, mv_val_d).item()
+            vl_s = masked_mse(ps, ys_val_d, ms_val_d).item()
+            val_loss = visc_weight * vl_v + st_weight * vl_s
+
+        history["train_loss"].append(avg_train)
+        history["val_loss"].append(val_loss)
+        history["val_visc"].append(vl_v)
+        history["val_st"].append(vl_s)
+        history["lr"].append(optimizer.param_groups[0]["lr"])
+
+        if val_loss < best_val_loss:
+            best_val_loss = val_loss
+            patience_counter = 0
+            torch.save({
+                "model_state_dict": model.state_dict(),
                 "scaler_visc_mean": sc_v.mean_.tolist(),
                 "scaler_visc_scale": sc_v.scale_.tolist(),
                 "scaler_st_mean": sc_s.mean_.tolist(),
                 "scaler_st_scale": sc_s.scale_.tolist(),
-                "model_config": {
-                    "fp_dim": fps_tr.shape[1],
-                    "t_feature_dim": t_tr.shape[1],
-                    "encoder_layers": model_config.encoder_layers[1:],
-                    "dropout": model_config.dropout,
-                },
-            }, output_dir / "best_direct_model.pt")
+                "epoch": epoch,
+                "val_loss": val_loss,
+            }, output_dir / "best_multitask_model.pt")
         else:
             patience_counter += 1
 
-        if (epoch + 1) % 10 == 0 or epoch == 0:
-            elapsed = time.time() - t0
-            print(f"Epoch {epoch+1:3d}/{train_config.epochs} | "
-                  f"train={avg_train_loss:.4f} val={val_loss:.4f} | "
-                  f"lr={current_lr:.2e} | best={best_val_loss:.4f} | "
-                  f"{elapsed:.0f}s")
+        if (epoch + 1) % 20 == 0 or epoch == 0:
+            print(f"  Epoch {epoch+1:3d}/{train_config.epochs} | "
+                  f"train={avg_train:.4f} val={val_loss:.4f} (v={vl_v:.4f} s={vl_s:.4f}) | "
+                  f"lr={optimizer.param_groups[0]['lr']:.2e} | best={best_val_loss:.4f} | "
+                  f"{time.time()-t0:.0f}s")
 
         if patience_counter >= train_config.patience:
-            print(f"Early stopping at epoch {epoch+1}")
+            print(f"  Early stopping at epoch {epoch+1}")
             break
 
-    with open(output_dir / "training_history.json", "w") as f:
-        json.dump(history, f)
+    ckpt = torch.load(output_dir / "best_multitask_model.pt", weights_only=False)
+    model.load_state_dict(ckpt["model_state_dict"])
 
-    checkpoint = torch.load(output_dir / "best_direct_model.pt", weights_only=False)
-    model.load_state_dict(checkpoint["model_state_dict"])
-
-    return model, sc_v, sc_s, history
-
-
-def evaluate_direct(model, fp_df, visc_df, st_df, test_compounds, scaler_visc, scaler_st, device):
-    test_data = build_direct_tensors(fp_df, visc_df, st_df, test_compounds, scaler_visc, scaler_st)
-    fps, t_feats, yv, ys, mv, ms, _, _ = test_data
+    # Test evaluation
+    test_data = build_multitask_tensors(fp_df, dataset["visc_df"], dataset["st_df"], splits["test"], sc_v, sc_s)
+    fps_te, t_te, yv_te, ys_te, mv_te, ms_te, _, _ = test_data
 
     model.eval()
     with torch.no_grad():
-        pred_v, pred_s = model(fps.to(device), t_feats.to(device))
+        pv, ps = model(fps_te.to(device), t_te.to(device))
 
-    results = {}
+    print(f"\n  TEST RESULTS (multi-task):")
+    if mv_te.any():
+        y_true_v = sc_v.inverse_transform(yv_te[mv_te].numpy())
+        y_pred_v = sc_v.inverse_transform(pv[mv_te].cpu().numpy())
+        m_log = compute_all_metrics(y_true_v.flatten(), y_pred_v.flatten())
+        print(f"\n  Viscosity (log space):")
+        for k, v in m_log.items():
+            print(f"    {k}: {v:.4f}")
 
-    if mv.any():
-        y_true_v = scaler_visc.inverse_transform(yv[mv].numpy())
-        y_pred_v = scaler_visc.inverse_transform(pred_v[mv].cpu().numpy())
-        y_true_v_exp = np.exp(y_true_v)
-        y_pred_v_exp = np.exp(y_pred_v)
-        results["viscosity_log"] = compute_all_metrics(y_true_v.flatten(), y_pred_v.flatten())
-        results["viscosity_exp"] = compute_all_metrics(y_true_v_exp.flatten(), y_pred_v_exp.flatten())
+        y_true_exp = np.exp(y_true_v)
+        y_pred_exp = np.exp(y_pred_v)
+        m_exp = compute_all_metrics(y_true_exp.flatten(), y_pred_exp.flatten())
+        print(f"\n  Viscosity (Pa.s):")
+        for k, v in m_exp.items():
+            print(f"    {k}: {v:.4f}")
 
-    if ms.any():
-        y_true_s = scaler_st.inverse_transform(ys[ms].numpy())
-        y_pred_s = scaler_st.inverse_transform(pred_s[ms].cpu().numpy())
-        results["surface_tension"] = compute_all_metrics(y_true_s.flatten(), y_pred_s.flatten())
+    if ms_te.any():
+        y_true_s = sc_s.inverse_transform(ys_te[ms_te].numpy())
+        y_pred_s = sc_s.inverse_transform(ps[ms_te].cpu().numpy())
+        m_st = compute_all_metrics(y_true_s.flatten(), y_pred_s.flatten())
+        print(f"\n  Surface tension (N/m):")
+        for k, v in m_st.items():
+            print(f"    {k}: {v:.4f}")
 
-    return results
+    return model, sc_v, sc_s, history
 
 
 def main():
     paths = Paths()
     data_config = DataConfig()
     split_config = SplitConfig()
-    model_config = ModelConfig()
-    train_config = TrainConfig(approach="direct")
+    train_config = TrainConfig(
+        approach="direct",
+        epochs=500,
+        batch_size=128,
+        lr=3e-4,
+        weight_decay=1e-4,
+        patience=50,
+        lr_min=1e-6,
+        seed=42,
+    )
 
     dataset = build_dataset(paths, data_config, split_config)
 
-    model, sc_v, sc_s, history = train_direct(dataset, model_config, train_config)
+    # Train single-task baselines first
+    print("\n" + "#" * 60)
+    print("# PHASE 1a: SINGLE-TASK BASELINES")
+    print("#" * 60)
 
-    device = next(model.parameters()).device
-    results = evaluate_direct(
-        model, dataset["fp_df"], dataset["visc_df"], dataset["st_df"],
-        dataset["splits"]["test"], sc_v, sc_s, device
-    )
+    train_single_task(dataset, "viscosity", train_config)
+    train_single_task(dataset, "surface_tension", train_config)
 
-    print("\n" + "=" * 60)
-    print("TEST SET RESULTS")
-    print("=" * 60)
-    for prop, metrics in results.items():
-        print(f"\n{prop}:")
-        for k, v in metrics.items():
-            print(f"  {k}: {v:.4f}")
+    # Then multi-task
+    print("\n" + "#" * 60)
+    print("# PHASE 1b: MULTI-TASK MODEL")
+    print("#" * 60)
+
+    train_multitask(dataset, train_config)
 
     output_dir = Paths().outputs
-    with open(output_dir / "test_results.json", "w") as f:
-        json.dump(results, f, indent=2)
-
-    print(f"\nResults saved to {output_dir}")
+    print(f"\nAll results saved to {output_dir}")
 
 
 if __name__ == "__main__":
