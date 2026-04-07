@@ -15,7 +15,7 @@ from shared.config import Paths, DataConfig, SplitConfig, ModelConfig, TrainConf
 from shared.data_utils import make_temperature_features
 from shared.metrics import compute_all_metrics
 from phase1.data_pipeline import build_dataset
-from phase1.model import DirectMultiTaskModel, SingleTaskModel, count_parameters
+from phase1.model import DirectMultiTaskModel, SingleTaskModel, ArrheniusModel, count_parameters
 
 
 def set_seed(seed: int):
@@ -446,6 +446,294 @@ def train_multitask(dataset, train_config):
     return model, sc_v, sc_s, history
 
 
+def build_arrhenius_data(fp_df, prop_df, compound_list, property_name, data_config, scaler=None):
+    """Fit [A, B] per compound, return (fps, targets, scaler)."""
+    sub = prop_df[prop_df["canonical_smiles"].isin(compound_list)]
+    sub = sub[sub["canonical_smiles"].isin(fp_df.index)]
+
+    fps, targets, smiles_list = [], [], []
+    for smi, group in sub.groupby("canonical_smiles"):
+        if len(group) < data_config.min_points_per_compound:
+            continue
+        T = group["T_K"].values
+        vals = group["value"].values
+
+        if property_name == "viscosity":
+            A, B, r2 = fit_arrhenius(T, vals)
+        else:
+            A, B, r2 = fit_linear_st(T, vals)
+
+        if r2 >= data_config.arrhenius_r2_threshold:
+            fps.append(fp_df.loc[smi].values)
+            targets.append([A, B])
+            smiles_list.append(smi)
+
+    if len(fps) == 0:
+        return None
+
+    fps = np.array(fps, dtype=np.float32)
+    targets = np.array(targets, dtype=np.float32)
+
+    if scaler is None:
+        scaler = StandardScaler()
+        targets = scaler.fit_transform(targets)
+    else:
+        targets = scaler.transform(targets)
+
+    return torch.tensor(fps), torch.tensor(targets, dtype=torch.float32), scaler, smiles_list
+
+
+def train_arrhenius(dataset, property_name, train_config, data_config=None):
+    """Train Arrhenius model: FP -> [A, B] coefficients."""
+    set_seed(train_config.seed)
+    device = get_device()
+
+    if data_config is None:
+        data_config = DataConfig()
+
+    print(f"\n{'='*60}")
+    print(f"ARRHENIUS: {property_name}")
+    print(f"Device: {device}")
+    print(f"{'='*60}")
+
+    fp_df = dataset["fp_df"]
+    prop_df = dataset["visc_df"] if property_name == "viscosity" else dataset["st_df"]
+    splits = dataset["splits"]
+
+    train_data = build_arrhenius_data(fp_df, prop_df, splits["train"], property_name, data_config)
+    if train_data is None:
+        print("No training data after Arrhenius fitting")
+        return None
+    fps_tr, y_tr, scaler, train_smiles = train_data
+
+    val_data = build_arrhenius_data(fp_df, prop_df, splits["val"], property_name, data_config, scaler)
+    if val_data is None:
+        print("No validation data after Arrhenius fitting")
+        return None
+    fps_val, y_val, _, val_smiles = val_data
+
+    print(f"Train: {len(fps_tr)} compounds, Val: {len(fps_val)} compounds")
+
+    train_ds = TensorDataset(fps_tr, y_tr)
+    train_loader = DataLoader(train_ds, batch_size=min(64, len(fps_tr)), shuffle=True)
+
+    model = ArrheniusModel(fp_dim=fps_tr.shape[1], dropout=0.3).to(device)
+    print(f"Parameters: {count_parameters(model):,}")
+
+    optimizer = torch.optim.AdamW(model.parameters(), lr=train_config.lr, weight_decay=train_config.weight_decay)
+    warmup_epochs = 10
+
+    def lr_lambda(epoch):
+        if epoch < warmup_epochs:
+            return (epoch + 1) / warmup_epochs
+        progress = (epoch - warmup_epochs) / max(1, train_config.epochs - warmup_epochs)
+        return max(train_config.lr_min / train_config.lr, 0.5 * (1 + np.cos(np.pi * progress)))
+
+    scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lr_lambda)
+
+    fps_val_d = fps_val.to(device)
+    y_val_d = y_val.to(device)
+
+    best_val_loss = float("inf")
+    patience_counter = 0
+    output_dir = Paths().outputs
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    t0 = time.time()
+    for epoch in range(train_config.epochs):
+        model.train()
+        epoch_loss = 0.0
+        n_batches = 0
+        for fp_b, y_b in train_loader:
+            fp_b, y_b = fp_b.to(device), y_b.to(device)
+            optimizer.zero_grad()
+            pred = model(fp_b)
+            loss = nn.functional.huber_loss(pred, y_b, delta=1.0)
+            loss.backward()
+            torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
+            optimizer.step()
+            epoch_loss += loss.item()
+            n_batches += 1
+
+        scheduler.step()
+        avg_train = epoch_loss / max(n_batches, 1)
+
+        model.eval()
+        with torch.no_grad():
+            pred_val = model(fps_val_d)
+            val_loss = nn.functional.huber_loss(pred_val, y_val_d, delta=1.0).item()
+
+        if val_loss < best_val_loss:
+            best_val_loss = val_loss
+            patience_counter = 0
+            torch.save({
+                "model_state_dict": model.state_dict(),
+                "scaler_mean": scaler.mean_.tolist(),
+                "scaler_scale": scaler.scale_.tolist(),
+                "epoch": epoch,
+                "val_loss": val_loss,
+                "property": property_name,
+                "approach": "arrhenius",
+            }, output_dir / f"best_arrhenius_{property_name}.pt")
+        else:
+            patience_counter += 1
+
+        if (epoch + 1) % 20 == 0 or epoch == 0:
+            print(f"  Epoch {epoch+1:3d}/{train_config.epochs} | "
+                  f"train={avg_train:.4f} val={val_loss:.4f} | "
+                  f"lr={optimizer.param_groups[0]['lr']:.2e} | best={best_val_loss:.4f} | "
+                  f"{time.time()-t0:.0f}s")
+
+        if patience_counter >= train_config.patience:
+            print(f"  Early stopping at epoch {epoch+1}")
+            break
+
+    # Load best and evaluate on test set
+    ckpt = torch.load(output_dir / f"best_arrhenius_{property_name}.pt", weights_only=False)
+    model.load_state_dict(ckpt["model_state_dict"])
+
+    test_data = build_arrhenius_data(fp_df, prop_df, splits["test"], property_name, data_config, scaler)
+    if test_data is not None:
+        fps_te, y_te, _, test_smiles = test_data
+        model.eval()
+        with torch.no_grad():
+            pred_te = model(fps_te.to(device)).cpu().numpy()
+
+        y_true = scaler.inverse_transform(y_te.numpy())
+        y_pred = scaler.inverse_transform(pred_te)
+
+        # Metrics on [A, B] coefficients
+        metrics_ab = compute_all_metrics(y_true.flatten(), y_pred.flatten())
+        print(f"\n  Test ([A,B] coefficients):")
+        for k, v in metrics_ab.items():
+            print(f"    {k}: {v:.4f}")
+
+        # Reconstruct property at actual temperatures and compute MAPE
+        test_sub = prop_df[prop_df["canonical_smiles"].isin(test_smiles)]
+        all_true, all_pred = [], []
+
+        for i, smi in enumerate(test_smiles):
+            A_pred, B_pred = y_pred[i]
+            A_true, B_true = y_true[i]
+            cpd_data = test_sub[test_sub["canonical_smiles"] == smi]
+
+            for _, row in cpd_data.iterrows():
+                T = row["T_K"]
+                true_val = row["value"]
+
+                if property_name == "viscosity":
+                    pred_val = np.exp(A_pred + B_pred / T)
+                else:
+                    pred_val = A_pred + B_pred * T
+
+                all_true.append(true_val)
+                all_pred.append(pred_val)
+
+        if all_true:
+            all_true = np.array(all_true)
+            all_pred = np.array(all_pred)
+            # Clip negative predictions for surface tension
+            if property_name == "surface_tension":
+                all_pred = np.clip(all_pred, 1e-6, None)
+            metrics_recon = compute_all_metrics(all_true, all_pred)
+            print(f"\n  Test (reconstructed {property_name} at measured temperatures):")
+            for k, v in metrics_recon.items():
+                print(f"    {k}: {v:.4f}")
+
+    return model, scaler
+
+
+def train_ensemble(dataset, property_name, train_config, data_config, n_models=5):
+    """Train an ensemble of Arrhenius models with different seeds."""
+    print(f"\n{'='*60}")
+    print(f"ENSEMBLE ({n_models} models): {property_name}")
+    print(f"{'='*60}")
+
+    models = []
+    scalers = []
+    for i in range(n_models):
+        seed = train_config.seed + i * 111
+        tc = TrainConfig(
+            approach="arrhenius",
+            epochs=train_config.epochs,
+            batch_size=train_config.batch_size,
+            lr=train_config.lr,
+            weight_decay=train_config.weight_decay,
+            patience=train_config.patience,
+            lr_min=train_config.lr_min,
+            seed=seed,
+        )
+        print(f"\n--- Ensemble member {i+1}/{n_models} (seed={seed}) ---")
+        result = train_arrhenius(dataset, property_name, tc, data_config)
+        if result is not None:
+            models.append(result[0])
+            scalers.append(result[1])
+
+    if not models:
+        print("No models trained successfully")
+        return
+
+    # Ensemble evaluation on test set
+    device = get_device()
+    fp_df = dataset["fp_df"]
+    prop_df = dataset["visc_df"] if property_name == "viscosity" else dataset["st_df"]
+    splits = dataset["splits"]
+
+    test_data = build_arrhenius_data(fp_df, prop_df, splits["test"], property_name, data_config, scalers[0])
+    if test_data is None:
+        print("No test data")
+        return
+
+    fps_te, y_te, _, test_smiles = test_data
+
+    # Average predictions from all models
+    all_preds = []
+    for model, scaler in zip(models, scalers):
+        # Refit test data with this model's scaler
+        td = build_arrhenius_data(fp_df, prop_df, splits["test"], property_name, data_config, scaler)
+        if td is None:
+            continue
+        fps_t, y_t, _, _ = td
+        model.eval()
+        with torch.no_grad():
+            pred = model(fps_t.to(device)).cpu().numpy()
+        pred_unscaled = scaler.inverse_transform(pred)
+        all_preds.append(pred_unscaled)
+
+    ensemble_pred = np.mean(all_preds, axis=0)
+    y_true = scalers[0].inverse_transform(y_te.numpy())
+
+    metrics_ab = compute_all_metrics(y_true.flatten(), ensemble_pred.flatten())
+    print(f"\n  ENSEMBLE Test ([A,B] coefficients):")
+    for k, v in metrics_ab.items():
+        print(f"    {k}: {v:.4f}")
+
+    # Reconstruct at measured temperatures
+    test_sub = prop_df[prop_df["canonical_smiles"].isin(test_smiles)]
+    all_true, all_pred_vals = [], []
+
+    for i, smi in enumerate(test_smiles):
+        A_pred, B_pred = ensemble_pred[i]
+        cpd_data = test_sub[test_sub["canonical_smiles"] == smi]
+
+        for _, row in cpd_data.iterrows():
+            T = row["T_K"]
+            if property_name == "viscosity":
+                pred_val = np.exp(A_pred + B_pred / T)
+            else:
+                pred_val = max(A_pred + B_pred * T, 1e-6)
+            all_true.append(row["value"])
+            all_pred_vals.append(pred_val)
+
+    if all_true:
+        metrics_recon = compute_all_metrics(np.array(all_true), np.array(all_pred_vals))
+        print(f"\n  ENSEMBLE Test (reconstructed {property_name}):")
+        for k, v in metrics_recon.items():
+            print(f"    {k}: {v:.4f}")
+
+    return models, scalers
+
+
 def main():
     paths = Paths()
     data_config = DataConfig()
@@ -463,20 +751,29 @@ def main():
 
     dataset = build_dataset(paths, data_config, split_config)
 
-    # Train single-task baselines first
+    # 1. Single-task direct baselines
     print("\n" + "#" * 60)
-    print("# PHASE 1a: SINGLE-TASK BASELINES")
+    print("# PHASE 1a: SINGLE-TASK DIRECT BASELINES")
     print("#" * 60)
 
     train_single_task(dataset, "viscosity", train_config)
     train_single_task(dataset, "surface_tension", train_config)
 
-    # Then multi-task
+    # 2. Arrhenius approach (compound-level)
     print("\n" + "#" * 60)
-    print("# PHASE 1b: MULTI-TASK MODEL")
+    print("# PHASE 1b: ARRHENIUS MODELS")
     print("#" * 60)
 
-    train_multitask(dataset, train_config)
+    train_arrhenius(dataset, "viscosity", train_config, data_config)
+    train_arrhenius(dataset, "surface_tension", train_config, data_config)
+
+    # 3. Ensemble of Arrhenius models
+    print("\n" + "#" * 60)
+    print("# PHASE 1c: ENSEMBLE (5 models)")
+    print("#" * 60)
+
+    train_ensemble(dataset, "viscosity", train_config, data_config, n_models=5)
+    train_ensemble(dataset, "surface_tension", train_config, data_config, n_models=5)
 
     output_dir = Paths().outputs
     print(f"\nAll results saved to {output_dir}")
