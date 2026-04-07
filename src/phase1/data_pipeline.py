@@ -243,6 +243,16 @@ def join_features_labels(
         print(f"\n[HC filter] Viscosity: {visc_before} -> {visc_joined['canonical_smiles'].nunique()} compounds")
         print(f"[HC filter] Surface tension: {st_before} -> {st_joined['canonical_smiles'].nunique()} compounds")
 
+    # Tag hydrocarbons for evaluation filtering later
+    hc_set = {smi for smi in fp_df.index if is_hydrocarbon(smi)}
+    visc_joined = visc_joined.copy()
+    visc_joined["is_hydrocarbon"] = visc_joined["canonical_smiles"].isin(hc_set)
+    st_joined = st_joined.copy()
+    st_joined["is_hydrocarbon"] = st_joined["canonical_smiles"].isin(hc_set)
+    n_hc_v = visc_joined[visc_joined["is_hydrocarbon"]]["canonical_smiles"].nunique()
+    n_hc_s = st_joined[st_joined["is_hydrocarbon"]]["canonical_smiles"].nunique()
+    print(f"[HC tag] {n_hc_v} visc hydrocarbons, {n_hc_s} ST hydrocarbons (for eval reporting)")
+
     print(f"[Joined] Viscosity: {len(visc_joined)} rows, {visc_joined['canonical_smiles'].nunique()} compounds")
     print(f"[Joined] Surface tension: {len(st_joined)} rows, {st_joined['canonical_smiles'].nunique()} compounds")
 

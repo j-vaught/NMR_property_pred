@@ -12,7 +12,7 @@ from torch.utils.data import DataLoader, TensorDataset
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from shared.config import Paths, DataConfig, SplitConfig, ModelConfig, TrainConfig
-from shared.data_utils import make_temperature_features, fit_arrhenius, fit_linear_st
+from shared.data_utils import make_temperature_features, fit_arrhenius, fit_linear_st, is_hydrocarbon
 from shared.metrics import compute_all_metrics
 from phase1.data_pipeline import build_dataset
 from phase1.model import DirectMultiTaskModel, SingleTaskModel, ArrheniusModel, count_parameters
@@ -610,12 +610,12 @@ def train_arrhenius(dataset, property_name, train_config, data_config=None):
 
         # Reconstruct property at actual temperatures and compute MAPE
         test_sub = prop_df[prop_df["canonical_smiles"].isin(test_smiles)]
-        all_true, all_pred = [], []
+        all_true, all_pred, all_is_hc, all_smiles = [], [], [], []
 
         for i, smi in enumerate(test_smiles):
             A_pred, B_pred = y_pred[i]
-            A_true, B_true = y_true[i]
             cpd_data = test_sub[test_sub["canonical_smiles"] == smi]
+            smi_is_hc = is_hydrocarbon(smi)
 
             for _, row in cpd_data.iterrows():
                 T = row["T_K"]
@@ -628,17 +628,29 @@ def train_arrhenius(dataset, property_name, train_config, data_config=None):
 
                 all_true.append(true_val)
                 all_pred.append(pred_val)
+                all_is_hc.append(smi_is_hc)
+                all_smiles.append(smi)
 
         if all_true:
             all_true = np.array(all_true)
             all_pred = np.array(all_pred)
-            # Clip negative predictions for surface tension
+            all_is_hc = np.array(all_is_hc)
             if property_name == "surface_tension":
                 all_pred = np.clip(all_pred, 1e-6, None)
             metrics_recon = compute_all_metrics(all_true, all_pred)
-            print(f"\n  Test (reconstructed {property_name} at measured temperatures):")
+            print(f"\n  Test (reconstructed {property_name}, ALL compounds):")
             for k, v in metrics_recon.items():
                 print(f"    {k}: {v:.4f}")
+
+            # HC-only evaluation
+            if all_is_hc.any():
+                hc_true = all_true[all_is_hc]
+                hc_pred = all_pred[all_is_hc]
+                metrics_hc = compute_all_metrics(hc_true, hc_pred)
+                n_hc = len(set(smi for smi, is_hc in zip(all_smiles, all_is_hc) if is_hc))
+                print(f"\n  Test (reconstructed {property_name}, HYDROCARBONS only, {n_hc} compounds):")
+                for k, v in metrics_hc.items():
+                    print(f"    {k}: {v:.4f}")
 
     return model, scaler
 
@@ -710,11 +722,12 @@ def train_ensemble(dataset, property_name, train_config, data_config, n_models=5
 
     # Reconstruct at measured temperatures
     test_sub = prop_df[prop_df["canonical_smiles"].isin(test_smiles)]
-    all_true, all_pred_vals = [], []
+    all_true, all_pred_vals, all_is_hc = [], [], []
 
     for i, smi in enumerate(test_smiles):
         A_pred, B_pred = ensemble_pred[i]
         cpd_data = test_sub[test_sub["canonical_smiles"] == smi]
+        smi_is_hc = is_hydrocarbon(smi)
 
         for _, row in cpd_data.iterrows():
             T = row["T_K"]
@@ -724,12 +737,25 @@ def train_ensemble(dataset, property_name, train_config, data_config, n_models=5
                 pred_val = max(A_pred + B_pred * T, 1e-6)
             all_true.append(row["value"])
             all_pred_vals.append(pred_val)
+            all_is_hc.append(smi_is_hc)
 
     if all_true:
-        metrics_recon = compute_all_metrics(np.array(all_true), np.array(all_pred_vals))
-        print(f"\n  ENSEMBLE Test (reconstructed {property_name}):")
+        all_true = np.array(all_true)
+        all_pred_vals = np.array(all_pred_vals)
+        all_is_hc = np.array(all_is_hc)
+
+        metrics_recon = compute_all_metrics(all_true, all_pred_vals)
+        print(f"\n  ENSEMBLE Test (reconstructed {property_name}, ALL):")
         for k, v in metrics_recon.items():
             print(f"    {k}: {v:.4f}")
+
+        if all_is_hc.any():
+            hc_true = all_true[all_is_hc]
+            hc_pred = all_pred_vals[all_is_hc]
+            metrics_hc = compute_all_metrics(hc_true, hc_pred)
+            print(f"\n  ENSEMBLE Test (reconstructed {property_name}, HYDROCARBONS):")
+            for k, v in metrics_hc.items():
+                print(f"    {k}: {v:.4f}")
 
     return models, scalers
 
