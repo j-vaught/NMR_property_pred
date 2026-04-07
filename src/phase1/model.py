@@ -88,6 +88,26 @@ class SingleTaskModel(nn.Module):
         return self.head(z_t)
 
 
+class ArrheniusModel(nn.Module):
+    """Predicts [A, B] coefficients from fingerprint only (no temperature input)."""
+
+    def __init__(self, fp_dim: int = 2048, encoder_layers: list[int] = None,
+                 dropout: float = 0.3):
+        super().__init__()
+        if encoder_layers is None:
+            encoder_layers = [fp_dim, 512, 256, 128]
+        else:
+            encoder_layers = [fp_dim] + encoder_layers
+
+        self.encoder = SharedEncoder(encoder_layers, dropout=dropout)
+        embed_dim = encoder_layers[-1]
+        self.head = PropertyHead(embed_dim, 2, hidden=64, dropout=0.2)
+
+    def forward(self, fp):
+        z = self.encoder(fp)
+        return self.head(z)
+
+
 def count_parameters(model: nn.Module) -> int:
     return sum(p.numel() for p in model.parameters() if p.requires_grad)
 
