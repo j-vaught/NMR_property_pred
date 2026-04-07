@@ -25,8 +25,11 @@ import lightgbm as lgb
 
 warnings.filterwarnings("ignore")
 
-ROOT = Path("/Users/user/Downloads/untitled folder")
-DATA = ROOT / "data"
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from shared.config import Paths as _Paths
+_p = _Paths()
+ROOT = _p.root
+DATA = _p.data
 OUTPUTS = ROOT / "src" / "phase1" / "outputs"
 
 # ── Config ──────────────────────────────────────────────────────────────────
