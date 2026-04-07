@@ -81,6 +81,15 @@ def fit_linear_st(T_K: np.ndarray, st_Nm: np.ndarray) -> tuple[float, float, flo
     return A, B, r2
 
 
+def is_hydrocarbon(smi: str) -> bool:
+    """Check if a SMILES represents a hydrocarbon (C and H only)."""
+    mol = Chem.MolFromSmiles(smi)
+    if mol is None:
+        return False
+    atoms = {atom.GetSymbol() for atom in mol.GetAtoms()}
+    return atoms.issubset({"C", "H"})
+
+
 def make_temperature_features(T_K: np.ndarray) -> np.ndarray:
     """Create temperature feature vector: [T/1000, 1/T, (T/1000)^2]."""
     T_scaled = T_K / 1000.0

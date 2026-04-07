@@ -9,6 +9,7 @@ from shared.config import Paths, DataConfig, SplitConfig
 from shared.data_utils import (
     canonical_smiles,
     inchi_to_canonical_smiles,
+    is_hydrocarbon,
     fit_arrhenius,
     fit_linear_st,
     make_temperature_features,
@@ -227,12 +228,22 @@ def build_unified_labels(paths: Paths, data_config: DataConfig) -> tuple[pd.Data
 
 
 def join_features_labels(
-    fp_df: pd.DataFrame, visc_df: pd.DataFrame, st_df: pd.DataFrame
+    fp_df: pd.DataFrame, visc_df: pd.DataFrame, st_df: pd.DataFrame,
+    data_config: DataConfig = None,
 ) -> tuple[pd.DataFrame, pd.DataFrame]:
     visc_joined = visc_df[visc_df["canonical_smiles"].isin(fp_df.index)]
     st_joined = st_df[st_df["canonical_smiles"].isin(fp_df.index)]
 
-    print(f"\n[Joined] Viscosity: {len(visc_joined)} rows, {visc_joined['canonical_smiles'].nunique()} compounds")
+    if data_config and data_config.hydrocarbons_only:
+        hc_smiles = {smi for smi in fp_df.index if is_hydrocarbon(smi)}
+        visc_before = visc_joined["canonical_smiles"].nunique()
+        st_before = st_joined["canonical_smiles"].nunique()
+        visc_joined = visc_joined[visc_joined["canonical_smiles"].isin(hc_smiles)]
+        st_joined = st_joined[st_joined["canonical_smiles"].isin(hc_smiles)]
+        print(f"\n[HC filter] Viscosity: {visc_before} -> {visc_joined['canonical_smiles'].nunique()} compounds")
+        print(f"[HC filter] Surface tension: {st_before} -> {st_joined['canonical_smiles'].nunique()} compounds")
+
+    print(f"[Joined] Viscosity: {len(visc_joined)} rows, {visc_joined['canonical_smiles'].nunique()} compounds")
     print(f"[Joined] Surface tension: {len(st_joined)} rows, {st_joined['canonical_smiles'].nunique()} compounds")
 
     all_compounds = set(visc_joined["canonical_smiles"]) | set(st_joined["canonical_smiles"])
@@ -334,7 +345,7 @@ def build_dataset(paths: Paths = None, data_config: DataConfig = None, split_con
 
     fp_df = load_fingerprints(paths, data_config)
     visc_df, st_df = build_unified_labels(paths, data_config)
-    visc_joined, st_joined = join_features_labels(fp_df, visc_df, st_df)
+    visc_joined, st_joined = join_features_labels(fp_df, visc_df, st_df, data_config)
 
     all_compounds = sorted(set(visc_joined["canonical_smiles"]) | set(st_joined["canonical_smiles"]))
     splits = split_by_compound(

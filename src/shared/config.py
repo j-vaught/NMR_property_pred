@@ -64,6 +64,7 @@ class DataConfig:
     P_max_kPa: float = 110.0
     min_points_per_compound: int = 3
     arrhenius_r2_threshold: float = 0.90
+    hydrocarbons_only: bool = True
 
 
 @dataclass
