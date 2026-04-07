@@ -125,10 +125,10 @@ def build_multitask_tensors(fp_df, visc_df, st_df, compound_list,
     )
 
 
-def masked_mse(pred, target, mask):
+def masked_loss(pred, target, mask, delta=1.0):
     if not mask.any():
         return torch.tensor(0.0, device=pred.device, requires_grad=True)
-    return nn.functional.mse_loss(pred[mask], target[mask])
+    return nn.functional.huber_loss(pred[mask], target[mask], delta=delta)
 
 
 def get_device():
@@ -211,7 +211,7 @@ def train_single_task(dataset, property_name, train_config):
             fp_b, t_b, y_b = fp_b.to(device), t_b.to(device), y_b.to(device)
             optimizer.zero_grad()
             pred = model(fp_b, t_b)
-            loss = nn.functional.mse_loss(pred, y_b)
+            loss = nn.functional.huber_loss(pred, y_b, delta=1.0)
             loss.backward()
             torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
             optimizer.step()
@@ -224,7 +224,7 @@ def train_single_task(dataset, property_name, train_config):
         model.eval()
         with torch.no_grad():
             pred_val = model(fps_val_d, t_val_d)
-            val_loss = nn.functional.mse_loss(pred_val, y_val_d).item()
+            val_loss = nn.functional.huber_loss(pred_val, y_val_d, delta=1.0).item()
 
         history["train_loss"].append(avg_train)
         history["val_loss"].append(val_loss)
@@ -358,8 +358,8 @@ def train_multitask(dataset, train_config):
             fp_b, t_b, yv_b, ys_b, mv_b, ms_b = [x.to(device) for x in batch]
             optimizer.zero_grad()
             pred_v, pred_s = model(fp_b, t_b)
-            loss_v = masked_mse(pred_v, yv_b, mv_b)
-            loss_s = masked_mse(pred_s, ys_b, ms_b)
+            loss_v = masked_loss(pred_v, yv_b, mv_b)
+            loss_s = masked_loss(pred_s, ys_b, ms_b)
             loss = visc_weight * loss_v + st_weight * loss_s
             loss.backward()
             torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
@@ -373,8 +373,8 @@ def train_multitask(dataset, train_config):
         model.eval()
         with torch.no_grad():
             pv, ps = model(fps_val_d, t_val_d)
-            vl_v = masked_mse(pv, yv_val_d, mv_val_d).item()
-            vl_s = masked_mse(ps, ys_val_d, ms_val_d).item()
+            vl_v = masked_loss(pv, yv_val_d, mv_val_d).item()
+            vl_s = masked_loss(ps, ys_val_d, ms_val_d).item()
             val_loss = visc_weight * vl_v + st_weight * vl_s
 
         history["train_loss"].append(avg_train)

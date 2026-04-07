@@ -52,7 +52,7 @@ class DirectMultiTaskModel(nn.Module):
                  encoder_layers: list[int] = None, dropout: float = 0.3):
         super().__init__()
         if encoder_layers is None:
-            encoder_layers = [fp_dim, 256, 128, 64]
+            encoder_layers = [fp_dim, 512, 256, 128]
         else:
             encoder_layers = [fp_dim] + encoder_layers
 
@@ -73,7 +73,7 @@ class SingleTaskModel(nn.Module):
                  encoder_layers: list[int] = None, dropout: float = 0.3):
         super().__init__()
         if encoder_layers is None:
-            encoder_layers = [fp_dim, 256, 128, 64]
+            encoder_layers = [fp_dim, 512, 256, 128]
         else:
             encoder_layers = [fp_dim] + encoder_layers
 

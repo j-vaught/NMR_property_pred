@@ -24,11 +24,40 @@ def load_fingerprints(paths: Paths, data_config: DataConfig) -> pd.DataFrame:
 
     df["canonical_smiles"] = df[smiles_col].apply(canonical_smiles)
     df = df.dropna(subset=["canonical_smiles"])
-    df = df.set_index("canonical_smiles")[bit_cols].astype(np.float32)
-    df = df[~df.index.duplicated(keep="first")]
+    fp_df = df.set_index("canonical_smiles")[bit_cols].astype(np.float32)
+    fp_df = fp_df[~fp_df.index.duplicated(keep="first")]
 
-    print(f"[FP] Loaded {len(df)} compounds with {len(bit_cols)} features from {fp_path.name}")
-    return df
+    # Remove zero-variance columns (bits that are never set)
+    nonzero_mask = fp_df.std() > 0
+    fp_df = fp_df.loc[:, nonzero_mask]
+
+    # Add RDKit descriptors if available
+    desc_path = paths.features / "rdkit_descriptors.csv"
+    if desc_path.exists():
+        desc_df = pd.read_csv(desc_path)
+        desc_df["canonical_smiles"] = desc_df["SMILES"].apply(canonical_smiles)
+        desc_df = desc_df.dropna(subset=["canonical_smiles"])
+        desc_cols = [c for c in desc_df.columns if c not in ("CAS", "SMILES", "canonical_smiles")]
+        desc_df = desc_df.set_index("canonical_smiles")[desc_cols].astype(np.float32)
+        desc_df = desc_df[~desc_df.index.duplicated(keep="first")]
+
+        # Replace NaN/inf with 0, then standardize descriptors to same scale as FP
+        desc_df = desc_df.replace([np.inf, -np.inf], np.nan).fillna(0)
+        desc_std = desc_df.std()
+        desc_df = desc_df.loc[:, desc_std > 0]
+        desc_mean = desc_df.mean()
+        desc_std = desc_df.std()
+        desc_df = (desc_df - desc_mean) / desc_std.replace(0, 1)
+
+        # Merge FP + descriptors
+        common_idx = fp_df.index.intersection(desc_df.index)
+        fp_df = pd.concat([fp_df.loc[common_idx], desc_df.loc[common_idx]], axis=1)
+        print(f"[FP+Desc] {len(fp_df)} compounds, {fp_df.shape[1]} features "
+              f"({nonzero_mask.sum()} FP bits + {len(desc_df.columns)} descriptors)")
+    else:
+        print(f"[FP] Loaded {len(fp_df)} compounds with {fp_df.shape[1]} features from {fp_path.name}")
+
+    return fp_df
 
 
 def _load_thermoml_labels(path: Path, property_name: str, data_config: DataConfig) -> pd.DataFrame:
