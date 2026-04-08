@@ -30,6 +30,15 @@ from phase2.spectrum_converter import convert_compound
 paths = Paths()
 
 
+def _canon_one(smi):
+    """Canonicalize a single SMILES string (module-level for pickling)."""
+    from rdkit import Chem
+    mol = Chem.MolFromSmiles(smi)
+    if mol is None:
+        return None
+    return Chem.MolToSmiles(mol)
+
+
 # ---------------------------------------------------------------------------
 # Label loading (mirrors phase1/train_direct_optimal.py load_labels)
 # ---------------------------------------------------------------------------
@@ -138,14 +147,6 @@ def _load_nmr_spectra(target_smiles: set[str] | None = None) -> dict[str, np.nda
             print(f"[NMR] Canonicalizing {len(unmatched_raw)} unmatched SMILES (parallel)...")
 
             from multiprocessing import Pool
-            import functools
-
-            def _canon_one(smi):
-                from rdkit import Chem
-                mol = Chem.MolFromSmiles(smi)
-                if mol is None:
-                    return None
-                return Chem.MolToSmiles(mol)
 
             with Pool(processes=8) as pool:
                 results = pool.map(_canon_one, unmatched_raw, chunksize=10000)
