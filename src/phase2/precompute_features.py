@@ -155,12 +155,17 @@ def _load_phase1_features(smiles_list: list[str]) -> tuple[np.ndarray, np.ndarra
             # Generate RDKit descriptors on-the-fly
             mol = Chem.MolFromSmiles(smi)
             if mol is not None:
-                desc_dict = Descriptors.CalcMolDescriptors(mol)
+                # Build descriptor name -> calculator mapping
+                desc_map = {name: func for name, func in Descriptors.descList}
                 for j, col in enumerate(rdkit_cols):
-                    val = desc_dict.get(col, 0.0)
-                    if val is None or not np.isfinite(val):
-                        val = 0.0
-                    rdkit_arr[i, j] = val
+                    if col in desc_map:
+                        try:
+                            val = desc_map[col](mol)
+                            if val is None or not np.isfinite(val):
+                                val = 0.0
+                        except Exception:
+                            val = 0.0
+                        rdkit_arr[i, j] = val
 
     # Clean NaN/inf
     morgan_arr = np.nan_to_num(morgan_arr, nan=0.0, posinf=0.0, neginf=0.0)
