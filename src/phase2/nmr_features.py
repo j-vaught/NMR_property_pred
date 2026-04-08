@@ -142,6 +142,132 @@ def extract_nmr_features(spectrum: np.ndarray, ppm_grid: np.ndarray = None) -> n
     return np.array(features, dtype=np.float32)
 
 
+# ---------------------------------------------------------------------------
+# Peak-list features (extracted BEFORE max-normalization)
+# ---------------------------------------------------------------------------
+
+_MULT_CATEGORIES = {"s": 0, "d": 1, "t": 2, "q": 3, "m": 4}
+# dd, dt, dq, td, tt, ddd, etc. all map to "complex" (5)
+# everything else maps to "other" (6)
+_N_MULT = 7
+
+
+def extract_peaklist_features(peaks: list[dict]) -> np.ndarray:
+    """Extract features from a parsed 1H NMR peak list (before normalization).
+
+    These features preserve absolute hydrogen count information that is
+    lost during max-normalization of the continuous spectrum. Total H count
+    is a strong proxy for molecular weight, which is critical for viscosity.
+
+    Parameters
+    ----------
+    peaks : list of dict
+        Output of parse_1h_peaks(). Each dict has keys: center_ppm,
+        integral, multiplicity, j_couplings_hz, shift_high, shift_low.
+
+    Returns
+    -------
+    features : np.ndarray, shape (n_peaklist_features,)
+    """
+    if not peaks:
+        return np.zeros(_n_peaklist_features(), dtype=np.float32)
+
+    features = []
+    integrals = [p["integral"] for p in peaks]
+    centers = [p["center_ppm"] for p in peaks]
+    total_h = sum(integrals)
+
+    # --- Size proxies (3) ---
+    features.append(total_h)                       # total hydrogen count
+    features.append(float(len(peaks)))             # number of peaks
+    features.append(max(integrals))                # max single integral
+
+    # --- Absolute H count per chemical shift region (9) ---
+    for name, (lo, hi) in _REGIONS.items():
+        region_h = sum(
+            p["integral"] for p in peaks
+            if lo <= p["center_ppm"] < hi
+        )
+        features.append(region_h)
+
+    # --- Multiplicity distribution (7) ---
+    mult_counts = np.zeros(_N_MULT, dtype=np.float32)
+    for p in peaks:
+        m = p.get("multiplicity", "s").lower().strip()
+        if m in _MULT_CATEGORIES:
+            mult_counts[_MULT_CATEGORIES[m]] += 1
+        elif len(m) > 1 and m[0] in "dtq":
+            mult_counts[5] += 1  # complex
+        else:
+            mult_counts[6] += 1  # other
+    n_peaks = len(peaks)
+    for i in range(_N_MULT):
+        features.append(mult_counts[i] / n_peaks)
+
+    # --- J-coupling statistics (3) ---
+    all_j = []
+    for p in peaks:
+        all_j.extend(p.get("j_couplings_hz", []))
+    if all_j:
+        features.append(np.mean(all_j))            # mean J
+        features.append(max(all_j))                 # max J
+    else:
+        features.append(0.0)
+        features.append(0.0)
+    features.append(
+        sum(1 for p in peaks if p.get("j_couplings_hz")) / n_peaks
+    )  # fraction with J info
+
+    # --- Derived ratios (3) ---
+    alkyl_h = sum(
+        p["integral"] for p in peaks if p["center_ppm"] < 2.0
+    )
+    aromatic_h = sum(
+        p["integral"] for p in peaks if 6.5 <= p["center_ppm"] < 8.5
+    )
+    ch3_region_h = sum(
+        p["integral"] for p in peaks if p["center_ppm"] < 1.0
+    )
+    ch2_region_h = sum(
+        p["integral"] for p in peaks if 1.0 <= p["center_ppm"] < 2.0
+    )
+
+    features.append(alkyl_h / (total_h + 1e-10))        # alkyl H fraction
+    features.append(aromatic_h / (total_h + 1e-10))      # aromatic H fraction
+    features.append(
+        ch2_region_h / (ch3_region_h + ch2_region_h + 1e-10)
+    )  # CH2/CH3 proxy (higher = longer chains)
+
+    return np.array(features, dtype=np.float32)
+
+
+def _n_peaklist_features() -> int:
+    """Number of features returned by extract_peaklist_features."""
+    return 3 + len(_REGIONS) + _N_MULT + 3 + 3  # 25
+
+
+def get_peaklist_feature_names() -> list[str]:
+    """Return human-readable names for peak-list features."""
+    names = [
+        "total_h_count",
+        "n_peaks",
+        "max_single_integral",
+    ]
+    for region_name in _REGIONS:
+        names.append(f"h_count_{region_name}")
+    names.extend([
+        "frac_singlet", "frac_doublet", "frac_triplet", "frac_quartet",
+        "frac_multiplet", "frac_complex", "frac_other",
+    ])
+    names.extend([
+        "j_coupling_mean", "j_coupling_max", "frac_with_j",
+    ])
+    names.extend([
+        "alkyl_h_fraction", "aromatic_h_fraction", "ch2_ch3_proxy",
+    ])
+    return names
+
+
 def extract_features_batch(spectra: np.ndarray, ppm_grid: np.ndarray = None) -> np.ndarray:
     """Extract features for an array of spectra.
 

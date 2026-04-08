@@ -1,10 +1,16 @@
 """
-Pre-compute NMR features and save to disk.
+Pre-compute NMR features AND Phase 1 features, save to disk.
 
 Run this once to create cached feature files, then train_features.py
 can load them instantly without holding the 3.37M-row NMR parquet in memory.
+
+Produces cache/ directory with:
+  - nmr_compound_cache.npz: spectra, spectrum features, peak-list features,
+    Phase 1 Morgan FP, Phase 1 RDKit descriptors, HC mask
+  - nmr_smiles_list.txt, labels_*.csv, *_feature_names.txt
 """
 
+import ast
 import gc
 import sys
 from pathlib import Path
@@ -15,8 +21,11 @@ import pandas as pd
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from shared.config import Paths
 from shared.data_utils import canonical_smiles, inchi_to_canonical_smiles, is_hydrocarbon
-from phase2.spectrum_converter import convert_compound
-from phase2.nmr_features import extract_nmr_features, get_feature_names
+from phase2.spectrum_converter import parse_1h_peaks, peaks_to_spectrum_1h, _1H_GRID
+from phase2.nmr_features import (
+    extract_nmr_features, get_feature_names,
+    extract_peaklist_features, get_peaklist_feature_names,
+)
 
 paths = Paths()
 CACHE_DIR = Path(__file__).resolve().parent / "cache"
@@ -57,17 +66,17 @@ def _load_labels(property_name: str) -> pd.DataFrame:
         gc_path = paths.thermo / "group_contribution" / "chemicals_surface_tension_expanded.csv"
 
     if gc_path.exists():
-        gc = pd.read_csv(gc_path)
-        gc["canonical_smiles"] = gc["SMILES"].apply(canonical_smiles)
-        gc = gc.dropna(subset=["canonical_smiles"])
-        gc_val = [c for c in gc.columns if "viscosity" in c.lower() or "surface" in c.lower()][0]
-        gc_df = pd.DataFrame({
-            "canonical_smiles": gc["canonical_smiles"],
-            "T_K": pd.to_numeric(gc["T_K"], errors="coerce"),
-            "value": pd.to_numeric(gc[gc_val], errors="coerce"),
+        gc_df = pd.read_csv(gc_path)
+        gc_df["canonical_smiles"] = gc_df["SMILES"].apply(canonical_smiles)
+        gc_df = gc_df.dropna(subset=["canonical_smiles"])
+        gc_val = [c for c in gc_df.columns if "viscosity" in c.lower() or "surface" in c.lower()][0]
+        gc_out = pd.DataFrame({
+            "canonical_smiles": gc_df["canonical_smiles"],
+            "T_K": pd.to_numeric(gc_df["T_K"], errors="coerce"),
+            "value": pd.to_numeric(gc_df[gc_val], errors="coerce"),
             "source": "gc",
         }).dropna()
-        dfs.append(gc_df)
+        dfs.append(gc_out)
 
     combined = pd.concat(dfs, ignore_index=True)
     combined = combined[(combined["T_K"] >= 200) & (combined["T_K"] <= 500)]
@@ -86,8 +95,85 @@ def _load_labels(property_name: str) -> pd.DataFrame:
     return combined
 
 
+def _load_phase1_features(smiles_list: list[str]) -> tuple[np.ndarray, np.ndarray, list[str], list[str]]:
+    """Load Phase 1 Morgan FP + RDKit descriptors for the given compounds.
+
+    For compounds not in the pre-computed CSVs, generates features on-the-fly.
+
+    Returns
+    -------
+    morgan : np.ndarray, shape (n_compounds, 2048)
+    rdkit_desc : np.ndarray, shape (n_compounds, n_desc)
+    morgan_names : list of feature names
+    rdkit_names : list of feature names
+    """
+    from rdkit import Chem
+    from rdkit.Chem import AllChem, Descriptors
+
+    # Load pre-computed files
+    morgan_df = pd.read_csv(paths.morgan_r2)
+    rdkit_df = pd.read_csv(paths.features / "rdkit_descriptors.csv")
+
+    # Canonicalize SMILES in Phase 1 files
+    morgan_df["canon"] = morgan_df["SMILES"].apply(canonical_smiles)
+    rdkit_df["canon"] = rdkit_df["SMILES"].apply(canonical_smiles)
+
+    morgan_cols = [c for c in morgan_df.columns if c.startswith("morgan_")]
+    rdkit_cols = [c for c in rdkit_df.columns if c not in ("CAS", "SMILES", "canon")]
+
+    morgan_lookup = morgan_df.dropna(subset=["canon"]).set_index("canon")[morgan_cols]
+    rdkit_lookup = rdkit_df.dropna(subset=["canon"]).set_index("canon")[rdkit_cols]
+
+    # Get the RDKit descriptor calculator names for on-the-fly generation
+    calc_names = [name for name, _ in Descriptors.descList]
+    # Map rdkit_cols to calculator names (they should match)
+    rdkit_col_set = set(rdkit_cols)
+
+    print(f"  Phase 1 features: {len(morgan_lookup)} Morgan, {len(rdkit_lookup)} RDKit")
+
+    morgan_arr = np.zeros((len(smiles_list), len(morgan_cols)), dtype=np.float32)
+    rdkit_arr = np.zeros((len(smiles_list), len(rdkit_cols)), dtype=np.float32)
+    n_from_csv = 0
+    n_generated = 0
+
+    for i, smi in enumerate(smiles_list):
+        # Try CSV lookup first
+        if smi in morgan_lookup.index:
+            morgan_arr[i] = morgan_lookup.loc[smi].values
+            n_from_csv += 1
+        else:
+            # Generate Morgan FP on-the-fly
+            mol = Chem.MolFromSmiles(smi)
+            if mol is not None:
+                fp = AllChem.GetMorganFingerprintAsBitVect(mol, radius=2, nBits=2048)
+                morgan_arr[i] = np.array(fp, dtype=np.float32)
+                n_generated += 1
+
+        if smi in rdkit_lookup.index:
+            rdkit_arr[i] = rdkit_lookup.loc[smi].values
+        else:
+            # Generate RDKit descriptors on-the-fly
+            mol = Chem.MolFromSmiles(smi)
+            if mol is not None:
+                desc_dict = Descriptors.CalcMolDescriptors(mol)
+                for j, col in enumerate(rdkit_cols):
+                    val = desc_dict.get(col, 0.0)
+                    if val is None or not np.isfinite(val):
+                        val = 0.0
+                    rdkit_arr[i, j] = val
+
+    # Clean NaN/inf
+    morgan_arr = np.nan_to_num(morgan_arr, nan=0.0, posinf=0.0, neginf=0.0)
+    rdkit_arr = np.nan_to_num(rdkit_arr, nan=0.0, posinf=0.0, neginf=0.0)
+
+    print(f"  Loaded {n_from_csv} from CSV, generated {n_generated} on-the-fly")
+    print(f"  Morgan shape: {morgan_arr.shape}, RDKit shape: {rdkit_arr.shape}")
+
+    return morgan_arr, rdkit_arr, morgan_cols, list(rdkit_cols)
+
+
 def precompute():
-    """Pre-compute and cache NMR features for all compounds with labels."""
+    """Pre-compute and cache all features for NMR-matched compounds."""
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
 
     # Step 1: Collect all target SMILES from both properties
@@ -97,8 +183,8 @@ def precompute():
     all_target_smiles = set(visc_labels["canonical_smiles"].unique()) | set(st_labels["canonical_smiles"].unique())
     print(f"  Total target SMILES: {len(all_target_smiles)}")
 
-    # Step 2: Load NMR data, match SMILES, convert spectra, extract features
-    print("Loading NMR parquet (1H NMR only, needed columns)...")
+    # Step 2: Load NMR data and match SMILES
+    print("Loading NMR parquet (1H NMR only)...")
     nmr = pd.read_parquet(
         paths.nmrexp,
         columns=["SMILES", "NMR_type", "NMR_processed"],
@@ -136,7 +222,6 @@ def precompute():
     nmr = nmr.dropna(subset=["canonical_smiles"])
 
     # Keep best entry per compound (most peaks)
-    import ast
     def _count_peaks(s):
         try:
             return len(ast.literal_eval(s))
@@ -149,65 +234,91 @@ def precompute():
     )
     print(f"  {len(nmr)} unique compounds with matched 1H NMR")
 
-    # Convert to spectra and extract features
-    print("Converting spectra and extracting features...")
-    feature_names = get_feature_names()
+    # Step 3: Parse peaks, extract spectrum + peak-list features
+    print("Extracting spectrum and peak-list features...")
     compound_data = []
 
     for i, (_, row) in enumerate(nmr.iterrows()):
         smi = row["canonical_smiles"]
-        spec = convert_compound(row["NMR_processed"], nmr_type="1H NMR")
-        if spec is not None:
-            features = extract_nmr_features(spec)
-            hc = is_hydrocarbon(smi)
-            compound_data.append({
-                "canonical_smiles": smi,
-                "spectrum": spec,
-                "features": features,
-                "is_hydrocarbon": hc,
-            })
+
+        # Parse peak list FIRST (preserves absolute integrals)
+        peaks = parse_1h_peaks(row["NMR_processed"])
+        if peaks is None:
+            continue
+
+        # Convert peaks to spectrum
+        spec = peaks_to_spectrum_1h(peaks, _1H_GRID)
+
+        # Extract both feature types
+        spectrum_feats = extract_nmr_features(spec)
+        peaklist_feats = extract_peaklist_features(peaks)
+        hc = is_hydrocarbon(smi)
+
+        compound_data.append({
+            "canonical_smiles": smi,
+            "spectrum": spec,
+            "spectrum_features": spectrum_feats,
+            "peaklist_features": peaklist_feats,
+            "is_hydrocarbon": hc,
+        })
+
         if (i + 1) % 100 == 0:
             print(f"  {i+1}/{len(nmr)} compounds...", flush=True)
 
-    print(f"  {len(compound_data)} compounds with valid spectra and features")
+    print(f"  {len(compound_data)} compounds with valid features")
 
     # Free NMR dataframe
     del nmr
     gc.collect()
 
-    # Save
+    # Step 4: Load Phase 1 features (Morgan FP + RDKit descriptors)
     smiles_list = [d["canonical_smiles"] for d in compound_data]
+    print(f"\nLoading Phase 1 features for {len(smiles_list)} compounds...")
+    morgan_arr, rdkit_arr, morgan_names, rdkit_names = _load_phase1_features(smiles_list)
+
+    # Step 5: Save everything
     spectra = np.stack([d["spectrum"] for d in compound_data])
-    features = np.stack([d["features"] for d in compound_data])
+    spectrum_features = np.stack([d["spectrum_features"] for d in compound_data])
+    peaklist_features = np.stack([d["peaklist_features"] for d in compound_data])
     hc_mask = np.array([d["is_hydrocarbon"] for d in compound_data])
 
     np.savez_compressed(
         CACHE_DIR / "nmr_compound_cache.npz",
         spectra=spectra,
-        features=features,
+        spectrum_features=spectrum_features,
+        peaklist_features=peaklist_features,
+        phase1_morgan=morgan_arr,
+        phase1_rdkit=rdkit_arr,
         hc_mask=hc_mask,
     )
 
-    # Save SMILES list separately (can't store strings in npz easily)
     with open(CACHE_DIR / "nmr_smiles_list.txt", "w") as f:
         for smi in smiles_list:
             f.write(smi + "\n")
 
-    # Save labels
     visc_labels.to_csv(CACHE_DIR / "labels_viscosity.csv", index=False)
     st_labels.to_csv(CACHE_DIR / "labels_surface_tension.csv", index=False)
 
-    # Save feature names
-    with open(CACHE_DIR / "feature_names.txt", "w") as f:
-        for name in feature_names:
-            f.write(name + "\n")
+    spectrum_names = get_feature_names()
+    peaklist_names = get_peaklist_feature_names()
+
+    for fname, names in [
+        ("spectrum_feature_names.txt", spectrum_names),
+        ("peaklist_feature_names.txt", peaklist_names),
+        ("morgan_feature_names.txt", morgan_names),
+        ("rdkit_feature_names.txt", rdkit_names),
+    ]:
+        with open(CACHE_DIR / fname, "w") as f:
+            for name in names:
+                f.write(name + "\n")
 
     print(f"\nCache saved to {CACHE_DIR}/")
     print(f"  Compounds: {len(smiles_list)}")
-    print(f"  Spectra shape: {spectra.shape}")
-    print(f"  Features shape: {features.shape}")
+    print(f"  Spectrum features: {spectrum_features.shape}")
+    print(f"  Peak-list features: {peaklist_features.shape}")
+    print(f"  Morgan FP: {morgan_arr.shape}")
+    print(f"  RDKit descriptors: {rdkit_arr.shape}")
     print(f"  Hydrocarbons: {hc_mask.sum()}")
-    print(f"  Feature names: {len(feature_names)}")
 
 
 if __name__ == "__main__":
