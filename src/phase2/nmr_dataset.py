@@ -324,9 +324,12 @@ class NMRDirectDataset(Dataset):
 
     @staticmethod
     def _augment(spec: np.ndarray) -> np.ndarray:
-        """Simple spectrum augmentation: small shift + noise + scaling."""
-        # Random horizontal shift (up to 2 grid points)
-        shift = np.random.randint(-2, 3)
+        """Spectrum augmentation: shift + noise + scaling + baseline drift.
+
+        Aggressive augmentation to compensate for small dataset size.
+        """
+        # Random horizontal shift (up to 5 grid points ~ 0.05 ppm)
+        shift = np.random.randint(-5, 6)
         if shift != 0:
             spec = np.roll(spec, shift)
             if shift > 0:
@@ -334,15 +337,32 @@ class NMRDirectDataset(Dataset):
             else:
                 spec[shift:] = 0
 
-        # Additive Gaussian noise
-        noise = np.random.normal(0, 0.005, spec.shape)
+        # Additive Gaussian noise (stronger)
+        noise_std = np.random.uniform(0.005, 0.02)
+        noise = np.random.normal(0, noise_std, spec.shape)
         spec = spec + noise
 
-        # Random intensity scaling
-        scale = np.random.uniform(0.9, 1.1)
+        # Random intensity scaling (wider range)
+        scale = np.random.uniform(0.8, 1.2)
         spec = spec * scale
 
-        # Re-clip to [0, ~1]
+        # Random baseline drift (low-frequency polynomial)
+        if np.random.random() < 0.5:
+            x = np.linspace(-1, 1, len(spec))
+            degree = np.random.randint(1, 4)
+            coeffs = np.random.randn(degree + 1) * 0.015
+            drift = np.polyval(coeffs, x) * (np.max(np.abs(spec)) + 1e-10)
+            spec = spec + drift
+
+        # Random peak dropout (zero a small ppm region)
+        if np.random.random() < 0.2:
+            center = np.random.randint(0, len(spec))
+            width = np.random.randint(5, 20)
+            lo = max(0, center - width // 2)
+            hi = min(len(spec), center + width // 2)
+            spec[lo:hi] = 0
+
+        # Re-clip and normalize
         spec = np.clip(spec, 0, None)
         peak = spec.max()
         if peak > 0:

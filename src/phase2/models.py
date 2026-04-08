@@ -28,12 +28,14 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 class DirectHead(nn.Module):
     """Direct prediction: concat embedding with T features -> 1 output."""
 
-    def __init__(self, embed_dim, t_feature_dim=3):
+    def __init__(self, embed_dim, t_feature_dim=3, dropout=0.3):
         super().__init__()
+        hidden = min(64, embed_dim)
         self.net = nn.Sequential(
-            nn.Linear(embed_dim + t_feature_dim, 64),
+            nn.Linear(embed_dim + t_feature_dim, hidden),
             nn.ReLU(),
-            nn.Linear(64, 1),
+            nn.Dropout(dropout),
+            nn.Linear(hidden, 1),
         )
         self._init_weights()
 
@@ -51,12 +53,14 @@ class DirectHead(nn.Module):
 class ArrheniusHead(nn.Module):
     """Arrhenius prediction: embedding -> 2 outputs [A, B] (no temperature)."""
 
-    def __init__(self, embed_dim):
+    def __init__(self, embed_dim, dropout=0.3):
         super().__init__()
+        hidden = min(64, embed_dim)
         self.net = nn.Sequential(
-            nn.Linear(embed_dim, 64),
+            nn.Linear(embed_dim, hidden),
             nn.ReLU(),
-            nn.Linear(64, 2),
+            nn.Dropout(dropout),
+            nn.Linear(hidden, 2),
         )
         self._init_weights()
 
@@ -77,12 +81,19 @@ class ArrheniusHead(nn.Module):
 class NMR1DCNN(nn.Module):
     """1D CNN for NMR spectrum -> property prediction.
 
-    Architecture:
-        Conv1d(1, 32, k=7, pad=3) -> BN -> ReLU -> MaxPool(4)     # (32, 300)
-        Conv1d(32, 64, k=5, pad=2) -> BN -> ReLU -> MaxPool(4)    # (64, 75)
-        Conv1d(64, 128, k=3, pad=1) -> BN -> ReLU -> MaxPool(3)   # (128, 25)
-        Conv1d(128, 256, k=3, pad=1) -> BN -> ReLU               # (256, 25)
-        GlobalAvgPool1d -> Dropout(0.3)                           # (256,)
+    Two size variants controlled by `width`:
+      - 'small' (~12K params): designed for <1000 compound datasets
+        Conv1d(1, 16, k=7) -> BN -> ReLU -> MaxPool(4)     # (16, 300)
+        Conv1d(16, 32, k=5) -> BN -> ReLU -> MaxPool(4)    # (32, 75)
+        Conv1d(32, 64, k=3) -> BN -> ReLU -> MaxPool(3)    # (64, 25)
+        GlobalAvgPool1d -> Dropout(0.5)                     # (64,)
+
+      - 'large' (~145K params): original architecture
+        Conv1d(1, 32, k=7) -> BN -> ReLU -> MaxPool(4)     # (32, 300)
+        Conv1d(32, 64, k=5) -> BN -> ReLU -> MaxPool(4)    # (64, 75)
+        Conv1d(64, 128, k=3) -> BN -> ReLU -> MaxPool(3)   # (128, 25)
+        Conv1d(128, 256, k=3) -> BN -> ReLU               # (256, 25)
+        GlobalAvgPool1d -> Dropout(0.3)                     # (256,)
 
     Parameters
     ----------
@@ -92,41 +103,64 @@ class NMR1DCNN(nn.Module):
         'direct' or 'arrhenius'. Determines the prediction head.
     t_feature_dim : int
         Number of temperature features (only used for direct approach).
+    width : str
+        'small' or 'large'. Controls model capacity.
     """
 
-    def __init__(self, in_channels=1, approach="direct", t_feature_dim=3):
+    def __init__(self, in_channels=1, approach="direct", t_feature_dim=3, width="small"):
         super().__init__()
         self.approach = approach
-        self.embed_dim = 256
 
-        self.features = nn.Sequential(
-            nn.Conv1d(in_channels, 32, kernel_size=7, padding=3),
-            nn.BatchNorm1d(32),
-            nn.ReLU(),
-            nn.MaxPool1d(4),
+        if width == "small":
+            self.embed_dim = 64
+            drop = 0.5
+            self.features = nn.Sequential(
+                nn.Conv1d(in_channels, 16, kernel_size=7, padding=3),
+                nn.BatchNorm1d(16),
+                nn.ReLU(),
+                nn.MaxPool1d(4),
 
-            nn.Conv1d(32, 64, kernel_size=5, padding=2),
-            nn.BatchNorm1d(64),
-            nn.ReLU(),
-            nn.MaxPool1d(4),
+                nn.Conv1d(16, 32, kernel_size=5, padding=2),
+                nn.BatchNorm1d(32),
+                nn.ReLU(),
+                nn.MaxPool1d(4),
 
-            nn.Conv1d(64, 128, kernel_size=3, padding=1),
-            nn.BatchNorm1d(128),
-            nn.ReLU(),
-            nn.MaxPool1d(3),
+                nn.Conv1d(32, 64, kernel_size=3, padding=1),
+                nn.BatchNorm1d(64),
+                nn.ReLU(),
+                nn.MaxPool1d(3),
+            )
+        else:
+            self.embed_dim = 256
+            drop = 0.3
+            self.features = nn.Sequential(
+                nn.Conv1d(in_channels, 32, kernel_size=7, padding=3),
+                nn.BatchNorm1d(32),
+                nn.ReLU(),
+                nn.MaxPool1d(4),
 
-            nn.Conv1d(128, 256, kernel_size=3, padding=1),
-            nn.BatchNorm1d(256),
-            nn.ReLU(),
-        )
+                nn.Conv1d(32, 64, kernel_size=5, padding=2),
+                nn.BatchNorm1d(64),
+                nn.ReLU(),
+                nn.MaxPool1d(4),
+
+                nn.Conv1d(64, 128, kernel_size=3, padding=1),
+                nn.BatchNorm1d(128),
+                nn.ReLU(),
+                nn.MaxPool1d(3),
+
+                nn.Conv1d(128, 256, kernel_size=3, padding=1),
+                nn.BatchNorm1d(256),
+                nn.ReLU(),
+            )
 
         self.pool = nn.AdaptiveAvgPool1d(1)
-        self.dropout = nn.Dropout(0.3)
+        self.dropout = nn.Dropout(drop)
 
         if approach == "arrhenius":
-            self.head = ArrheniusHead(self.embed_dim)
+            self.head = ArrheniusHead(self.embed_dim, dropout=drop)
         else:
-            self.head = DirectHead(self.embed_dim, t_feature_dim)
+            self.head = DirectHead(self.embed_dim, t_feature_dim, dropout=drop)
 
         self._init_weights()
 
@@ -146,7 +180,7 @@ class NMR1DCNN(nn.Module):
 
         Returns
         -------
-        embedding : tensor, shape (batch, 256)
+        embedding : tensor, shape (batch, embed_dim)
         """
         h = self.features(x)
         h = self.pool(h).squeeze(-1)
@@ -215,14 +249,9 @@ class ResBlock1d(nn.Module):
 class NMR1DResNet(nn.Module):
     """1D ResNet for NMR spectrum -> property prediction.
 
-    Architecture:
-        Stem: Conv1d(1, 18, k=7, s=2, pad=3) -> BN -> ReLU -> MaxPool(2)  # (18, 300)
-        ResBlock(18, 36, stride=2)    # (36, 150)
-        ResBlock(36, 36, stride=1)
-        ResBlock(36, 72, stride=2)    # (72, 75)
-        ResBlock(72, 72, stride=1)
-        ResBlock(72, 144, stride=2)   # (144, 38)
-        GlobalAvgPool1d -> Dropout(0.3)  # (144,)
+    Two size variants controlled by `width`:
+      - 'small' (~18K params): designed for <1000 compound datasets
+      - 'large' (~190K params): original architecture
 
     Parameters
     ----------
@@ -232,40 +261,57 @@ class NMR1DResNet(nn.Module):
         'direct' or 'arrhenius'.
     t_feature_dim : int
         Number of temperature features (direct approach only).
+    width : str
+        'small' or 'large'. Controls model capacity.
     """
 
-    def __init__(self, in_channels=1, approach="direct", t_feature_dim=3):
+    def __init__(self, in_channels=1, approach="direct", t_feature_dim=3, width="small"):
         super().__init__()
         self.approach = approach
-        self.embed_dim = 256
 
-        self.stem = nn.Sequential(
-            nn.Conv1d(in_channels, 18, kernel_size=7, stride=2, padding=3, bias=False),
-            nn.BatchNorm1d(18),
-            nn.ReLU(),
-            nn.MaxPool1d(2),
-        )
+        if width == "small":
+            drop = 0.5
+            self.stem = nn.Sequential(
+                nn.Conv1d(in_channels, 12, kernel_size=7, stride=2, padding=3, bias=False),
+                nn.BatchNorm1d(12),
+                nn.ReLU(),
+                nn.MaxPool1d(2),
+            )
+            self.layer1 = nn.Sequential(
+                ResBlock1d(12, 24, stride=2),
+                ResBlock1d(24, 24, stride=1),
+            )
+            self.layer2 = nn.Sequential(
+                ResBlock1d(24, 48, stride=2),
+            )
+            self.layer3 = ResBlock1d(48, 64, stride=2)
+            self.embed_dim = 64
+        else:
+            drop = 0.3
+            self.stem = nn.Sequential(
+                nn.Conv1d(in_channels, 18, kernel_size=7, stride=2, padding=3, bias=False),
+                nn.BatchNorm1d(18),
+                nn.ReLU(),
+                nn.MaxPool1d(2),
+            )
+            self.layer1 = nn.Sequential(
+                ResBlock1d(18, 36, stride=2),
+                ResBlock1d(36, 36, stride=1),
+            )
+            self.layer2 = nn.Sequential(
+                ResBlock1d(36, 72, stride=2),
+                ResBlock1d(72, 72, stride=1),
+            )
+            self.layer3 = ResBlock1d(72, 144, stride=2)
+            self.embed_dim = 144
 
-        self.layer1 = nn.Sequential(
-            ResBlock1d(18, 36, stride=2),
-            ResBlock1d(36, 36, stride=1),
-        )
-
-        self.layer2 = nn.Sequential(
-            ResBlock1d(36, 72, stride=2),
-            ResBlock1d(72, 72, stride=1),
-        )
-
-        self.layer3 = ResBlock1d(72, 144, stride=2)
-
-        self.embed_dim = 144
         self.pool = nn.AdaptiveAvgPool1d(1)
-        self.dropout = nn.Dropout(0.3)
+        self.dropout = nn.Dropout(drop)
 
         if approach == "arrhenius":
-            self.head = ArrheniusHead(self.embed_dim)
+            self.head = ArrheniusHead(self.embed_dim, dropout=drop)
         else:
-            self.head = DirectHead(self.embed_dim, t_feature_dim)
+            self.head = DirectHead(self.embed_dim, t_feature_dim, dropout=drop)
 
         # Init stem conv
         for m in self.stem.modules():
@@ -273,16 +319,6 @@ class NMR1DResNet(nn.Module):
                 nn.init.kaiming_normal_(m.weight, nonlinearity="relu")
 
     def forward_embed(self, x):
-        """Extract embedding from spectrum input.
-
-        Parameters
-        ----------
-        x : tensor, shape (batch, C_in, 1200)
-
-        Returns
-        -------
-        embedding : tensor, shape (batch, 256)
-        """
         h = self.stem(x)
         h = self.layer1(h)
         h = self.layer2(h)
@@ -292,17 +328,6 @@ class NMR1DResNet(nn.Module):
         return h
 
     def forward(self, x, t_features=None):
-        """Forward pass.
-
-        Parameters
-        ----------
-        x : tensor, shape (batch, C_in, 1200)
-        t_features : tensor or None
-
-        Returns
-        -------
-        prediction : tensor
-        """
         embed = self.forward_embed(x)
         if self.approach == "arrhenius":
             return self.head(embed)
@@ -348,11 +373,24 @@ class NMRTransformer(nn.Module):
     """
 
     def __init__(self, peak_dim=12, d_model=64, n_heads=4, n_layers=4,
-                 d_ff=128, max_peaks=50, approach="direct", t_feature_dim=3):
+                 d_ff=128, max_peaks=50, approach="direct", t_feature_dim=3,
+                 width="small"):
         super().__init__()
         self.approach = approach
-        self.embed_dim = d_model
         self.max_peaks = max_peaks
+
+        if width == "small":
+            d_model = 32
+            n_heads = 4
+            n_layers = 2
+            d_ff = 64
+            drop = 0.5
+            enc_drop = 0.2
+        else:
+            drop = 0.3
+            enc_drop = 0.1
+
+        self.embed_dim = d_model
 
         # Peak embedding
         self.embed = nn.Sequential(
@@ -369,17 +407,17 @@ class NMRTransformer(nn.Module):
             d_model=d_model,
             nhead=n_heads,
             dim_feedforward=d_ff,
-            dropout=0.1,
+            dropout=enc_drop,
             batch_first=True,
         )
         self.transformer = nn.TransformerEncoder(encoder_layer, num_layers=n_layers)
 
-        self.dropout = nn.Dropout(0.3)
+        self.dropout = nn.Dropout(drop)
 
         if approach == "arrhenius":
-            self.head = ArrheniusHead(self.embed_dim)
+            self.head = ArrheniusHead(self.embed_dim, dropout=drop)
         else:
-            self.head = DirectHead(self.embed_dim, t_feature_dim)
+            self.head = DirectHead(self.embed_dim, t_feature_dim, dropout=drop)
 
         self._init_weights()
 
@@ -462,70 +500,24 @@ if __name__ == "__main__":
 
     batch = 4
     spec_len = 1200
-
-    # --- NMR1DCNN ---
-    print("\n--- NMR1DCNN (direct) ---")
-    cnn_d = NMR1DCNN(in_channels=1, approach="direct")
     x_spec = torch.randn(batch, 1, spec_len)
     t_feat = torch.randn(batch, 3)
-    embed_cnn = cnn_d.forward_embed(x_spec)
-    out_cnn = cnn_d(x_spec, t_feat)
-    print(f"  Params: {count_parameters(cnn_d):,}")
-    print(f"  Embed shape: {embed_cnn.shape}")
-    print(f"  Output shape: {out_cnn.shape}")
 
-    print("\n--- NMR1DCNN (arrhenius) ---")
-    cnn_a = NMR1DCNN(in_channels=1, approach="arrhenius")
-    out_cnn_a = cnn_a(x_spec)
-    print(f"  Params: {count_parameters(cnn_a):,}")
-    print(f"  Output shape: {out_cnn_a.shape}")
+    for width in ["small", "large"]:
+        print(f"\n{'='*40} WIDTH={width} {'='*40}")
 
-    # --- NMR1DResNet ---
-    print("\n--- NMR1DResNet (direct) ---")
-    resnet_d = NMR1DResNet(in_channels=1, approach="direct")
-    embed_res = resnet_d.forward_embed(x_spec)
-    out_res = resnet_d(x_spec, t_feat)
-    print(f"  Params: {count_parameters(resnet_d):,}")
-    print(f"  Embed shape: {embed_res.shape}")
-    print(f"  Output shape: {out_res.shape}")
+        cnn_d = NMR1DCNN(approach="direct", width=width)
+        out = cnn_d(x_spec, t_feat)
+        print(f"  CNN direct:     {count_parameters(cnn_d):>8,} params, embed={cnn_d.embed_dim}, out={out.shape}")
 
-    print("\n--- NMR1DResNet (arrhenius) ---")
-    resnet_a = NMR1DResNet(in_channels=1, approach="arrhenius")
-    out_res_a = resnet_a(x_spec)
-    print(f"  Params: {count_parameters(resnet_a):,}")
-    print(f"  Output shape: {out_res_a.shape}")
+        resnet_d = NMR1DResNet(approach="direct", width=width)
+        out = resnet_d(x_spec, t_feat)
+        print(f"  ResNet direct:  {count_parameters(resnet_d):>8,} params, embed={resnet_d.embed_dim}, out={out.shape}")
 
-    # --- NMRTransformer ---
-    print("\n--- NMRTransformer (direct) ---")
-    transformer_d = NMRTransformer(approach="direct")
-    n_peaks = 15
-    x_peaks = torch.randn(batch, n_peaks, 12)
-    mask = torch.zeros(batch, n_peaks, dtype=torch.bool)
-    mask[0, 10:] = True  # First sample has only 10 peaks
-    mask[1, 8:] = True   # Second has 8
-    embed_tf = transformer_d.forward_embed(x_peaks, padding_mask=mask)
-    out_tf = transformer_d(x_peaks, t_feat, padding_mask=mask)
-    print(f"  Params: {count_parameters(transformer_d):,}")
-    print(f"  Embed shape: {embed_tf.shape}")
-    print(f"  Output shape: {out_tf.shape}")
-
-    print("\n--- NMRTransformer (arrhenius) ---")
-    transformer_a = NMRTransformer(approach="arrhenius")
-    out_tf_a = transformer_a(x_peaks, padding_mask=mask)
-    print(f"  Params: {count_parameters(transformer_a):,}")
-    print(f"  Output shape: {out_tf_a.shape}")
-
-    # --- Summary ---
-    print("\n" + "=" * 60)
-    print("  Parameter Summary")
-    print("=" * 60)
-    models = {
-        "NMR1DCNN (direct)": cnn_d,
-        "NMR1DCNN (arrhenius)": cnn_a,
-        "NMR1DResNet (direct)": resnet_d,
-        "NMR1DResNet (arrhenius)": resnet_a,
-        "NMRTransformer (direct)": transformer_d,
-        "NMRTransformer (arrhenius)": transformer_a,
-    }
-    for name, model in models.items():
-        print(f"  {name:30s} {count_parameters(model):>10,} params")
+        transformer_d = NMRTransformer(approach="direct", width=width)
+        n_peaks = 15
+        x_peaks = torch.randn(batch, n_peaks, 12)
+        mask = torch.zeros(batch, n_peaks, dtype=torch.bool)
+        mask[0, 10:] = True
+        out = transformer_d(x_peaks, t_feat, padding_mask=mask)
+        print(f"  Transformer direct: {count_parameters(transformer_d):>8,} params, embed={transformer_d.embed_dim}, out={out.shape}")

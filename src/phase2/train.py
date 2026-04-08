@@ -183,12 +183,13 @@ def train_one_model_spectrum(
     model, train_loader, val_loader, device,
     approach="direct", loss_fn=None,
     epochs=500, lr=3e-4, patience=50, print_every=20,
+    weight_decay=5e-4,
 ):
     """Train a single spectrum-based model (CNN or ResNet).
 
     Returns the best model (loaded with best validation weights).
     """
-    optimizer = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=1e-4)
+    optimizer = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=weight_decay)
     warmup = 10
 
     def lr_lambda(ep):
@@ -279,9 +280,10 @@ def train_one_model_transformer(
     model, train_loader, val_loader, device,
     approach="direct", loss_fn=None,
     epochs=500, lr=3e-4, patience=50, print_every=20,
+    weight_decay=5e-4,
 ):
     """Train a single Transformer model (peak-list input)."""
-    optimizer = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=1e-4)
+    optimizer = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=weight_decay)
     warmup = 10
 
     def lr_lambda(ep):
@@ -512,9 +514,9 @@ def _train_fold_spectrum(
         for e in range(n_ensemble):
             set_seed(42 + fold * 1000 + e * 111)
             if model_type == "cnn":
-                model = NMR1DCNN(approach="direct").to(device)
+                model = NMR1DCNN(approach="direct", width="small").to(device)
             else:
-                model = NMR1DResNet(approach="direct").to(device)
+                model = NMR1DResNet(approach="direct", width="small").to(device)
 
             if e == 0:
                 print(f"  Model: {model_type.upper()}, {count_parameters(model):,} params")
@@ -581,9 +583,9 @@ def _train_fold_spectrum(
         for e in range(n_ensemble):
             set_seed(42 + fold * 1000 + e * 111)
             if model_type == "cnn":
-                model = NMR1DCNN(approach="arrhenius").to(device)
+                model = NMR1DCNN(approach="arrhenius", width="small").to(device)
             else:
-                model = NMR1DResNet(approach="arrhenius").to(device)
+                model = NMR1DResNet(approach="arrhenius", width="small").to(device)
 
             if e == 0:
                 print(f"  Model: {model_type.upper()}, {count_parameters(model):,} params")
@@ -704,7 +706,7 @@ def _train_fold_transformer(
         models = []
         for e in range(n_ensemble):
             set_seed(42 + fold * 1000 + e * 111)
-            model = NMRTransformer(approach="direct").to(device)
+            model = NMRTransformer(approach="direct", width="small").to(device)
             if e == 0:
                 print(f"  Model: Transformer, {count_parameters(model):,} params")
 
@@ -810,7 +812,7 @@ def _train_fold_transformer(
         models = []
         for e in range(n_ensemble):
             set_seed(42 + fold * 1000 + e * 111)
-            model = NMRTransformer(approach="arrhenius").to(device)
+            model = NMRTransformer(approach="arrhenius", width="small").to(device)
             if e == 0:
                 print(f"  Model: Transformer, {count_parameters(model):,} params")
 
@@ -1025,30 +1027,31 @@ def _to_serializable(obj):
 def main():
     print("=" * 60)
     print("  PHASE 2: NMR SPECTRUM -> PROPERTY PREDICTION")
-    print("  CNN direct for viscosity and surface tension")
+    print("  CNN / ResNet / Transformer (small-width) for viscosity and surface tension")
     print("=" * 60)
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
     results = {}
 
-    # CNN direct for viscosity
-    visc_cnn = train_nmr_model(
-        model_type="cnn", property_name="viscosity", approach="direct",
-        n_folds=5, n_ensemble=3,
-    )
-    results.setdefault("viscosity", {})["cnn_direct"] = visc_cnn
+    for model_type in ["cnn", "resnet", "transformer"]:
+        for prop in ["viscosity", "surface_tension"]:
+            fold_results = train_nmr_model(
+                model_type=model_type,
+                property_name=prop,
+                approach="direct",
+                n_folds=5,
+                n_ensemble=3,
+                lr=2e-4,
+                patience=50,
+            )
+            key = f"{model_type}_direct"
+            results.setdefault(prop, {})[key] = fold_results
 
-    # CNN direct for surface tension
-    st_cnn = train_nmr_model(
-        model_type="cnn", property_name="surface_tension", approach="direct",
-        n_folds=5, n_ensemble=3,
-    )
-    results.setdefault("surface_tension", {})["cnn_direct"] = st_cnn
+            # Save intermediate results after each model
+            with open(OUTPUT_DIR / "phase2_results.json", "w") as f:
+                json.dump(_to_serializable(results), f, indent=2)
 
-    # Save results
-    with open(OUTPUT_DIR / "phase2_results.json", "w") as f:
-        json.dump(_to_serializable(results), f, indent=2)
     print(f"\nResults saved to {OUTPUT_DIR / 'phase2_results.json'}")
 
     # Print comparison with Phase 1
