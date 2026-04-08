@@ -105,19 +105,56 @@ def _load_labels(property_name: str) -> pd.DataFrame:
 # NMR loading and spectrum conversion
 # ---------------------------------------------------------------------------
 
-def _load_nmr_spectra() -> dict[str, np.ndarray]:
+def _load_nmr_spectra(target_smiles: set[str] | None = None) -> dict[str, np.ndarray]:
     """Load NMRexp 1H NMR rows, canonicalize SMILES, pick best entry per
     compound (most peaks), and convert each to a spectrum array.
 
+    Parameters
+    ----------
+    target_smiles : set of canonical SMILES to filter to (optional).
+        If provided, only NMR rows whose raw SMILES canonicalize to a
+        member of this set are kept. This avoids canonicalizing 1.4M
+        SMILES when we only need a few thousand.
+
     Returns dict mapping canonical_smiles -> spectrum (1200,).
     """
-    df = pd.read_parquet(paths.nmrexp)
+    print("[NMR] Loading NMRexp parquet...")
+    df = pd.read_parquet(paths.nmrexp, columns=["SMILES", "NMR_type", "NMR_processed"])
     df = df[df["NMR_type"] == "1H NMR"].copy()
     df = df.dropna(subset=["NMR_processed", "SMILES"])
+    print(f"[NMR] {len(df)} 1H NMR rows, {df['SMILES'].nunique()} unique raw SMILES")
 
-    # Canonicalize
-    df["canonical_smiles"] = df["SMILES"].apply(canonical_smiles)
-    df = df.dropna(subset=["canonical_smiles"])
+    # Fast pre-filter: only canonicalize SMILES that could match targets
+    if target_smiles is not None:
+        # First pass: try raw SMILES as-is (many are already canonical)
+        raw_hits = df["SMILES"].isin(target_smiles)
+        print(f"[NMR] {raw_hits.sum()} rows match targets by raw SMILES")
+
+        # Second pass: canonicalize only the unique non-matching SMILES
+        unique_raw = df.loc[~raw_hits, "SMILES"].unique()
+        print(f"[NMR] Canonicalizing {len(unique_raw)} remaining unique SMILES...")
+        canon_map = {}
+        for smi in unique_raw:
+            c = canonical_smiles(smi)
+            if c is not None and c in target_smiles:
+                canon_map[smi] = c
+
+        print(f"[NMR] {len(canon_map)} additional matches found after canonicalization")
+
+        # Build canonical column efficiently
+        df["canonical_smiles"] = df["SMILES"].copy()
+        # Direct matches: raw SMILES IS the canonical form
+        mask_direct = df["SMILES"].isin(target_smiles)
+        # Mapped matches: raw -> canonical via canon_map
+        mask_mapped = df["SMILES"].isin(canon_map)
+        df.loc[mask_mapped, "canonical_smiles"] = df.loc[mask_mapped, "SMILES"].map(canon_map)
+
+        df = df[mask_direct | mask_mapped]
+        df = df.dropna(subset=["canonical_smiles"])
+    else:
+        # No filter: canonicalize everything (slow!)
+        df["canonical_smiles"] = df["SMILES"].apply(canonical_smiles)
+        df = df.dropna(subset=["canonical_smiles"])
 
     # Count peaks per entry to select the best one per compound
     def _count_peaks(s):
@@ -134,18 +171,20 @@ def _load_nmr_spectra() -> dict[str, np.ndarray]:
         subset=["canonical_smiles"], keep="first"
     )
 
-    print(f"[NMR] {len(df)} unique compounds with 1H NMR data")
+    print(f"[NMR] {len(df)} unique compounds with matched 1H NMR data")
 
     # Convert to spectra
     spectra = {}
     n_fail = 0
-    for _, row in df.iterrows():
+    for i, (_, row) in enumerate(df.iterrows()):
         smi = row["canonical_smiles"]
         spec = convert_compound(row["NMR_processed"], nmr_type="1H NMR")
         if spec is not None:
             spectra[smi] = spec
         else:
             n_fail += 1
+        if (i + 1) % 100 == 0:
+            print(f"  Converting spectra: {i+1}/{len(df)}...", flush=True)
 
     print(f"[NMR] {len(spectra)} spectra converted, {n_fail} failures")
     return spectra
@@ -170,13 +209,14 @@ def build_nmr_property_dataset(property_name: str = "viscosity") -> dict:
         smiles_list : list of canonical SMILES (compound order matches spectra rows)
         hc_mask : np.ndarray of bool, True for hydrocarbons
     """
-    # Load NMR spectra
-    spectra_dict = _load_nmr_spectra()
-
-    # Load property labels
+    # Load property labels FIRST (small, fast)
     labels = _load_labels(property_name)
     print(f"[Labels {property_name}] {len(labels)} rows, "
           f"{labels['canonical_smiles'].nunique()} compounds")
+
+    # Load NMR spectra, filtering to only compounds with labels
+    target_smiles = set(labels["canonical_smiles"].unique())
+    spectra_dict = _load_nmr_spectra(target_smiles=target_smiles)
 
     # Inner join: keep only compounds that have both NMR and labels
     nmr_smiles = set(spectra_dict.keys())
