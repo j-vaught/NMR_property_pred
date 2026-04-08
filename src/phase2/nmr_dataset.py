@@ -130,26 +130,32 @@ def _load_nmr_spectra(target_smiles: set[str] | None = None) -> dict[str, np.nda
         mask_direct = df["SMILES"].isin(target_smiles)
         print(f"[NMR] {mask_direct.sum()} rows match targets by raw SMILES")
 
-        # Pass 2: canonicalize only target SMILES that might have non-canonical
-        # forms in NMRexp. Build reverse map from target canonical -> all raw forms.
-        # Only canonicalize the ~2K target SMILES, not 1.4M NMR SMILES.
+        # Pass 2: canonicalize unmatched NMR SMILES in parallel to find
+        # non-canonical forms of target molecules.
         remaining_targets = target_smiles - set(df.loc[mask_direct, "SMILES"].unique())
         if remaining_targets:
-            # Get unique unmatched raw SMILES (sample up to 50K to limit time)
             unmatched_raw = df.loc[~mask_direct, "SMILES"].unique()
-            if len(unmatched_raw) > 50000:
-                # Random sample — we'll miss some but keep it fast
-                rng = np.random.RandomState(42)
-                unmatched_raw = rng.choice(unmatched_raw, 50000, replace=False)
-                print(f"[NMR] Sampling 50K of {df.loc[~mask_direct, 'SMILES'].nunique()} unmatched SMILES for canonicalization")
+            print(f"[NMR] Canonicalizing {len(unmatched_raw)} unmatched SMILES (parallel)...")
+
+            from multiprocessing import Pool
+            import functools
+
+            def _canon_one(smi):
+                from rdkit import Chem
+                mol = Chem.MolFromSmiles(smi)
+                if mol is None:
+                    return None
+                return Chem.MolToSmiles(mol)
+
+            with Pool(processes=8) as pool:
+                results = pool.map(_canon_one, unmatched_raw, chunksize=10000)
 
             canon_map = {}
-            for smi in unmatched_raw:
-                c = canonical_smiles(smi)
-                if c is not None and c in remaining_targets:
-                    canon_map[smi] = c
+            for raw_smi, canon in zip(unmatched_raw, results):
+                if canon is not None and canon in remaining_targets:
+                    canon_map[raw_smi] = canon
 
-            print(f"[NMR] {len(canon_map)} additional matches from partial canonicalization")
+            print(f"[NMR] {len(canon_map)} additional matches from full canonicalization")
             mask_mapped = df["SMILES"].isin(canon_map)
         else:
             mask_mapped = pd.Series(False, index=df.index)
