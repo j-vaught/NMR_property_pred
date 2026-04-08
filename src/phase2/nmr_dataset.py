@@ -124,31 +124,40 @@ def _load_nmr_spectra(target_smiles: set[str] | None = None) -> dict[str, np.nda
     df = df.dropna(subset=["NMR_processed", "SMILES"])
     print(f"[NMR] {len(df)} 1H NMR rows, {df['SMILES'].nunique()} unique raw SMILES")
 
-    # Fast pre-filter: only canonicalize SMILES that could match targets
+    # Fast pre-filter: only keep NMR rows whose SMILES match targets
     if target_smiles is not None:
-        # First pass: try raw SMILES as-is (many are already canonical)
-        raw_hits = df["SMILES"].isin(target_smiles)
-        print(f"[NMR] {raw_hits.sum()} rows match targets by raw SMILES")
-
-        # Second pass: canonicalize only the unique non-matching SMILES
-        unique_raw = df.loc[~raw_hits, "SMILES"].unique()
-        print(f"[NMR] Canonicalizing {len(unique_raw)} remaining unique SMILES...")
-        canon_map = {}
-        for smi in unique_raw:
-            c = canonical_smiles(smi)
-            if c is not None and c in target_smiles:
-                canon_map[smi] = c
-
-        print(f"[NMR] {len(canon_map)} additional matches found after canonicalization")
-
-        # Build canonical column efficiently
-        df["canonical_smiles"] = df["SMILES"].copy()
-        # Direct matches: raw SMILES IS the canonical form
+        # Pass 1: direct raw SMILES match (most NMRexp SMILES are canonical)
         mask_direct = df["SMILES"].isin(target_smiles)
-        # Mapped matches: raw -> canonical via canon_map
-        mask_mapped = df["SMILES"].isin(canon_map)
-        df.loc[mask_mapped, "canonical_smiles"] = df.loc[mask_mapped, "SMILES"].map(canon_map)
+        print(f"[NMR] {mask_direct.sum()} rows match targets by raw SMILES")
 
+        # Pass 2: canonicalize only target SMILES that might have non-canonical
+        # forms in NMRexp. Build reverse map from target canonical -> all raw forms.
+        # Only canonicalize the ~2K target SMILES, not 1.4M NMR SMILES.
+        remaining_targets = target_smiles - set(df.loc[mask_direct, "SMILES"].unique())
+        if remaining_targets:
+            # Get unique unmatched raw SMILES (sample up to 50K to limit time)
+            unmatched_raw = df.loc[~mask_direct, "SMILES"].unique()
+            if len(unmatched_raw) > 50000:
+                # Random sample — we'll miss some but keep it fast
+                rng = np.random.RandomState(42)
+                unmatched_raw = rng.choice(unmatched_raw, 50000, replace=False)
+                print(f"[NMR] Sampling 50K of {df.loc[~mask_direct, 'SMILES'].nunique()} unmatched SMILES for canonicalization")
+
+            canon_map = {}
+            for smi in unmatched_raw:
+                c = canonical_smiles(smi)
+                if c is not None and c in remaining_targets:
+                    canon_map[smi] = c
+
+            print(f"[NMR] {len(canon_map)} additional matches from partial canonicalization")
+            mask_mapped = df["SMILES"].isin(canon_map)
+        else:
+            mask_mapped = pd.Series(False, index=df.index)
+            canon_map = {}
+
+        # Build canonical column
+        df["canonical_smiles"] = df["SMILES"].copy()
+        df.loc[mask_mapped, "canonical_smiles"] = df.loc[mask_mapped, "SMILES"].map(canon_map)
         df = df[mask_direct | mask_mapped]
         df = df.dropna(subset=["canonical_smiles"])
     else:
