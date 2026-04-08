@@ -267,9 +267,11 @@ def precompute():
 
     print(f"  {len(compound_data)} compounds with valid features")
 
-    # Free NMR dataframe
+    # Free NMR dataframe AND canonical_smiles LRU cache to reclaim ~30GB
     del nmr
+    canonical_smiles.cache_clear()
     gc.collect()
+    print("  Freed NMR data and SMILES cache")
 
     # Step 4: Load Phase 1 features (Morgan FP + RDKit descriptors)
     smiles_list = [d["canonical_smiles"] for d in compound_data]
