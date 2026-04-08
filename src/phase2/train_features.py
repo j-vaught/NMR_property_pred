@@ -13,25 +13,35 @@ Models:
 All use 5-fold compound-level CV with the same splits as Phase 1/Phase 2 CNN.
 """
 
+"""
+Phase 2 Feature-Based Training: NMR features + Ridge/XGBoost/NN -> property prediction.
+
+Instead of end-to-end CNN on raw spectra (which fails with 512 compounds),
+extract fixed NMR features and use traditional ML models that are proven
+for small datasets. Mirrors Phase 1's successful approach.
+
+Requires running precompute_features.py first to create the cache.
+"""
+
 import json
 import sys
 import time
 from pathlib import Path
 
 import numpy as np
+import pandas as pd
 from sklearn.linear_model import Ridge, LassoCV
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import KFold
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from shared.config import Paths
-from shared.data_utils import is_hydrocarbon, make_temperature_features
+from shared.data_utils import make_temperature_features
 from shared.metrics import compute_all_metrics
-from phase2.nmr_dataset import build_nmr_property_dataset
-from phase2.nmr_features import extract_features_batch, get_feature_names
 
 paths = Paths()
 OUTPUT_DIR = Path(__file__).resolve().parent / "outputs"
+CACHE_DIR = Path(__file__).resolve().parent / "cache"
 
 
 def _build_xy(
@@ -262,27 +272,37 @@ def main():
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     results = {}
 
-    # Pre-load NMR spectra once (shared across properties)
-    _spectra_cache = {}
+    # Load pre-computed cache
+    print("  Loading pre-computed NMR feature cache...")
+    cache = np.load(CACHE_DIR / "nmr_compound_cache.npz")
+    nmr_features = cache["features"]
+    hc_mask_all = cache["hc_mask"]
+
+    with open(CACHE_DIR / "nmr_smiles_list.txt") as f:
+        all_smiles = [line.strip() for line in f]
+    smi_to_idx = {s: i for i, s in enumerate(all_smiles)}
+
+    with open(CACHE_DIR / "feature_names.txt") as f:
+        feature_names = [line.strip() for line in f]
+
+    print(f"  {len(all_smiles)} compounds, {nmr_features.shape[1]} features")
 
     for property_name in ["viscosity", "surface_tension"]:
         print(f"\n{'#'*60}")
         print(f"  {property_name.upper()}")
         print(f"{'#'*60}")
 
-        # Load data
-        data = build_nmr_property_dataset(property_name)
-        spectra = data["spectra"]
-        labels_df = data["labels_df"]
-        smiles_list = data["smiles_list"]
-        hc_mask = data["hc_mask"]
-        smi_to_idx = data["smi_to_idx"]
+        # Load labels from cache
+        labels_df = pd.read_csv(CACHE_DIR / f"labels_{property_name}.csv")
 
-        # Extract NMR features
-        print(f"  Extracting NMR features from {len(spectra)} spectra...")
-        nmr_features = extract_features_batch(spectra)
-        feature_names = get_feature_names()
-        print(f"  Feature matrix: {nmr_features.shape} ({len(feature_names)} features)")
+        # Inner join: only compounds with both NMR and labels
+        nmr_smiles_set = set(all_smiles)
+        labels_df = labels_df[labels_df["canonical_smiles"].isin(nmr_smiles_set)].copy()
+        smiles_list = sorted(set(labels_df["canonical_smiles"].unique()) & nmr_smiles_set)
+        hc_mask = np.array([hc_mask_all[smi_to_idx[s]] for s in smiles_list])
+
+        print(f"  {len(smiles_list)} compounds with NMR + {property_name}")
+        print(f"  {len(labels_df)} measurement rows, {hc_mask.sum()} hydrocarbons")
 
         # HC set for evaluation
         hc_set = {s for i, s in enumerate(smiles_list) if hc_mask[i]}
