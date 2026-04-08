@@ -140,23 +140,19 @@ def _load_nmr_spectra(target_smiles: set[str] | None = None) -> dict[str, np.nda
         print(f"[NMR] {mask_direct.sum()} rows match targets by raw SMILES")
 
         # Pass 2: canonicalize unmatched NMR SMILES to find non-canonical
-        # forms of target molecules. Uses spawn-based multiprocessing to
-        # avoid fork issues with RDKit's C extensions.
+        # forms of target molecules. Uses serial loop with progress tracking.
         remaining_targets = target_smiles - set(df.loc[mask_direct, "SMILES"].unique())
         if remaining_targets:
             unmatched_raw = df.loc[~mask_direct, "SMILES"].unique()
             print(f"[NMR] Canonicalizing {len(unmatched_raw)} unmatched SMILES...")
 
-            import multiprocessing as mp
-            ctx = mp.get_context("spawn")
-
-            with ctx.Pool(processes=8) as pool:
-                results = pool.map(_canon_one, unmatched_raw, chunksize=20000)
-
             canon_map = {}
-            for raw_smi, canon in zip(unmatched_raw, results):
-                if canon is not None and canon in remaining_targets:
-                    canon_map[raw_smi] = canon
+            for i, smi in enumerate(unmatched_raw):
+                c = canonical_smiles(smi)
+                if c is not None and c in remaining_targets:
+                    canon_map[smi] = c
+                if (i + 1) % 200000 == 0:
+                    print(f"  Canonicalized {i+1}/{len(unmatched_raw)}, {len(canon_map)} matches so far...")
 
             print(f"[NMR] {len(canon_map)} additional matches from full canonicalization")
             mask_mapped = df["SMILES"].isin(canon_map)

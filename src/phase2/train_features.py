@@ -262,6 +262,9 @@ def main():
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     results = {}
 
+    # Pre-load NMR spectra once (shared across properties)
+    _spectra_cache = {}
+
     for property_name in ["viscosity", "surface_tension"]:
         print(f"\n{'#'*60}")
         print(f"  {property_name.upper()}")
