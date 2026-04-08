@@ -121,8 +121,8 @@ def _load_phase1_features(smiles_list: list[str]) -> tuple[np.ndarray, np.ndarra
     morgan_cols = [c for c in morgan_df.columns if c.startswith("morgan_")]
     rdkit_cols = [c for c in rdkit_df.columns if c not in ("CAS", "SMILES", "canon")]
 
-    morgan_lookup = morgan_df.dropna(subset=["canon"]).set_index("canon")[morgan_cols]
-    rdkit_lookup = rdkit_df.dropna(subset=["canon"]).set_index("canon")[rdkit_cols]
+    morgan_lookup = morgan_df.dropna(subset=["canon"]).drop_duplicates(subset=["canon"]).set_index("canon")[morgan_cols]
+    rdkit_lookup = rdkit_df.dropna(subset=["canon"]).drop_duplicates(subset=["canon"]).set_index("canon")[rdkit_cols]
 
     # Get the RDKit descriptor calculator names for on-the-fly generation
     calc_names = [name for name, _ in Descriptors.descList]
