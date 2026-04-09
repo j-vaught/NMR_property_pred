@@ -24,7 +24,24 @@ paths = Paths()
 FUEL_DIR = paths.fuels
 
 
-# POSF number mapping for cross-referencing between data sources
+# Jameel 2021 NMR functional group shift ranges (ppm)
+# These map 1H NMR chemical shift regions to specific functional groups
+# and work for both pure compounds AND fuel mixtures.
+FUNCTIONAL_GROUPS = {
+    "aromatic_H":     (6.42, 8.99),
+    "olefinic_H":     (4.50, 6.42),
+    "alpha_CH":       (2.88, 3.40),
+    "alpha_CH2":      (2.64, 2.88),
+    "alpha_CH3":      (2.04, 2.64),
+    "naphthenic_H":   (1.57, 1.96),
+    "paraffinic_CH":  (1.39, 1.57),
+    "paraffinic_CH2": (0.94, 1.39),
+    "paraffinic_CH3": (0.25, 0.94),
+}
+
+
+# POSF number mapping for cross-referencing between NMR and AFRL data
+# NMR fuel name -> POSF number
 FUEL_POSF = {
     "JP-5 POSF 10289": "10289",
     "Jet-A POSF 10325": "10325",
@@ -34,36 +51,63 @@ FUEL_POSF = {
     "Gevo-ATJ POSF 10151": "10151",
 }
 
+# Approximate POSF cross-references (same fuel type, different batch)
+POSF_APPROX_MATCH = {
+    "10151": "11498",   # Gevo ATJ: NMR batch vs AFRL batch
+    "7720": "10301",    # HRJ Camelina: Burnett vs AFRL UOP camelina
+}
 
-def _resample_spectrum(ppm: np.ndarray, intensity: np.ndarray,
-                       target_grid: np.ndarray = None) -> np.ndarray:
-    """Resample a raw NMR spectrum to the standard 1200-point grid.
+
+def extract_functional_groups(spectrum: np.ndarray,
+                               ppm_grid: np.ndarray = None) -> np.ndarray:
+    """Extract Jameel 2021 functional group fractions from a 1H NMR spectrum.
+
+    These features are physically meaningful for both pure compounds and
+    fuel mixtures, as they represent the hydrogen distribution across
+    chemical environments.
 
     Parameters
     ----------
-    ppm : array of chemical shift values (may be descending)
-    intensity : array of intensity values
-    target_grid : target ppm grid (default: 0-12 ppm, 1200 points)
+    spectrum : max-normalized spectrum (1200 points)
+    ppm_grid : ppm grid (default: 0-12 ppm, 1200 points)
 
     Returns
     -------
-    resampled : array of shape (1200,), max-normalized to [0, 1]
+    features : array of shape (9,) — fractional integral in each FG region
     """
+    if ppm_grid is None:
+        ppm_grid = _1H_GRID
+
+    total = spectrum.sum()
+    if total <= 0:
+        return np.zeros(len(FUNCTIONAL_GROUPS), dtype=np.float32)
+
+    features = []
+    for name, (lo, hi) in FUNCTIONAL_GROUPS.items():
+        mask = (ppm_grid >= lo) & (ppm_grid <= hi)
+        region_integral = spectrum[mask].sum() if mask.any() else 0.0
+        features.append(region_integral / total)
+
+    return np.array(features, dtype=np.float32)
+
+
+def get_functional_group_names() -> list[str]:
+    return [f"fg_{name}" for name in FUNCTIONAL_GROUPS]
+
+
+def _resample_spectrum(ppm: np.ndarray, intensity: np.ndarray,
+                       target_grid: np.ndarray = None) -> np.ndarray:
+    """Resample a raw NMR spectrum to the standard 1200-point grid."""
     if target_grid is None:
         target_grid = _1H_GRID
 
-    # Ensure ascending order
     if ppm[0] > ppm[-1]:
         ppm = ppm[::-1]
         intensity = intensity[::-1]
 
-    # Interpolate to target grid
     resampled = np.interp(target_grid, ppm, intensity, left=0, right=0)
-
-    # Clip negative values (noise/background)
     resampled = np.clip(resampled, 0, None)
 
-    # Max-normalize
     peak = resampled.max()
     if peak > 0:
         resampled /= peak
@@ -75,67 +119,52 @@ def _extract_pseudo_peaklist(spectrum: np.ndarray, ppm_grid: np.ndarray = None,
                               threshold: float = 0.02) -> list[dict]:
     """Extract a pseudo peak list from a continuous spectrum.
 
-    Since fuel NMR spectra are continuous (not peak lists), we identify
-    peaks as local maxima above a threshold and estimate integrals from
-    the area under each peak region.
-
-    Parameters
-    ----------
-    spectrum : max-normalized spectrum (1200 points)
-    ppm_grid : ppm grid
-    threshold : minimum intensity to consider as a peak
-
-    Returns
-    -------
-    peaks : list of dicts compatible with extract_peaklist_features()
+    Since fuel NMR spectra are continuous (not discrete peak lists), we
+    identify peaks as contiguous regions above threshold and estimate
+    integrals from the area under each region.
     """
     if ppm_grid is None:
         ppm_grid = _1H_GRID
 
-    # Find regions above threshold
     above = spectrum > threshold
     if not above.any():
         return [{"center_ppm": 1.0, "integral": 1.0, "multiplicity": "m",
                  "j_couplings_hz": [], "shift_high": 1.0, "shift_low": 1.0}]
 
-    # Find contiguous regions
     transitions = np.diff(above.astype(int))
     starts = np.where(transitions == 1)[0] + 1
     ends = np.where(transitions == -1)[0] + 1
 
-    # Handle edge cases
     if above[0]:
         starts = np.concatenate([[0], starts])
     if above[-1]:
         ends = np.concatenate([ends, [len(spectrum)]])
 
     peaks = []
+    ppm_step = abs(ppm_grid[1] - ppm_grid[0]) if len(ppm_grid) > 1 else 0.01
+
     for s, e in zip(starts, ends):
         region = spectrum[s:e]
         region_ppm = ppm_grid[s:e]
 
-        # Peak center: intensity-weighted mean ppm
         total_int = region.sum()
         if total_int > 0:
             center = np.sum(region_ppm * region) / total_int
         else:
             center = region_ppm.mean()
 
-        # Integral: proportional to area under curve, scaled by ppm width
-        ppm_step = abs(ppm_grid[1] - ppm_grid[0]) if len(ppm_grid) > 1 else 0.01
         integral = total_int * ppm_step
 
-        # Scale integral to approximate H-count (normalize so total ~ 20 for a typical fuel)
         peaks.append({
             "center_ppm": float(center),
             "integral": float(integral),
-            "multiplicity": "m",  # mixtures always appear as complex multiplets
+            "multiplicity": "m",
             "j_couplings_hz": [],
             "shift_high": float(region_ppm.max()),
             "shift_low": float(region_ppm.min()),
         })
 
-    # Scale integrals so total ≈ 20 (typical fuel average H-count proxy)
+    # Scale integrals so total ~ 20 (typical fuel H-count proxy)
     total = sum(p["integral"] for p in peaks)
     if total > 0:
         scale = 20.0 / total
@@ -146,11 +175,7 @@ def _extract_pseudo_peaklist(spectrum: np.ndarray, ppm_grid: np.ndarray = None,
 
 
 def load_burnett_fuels() -> dict[str, dict]:
-    """Load Burnett fuel NMR spectra and properties.
-
-    Returns dict mapping fuel_name -> {spectrum, spectrum_features, peaklist_features,
-                                        viscosity_data, source}
-    """
+    """Load Burnett fuel NMR spectra and properties."""
     burnett_dir = FUEL_DIR / "burnett"
     fuels = {}
 
@@ -169,26 +194,29 @@ def load_burnett_fuels() -> dict[str, dict]:
         ppm = df.iloc[:, 0].values
         intensity = df.iloc[:, 1].values
 
-        # Resample to standard grid
         spectrum = _resample_spectrum(ppm, intensity)
         spectrum_feats = extract_nmr_features(spectrum)
-
-        # Extract pseudo peak list for peaklist features
         pseudo_peaks = _extract_pseudo_peaklist(spectrum)
         peaklist_feats = extract_peaklist_features(pseudo_peaks)
+        fg_feats = extract_functional_groups(spectrum)
 
         fuel = {
             "spectrum": spectrum,
             "spectrum_features": spectrum_feats,
             "peaklist_features": peaklist_feats,
+            "fg_features": fg_feats,
             "source": "burnett",
         }
 
         # Load viscosity data if available
         visc_file = burnett_dir / nmr_file.replace("_NMR_spectrum.csv", "_experimental_viscosity.csv")
         if visc_file.exists():
-            visc_df = pd.read_csv(visc_file)
-            fuel["viscosity_data"] = visc_df.values  # [[T_K, visc_cSt], ...]
+            vd = pd.read_csv(visc_file)
+            fuel["measured_viscosity"] = {
+                "T_K": vd.iloc[:, 0].values,
+                "viscosity_cSt": vd.iloc[:, 1].values,
+                "source": "burnett_experimental",
+            }
 
         fuels[fuel_name] = fuel
 
@@ -196,10 +224,7 @@ def load_burnett_fuels() -> dict[str, dict]:
 
 
 def load_parker_fuels() -> dict[str, dict]:
-    """Load Parker 2025 fuel NMR spectra.
-
-    Returns dict mapping fuel_name -> {spectrum, spectrum_features, peaklist_features, source}
-    """
+    """Load Parker 2025 fuel NMR spectra."""
     nmr_path = FUEL_DIR / "parker2025_extracted" / "nmr_spectra.csv"
     if not nmr_path.exists():
         return {}
@@ -214,81 +239,112 @@ def load_parker_fuels() -> dict[str, dict]:
 
         spectrum = _resample_spectrum(ppm, intensity)
         spectrum_feats = extract_nmr_features(spectrum)
-
         pseudo_peaks = _extract_pseudo_peaklist(spectrum)
         peaklist_feats = extract_peaklist_features(pseudo_peaks)
+        fg_feats = extract_functional_groups(spectrum)
 
         fuels[fuel_name] = {
             "spectrum": spectrum,
             "spectrum_features": spectrum_feats,
             "peaklist_features": peaklist_feats,
+            "fg_features": fg_feats,
             "source": "parker2025",
         }
 
     return fuels
 
 
-def load_fuel_properties() -> dict[str, dict]:
-    """Load measured fuel properties from AFRL + Burnett for validation.
+def _match_afrl_by_posf(fuel_posf: str, afrl_df: pd.DataFrame) -> pd.DataFrame | None:
+    """Match AFRL data rows by POSF number (exact or approximate)."""
+    # Try exact match
+    mask = afrl_df["POSF_number"].astype(str).str.strip() == fuel_posf
+    if mask.any():
+        return afrl_df[mask]
 
-    Returns dict mapping fuel_name -> {viscosity: DataFrame, surface_tension: DataFrame,
-                                        density: DataFrame}
-    """
-    props = {}
+    # Try float match (some POSF stored as float)
+    try:
+        posf_float = float(fuel_posf)
+        mask = afrl_df["POSF_number"] == posf_float
+        if mask.any():
+            return afrl_df[mask]
+    except ValueError:
+        pass
 
-    # AFRL viscosity
-    visc_path = FUEL_DIR / "afrl_extracted" / "afrl_viscosity.csv"
-    if visc_path.exists():
-        visc = pd.read_csv(visc_path)
-        for name in visc["fuel_name"].unique():
-            props.setdefault(name, {})["viscosity_afrl"] = visc[visc["fuel_name"] == name]
+    # Try approximate match
+    approx = POSF_APPROX_MATCH.get(fuel_posf)
+    if approx:
+        return _match_afrl_by_posf(approx, afrl_df)
 
-    # AFRL surface tension
-    st_path = FUEL_DIR / "afrl_extracted" / "afrl_surface_tension.csv"
-    if st_path.exists():
-        st = pd.read_csv(st_path)
-        for name in st["fuel_name"].unique():
-            props.setdefault(name, {})["surface_tension_afrl"] = st[st["fuel_name"] == name]
+    return None
 
-    # AFRL density
-    dens_path = FUEL_DIR / "afrl_extracted" / "afrl_density.csv"
-    if dens_path.exists():
-        dens = pd.read_csv(dens_path)
-        for name in dens["fuel_name"].unique():
-            props.setdefault(name, {})["density_afrl"] = dens[dens["fuel_name"] == name]
 
-    # Burnett JP-5 viscosity
-    jp5_visc = FUEL_DIR / "burnett" / "JP5_experimental_viscosity.csv"
-    if jp5_visc.exists():
-        df = pd.read_csv(jp5_visc)
-        props.setdefault("JP-5 POSF 10289", {})["viscosity_burnett"] = df
+def load_afrl_properties() -> dict:
+    """Load all AFRL measured properties, indexed by POSF."""
+    afrl_dir = FUEL_DIR / "afrl_extracted"
+    data = {}
 
-    return props
+    for prop_name, filename, val_col in [
+        ("viscosity", "afrl_viscosity.csv", "viscosity_cSt"),
+        ("surface_tension", "afrl_surface_tension.csv", "surface_tension_mNm"),
+        ("density", "afrl_density.csv", "density_kgm3"),
+    ]:
+        path = afrl_dir / filename
+        if path.exists():
+            data[prop_name] = pd.read_csv(path)
+
+    return data
+
+
+def attach_measured_properties(fuels: dict[str, dict]) -> None:
+    """Attach AFRL measured properties to fuels by POSF matching."""
+    afrl = load_afrl_properties()
+
+    for fuel_name, fuel_data in fuels.items():
+        posf = FUEL_POSF.get(fuel_name)
+        if not posf:
+            continue
+
+        # Viscosity
+        if "viscosity" in afrl:
+            matched = _match_afrl_by_posf(posf, afrl["viscosity"])
+            if matched is not None and len(matched) > 0:
+                fuel_data["measured_viscosity_afrl"] = {
+                    "T_K": matched["T_K"].values,
+                    "viscosity_cSt": matched["viscosity_cSt"].values,
+                    "source": "AFRL_Edwards_2020",
+                }
+
+        # Surface tension
+        if "surface_tension" in afrl:
+            matched = _match_afrl_by_posf(posf, afrl["surface_tension"])
+            if matched is not None and len(matched) > 0:
+                fuel_data["measured_surface_tension"] = {
+                    "T_K": matched["T_K"].values,
+                    "surface_tension_mNm": matched["surface_tension_mNm"].values,
+                    "source": "AFRL_Edwards_2020",
+                }
+
+        # Density (needed for viscosity unit conversion)
+        if "density" in afrl:
+            matched = _match_afrl_by_posf(posf, afrl["density"])
+            if matched is not None and len(matched) > 0:
+                fuel_data["measured_density"] = {
+                    "T_K": matched["T_K"].values,
+                    "density_kgm3": matched["density_kgm3"].values,
+                    "source": "AFRL_Edwards_2020",
+                }
 
 
 def load_all_fuels() -> dict[str, dict]:
-    """Load all fuel NMR spectra from both sources.
-
-    Merges Burnett and Parker fuels, preferring Parker for duplicates
-    (higher spectral resolution). Attaches measured properties for validation.
-    """
+    """Load all fuel NMR spectra and attach measured properties."""
     burnett = load_burnett_fuels()
     parker = load_parker_fuels()
 
-    # Merge (Parker takes priority for overlapping fuels)
     all_fuels = {}
     all_fuels.update(burnett)
-    all_fuels.update(parker)  # overwrites JP-5, Jet-A, HRJ if present
+    all_fuels.update(parker)  # Parker overwrites for overlapping fuels
 
-    # Attach measured properties
-    props = load_fuel_properties()
-    for fuel_name, fuel_data in all_fuels.items():
-        posf = FUEL_POSF.get(fuel_name, "")
-        # Match by POSF number in property data
-        for prop_name, prop_data in props.items():
-            if posf and posf in prop_name:
-                fuel_data.update(prop_data)
-                break
+    attach_measured_properties(all_fuels)
 
     return all_fuels
 
@@ -303,14 +359,10 @@ if __name__ == "__main__":
         posf = FUEL_POSF.get(name, "?")
         print(f"\n  {name} (POSF {posf}):")
         print(f"    Source: {data['source']}")
-        print(f"    Spectrum: {data['spectrum'].shape}, max={data['spectrum'].max():.3f}")
-        print(f"    Spectrum features: {data['spectrum_features'].shape}")
-        print(f"    Peaklist features: {data['peaklist_features'].shape}")
-        print(f"    Total H proxy: {data['peaklist_features'][0]:.1f}")
-        if "viscosity_burnett" in data:
-            print(f"    Burnett viscosity: {len(data['viscosity_burnett'])} T points")
-        if "viscosity_data" in data:
-            print(f"    Burnett viscosity (raw): {data['viscosity_data'].shape}")
+        print(f"    Spectrum: {data['spectrum'].shape}")
+        print(f"    FG fractions: {dict(zip(get_functional_group_names(), data['fg_features']))}")
+
         for key in data:
-            if "afrl" in key:
-                print(f"    {key}: {len(data[key])} rows")
+            if "measured" in key:
+                mdata = data[key]
+                print(f"    {key}: {len(mdata[list(mdata.keys())[0]])} T points ({mdata['source']})")
