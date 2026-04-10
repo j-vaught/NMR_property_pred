@@ -125,7 +125,7 @@
 #include "03a-data-nmr-databases.typ"
 
 == Thermophysical Property and Fuel-Specific Databases <thermo-databases>
-#include "03b-data-thermo-databases.typ"
+#include "03b-data-thermo-fuel.typ"
 
 == Fuel-Specific Data <fuel-specific>
 #include "03c-data-fuel-specific.typ"
