@@ -1,0 +1,173 @@
+================================================================
+DATA COLLECTION TODO — Manual steps required
+================================================================
+Last updated: 2026-04-09
+Status: 10/14 datasets complete automatically (~65 GB). 4 need manual work.
+
+================================================================
+PRIORITY 1 — FUEL-RELEVANT, HIGH VALUE
+================================================================
+
+[ ] DLQMA hydrocarbon NMR mixtures (Anal. Chem. 2026)
+    ----------------------------------------------------
+    Why: Directly relevant to Phase 3 fuel mixture prediction.
+         Has 1H NMR of hydrocarbon mixtures (gasoline-adjacent).
+    Where: ACS paper supplementary data
+    DOI: 10.1021/acs.analchem.5c04983
+    URL: https://pubs.acs.org/doi/10.1021/acs.analchem.5c04983
+
+    Steps:
+    1. Access via USC library (ask chemistry librarian for ACS subscription)
+    2. Open the "Supporting Info" link on the paper page
+    3. Download the supplementary ZIP (usually ~10-100 MB)
+    4. scp to: comech-2422:~/NMR_property_pred/data/nmr/dlqma/
+    5. Run: ssh comech-2422 "source ~/NMR_property_pred/.venv/bin/activate &&
+            python3 ~/NMR_property_pred/scripts/verify_nmr_datasets.py"
+
+    Expected: Hundreds of labeled hydrocarbon mixture 1H NMR spectra.
+
+================================================================
+PRIORITY 2 — LARGE UNIQUE DATASET
+================================================================
+
+[ ] CH-NMR-NP (JEOL Japanese natural products NMR)
+    ----------------------------------------------------
+    Why: ~35,500 natural product NMR entries that are likely NOT
+         in NMRexp (which only scrapes 2010-2024 English papers).
+         Heavy coverage of Japanese and pre-2010 literature.
+    Where: https://ch-nmr-np.jeol.co.jp/en/nmrdb/
+
+    Steps:
+    1. Visit https://ch-nmr-np.jeol.co.jp/en/nmrdb/
+    2. Click "Sign Up" (free, one-time)
+       - Name, affiliation (University of South Carolina),
+         country, email (jvaught@sc.edu)
+    3. Confirm email
+    4. Look for a "Download" or "Export" option after login
+    5. If no bulk download is visible, email JEOL R&D:
+       - Try: nmrdb@jeol.co.jp (or link on Contact page)
+       - Subject: "Academic data access request: bulk CH-NMR-NP
+         download for ML training"
+       - Body: Mention PhD student at USC, project on NMR→property
+         prediction for aviation fuels, will cite CH-NMR-NP in
+         any publications
+    6. Place downloaded files in:
+       ~/NMR_property_pred/data/nmr/ch_nmr_np/
+    7. Run verify script
+
+    Expected size: ~2 GB if full export granted
+
+================================================================
+PRIORITY 3 — METABOLOMICS REFERENCE DATA
+================================================================
+
+[ ] HMDB v5 NMR-specific files (predicted + experimental)
+    ----------------------------------------------------
+    Why: 313K predicted 1H/13C NMR spectra + experimental NMR
+         for metabolite standards. Cloudflare blocks our server.
+    Files needed:
+      - spectral_data/spectra_xml/hmdb_nmr_spectra.zip (~873 MB)
+      - spectral_data/peak_lists_txt/hmdb_nmr_peak_lists.zip (~1 MB)
+
+    Already have (via Wayback Machine):
+      ✓ hmdb_metabolites.zip (910 MB) — main XML with SMILES
+      ✓ HMDB 2.5 NMR archives: FIDs, Peaklist, spectra (2.3 GB)
+
+    Option A — Email David Wishart directly (RECOMMENDED):
+    --------------------------------------------------------
+    1. Email david.wishart@ualberta.ca
+    2. CC: samackay@ualberta.ca
+    3. Subject: "HMDB bulk NMR data access — Cloudflare WAF
+       blocking academic research fetch"
+    4. Body: Explain academic use, ML training for fuel property
+       prediction, USC PhD student, will cite HMDB 5.0 paper.
+       Ask for either (a) a direct transfer (Globus/Dropbox)
+       of the 2 NMR zips, or (b) temporary CF WAF exclusion
+       for comech-2422 IP range (currently 213.81.0.0/16 — ask
+       the IT dept for exact range).
+    5. Expected reply time: 1-14 days
+
+    Option B — FlareSolverr Docker (if you need it fast):
+    --------------------------------------------------------
+    1. On a machine with a clean residential IP (home WiFi):
+       docker run -d --name=flaresolverr -p 8191:8191 \
+         ghcr.io/flaresolverr/flaresolverr:latest
+    2. POST to http://localhost:8191/v1 with JSON:
+       {"cmd":"request.get","url":"https://hmdb.ca/downloads",
+        "maxTimeout":60000}
+    3. Parse the cf_clearance cookie from the response
+    4. curl the 2 NMR zips with that cookie + matching UA
+    5. scp to comech-2422:~/NMR_property_pred/data/nmr/hmdb/
+
+    Already downloaded main HMDB data is ~3.4 GB total.
+
+================================================================
+PRIORITY 4 — LOWER VALUE, SERVER DEAD
+================================================================
+
+[ ] BML-NMR full library (Birmingham Metabolite Library)
+    ----------------------------------------------------
+    Why: 3,328 raw experimental 1H NMR spectra (500 MHz, various
+         conditions). 208 metabolite standards × 16 spectra each.
+         High quality, but similar content available in BMRB.
+
+    Status: http://www.bml-nmr.org/ unreachable since ~Sept 2025.
+            Only 3 of 3,328 spectra publicly available (grabbed).
+
+    Steps:
+    1. Email Mark Viant (corresponding author of the 2011 paper):
+       m.viant@bham.ac.uk
+    2. Subject: "BML-NMR data access — www.bml-nmr.org unreachable
+       since Sept 2025"
+    3. Body: Cite Ludwig et al., Metabolomics 2012, DOI
+       10.1007/s11306-011-0347-7. Mention academic use, ML training,
+       USC. Ask whether:
+       (a) Outage is permanent
+       (b) A MySQL dump or tarball of per-Analysis XMLs can be shared
+       (c) Data will be migrated to MetaboLights/Zenodo
+    4. CC if needed: Christian Ludwig (first author)
+    5. Parallel: email metabolights-help@ebi.ac.uk referencing
+       EBI's BMLNMRtoMetaboLights Java converter (on GitHub) —
+       they have the JSON conversions on internal NFS.
+
+    Already have 3 sample spectra (18 MB) at:
+      ~/NMR_property_pred/data/nmr/bml_nmr/samples/
+    Good enough to validate XML parser / Bruker FID reader.
+
+    Lower priority because BMRB metabolomics FTP is essentially
+    a superset of BML-NMR's compounds.
+
+================================================================
+WHEN YOU'RE DONE
+================================================================
+
+After placing any manual download in the right directory:
+
+    ssh comech-2422 "source ~/NMR_property_pred/.venv/bin/activate && \
+        python3 ~/NMR_property_pred/scripts/verify_nmr_datasets.py && \
+        cat ~/NMR_property_pred/data/nmr/DATASETS_INVENTORY.md"
+
+================================================================
+CURRENT STATE (2026-04-09)
+================================================================
+
+Completed datasets:
+  ✓ NMRexp          1.48M compounds    (already had)
+  ✓ NMRBank         149K compounds     (already had)
+  ✓ NMRShiftDB2     58K compounds      (already had)
+  ✓ SDBS            30K compounds      (scraped)
+  ✓ IR-NMR multimodal  1,255 compounds (already had)
+  ✓ logD predictor  754 pharma         (new, 160 MB)
+  ✓ 2DNMRGym        22K HSQC           (new, 1.1 GB)
+  ✓ BMRB/GISSMO     3.4K metabolites   (new, 1.2 GB)
+       + relational tables: 3,315 SMILES + 90K 1H peaks
+  ✓ NP-MRD          ~281K natural products (new, 13.9 GB)
+  ✓ HMDB main       217K metabolites   (new, 910 MB via Wayback)
+  ✓ HMDB 2.5 NMR    ~400 standards     (new, 2.3 GB via Wayback)
+  ✓ PROSPRE         10K solvent-annot  (new, partial)
+  ✓ nmrXiv          151 projects       (new, 38 GB)
+  ✓ BML-NMR samples 3 of 3,328         (new, 18 MB)
+
+Total new data: ~65 GB across 10 datasets
+Total NMR data now: ~75 GB
+================================================================

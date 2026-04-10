@@ -25,6 +25,8 @@ Thumbs.db
 data/nmr/nmrexp/
 data/nmr/nmrshiftdb/
 data/nmr/pubchem/
+data/nmr/sdbs/
+data/nmr/hmdb_download/
 data/thermo/thermoml/ThermoML.v2020-09-30.tgz
 data/thermo/ilthermo/viscosity/
 data/thermo/ilthermo/surface_tension/
