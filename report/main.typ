@@ -69,16 +69,15 @@
 // =============================================================================
 
 #align(center)[
-  #v(2in)
-  #text(size: 18pt, weight: "bold")[
-    Predicting Thermophysical Properties of Organic Compounds \
-    and Aviation Fuel Mixtures from Nuclear Magnetic Resonance Spectra
-  ]
   #v(0.8in)
+  #text(size: 18pt, weight: "bold")[
+    Predicting Thermophysical Properties of Organic Compounds and Aviation Fuel Mixtures from Nuclear Magnetic Resonance Spectra
+  ]
+  #v(0.5in)
   #text(size: 14pt)[J.C. Vaught]
-  #v(0.3in)
+  #v(0.2in)
   #text(size: 12pt)[#datetime.today().display("[month repr:long] [day], [year]")]
-  #v(1in)
+  #v(0.4in)
 ]
 
 // --- Abstract ---
