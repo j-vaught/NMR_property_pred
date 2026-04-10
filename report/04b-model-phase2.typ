@@ -157,7 +157,7 @@ The fourth model family, XGBoost, operates on the extracted 120-dimensional
 feature vector (95 spectrum + 25 peaklist features) rather than on the raw
 spectrum. This choice is motivated by the classical machine learning principle
 that hand-engineered features outperform learned representations when training
-data is severely limited @Chen2016XGBoost. With only approximately 500 compounds,
+data is severely limited @Chen2016. With only approximately 500 compounds,
 XGBoost's built-in L1/L2 regularization, column subsampling, and early stopping
 provide far more effective overfitting control than the implicit regularization
 of neural network training.
