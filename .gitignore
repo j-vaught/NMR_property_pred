@@ -47,3 +47,6 @@ data/thermo/additional_properties/heat_capacity.csv
 *.progress
 /tmp/
 Physical-Property-Modeling-Using-NMR-Spectra-and-Functional-Group-Representation/
+
+# Apple double files
+._*
